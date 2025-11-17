@@ -16,7 +16,7 @@ public class Test {
         this.subject = subject;
         this.date = date;
         this.punctuation = punctuation;
-        this.feedback_ai = feedback_ai;
+
     }
     public int getId() {
         return id;
