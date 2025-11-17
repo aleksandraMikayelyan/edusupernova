@@ -4,12 +4,15 @@ public class Questions {
     private int id;
     private Subject subject;
     private String question;
-    private enum type {
+    private type questionType;        // Cambiado de enum directo a campo
+    public enum type {
         multipleChoice, openEnded, logicalProblems
     }
     private String options;
     private String answer;
     private String prompt_ia;
+
+    public Questions() {}
 
     public Questions(int id, Subject subject, String question, String options, String answer, String promptIa) {
         this.id = id;
@@ -37,6 +40,13 @@ public class Questions {
     }
     public String getPrompt_ia() {
         return prompt_ia;
+    }
+    public type getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(type questionType) {
+        this.questionType = questionType;
     }
     public void setId(int id) {
         this.id = id;

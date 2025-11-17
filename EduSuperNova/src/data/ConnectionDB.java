@@ -120,7 +120,7 @@ public class ConnectionDB {
                     + "subject_id INT NOT NULL, "
                     + "question_text TEXT NOT NULL,"
                     + "options TEXT,"
-                    + "correct_response TEXT,"
+                    + "correct_answer TEXT,"
                     + "prompt_ia TEXT,"
                     + "CONSTRAINT fk_question_subject FOREIGN KEY (subject_id) REFERENCES Subject(id)"
                     + ")";
@@ -143,7 +143,6 @@ public class ConnectionDB {
                     + "user_id INT NOT NULL, "
                     + "subject_id INT NOT NULL, "
                     + "creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,"
-                    + "punctuation INT DEFAULT 0,"
                     + "CONSTRAINT fk_test_user FOREIGN KEY (user_id) REFERENCES User(id)"
                     + "CONSTRAINT fk_question_subject FOREIGN KEY (subject_id) REFERENCES Subject(id)"
                     + ")";
@@ -165,6 +164,8 @@ public class ConnectionDB {
                     + "question_id INT NOT NULL,"
                     + "user_response TEXT,"
                     + "correct_response BOOLEAN DEFAULT FALSE,"
+                    + "punctuation INT DEFAULT 0,"
+                    + "feedback_ia TEXT,"
                     + "CONSTRAINT pk_test_question PRIMARY KEY (test_id, question_id),"
                     + "CONSTRAINT fk_question FOREIGN KEY (question_id) REFERENCES Quiz(id),"
                     + "CONSTRAINT fk_test FOREIGN KEY (test_id) REFERENCES Test(id)"

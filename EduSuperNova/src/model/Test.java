@@ -9,12 +9,14 @@ public class Test {
     private LocalDate date;
     private int punctuation;
 
-    public Test(int id, User user, Subject subject, LocalDate date, int punctuation) {
+
+    public Test(int id, User user, Subject subject, LocalDate date, int punctuation,  String feedback_ai) {
         this.id = id;
         this.user = user;
         this.subject = subject;
         this.date = date;
         this.punctuation = punctuation;
+        this.feedback_ai = feedback_ai;
     }
     public int getId() {
         return id;
@@ -46,6 +48,7 @@ public class Test {
     public void setPunctuation(int punctuation) {
         this.punctuation = punctuation;
     }
+
 
     @Override
     public String toString() {

@@ -6,6 +6,7 @@ public class Subject {
     private String description;
     private String subjectType;
 
+    public Subject(){}
     public Subject(int id, String subjectName, String description, String subjectType) {
         this.id = id;
         this.subjectName = subjectName;
