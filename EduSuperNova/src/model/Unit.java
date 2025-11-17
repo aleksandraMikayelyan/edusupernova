@@ -7,6 +7,8 @@ public class Unit {
     private String summary;
     private Subject subject;
 
+    public Unit(){}
+
     public Unit(int id, String title, int queue, String summary, Subject subject) {
         this.id = id;
         this.title = title;
