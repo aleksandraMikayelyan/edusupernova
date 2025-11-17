@@ -18,13 +18,12 @@ public class ConnectionDB {
         createTables();
     }
 
-
     public void openConnection() {
         try {
 
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement stmt = conn.createStatement();
-            String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS edusupernova ";
+            String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS edusupernova";
             stmt.execute(sqlCreateDB);
             stmt.close();
             conn.close();
@@ -39,6 +38,7 @@ public class ConnectionDB {
             System.out.println("Error while opening DB: " + e.getMessage());
         }
     }
+
     private void createTables() {
         createTableUser();
         createTableSubject();
@@ -47,6 +47,7 @@ public class ConnectionDB {
         createTableTest();
         createTableTestQuestions();
     }
+
     public void createTableUser(){
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -67,6 +68,7 @@ public class ConnectionDB {
             System.out.println("Error while creating table User: " + e.getMessage());
         }
     }
+
     public void createTableSubject() {
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -108,6 +110,7 @@ public class ConnectionDB {
             System.out.println("Error while creating table Unit: " + e.getMessage());
         }
     }
+
     public void createTableQuestions() {
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -153,6 +156,7 @@ public class ConnectionDB {
             System.out.println("Error while creating table Test: " + e.getMessage());
         }
     }
+
     public void createTableTestQuestions(){
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -176,6 +180,7 @@ public class ConnectionDB {
         }
 
     }
+
     public Connection getConnection(){
         return conn;
     }
