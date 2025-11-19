@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String salt;
 
     public User(int id, String username, String email, String password) {
         this.id = id;
@@ -38,6 +39,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getSalt() { return salt; }
+    public void setSalt(String salt) { this.salt = salt; }
 
     @Override
     public String toString() {

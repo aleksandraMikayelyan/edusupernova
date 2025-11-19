@@ -52,9 +52,7 @@ public class UnitDAO {
             JOIN Subjects s ON u.subject_id = s.id
             WHERE u.id = ?
             """;
-
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-
             ps.setInt(1, unitId);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
