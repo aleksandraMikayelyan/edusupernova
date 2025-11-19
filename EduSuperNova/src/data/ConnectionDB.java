@@ -41,7 +41,8 @@ public class ConnectionDB {
     }
     private void createTables() {
         createTableUser();
-        createTableSubject();
+        createTableExams();
+        createTableCourses();
         createTableUnit();
         createTableQuestions();
         createTableTest();
@@ -68,23 +69,47 @@ public class ConnectionDB {
             System.out.println("Error while creating table User: " + e.getMessage());
         }
     }
-    public void createTableSubject() {
+    public void createTableExams() {
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
             return;
         }
         try {
             Statement stmt = conn .createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS Subject("
-                    + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                    + "title INT NOT NULL, "
-                    + "description VARCHAR(150) NOT NULL, "
-                    + "type ENUM('techno', 'general') DEFAULT 'general' "
+            String sql = "CREATE TABLE IF NOT EXISTS Exams("
+                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "name VARCHAR(100) NOT NULL,"
+                    + "description TEXT,"
+                    + "icon VARCHAR(100),"
+                    +"is_active BOOLEAN DEFAULT TRUE"
                     + ")";
             stmt.execute(sql);
-            System.out.println("Table Subject created successfully.");
+            System.out.println("Table Exams created successfully.");
         } catch (SQLException e) {
-            System.out.println("Error while creating table Subject: " + e.getMessage());
+            System.out.println("Error while creating table Exams: " + e.getMessage());
+        }
+    }
+
+    public void createTableCourses() {
+        if (conn == null) {
+            System.out.println("Error: Connection not established. Call the methode openConnection() first.");
+            return;
+        }
+        try {
+            Statement stmt = conn .createStatement();
+            String sql = "CREATE TABLE IF NOT EXISTS Courses (\n" +
+                    "                id INT AUTO_INCREMENT PRIMARY KEY,\n" +
+                    "                exam_id INT NOT NULL,\n" +
+                    "                name VARCHAR(100) NOT NULL,\n" +
+                    "                description TEXT,\n" +
+                    "                icon VARCHAR(100),\n" +
+                    "                total_questions INT DEFAULT 0,\n" +
+                    "                FOREIGN KEY (exam_id) REFERENCES Exams(id) ON DELETE CASCADE"
+                    + ")";
+            stmt.execute(sql);
+            System.out.println("Table Courses created successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error while creating table Courses: " + e.getMessage());
         }
     }
 
