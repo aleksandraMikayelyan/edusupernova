@@ -18,12 +18,13 @@ public class ConnectionDB {
         createTables();
     }
 
+
     public void openConnection() {
         try {
 
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement stmt = conn.createStatement();
-            String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS edusupernova";
+            String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS edusupernova ";
             stmt.execute(sqlCreateDB);
             stmt.close();
             conn.close();
@@ -38,16 +39,15 @@ public class ConnectionDB {
             System.out.println("Error while opening DB: " + e.getMessage());
         }
     }
-
     private void createTables() {
         createTableUser();
-        createTableSubject();
+        createTableExams();
+        createTableCourses();
         createTableUnit();
         createTableQuestions();
         createTableTest();
         createTableTestQuestions();
     }
-
     public void createTableUser(){
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -60,6 +60,7 @@ public class ConnectionDB {
                     + "username VARCHAR(50) NOT NULL, "
                     + "email VARCHAR(150) NOT NULL,"
                     + "password VARCHAR(50) NOT NULL, "
+                    + "salt VARCHAR(255) NOT NULL,"
                     + "rol ENUM('student', 'admin') DEFAULT 'student'"
                     + ")";
             stmt.execute(sql);
@@ -68,26 +69,75 @@ public class ConnectionDB {
             System.out.println("Error while creating table User: " + e.getMessage());
         }
     }
-
-    public void createTableSubject() {
+    public void createTableExams() {
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
             return;
         }
         try {
             Statement stmt = conn .createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS Subject("
-                    + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                    + "title INT NOT NULL, "
-                    + "description VARCHAR(150) NOT NULL, "
-                    + "type ENUM('techno', 'general') DEFAULT 'general' "
+            String sql = "CREATE TABLE IF NOT EXISTS Exams("
+                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "name VARCHAR(100) NOT NULL,"
+                    + "description TEXT,"
+                    + "icon VARCHAR(100),"
+                    +"is_active BOOLEAN DEFAULT TRUE"
                     + ")";
             stmt.execute(sql);
-            System.out.println("Table Subject created successfully.");
+            System.out.println("Table Exams created successfully.");
         } catch (SQLException e) {
-            System.out.println("Error while creating table Subject: " + e.getMessage());
+            System.out.println("Error while creating table Exams: " + e.getMessage());
         }
     }
+
+    public void createTableCourses() {
+        if (conn == null) {
+            System.out.println("Error: Connection not established. Call the methode openConnection() first.");
+            return;
+        }
+        try {
+            Statement stmt = conn .createStatement();
+            String sql = "CREATE TABLE IF NOT EXISTS Courses (\n" +
+                    "                id INT AUTO_INCREMENT PRIMARY KEY,\n" +
+                    "                exam_id INT NOT NULL,\n" +
+                    "                name VARCHAR(100) NOT NULL,\n" +
+                    "                description TEXT,\n" +
+                    "                icon VARCHAR(100),\n" +
+                    "                total_questions INT DEFAULT 0,\n" +
+                    "                FOREIGN KEY (exam_id) REFERENCES Exams(id) ON DELETE CASCADE"
+                    + ")";
+            stmt.execute(sql);
+            System.out.println("Table Courses created successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error while creating table Courses: " + e.getMessage());
+        }
+    }
+
+
+    public void createTableEnrollment() {
+        if (conn == null) {
+            System.out.println("Error: Connection not established. Call the methode openConnection() first.");
+            return;
+        }
+        try {
+            Statement stmt = conn .createStatement();
+            String sql = "CREATE TABLE IF NOT EXISTS Enrollment (\n" +
+                    "    user_id INT NOT NULL,\n" +
+                    "    subject_id INT NOT NULL,\n" +
+                    "    enrolled_at DATETIME DEFAULT CURRENT_TIMESTAMP,\n" +
+                    "    progress DECIMAL(5,2) DEFAULT 0.00,     -- opcional: % completado\n" +
+                    "    last_activity DATETIME,                 -- opcional: para estadísticas\n" +
+                    "    PRIMARY KEY (user_id, subject_id),\n" +
+                    "    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE,\n" +
+                    "    FOREIGN KEY (subject_id) REFERENCES Subjects(id) ON DELETE CASCADE "
+                    + ")";
+            stmt.execute(sql);
+            System.out.println("Table Enrollment created successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error while creating table Enrollment: " + e.getMessage());
+        }
+    }
+
 
     public void createTableUnit(){
         if (conn == null) {
@@ -110,7 +160,6 @@ public class ConnectionDB {
             System.out.println("Error while creating table Unit: " + e.getMessage());
         }
     }
-
     public void createTableQuestions() {
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -155,7 +204,6 @@ public class ConnectionDB {
             System.out.println("Error while creating table Test: " + e.getMessage());
         }
     }
-
     public void createTableTestQuestions(){
         if (conn == null) {
             System.out.println("Error: Connection not established. Call the methode openConnection() first.");
@@ -181,7 +229,6 @@ public class ConnectionDB {
         }
 
     }
-
     public Connection getConnection(){
         return conn;
     }

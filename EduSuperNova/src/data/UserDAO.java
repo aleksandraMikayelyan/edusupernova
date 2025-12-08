@@ -2,74 +2,113 @@ package data;
 
 import model.User;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Optional;
 
 public class UserDAO {
-    private final Connection conexion;
+    Connection conn;
 
-    public UserDAO(Connection conexion) {
-        this.conexion = conexion;
+    public UserDAO(Connection conn) {
+        this.conn = conn;
     }
 
-    public void create(User usuario) {
-        String sql = "INSERT INTO User (username, email, password) VALUES (?, ?)";
-        try (PreparedStatement pstmt = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.setString(1, usuario.getUsername());
-            pstmt.setString(2, usuario.getEmail());
-            pstmt.setString(3, usuario.getPassword());
-            pstmt.executeUpdate();
-            ResultSet rs = pstmt.getGeneratedKeys();
-            if (rs.next()) {
-                usuario.setId(rs.getInt(1));
-            }
+    public boolean registerWithSalt(User user, String salt) {
+        String sql = "INSERT INTO Users (username, email, password_hash, salt) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getPassword()); // password_hash
+            ps.setString(4, salt);
+            return ps.executeUpdate() > 0;
+
         } catch (SQLException e) {
-            System.out.println("Error while registering new User: " + e.getMessage());
+            System.err.println("Error registrando usuario: " + e.getMessage());
+            e.printStackTrace();
+            return false;
         }
     }
 
+    // BUSCAR USUARIO POR EMAIL (para login)
+    public User findByEmail(String email) {
+        String sql = "SELECT id, username, email, password_hash, salt FROM Users WHERE email = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
-    public void update(User user) {
-        String sql = "UPDATE User SET username = ?, email = ? , password = ? WHERE id = ?";
-        try (PreparedStatement pstmt = conexion.prepareStatement(sql)) {
-            pstmt.setString(1, user.getUsername());
-            pstmt.setString(2, user.getEmail());
-            pstmt.setInt(3, user.getId());
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error while updating the table User: " + e.getMessage());
-        }
-    }
-
-
-    public void delete(int id) {
-        String sql = "DELETE FROM User WHERE id = ?";
-        try (PreparedStatement pstmt = conexion.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error while deleting a User: " + e.getMessage());
-        }
-    }
-
-
-    public User findById(int id) {
-        String sql = "SELECT * FROM User WHERE id = ?";
-        try (PreparedStatement pstmt = conexion.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            try (ResultSet rs = pstmt.executeQuery()) {
+            ps.setString(1, email);
+            try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return new User(
-                            rs.getInt("id"),
-                            rs.getString("username"),
-                            rs.getString("email"),
-                            rs.getString("password")
-                    );
+                    User user = new User();
+                    user.setId(rs.getInt("id"));
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setPassword(rs.getString("password_hash"));
+                    // salt se obtiene con getSaltByEmail si es necesario
+                    return user;
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Error al consultar Usuario: " + e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }
+
+    // OBTENER SALT POR EMAIL (nuevo método necesario para login)
+    public String getSaltByEmail(String email) {
+        String sql = "SELECT salt FROM Users WHERE email = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, email);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("salt");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // BUSCAR USUARIO POR ID (opcional pero útil)
+    public User findById(int id) {
+        String sql = "SELECT id, username, email, password_hash FROM Users WHERE id = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    User user = new User();
+                    user.setId(rs.getInt("id"));
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setPassword(rs.getString("password_hash"));
+                    return user;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // ACTUALIZAR CONTRASEÑA + SALT (para cambio de contraseña)
+    public boolean updatePasswordWithSalt(int userId, String newHash, String newSalt) {
+        String sql = "UPDATE Users SET password_hash = ?, salt = ? WHERE id = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, newHash);
+            ps.setString(2, newSalt);
+            ps.setInt(3, userId);
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
+
+
