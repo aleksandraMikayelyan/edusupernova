@@ -1,0 +1,44 @@
+package com.edusupernova.edusupernova.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import org.aspectj.weaver.ast.Test;
+
+import java.util.List;
+
+@Entity
+@Table(name = "Exams")
+@Data
+public class Exams {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false, length = 100)
+    private String name;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(length = 100)
+    private String icon;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
+    private Boolean isActive = true;
+
+    // Relaciones
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    private List<Courses> courses;
+
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    private List<Enrollment> enrollments;
+
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    private List<Unit> units;
+
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    private List<Quiz> quizzes;
+
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    private List<Test> tests;
+}
