@@ -12,20 +12,20 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "Enrollment")
+@Table(name = "Enrollments")
 @Data
 public class Enrollment{
     @EmbeddedId
     private EnrollmentId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("userId")
-    @JoinColumn(name = "user_id")
+    @MapsId("idUser")
+    @JoinColumn(name = "idUser")
     private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("examId")
-    @JoinColumn(name = "exam_id")
+    @MapsId("idExam")
+    @JoinColumn(name = "idExam")
     private Exams exam;
 
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")

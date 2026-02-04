@@ -3,6 +3,8 @@ package com.edusupernova.edusupernova.data;
 
 
 import com.edusupernova.edusupernova.model.Exams;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,28 +16,50 @@ import java.util.Optional;
 @Repository
 public interface ExamRepository extends JpaRepository<Exams, Integer> {
 
-    // dashboard(): Todos los exams ordenados por nombre
-    List<Exams> findAllByOrderByNameAsc();
+    // 1. Todos los exámenes activos, ordenados por nombre (ideal para dashboard)
+    List<Exams> findAllByIsActiveTrueOrderByExamnameAsc();
 
-    // findById(): Ya lo tienes gratis con JpaRepository
-    // Optional<Exam> findById(Integer id);  // ← heredado
+    // 2. Versión con paginación (muy recomendada si puedes tener +50 exámenes)
+    Page<Exams> findAllByIsActiveTrueOrderByExamnameAsc(Pageable pageable);
 
-    // Búsqueda avanzada (equivalente a tu search con LIKE y orden prioritario)
+    // 3. Búsqueda avanzada corregida + filtro por activo + orden prioritario
     @Query("""
-            SELECT e
-            FROM Exams e
-            WHERE LOWER(e.name) LIKE LOWER(CONCAT('%', :term, '%'))
-               OR LOWER(e.description) LIKE LOWER(CONCAT('%', :term, '%'))
-            ORDER BY
-                CASE
-                    WHEN LOWER(e.name) LIKE LOWER(CONCAT(:term, '%')) THEN 1
-                    WHEN LOWER(e.name) LIKE LOWER(CONCAT('%', :term, '%')) THEN 2
-                    ELSE 3
-                END,
-                e.name
+        SELECT e
+        FROM Exams e
+        WHERE e.isActive = true
+          AND (LOWER(e.examname) LIKE LOWER(CONCAT('%', :term, '%'))
+               OR LOWER(e.description) LIKE LOWER(CONCAT('%', :term, '%')))
+        ORDER BY
+            CASE
+                WHEN LOWER(e.examname) LIKE LOWER(CONCAT(:term, '%')) THEN 1
+                WHEN LOWER(e.examname) LIKE LOWER(CONCAT('%', :term, '%')) THEN 2
+                ELSE 3
+            END,
+            e.examname
         """)
-    List<Exams> searchByNameOrDescription(@Param("term") String term);
+    List<Exams> searchActiveByNameOrDescription(@Param("term") String term);
 
-    // Versión más simple si no necesitas el orden tan sofisticado
-    // List<Exam> findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String name, String description);
+    // 4. Versión paginada de la búsqueda (muy útil en frontend)
+    @Query("""
+        SELECT e
+        FROM Exams e
+        WHERE e.isActive = true
+          AND (LOWER(e.examname) LIKE LOWER(CONCAT('%', :term, '%'))
+               OR LOWER(e.description) LIKE LOWER(CONCAT('%', :term, '%')))
+        ORDER BY
+            CASE
+                WHEN LOWER(e.examname) LIKE LOWER(CONCAT(:term, '%')) THEN 1
+                WHEN LOWER(e.examname) LIKE LOWER(CONCAT('%', :term, '%')) THEN 2
+                ELSE 3
+            END,
+            e.examname
+        """)
+    Page<Exams> searchActiveByNameOrDescriptionPaginated(@Param("term") String term, Pageable pageable);
+
+    // 5. Alternativa más simple (si no necesitas el orden prioritario)
+    List<Exams> findByIsActiveTrueAndExamnameContainingIgnoreCaseOrDescriptionContainingIgnoreCaseOrderByExamnameAsc(
+            String examname, String description);
+
+    // 6. Bonus: contar exámenes activos (útil para dashboard)
+    long countByIsActiveTrue();
 }

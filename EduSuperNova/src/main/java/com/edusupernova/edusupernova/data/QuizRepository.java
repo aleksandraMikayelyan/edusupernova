@@ -11,24 +11,26 @@ import java.util.List;
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
-    // Contar preguntas por tipo y exam (equivalente a contarPorTipo)
-    long countByExamIdAndQuestionType(Integer examId, String questionType);
+    // Contar preguntas por tipo en un curso específico
+    long countByCourseIdAndType(Integer courseId, String type);
 
-    // Generar test aleatorio: 15 multiple_choice + 5 open_ended o logical_problems
+    // Generar test aleatorio para un curso concreto
     @Query(value = """
         SELECT * FROM (
-            (SELECT * FROM Quiz 
-             WHERE exam_id = :examId AND question_type = 'multiple_choice' 
+            (SELECT * FROM Quizes 
+             WHERE idCourse = :courseId 
+             AND type = 'multipleChoice' 
              ORDER BY RAND() LIMIT 15)
             UNION ALL
-            (SELECT * FROM Quiz 
-             WHERE exam_id = :examId AND question_type IN ('open_ended', 'logical_problems') 
+            (SELECT * FROM Quizes 
+             WHERE idCourse = :courseId 
+             AND type IN ('openEnded', 'logicalProblems') 
              ORDER BY RAND() LIMIT 5)
         ) AS selected_questions
         """, nativeQuery = true)
-    List<Quiz> generateRandomTest(@Param("examId") Integer examId);
+    List<Quiz> generateRandomTest(@Param("courseId") Integer courseId);
 
-    // Alternativa más "JPA-like" sin SQL nativo (usa RAND() de MySQL)
-    // Pero la nativa es más limpia para este caso de UNION + LIMIT separados
+    // Opcional: contar total de preguntas en un curso
+    long countByCourseId(Integer courseId);
 }
 

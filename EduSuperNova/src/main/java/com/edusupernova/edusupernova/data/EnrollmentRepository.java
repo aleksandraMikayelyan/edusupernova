@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.edusupernova.edusupernova.model.Exams;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +30,6 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, Enrollme
     // Desinscribir
     void deleteByUserIdAndExamId(Integer userId, Integer examId);
 
-    // Obtener todos los exams inscritos por un usuario
-    List<Enrollment> findByUserId(Integer userId);
+    @Query("SELECT e.exam FROM Enrollment e WHERE e.user.id = :userId")
+    List<Exams> findEnrolledExamsByUserId(@Param("userId") Integer userId);
 }

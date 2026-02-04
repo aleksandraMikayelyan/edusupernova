@@ -1,0 +1,184 @@
+BASIC ECONOMIC IDEAS AND RESOURCE ALLOCATION
+
+THE FUNDAMENTAL ECONOMIC PROBLEM: SCARCITY
+The central economic problem is the conflict between UNLIMITED WANTS
+and FINITE (SCARCE) RESOURCES.
+- Scarcity necessitates CHOICE.
+- Every choice involves an OPPORTUNITY COST.
+
+THE THREE FUNDAMENTAL QUESTIONS
+Every economy must answer these three questions:
+    - WHAT TO PRODUCE? (Prioritizing goods/services based on needs).
+    - HOW TO PRODUCE? (Choosing between Labor-intensive vs. Capital-intensive).
+    - FOR WHOM TO PRODUCE? (Deciding how the total output is distributed).
+
+FACTORS OF PRODUCTION (RESOURCES)
+Resources are combined in the PROCESS OF PRODUCTION to create output.
+Each factor has a specific "reward" (return):
+
+    LAND: All natural resources (fields, mineral deposits, water).
+      - REWARD: Rent.
+    LABOUR: Human effort, both physical and mental.
+      - REWARD: Wages or Salaries.
+    CAPITAL: Man-made aids to production (machinery, tools, technology).
+      - REWARD: Interest.
+    ENTERPRISE (Entrepreneur): The individual who organizes the other
+      factors and takes the risk of production.
+      - REWARD: Profit.
+
+
+PRODUCTION VS. CONSUMPTION
+    - PRODUCTION: The process of combining resources to create goods/services
+      with the "utility" (capacity) to satisfy wants.
+    - CONSUMPTION: The act of using goods/services to satisfy wants.
+    - CONSUMER DURABLES: Goods that provide utility over a long period
+      (e.g., cars, washing machines).
+
+OPPORTUNITY COST
+    The cost of any choice expressed in terms of the "next best alternative
+    forgone." It is not just about money, but about what you give up.
+
+PRODUCTION TRENDS
+    - DEVELOPED ECONOMIES: Often move toward the "Tertiary Sector" (Services).
+    - DEVELOPING ECONOMIES: Often rely more on the "Primary Sector"
+      (Agriculture/Extraction).
+    - Structural changes usually occur as a country's standard of living rises.
+
+ECONOMIC SYSTEMS AND RESOURCE ALLOCATION
+
+An economic system is defined as the means by which choices are made regarding resource management.
+It includes the institutions and mechanisms that direct the production, consumption, and distribution of goods and services.
+
+Economists distinguish between four main economic systems:
+
+TRADITIONAL ECONOMY
+The traditional economy is the oldest type of economic system.
+It is characterised by manual labour, a minimal division of labour, and underdeveloped infrastructure.
+
+    -ADVANTAGES: Minimal wastage and high sustainability, as communities typically consume only what they produce.
+    -DISADVANTAGES: Limited economic progress and development due to a lack of labour specialisation and modern technology.
+
+COMMAND (CENTRALLY PLANNED) ECONOMY
+In this system, the state plays the central role in decision-making.
+The government determines what is produced, how it is produced, and sets both prices and wages.
+
+    -ADVANTAGES: Essential public services, such as education and healthcare,
+    are often provided free of charge to the citizens.
+    -DISADVANTAGES: A disconnect between production and actual consumer needs often leads to surpluses
+    of unwanted goods and shortages of essential ones, creating significant underlying economic imbalances.
+
+FREE MARKET ECONOMY
+In a free market, individuals and private firms own the factors of production.
+Economic decisions are driven by self-interest with minimal to no government interference.
+
+    MARKET MECHANISM: This coordinates the plans of buyers and producers through the forces of supply and demand.
+    While firms aim for profit, individuals seek to maximise value.
+    PRICE: This serves as the primary tool for resource allocation,
+    balancing supply and demand while signalling shortages or surpluses.
+    COMPETITION: This acts as a catalyst for efficiency and continuous economic development.
+    ADVANTAGES: High innovation and responsiveness to consumer desires.
+    DISADVANTAGES: Potential for inequality and the under-provision of public goods
+    (like street lighting or national defence).
+
+MIXED ECONOMY
+
+Mixed economies combine features of both command and market systems.
+The government regulates essential goods and services, influences production methods, and addresses social welfare issues.
+The degree of intervention varies by country; for example, some nations lean toward a command structure (e.g., China),
+while others lean toward a market structure (e.g., the USA). Economic freedom in these systems is typically measured by:
+
+    -The rule of law (including property rights).
+    -Government size and spending.
+    -Regulatory efficiency.
+    -Openness of markets.
+
+THE PRODUCTION POSSIBILITY CURVE (PPC)
+
+DEFINITION
+The PPC is a graphical model representing the maximum combinations of
+two goods an economy can produce given fixed resources and technology.
+It illustrates scarcity, choice, and opportunity cost.
+
+CLASSIFICATION OF GOODS
+    - CONSUMER GOODS: Products intended for immediate use by individuals.
+      Examples: Smartphones, clothing, food.
+    - CAPITAL GOODS: Human-made tools used to create other goods.
+      Examples: Industrial machinery, factory equipment, delivery trucks.
+
+CORE ASSUMPTIONS
+    - TWO-GOOD ECONOMY: Only two goods are produced (e.g., Capital vs Consumer).
+    - FIXED RESOURCES: The quantity/quality of resources does not change.
+    - FIXED TECHNOLOGY: The methods of production remain constant.
+    - FULL EMPLOYMENT: All available resources are utilized.
+
+ANALYSING POINTS ON THE PPC
+    - ON THE CURVE: Represents PRODUCTIVE EFFICIENCY. All resources are
+      used fully. Moving between points on the curve illustrates the
+      TRADE-OFF (Opportunity Cost).
+    - INSIDE THE CURVE: Represents INEFFICIENCY or unemployment.
+      Resources are being wasted or under-utilized.
+    - OUTSIDE THE CURVE: Represents UNATTAINABLE production levels with
+      current resources/technology.
+
+THE PRINCIPLE OF OPPORTUNITY COST
+Because resources are scarce, increasing production of Capital Goods
+requires a reduction in Consumer Goods.
+
+ SHAPE: The curve is "Bowed-Out" (concave to the origin) because of
+  INCREASING OPPORTUNITY COSTS. Resources are not equally suited
+  to producing all types of goods.
+
+ECONOMIC GROWTH
+The entire PPC shifts OUTWARD if there is:
+    - An increase in the quantity of resources.
+    - An improvement in the quality of resources (e.g., better education).
+    - Advances in technology.
+
+
+CLASSIFICATION OF GOODS AND SERVICES
+
+THE TWO CHARACTERISTICS OF GOODS
+    To classify goods, economists look at two main features:
+        - EXCLUDABILITY: Can people be prevented from using the good if they
+          do not pay? (Yes = Excludable / No = Non-excludable).
+        - RIVALRY: Does one person's use of the good reduce the amount
+          available for others? (Yes = Rival / No = Non-rival).
+
+
+PRIVATE GOODS (Pure Private)
+    These are typical goods provided by the market system.
+        - CHARACTERISTICS: Both EXCLUDABLE and RIVAL.
+        - FEATURES: They are divisible into small units. If you buy it, you
+          own it, and no one else can consume that specific unit.
+        - EXAMPLES: Food, clothes, smartphones, personal hygiene products.
+
+PUBLIC GOODS (Pure Public)
+    These goods are contrary to private goods and are usually provided by
+    the government because the free market fails to produce them.
+        - CHARACTERISTICS: Both NON-EXCLUDABLE and NON-RIVAL.
+        - FEATURES: Indivisible and consumed collectively. Adding one more
+          user costs $0 and doesn't reduce the benefit to others.
+        - THE FREE RIDER PROBLEM: Because you cannot exclude non-payers,
+          people have no incentive to pay. This leads to "Market Failure."
+        - EXAMPLES: National defense, street lighting, lighthouse signals.
+
+QUASI-PUBLIC GOODS
+    These goods do not meet all the criteria for "pure" goods. They
+    fall into two sub-categories:
+
+        NATURAL MONOPOLY GOODS (Club Goods)
+        - CHARACTERISTICS: EXCLUDABLE but NON-RIVAL.
+        - EXAMPLES: Netflix/Streaming services, Internet, Private Gyms.
+          (You must pay to enter, but your use doesn't stop others from using).
+
+        COMMON RESOURCES
+        - CHARACTERISTICS: NON-EXCLUDABLE but RIVAL.
+        - THE PROBLEM: Leads to "The Tragedy of the Commons" (Overconsumption).
+        - EXAMPLES: Fish in the ocean, public forests, clean air.
+
+THE IMPACT OF CONGESTION
+    Some public goods can lose their "non-rival" status as they get
+    crowded. This is the "quantitative dimension."
+        - EXAMPLE: A public highway or a beach.
+        - ANALYSIS: When empty, they are non-rival. When crowded (congested),
+          one person's presence reduces the utility/space for others.

@@ -12,10 +12,10 @@ import java.util.List;
 public class Exams {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idExam;
 
     @Column(nullable = false, length = 100)
-    private String name;
+    private String examname;
 
     @Column(columnDefinition = "TEXT")
     private String description;

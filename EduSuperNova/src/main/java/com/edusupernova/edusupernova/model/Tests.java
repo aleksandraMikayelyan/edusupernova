@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 @Entity
-@Table(name = "Test")
+@Table(name = "Tests")
 @Data
 public class Tests {
     @Id
@@ -13,12 +13,12 @@ public class Tests {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "idUser", nullable = false)
     private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exam_id", nullable = false)
-    private Exams exam;
+    @JoinColumn(name = "idCourse", nullable = false)
+    private Courses course;
 
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime creationDate = LocalDateTime.now();

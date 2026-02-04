@@ -36,5 +36,5 @@ public class Users{
     private List<Enrollment> enrollments;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Test> tests;
+    private List<Tests> tests;
 }

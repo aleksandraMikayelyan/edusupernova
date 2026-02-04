@@ -1,6 +1,8 @@
 package com.edusupernova.edusupernova.model;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import org.aspectj.weaver.ast.Test;
 
 import java.util.List;
@@ -12,13 +14,14 @@ public class TestQuestions {
     private TestQuestionId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("testId")
-    @JoinColumn(name = "test_id")
+    @MapsId("idTest")
+    @JoinColumn(name = "idTest")
+    @Getter(value = AccessLevel.PUBLIC, onMethod_ = @Column(name = "idTest"))
     private Tests test;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("questionId")
-    @JoinColumn(name = "question_id")
+    @MapsId("idQuiz")
+    @JoinColumn(name = "idQuiz")
     private Quiz quiz;
 
     @Column(columnDefinition = "TEXT")

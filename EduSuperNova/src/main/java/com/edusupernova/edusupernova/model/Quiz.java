@@ -5,16 +5,16 @@ import org.aspectj.weaver.ast.Test;
 
 import java.util.List;
 @Entity
-@Table(name = "Quiz")
+@Table(name = "Quizes")
 @Data
 public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idQuiz;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exam_id", nullable = false)
-    private Exams exam;
+    @JoinColumn(name = "idCourse", nullable = false)
+    private Courses course;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String questionText;

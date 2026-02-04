@@ -1,6 +1,7 @@
 package com.edusupernova.edusupernova.data;
 import com.edusupernova.edusupernova.model.Unit;
 
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,14 +13,14 @@ import java.util.Optional;
 @Repository
 public interface UnitRepository extends JpaRepository<Unit, Integer> {
 
-    // 1. Obtener todas las unidades de un exam ordenadas por queue
-    List<Unit> findByExamIdOrderByQueueAsc(Integer examId);
+    // Unidades de un curso específico, ordenadas por queue
+    List<Unit> findByCourseIdOrderByQueueAsc(Integer courseId);
 
-    // 2. Obtener una unidad por ID (con su Exam cargado automáticamente)
-    @Override
+    // Si todavía lo necesitas: unidades de un examen (pasando por el curso)
+    @Query("SELECT u FROM Unit u WHERE u.course.exam.idExam = :examId ORDER BY u.queue ASC")
+    List<Unit> findByExamIdOrderByQueueAsc(@Param("examId") Integer examId);
+
+    // Opcional: si quieres cargar el course/exam al buscar por ID
+    @EntityGraph(attributePaths = {"course", "course.exam"})
     Optional<Unit> findById(Integer id);
-
-    // Opcional: si quieres asegurarte de que el Exam se cargue ansiosamente
-    // @EntityGraph(attributePaths = {"exam"})
-    // Optional<Unit> findWithExamById(Integer id);
 }

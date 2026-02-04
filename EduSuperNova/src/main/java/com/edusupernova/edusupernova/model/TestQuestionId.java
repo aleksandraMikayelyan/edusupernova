@@ -8,6 +8,6 @@ import java.io.Serializable;
 @Embeddable
 @Data
 public class TestQuestionId implements Serializable {
-    private Integer testId;
-    private Integer questionId;
+    private Integer idTest;
+    private Integer idQuiz;
 }

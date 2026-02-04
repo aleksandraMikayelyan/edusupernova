@@ -10,14 +10,14 @@ import java.util.List;
 public class Courses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idCourse;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exam_id", nullable = false)
+    @JoinColumn(name = "idExam", nullable = false)
     private Exams exam;
 
     @Column(nullable = false, length = 100)
-    private String name;
+    private String coursename;
 
     @Column(columnDefinition = "TEXT")
     private String description;
