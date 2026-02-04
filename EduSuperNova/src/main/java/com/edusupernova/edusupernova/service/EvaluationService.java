@@ -29,7 +29,7 @@ public class EvaluationService {
      * @return Resultado global con puntuación y feedback
      */
     public TestEvaluationResult evaluateTest(Integer testId) {
-        List<TestQuestions> allAnswers = testQuestionRepo.findByTestId(testId);
+        List<TestQuestions> allAnswers = testQuestionRepo.findByIdTestId(testId);
 
         if (allAnswers.isEmpty()) {
             throw new IllegalStateException("No hay respuestas para evaluar en el test " + testId);

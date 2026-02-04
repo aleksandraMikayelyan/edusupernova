@@ -12,7 +12,7 @@ import java.util.List;
 public class Exams {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idExam;
+    private Integer id;
 
     @Column(nullable = false, length = 100)
     private String examname;
@@ -32,7 +32,7 @@ public class Exams {
 
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
     private List<Enrollment> enrollments;
-
+/*
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
     private List<Unit> units;
 
@@ -40,5 +40,5 @@ public class Exams {
     private List<Quiz> quizzes;
 
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
-    private List<Test> tests;
+    private List<Tests> tests;*/
 }

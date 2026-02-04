@@ -57,14 +57,14 @@ public class TestService {
                     .orElseThrow(() -> new RuntimeException("Test no encontrado"));
 
             // Validación extra: todas las preguntas deben pertenecer al curso del test
-            Integer courseId = test.getCourse().getIdCourse();
+            Integer courseId = test.getCourse().getId();
             for (TestQuestions tq : answers) {
-                if (tq.getQuiz() == null || !tq.getQuiz().getCourse().getIdCourse().equals(courseId)) {
+                if (tq.getQuiz() == null || !tq.getQuiz().getCourse().getId().equals(courseId)) {
                     throw new IllegalArgumentException("Pregunta no pertenece al curso del test");
                 }
 
                 tq.setTest(test);
-                tq.getId().setIdTest(testId);  // clave compuesta
+                tq.getId().setTestId(testId);  // clave compuesta
 
                 // Opcional: calcular si es correcta y asignar puntuación/feedback aquí
                 // boolean esCorrecta = tq.getUserResponse().equals(tq.getQuiz().getCorrectAnswer());

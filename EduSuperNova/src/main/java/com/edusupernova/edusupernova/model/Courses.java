@@ -10,7 +10,7 @@ import java.util.List;
 public class Courses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCourse;
+    private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idExam", nullable = false)

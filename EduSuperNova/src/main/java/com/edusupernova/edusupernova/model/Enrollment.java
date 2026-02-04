@@ -19,12 +19,12 @@ public class Enrollment{
     private EnrollmentId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idUser")
+    @MapsId("userId")
     @JoinColumn(name = "idUser")
     private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idExam")
+    @MapsId("examId")
     @JoinColumn(name = "idExam")
     private Exams exam;
 

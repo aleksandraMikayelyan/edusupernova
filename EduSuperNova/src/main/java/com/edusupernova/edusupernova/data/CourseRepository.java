@@ -16,7 +16,7 @@ public interface CourseRepository extends JpaRepository<Courses, Integer> {
     @EntityGraph(attributePaths = {"units"})  // ← carga automáticamente la lista de unidades
     Optional<Courses> findById(Integer id);
 
-    List<Courses> findByExamId(Integer examId);
+    //List<Courses> findByExamId(Integer examId);
 
-    long countByExamId(Integer examId);
+    //long countByExamId(Integer examId);
 }

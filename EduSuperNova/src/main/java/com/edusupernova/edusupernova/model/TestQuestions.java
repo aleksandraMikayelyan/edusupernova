@@ -14,13 +14,13 @@ public class TestQuestions {
     private TestQuestionId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idTest")
+    @MapsId("testId")
     @JoinColumn(name = "idTest")
     @Getter(value = AccessLevel.PUBLIC, onMethod_ = @Column(name = "idTest"))
     private Tests test;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idQuiz")
+    @MapsId("quizId")
     @JoinColumn(name = "idQuiz")
     private Quiz quiz;
 
