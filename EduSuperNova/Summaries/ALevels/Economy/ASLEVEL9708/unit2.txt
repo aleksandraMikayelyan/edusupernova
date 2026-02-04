@@ -1,0 +1,302 @@
+THE PRICE SYSTEM AND THE MICROECONOMY
+
+DEMAND AND SUPPLY CURVES
+
+    THE NATURE OF DEMAND
+
+        Demand is the quantity of a good or service that consumers are both
+        WILLING and ABLE to buy at a given price in a given time period.
+        * EFFECTIVE DEMAND: Only demand backed by the ability to pay (money)
+          is recognized by the market.
+
+    THE LAW OF DEMAND
+        There is an INVERSE (negative) relationship between Price (P) and
+        Quantity Demanded , ceteris paribus.
+        - When Price rises, Quantity Demanded falls.
+        - When Price falls, Quantity Demanded rises.
+        - RESULT: The Demand curve slopes downwards from left to right.
+
+    WHY DOES THE DEMAND CURVE SLOPE DOWNWARDS?
+        - INCOME EFFECT: As price falls, a consumer's "real income" (purchasing
+          power) increases, allowing them to buy more.
+        - SUBSTITUTION EFFECT: As price falls, the good becomes cheaper
+          relative to its substitutes, so consumers switch toward it.
+        - LAW OF DIMINISHING MARGINAL UTILITY: As a person consumes more units,
+          the extra satisfaction (utility) declines, so they are only willing
+          to buy more at a lower price.
+
+    MOVEMENTS VS. SHIFTS
+        * MOVEMENT ALONG THE CURVE:
+          - Caused ONLY by a change in the PRICE of the good itself.
+          - An upward movement is a "Contraction" in demand.
+          - A downward movement is an "Expansion" in demand.
+
+        * SHIFT OF THE CURVE:
+          - Caused by NON-PRICE DETERMINANTS (e.g., Income, Tastes, Sub-prices).
+          - A shift to the RIGHT is an "Increase" in demand.
+          - A shift to the LEFT is a "Decrease" in demand.
+
+    CETERIS PARIBUS ASSUMPTION
+        This is a Latin phrase meaning "all other things being equal." We use
+        this to isolate the effect of one variable (like price) while
+        assuming other factors (like income) do not change.
+
+    THE SUPPLY CURVE
+
+    THE NATURE OF SUPPLY
+
+    Supply is the quantity of a good or service that producers are WILLING
+    and ABLE to provide to the market at a given price in a given time period.
+    * PROFIT MOTIVE: Producers usually only supply more if the price covers
+      the extra cost of production.
+
+    THE LAW OF SUPPLY
+    There is a DIRECT (positive) relationship between Price (P) and
+    Quantity Supplied, ceteris paribus.
+        - When Price rises, Quantity Supplied increases.
+        - When Price falls, Quantity Supplied decreases.
+        - RESULT: The Supply curve slopes UPWARDS from left to right.
+
+    WHY DOES THE SUPPLY CURVE SLOPE UPWARDS?
+    * PROFIT INCENTIVE: Higher prices mean higher potential profit,
+      encouraging firms to increase output.
+    * DIMINISHING MARGINAL RETURNS: As production increases, the cost of
+      producing an extra unit (marginal cost) often rises. Therefore, firms
+      need a higher price to cover these higher costs.
+    * NEW ENTRANTS: Higher prices attract new firms into the industry.
+
+    MOVEMENTS VS. SHIFTS
+        * MOVEMENT ALONG THE CURVE:
+          - Caused ONLY by a change in the PRICE of the good itself.
+          - An upward movement is an "Extension" in supply.
+          - A downward movement is a "Contraction" in supply.
+
+        * SHIFT OF THE CURVE:
+          - Caused by NON-PRICE DETERMINANTS (Factors affecting costs).
+          - A shift to the RIGHT (S1 to S2) is an "Increase" in supply.
+          - A shift to the LEFT (S1 to S3) is a "Decrease" in supply.
+
+        NON-PRICE DETERMINANTS OF SUPPLY (The "PINTS" Acronym)
+        - P: PRODUCTION COSTS (Wages, raw materials, energy, rent).
+        - I: INDIRECT TAXES (Government taxes on spending, e.g., VAT).
+        - N: NUMBER OF FIRMS (Market size/Competition).
+        - T: TECHNOLOGY (Improvements increase efficiency and lower costs).
+        - S: SUBSIDIES (Government grants that lower production costs).
+        - O: OTHER (Weather in agriculture, future price expectations).
+
+        JOINT AND COMPETITIVE SUPPLY
+        - JOINT SUPPLY: When the production of one good automatically
+          produces another (e.g., Beef and Leather).
+        - COMPETITIVE SUPPLY: When a resource can be used for two different
+          goods (e.g., A farmer using land for wheat OR barley).
+
+        ELASTICITY OF DEMAND
+
+        PRICE ELASTICITY OF DEMAND (PED)
+        Definition: Measures the responsiveness of Quantity Demanded (Qd) to
+        a change in the Price (P) of the good itself.
+
+            FORMULA:
+            PED = (% Change in Qd) / (% Change in Price)
+
+        * THE MIDPOINT METHOD (Standard for precision):
+          % Change = (Change / Average) * 100
+          Average = (Initial + Final) / 2
+
+
+        INTERPRETING PED VALUES
+            (Note: PED is usually negative due to the Law of Demand, but we often
+            use the absolute value).
+        - PED = 0: PERFECTLY INELASTIC (Vertical line). No change in Qd
+          regardless of price (e.g., life-saving insulin).
+        - 0 < PED < 1: INELASTIC (Steep curve). Qd changes by a smaller %
+          than Price (e.g., fuel, salt).
+        - PED = 1: UNIT ELASTIC. % change in Qd = % change in Price.
+        - PED > 1: ELASTIC (Flat curve). Qd changes by a larger % than Price
+          (e.g., luxury cars, specific brands).
+        - PED = Infinity: PERFECTLY ELASTIC (Horizontal line). Even a tiny
+          price change leads to an infinite change in Qd.
+
+        DETERMINANTS OF PED (Why is it high or low?)
+
+        - SUBSTITUTES: More substitutes = More Elastic.
+        - NECESSITY VS. LUXURY: Necessities are Inelastic; Luxuries are Elastic.
+        - DEFINITION: Broad categories (Food) are Inelastic; narrow brands
+          (Ben & Jerry's Ice Cream) are Elastic.
+        - % OF INCOME: Cheap items (Matches/Salt) are Inelastic; expensive
+          items (Houses/Cars) are Elastic.
+        - TIME: Demand is more Elastic in the LONG RUN as consumers find
+          alternatives.
+
+        INCOME ELASTICITY OF DEMAND (YED)
+        Definition: Measures how Qd changes when consumer INCOME (Y) changes.
+
+            FORMULA:
+            YED = (% Change in Qd) / (% Change in Income)
+
+        THE SIGN MATTERS:
+        - POSITIVE (+) YED: NORMAL GOOD. (Income up = Demand up).
+          * 0 to 1: Necessity (Inelastic).
+          * > 1: Luxury (Elastic).
+        - NEGATIVE (-) YED: INFERIOR GOOD. (Income up = Demand falls,
+          e.g., second-hand clothes, instant noodles).
+
+        CROSS-PRICE ELASTICITY OF DEMAND (XED)
+        Definition: Measures how Qd of Good A reacts to a price change of Good B.
+
+            FORMULA:
+            XED = (% Change in Qd of Good A) / (% Change in Price of Good B)
+
+        THE SIGN MATTERS:
+        - POSITIVE (+) XED: SUBSTITUTES (e.g., Coke and Pepsi). If price of
+          one rises, demand for the other rises.
+        - NEGATIVE (-) XED: COMPLEMENTS (e.g., Printers and Ink). If price of
+          one rises, demand for the other falls.
+        - ZERO (0) XED: UNRELATED GOODS.
+
+        PRICE ELASTICITY OF SUPPLY (PES)
+
+        DEFINITION
+        PES measures the responsiveness of the Quantity Supplied (Qs) to a
+        change in the Price (P) of the good itself.
+
+            FORMULA:
+            PES = (% Change in Qs) / (% Change in Price)
+
+        * Note: Unlike Demand, PES is ALWAYS POSITIVE because of the direct
+          relationship between Price and Supply.
+
+        INTERPRETING PES VALUES
+
+        - PES = 0: PERFECTLY INELASTIC (Vertical line). Supply cannot change
+          regardless of price (e.g., stadium seats for a specific match).
+        - 0 < PES < 1: INELASTIC (Steep curve). Qs is not very responsive
+          to price (e.g., complex manufactured goods, agricultural crops).
+        - PES = 1: UNIT ELASTIC. % change in Qs = % change in Price.
+        - PES > 1: ELASTIC (Flat curve). Qs is very responsive to price.
+        - PES = Infinity: PERFECTLY ELASTIC (Horizontal line). Producers
+          supply any amount at a specific price.
+
+        DETERMINANTS OF PES (What makes supply flexible?)
+        The "BRITS" Acronym is helpful here:
+
+            - B: BARRIERS TO ENTRY. High barriers (patents, high start-up costs)
+              make supply INELASTIC.
+            - R: RAW MATERIALS. If resources are hard to find, supply is INELASTIC.
+            - I: INVENTORY (Stocks). If a firm can store its goods easily (like
+              canned food), supply is ELASTIC. Perishable goods (fresh fish) are
+              INELASTIC.
+            - T: TIME PERIOD.
+                  * Momentary Period: Supply is fixed/Perfectly Inelastic.
+                  * Short Run: Inelastic (only some factors like labor can change).
+                  * Long Run: Elastic (all factors including factory size can change).
+            - S: SPARE CAPACITY. If a factory is running at 50% capacity, it can
+              quickly increase output if price rises (ELASTIC). If it is at
+              Full Capacity, it is INELASTIC.
+
+        THE TIME FACTOR IN DEPTH
+            - MOMENTARY RUN: All factors are fixed. Supply cannot react.
+            - SHORT RUN (SR): At least one factor of production is fixed (e.g.,
+              size of the factory). Supply can increase by adding more labor.
+            - LONG RUN (LR): All factors are variable. Firms can build new
+              factories or leave the industry. Supply is highly elastic.
+
+        INTERACTION OF SUPPLY AND DEMAND
+
+        MARKET EQUILIBRIUM
+
+        Equilibrium occurs at the intersection of the Demand and Supply
+        curves (Point E).
+        - EQUILIBRIUM PRICE (Pe): The price where Qd = Qs. The market "clears."
+        - EQUILIBRIUM QUANTITY (Qe): The amount bought/sold at the Pe.
+        - TOTAL REVENUE (TR): Price x Quantity (P x Q).
+
+        2. MARKET DISEQUILIBRIUM
+        - EXCESS DEMAND (Shortage): Occurs when Price < Pe.
+          * Effect: Qd > Qs.
+          * Market Reaction: Buyers outbid each other, forcing prices UP.
+        - EXCESS SUPPLY (Surplus): Occurs when Price > Pe.
+          * Effect: Qs > Qd.
+          * Market Reaction: Unsold stock forces producers to lower prices DOWN.
+
+        FUNCTIONS OF THE PRICE MECHANISM (The "SIR" Acronym)
+            When demand or supply shifts, the price changes to fix the market:
+            - SIGNALLING: Price changes provide information to buyers and sellers
+              about changing market conditions.
+            - INCENTIVE: Higher prices encourage producers to supply more (profit)
+              and consumers to buy less.
+            - RATIONING: When resources are scarce, the price rises so that only
+              those who value the good most (and can afford it) receive it.
+
+        THE EFFECTS OF SHIFTS (The "Four Laws")
+
+        - Demand Increases (D shifts Right) -> Price Increases, Quantity Increases.
+        - Demand Decreases (D shifts Left)  -> Price Decreases, Quantity Decreases.
+        - Supply Increases (S shifts Right) -> Price Decreases, Quantity Increases.
+        - Supply Decreases (S shifts Left)  -> Price Increases, Quantity Decreases.
+
+        SIMULTANEOUS SHIFTS (Double Shifts)
+
+            When both curves move at once, the outcome for one variable (P or Q)
+            is often "Indeterminate" (uncertain) unless we know which shift
+            is larger.
+
+                * BOTH INCREASE (D up, S up):
+                  - Quantity will DEFINITELY Increase.
+                  - Price is Indeterminate (depends on which shift is bigger).
+                * BOTH DECREASE (D down, S down):
+                  - Quantity will DEFINITELY Decrease.
+                  - Price is Indeterminate.
+                * OPPOSITE DIRECTIONS (e.g., D up, S down):
+                  - Price will DEFINITELY Increase.
+                  - Quantity is Indeterminate.
+
+        CONSUMER AND PRODUCER SURPLUS
+
+        CONSUMER SURPLUS (CS)
+        Definition: The difference between the maximum price a consumer is
+        willing and able to pay for a good and the actual market price paid.
+
+            * THE MARGINAL BENEFIT: The Demand curve represents the Marginal
+              Benefit (MB) to the consumer. As we consume more, our willingness
+              to pay for an extra unit decreases.
+            * ON THE GRAPH: CS is the area BELOW the Demand curve and ABOVE
+              the Market Price.
+
+            * CHANGES IN CS:
+              - PRICE FALLS: CS increases (Consumers pay less for what they were
+                already buying, plus new consumers enter the market).
+              - PRICE RISES: CS decreases (Consumers pay more, and some leave
+                the market).
+
+        PRODUCER SURPLUS (PS)
+        Definition: The difference between the minimum price a producer is
+        willing to accept for a good and the actual market price received.
+
+            * THE MARGINAL COST: The Supply curve represents the Marginal
+              Cost (MC) of production. A firm will only sell a unit if the
+              price is at least equal to the cost of making it.
+            * ON THE GRAPH: PS is the area ABOVE the Supply curve and BELOW
+              the Market Price.
+
+            CHANGES IN PS:
+              - PRICE RISES: PS increases (Producers get a higher price for
+                existing units, plus new producers enter the market).
+              - PRICE FALLS: PS decreases (Profit margins shrink and some
+                high-cost producers exit).
+
+        SOCIAL (TOTAL) SURPLUS
+            Total Surplus = Consumer Surplus + Producer Surplus.
+            - This represents the TOTAL WELFARE or benefit to society from
+              the production and consumption of a good.
+            - In a free market with no externalities, Total Surplus is
+              MAXIMIZED at the Equilibrium point (Allocative Efficiency).
+
+        AS LEVEL EXAM TIP: THE "TRIANGLE" CALCULATION
+
+            You may be asked to calculate the value of CS or PS using the
+            formula for the area of a triangle:
+            Area = 1/2 x Base x Height
+            - Base: The equilibrium quantity.
+            - Height: The difference between the intercept on the Y-axis
+              and the market price.

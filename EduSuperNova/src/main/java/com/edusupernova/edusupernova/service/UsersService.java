@@ -17,7 +17,7 @@ public class UsersService {
 
     // Utilidad para hashear contraseña con salt (recomendado BCrypt, no SHA simple)
     @Autowired
-    private PasswordEncoder passwordEncoder;  // Inyecta BCryptPasswordEncoder*/
+    private PasswordEncoder passwordEncoder;  // Inyecta BCryptPasswordEncoder
 
     // 1. Registro de usuario con salt automático (BCrypt lo incluye)
     public Users register(Users user) {
