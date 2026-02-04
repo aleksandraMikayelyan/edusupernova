@@ -1,0 +1,167 @@
+GOVERNMENT MICROECONOMIC INTERVENTION
+
+    REASONS FOR GOVERNMENT INTERVENTION: MARKET FAILURE
+
+    DEFINITION OF MARKET FAILURE
+
+    Market failure occurs when the free market mechanism fails to allocate
+    resources efficiently, leading to a loss of social welfare (Net
+    Welfare Loss).
+
+    MAIN CATEGORIES OF MARKET FAILURE
+    * EXTERNALITIES: Spillovers to third parties not involved in the
+      transaction.
+    * PUBLIC GOODS: Goods that are non-excludable and non-rival.
+    * MONOPOLY POWER: Firms with too much power charge high prices and
+      under-produce.
+    * ASYMMETRIC INFORMATION: When one party (usually the seller) knows
+      more than the other, leading to poor choices.
+
+   EXTERNALITIES (The "Spillover" Effects)
+    - NEGATIVE EXTERNALITIES (External Costs): Costs imposed on third
+      parties (e.g., pollution, passive smoking).
+      * RESULT: Market OVER-PRODUCES these goods.
+      * POLICY: Indirect taxes, regulations.
+    - POSITIVE EXTERNALITIES (External Benefits): Benefits enjoyed by
+      third parties (e.g., vaccination, education).
+      * RESULT: Market UNDER-PRODUCES these goods.
+      * POLICY: Subsidies, state provision.
+
+    PUBLIC GOODS & THE FREE-RIDER PROBLEM
+    Because public goods (e.g., national defense) are non-excludable,
+    people can use them without paying.
+    - RESULT: Private firms have no profit incentive to produce them.
+    - MARKET FAILURE: The good is not produced at all (Missing Market).
+    - SOLUTION: Provided by the government and funded through taxation.
+
+    ASYMMETRIC INFORMATION & MERIT/DEMERIT GOODS
+    Market failure often happens because consumers lack "Perfect
+    Information."
+    - MERIT GOODS: Better for the consumer than they realize (e.g.,
+      health checkups). Under-consumed due to information failure.
+    - DEMERIT GOODS: Worse for the consumer than they realize (e.g.,
+      sugary drinks, junk food). Over-consumed due to information failure.
+
+    CASE STUDY: SUGAR TAX (UK EXAMPLE)
+        - THE PROBLEM: Overconsumption of sugar leads to obesity/diabetes
+          (Negative Externality: costs to healthcare system) and information
+          failure (consumers underestimate health risks).
+        - THE INTERVENTION: A "Tiered Tax" on manufacturers.
+        - THE OUTCOME: Encourages firms to reformulate (reduce sugar) to
+          avoid the tax.
+
+
+    METHODS AND EFFECTS OF GOVERNMENT INTERVENTION IN MARKETS
+
+        Governments intervene to correct market failures (such as externalities
+        or information gaps) and to achieve social equity.
+
+        PRICE CONTROLS
+
+        Legal limits placed on the market price to protect specific groups.
+
+        A. PRICE CEILING (Maximum Price)
+           - DEFINITION: A legal maximum price set BELOW the equilibrium.
+           - PURPOSE: To ensure essential goods (rent, food) stay affordable.
+           - IMPACTS:
+             * Shortage: Quantity Demanded (Qd) > Quantity Supplied (Qs).
+             * Non-Price Rationing: Use of queues, coupons, or seller bias.
+             * Black Markets: Illegal sales above the legal price limit.
+             * Quality Decline: Producers cut costs (e.g., poor maintenance).
+
+
+
+        B. PRICE FLOOR (Minimum Price)
+           - DEFINITION: A legal minimum price set ABOVE the equilibrium.
+           - PURPOSE: To protect producer income (farmers) or workers (Min Wage).
+           - IMPACTS:
+             * Surplus: Quantity Supplied (Qs) > Quantity Demanded (Qd).
+             * Inefficiency: Government may need to buy/store excess stock.
+             * Demerit Goods: High floors can be used to reduce consumption
+               of harmful products.
+
+        TAXATION
+
+        Used to fund public services and discourage "demerit" goods.
+
+        - DIRECT TAXES: Paid from income/profits (e.g., Personal Income Tax).
+        - INDIRECT TAXES: Imposed on spending (e.g., VAT, Excise Duties).
+          * MECHANISM: Increases production costs; shifts Supply Curve LEFT.
+          * TAX INCIDENCE: How the burden is shared based on elasticity.
+            - Inelastic Demand: Consumer pays the majority of the tax.
+            - Elastic Demand: Producer absorbs the majority of the tax.
+
+        SUBSIDIES
+
+        A government payment to producers to lower their costs of production.
+
+        - MECHANISM: Lowers production costs; shifts Supply Curve RIGHT.
+        - PURPOSES:
+          * Support low-income producers (farmers).
+          * Encourage "Merit Goods" (vaccines, education).
+          * Support infant or eco-friendly industries (EVs, solar).
+        - DRAWBACKS:
+          * High Opportunity Cost: Uses money that could go to other services.
+          * Inefficiency: Firms may stop innovating if they rely on aid.
+          * Overconsumption: Can lead to environmental damage (e.g., energy).
+
+    INCOME AND WEALTH INEQUALITY
+
+    DEFINITIONS: INCOME VS. WEALTH
+        - INCOME: A FLOW concept. The money received over a period of time
+          (wages, interest, dividends, rent, transfer payments).
+        - WEALTH: A STOCK concept. The value of assets owned at a specific
+          point in time (savings, property, shares, pension funds).
+        * LINK: High wealth generates more income (rent/interest); high
+          income allows for more saving, which increases wealth.
+
+    MEASURING INEQUALITY: THE GINI COEFFICIENT
+        - The Gini Coefficient is a numerical measure of inequality.
+        - SCALE: 0 to 1 (or 0% to 100%).
+          * 0 = PERFECT EQUALITY (Everyone has the exact same income).
+          * 1 = PERFECT INEQUALITY (One person has all the income).
+        - AS LEVEL TIP: In exams, this is often linked to the LORENZ CURVE.
+          The further the curve bows away from the 45-degree line, the
+          higher the Gini coefficient.
+
+    CAUSES OF INEQUALITY
+        - HUMAN CAPITAL: Differences in education, skills, and qualifications.
+        - HOUSEHOLD COMPOSITION: Single-parent vs. dual-income households.
+        - WEALTH DISTRIBUTION: Inheritance (intergenerational inequality).
+        - MARKET POWER: Monopoly power or discrimination in the labor market.
+        - UNEMPLOYMENT: Long-term joblessness is a primary cause of poverty.
+
+    THE EQUITY VS. EFFICIENCY DEBATE
+        * ARGUMENTS FOR INEQUALITY (Growth Promoting):
+          - INCENTIVES: High-income potential encourages people to work
+            harder, gain skills, and take entrepreneurial risks.
+        * ARGUMENTS AGAINST INEQUALITY (Socially Harmful):
+          - SOCIAL FRICTION: Can lead to crime and political instability.
+          - WASTED POTENTIAL: Talented people in poverty lack the means to
+            get educated (Market Failure).
+          - MARGINAL UTILITY: An extra $100 provides more benefit to a
+            poor person than to a billionaire.
+
+    GOVERNMENT INTERVENTION TOOLS
+        Governments redistribute income using two main methods:
+
+        FISCAL POLICY (TAXATION):
+        - PROGRESSIVE TAXES: As income rises, the % of tax paid increases
+          (e.g., Personal Income Tax). This reduces the "gap" between rich
+          and poor.
+        - REGRESSIVE TAXES: As income rises, the % of tax paid decreases
+          (e.g., VAT/Sales tax, as it takes a larger % of a poor person's
+          total income).
+
+        TRANSFER PAYMENTS:
+        - Payments made by the state to individuals without any exchange of
+          goods or services (e.g., Pensions, Unemployment Benefits, Child
+          Support).
+
+        EVALUATION: DRAWBACKS OF REDISTRIBUTION
+        - THE UNEMPLOYMENT TRAP: If benefits are too high, people have little
+          incentive to find work.
+        - THE BRAIN DRAIN: High progressive taxes may cause high-skilled
+          workers to move to countries with lower taxes.
+        - TAX EVASION: Extremely high taxes can lead to people hiding
+          income in black markets or offshore accounts.
