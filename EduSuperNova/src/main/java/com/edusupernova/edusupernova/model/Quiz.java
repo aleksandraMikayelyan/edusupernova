@@ -31,4 +31,15 @@ public class Quiz {
     // Relación con TestQuestion
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<TestQuestions> testQuestions;
+    // ← Campo que faltaba
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private QuestionType type = QuestionType.MULTIPLE_CHOICE;  // valor por defecto
+
+    // Enum interno (puedes moverlo a otro archivo si prefieres)
+    public enum QuestionType {
+        MULTIPLE_CHOICE,
+        OPEN_ENDED,
+        LOGICAL_PROBLEMS
+    }
 }
