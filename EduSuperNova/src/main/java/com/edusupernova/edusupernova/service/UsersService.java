@@ -1,63 +1,61 @@
 package com.edusupernova.edusupernova.service;
 
+import com.edusupernova.edusupernova.config.JwtTokenUtil;
 import com.edusupernova.edusupernova.data.UserRepository;
+import com.edusupernova.edusupernova.dto.AuthResponse;
+import com.edusupernova.edusupernova.dto.LoginRequest;
+import com.edusupernova.edusupernova.dto.RegisterRequest;
 import com.edusupernova.edusupernova.model.Role;
 import com.edusupernova.edusupernova.model.Users;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
 
 @Service
 @Transactional
 public class UsersService {
 
-    @Autowired
-    private UserRepository userRepo;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
 
-    // Utilidad para hashear contraseña con salt (recomendado BCrypt, no SHA simple)
-    @Autowired
-    private PasswordEncoder passwordEncoder;  // Inyecta BCryptPasswordEncoder
+    public UsersService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
+    }
 
-    // 1. Registro de usuario con salt automático (BCrypt lo incluye)
-    public Users register(Users user) {
-        if (userRepo.existsByEmail(user.getEmail())) {
-            throw new RuntimeException("Email already registered");
+    public AuthResponse register(RegisterRequest request) {
+        // Corrección: verificar si ya existe
+        if (userRepository.findByEmail(request.email()).isEnabled()) {
+            throw new IllegalArgumentException("Email already exists");
         }
-        if (userRepo.existsByUsername(user.getUsername())) {
-            throw new RuntimeException("Username already exists");
-        }
 
-        // Con BCrypt: NO necesitas almacenar salt por separado
-        // BCrypt genera y guarda el salt dentro del hash
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        // Si insistes en salt manual, genera uno y hashea, pero BCrypt es mejor
+        Users user = new Users();
+        user.setUsername(request.username());
+        user.setEmail(request.email());
+        user.setPassword(passwordEncoder.encode(request.password()));
+        user.setRol(request.rol() != null ? request.rol() : Role.STUDENT);
 
-        user.setRol(Role.STUDENT); // por defecto
-        return userRepo.save(user);
+        userRepository.save(user);
+
+        // Ahora funcionará porque Users implementará UserDetails
+        String token = JwtTokenUtil.generateToken(user);
+        return new AuthResponse(token);
     }
 
-    // 2. Obtener usuario por email (para login)
-    public Users findByEmail(String email) {
-        return userRepo.findByEmail(email);
-    }
+    public AuthResponse login(LoginRequest request) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(request.email(), request.password())
+        );
 
-    // 3. Validar contraseña en login (con BCrypt)
-    public boolean validatePassword(String plainPassword, String hashedPassword) {
-        return passwordEncoder.matches(plainPassword, hashedPassword);
-    }
+        // Corrección: manejar el Optional
+        Users user = userRepository.findByEmail(request.email());
 
-    // 4. Cambiar contraseña
-    public boolean updatePassword(int userId, String newPlainPassword) {
-        Users user = userRepo.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        user.setPassword(passwordEncoder.encode(newPlainPassword));
-        userRepo.save(user);
-        return true;
-    }
-
-    // 5. Buscar por ID
-    public Users findById(int id) {
-        return userRepo.findById(id).orElse(null);
+        String token = JwtTokenUtil.generateToken(user);
+        return new AuthResponse(token);
     }
 }

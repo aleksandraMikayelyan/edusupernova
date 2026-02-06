@@ -22,7 +22,7 @@ public interface ExamRepository extends JpaRepository<Exams, Integer> {
     // 2. Versión con paginación (muy recomendada si puedes tener +50 exámenes)
     Page<Exams> findAllByIsActiveTrueOrderByExamnameAsc(Pageable pageable);
 
-    // 3. Búsqueda avanzada corregida + filtro por activo + orden prioritario
+    /*// 3. Búsqueda avanzada corregida + filtro por activo + orden prioritario
     @Query("""
         SELECT e
         FROM Exams e
@@ -54,10 +54,12 @@ public interface ExamRepository extends JpaRepository<Exams, Integer> {
             END,
             e.examname
         """)
-    Page<Exams> searchActiveByNameOrDescriptionPaginated(@Param("term") String term, Pageable pageable);
+    Page<Exams> searchActiveByNameOrDescriptionPaginated(@Param("term") String term, Pageable pageable);*/
 
+    // Versión paginada
+    Page<Exams> findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCase(String nameTerm);
     // 5. Alternativa más simple (si no necesitas el orden prioritario)
-    List<Exams> findByIsActiveTrueAndExamnameContainingIgnoreCaseOrDescriptionContainingIgnoreCaseOrderByExamnameAsc(
+    List<Exams> findByIsActiveTrueAndExamNameContainingIgnoreCaseOrDescriptionContainingIgnoreCaseOrderByExamnameAsc(
             String examname, String description);
 
     // 6. Bonus: contar exámenes activos (útil para dashboard)

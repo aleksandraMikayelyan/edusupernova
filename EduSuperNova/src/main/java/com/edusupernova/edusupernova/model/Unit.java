@@ -11,6 +11,7 @@ import java.util.List;
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idUnit")
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)

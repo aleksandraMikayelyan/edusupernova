@@ -12,6 +12,7 @@ import java.util.List;
 public class Exams {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idExam")
     private Integer id;
 
     @Column(nullable = false, length = 100)

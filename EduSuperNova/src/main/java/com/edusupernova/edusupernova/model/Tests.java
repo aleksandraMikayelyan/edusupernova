@@ -10,6 +10,7 @@ import java.util.List;
 public class Tests {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idTest")
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)

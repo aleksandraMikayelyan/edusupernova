@@ -17,14 +17,14 @@ public interface QuizRepository extends JpaRepository<Quiz, Integer> {
     // Generar test aleatorio para un curso concreto
     @Query(value = """
         SELECT * FROM (
-            (SELECT * FROM Quizes 
-             WHERE idCourse = :courseId 
-             AND type = 'multipleChoice' 
+            (SELECT * FROM Quizes
+             WHERE idCourse = :courseId
+             AND type = 'multipleChoice'
              ORDER BY RAND() LIMIT 15)
             UNION ALL
-            (SELECT * FROM Quizes 
-             WHERE idCourse = :courseId 
-             AND type IN ('openEnded', 'logicalProblems') 
+            (SELECT * FROM Quizes
+             WHERE idCourse = :courseId
+             AND type IN ('openEnded', 'logicalProblems')
              ORDER BY RAND() LIMIT 5)
         ) AS selected_questions
         """, nativeQuery = true)

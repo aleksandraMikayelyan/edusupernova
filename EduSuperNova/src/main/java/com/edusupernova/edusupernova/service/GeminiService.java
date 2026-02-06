@@ -11,10 +11,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-@Service  // ← Esto es lo que faltaba
-public class GeminiService {  // Puedes renombrarla a GroqService si prefieres ser más preciso
+@Service
+public class GeminiService {
 
-    // ¡IMPORTANTE! Nunca dejes la API key hardcodeada en el código
     // Mejor usa application.properties o variables de entorno
     @Value("${groq.api.key}")  // ← lee de application.properties o .env
     private String apiKey;

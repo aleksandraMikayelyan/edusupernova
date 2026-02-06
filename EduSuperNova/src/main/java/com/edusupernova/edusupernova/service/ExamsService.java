@@ -28,7 +28,7 @@ public class ExamsService {
         }
 
         String term = searchTerm.trim();
-        List<Exams> results = examRepo.searchActiveByNameOrDescription(term);
+        List<Exams> results = examRepo.findByIsActiveTrueAndExamNameContainingIgnoreCaseOrDescriptionContainingIgnoreCaseOrderByExamnameAsc(term , "");
 
         // Límite suave a 20 (puedes quitarlo si usas paginación)
         return results.size() > 20 ? results.subList(0, 20) : results;

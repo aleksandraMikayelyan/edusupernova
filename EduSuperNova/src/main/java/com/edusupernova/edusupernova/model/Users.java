@@ -1,16 +1,23 @@
 package com.edusupernova.edusupernova.model;
 
-import com.edusupernova.edusupernova.model.Role;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import org.aspectj.weaver.ast.Test;
 
 import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import java.util.Collection;
+import java.util.List;
+
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 @Data
-public class Users{
+public class Users implements UserDetails { // 1. Implementa la interfaz
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,17 +31,48 @@ public class Users{
     @Column(nullable = false, length = 255)
     private String password;
 
-    @Column(nullable = false, length = 255)
-    private String salt;
-
     @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "ENUM('student', 'admin') DEFAULT 'student'")
+    @Column(nullable = false) // Removí columnDefinition para evitar errores de dialecto si no es necesario
     private Role rol = Role.STUDENT;
 
-    // Relaciones (bidireccionales donde aplica)
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Enrollment> enrollments;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Tests> tests;
+
+    // --- MÉTODOS DE USERDETAILS ---
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Convierte tu ENUM de rol en una autoridad que Spring entienda
+        return List.of(new SimpleGrantedAuthority("ROLE_" + rol.name()));
+    }
+
+    @Override
+    public String getUsername() {
+        // IMPORTANTE: Spring Security usa este método para identificar al usuario.
+        // Si haces login con email, devuelve el email aquí.
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true; // Cambiar a lógica real si manejas expiración
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; // Cambiar a lógica real si manejas bloqueos
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
