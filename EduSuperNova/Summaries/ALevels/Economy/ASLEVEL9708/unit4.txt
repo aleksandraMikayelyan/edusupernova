@@ -1,0 +1,354 @@
+THE MACROECONOMY
+
+NATIONAL INCOME STATISTICS
+
+ GROSS DOMESTIC PRODUCT (GDP)
+    Definition: The total market value of all final goods and services
+    produced within a country's borders in a specific time period.
+
+    * KEY RESTRAINTS:
+      - FINAL GOODS ONLY: Excludes intermediate goods to avoid "Double
+        Counting."
+      - GEOGRAPHIC: Produced WITHIN the country (e.g., a foreign car
+        plant in Germany counts toward German GDP).
+      - EXCLUSIONS: Used goods (resale), illegal/black market activity,
+        and home-produced goods (e.g., DIY).
+
+ NOMINAL VS. REAL GDP
+    This is a critical distinction for evaluating actual economic growth.
+
+    - NOMINAL GDP: Measured at CURRENT prices. It can rise just because
+      prices went up (inflation), even if production stayed the same.
+    - REAL GDP: Measured at CONSTANT (Base Year) prices. It removes the
+      effect of inflation to show actual changes in output.
+
+    * THE GDP DEFLATOR: A price index used to adjust Nominal GDP to Real.
+      Formula: (Nominal GDP / Real GDP) x 100
+
+ MEASURING GDP: THE EXPENDITURE APPROACH
+    GDP is the sum of spending by four main sectors:
+    Formula: GDP = C + I + G + (X - M)
+
+    - C (CONSUMPTION): Household spending on durable/non-durable goods.
+    - I (INVESTMENT): Firm spending on capital (machinery/factories)
+      and household spending on NEW housing.
+    - G (GOVERNMENT SPENDING): State spending on public services
+      (health, education, defense).
+    - NX (NET EXPORTS): Exports (X) minus Imports (M).
+      * If X > M = Trade Surplus (Adds to GDP).
+      * If M > X = Trade Deficit (Subtracts from GDP).
+
+ GNI AND NNI (NATIONAL VS. DOMESTIC)
+    - GROSS NATIONAL INCOME (GNI): Measures income earned by a country's
+      residents, regardless of where they are in the world.
+      Formula: GNI = GDP + Net Income from Abroad.
+
+    - NET NATIONAL INCOME (NNI): Adjusts GNI for the "wear and tear"
+      of machines and infrastructure.
+      Formula: NNI = GNI - Depreciation (Capital Consumption).
+
+ AS LEVEL EXAM TIP: REAL GDP PER CAPITA
+    To compare the "Standard of Living" between countries, we use
+    Real GDP per Capita.
+    Formula: Real GDP / Total Population.
+    This tells us how much income is available, on average, per person.
+
+
+THE CIRCULAR FLOW OF INCOME
+
+
+ THE SIMPLE TWO-SECTOR MODEL (CLOSED ECONOMY)
+    This model assumes only two entities: Households and Firms.
+
+    - HOUSEHOLDS: Own the factors of production (Land, Labor, Capital,
+      Enterprise). They provide these to firms in exchange for Income (Y).
+    - FIRMS: Use factors to produce goods and services. They pay
+      households wages, rent, interest, and profit.
+    - THE FLOW: Households spend all their income on goods produced by
+      firms (Consumption).
+    - KEY IDENTITY: National Output = National Income = National Expenditure.
+
+ THE OPEN ECONOMY MODEL (FIVE SECTORS)
+    In reality, money leaves the "inner flow" (Consumption) and new
+    money enters it from other sectors.
+
+    A. LEAKAGES / WITHDRAWALS (W)
+    Money that leaves the circular flow, reducing the size of National Income.
+        1. SAVINGS (S): Money put into financial institutions (banks)
+           rather than spent.
+        2. TAXES (T): Money paid to the government (Net Taxes = Taxes
+           paid minus transfer payments received).
+        3. IMPORTS (M): Money spent on goods produced in other countries.
+
+    B. INJECTIONS (J)
+        Money that enters the circular flow from outside the inner loop.
+        1. INVESTMENT (I): Spending by firms on capital goods using
+           funds from financial markets.
+        2. GOVERNMENT SPENDING (G): State spending on goods and services.
+        3. EXPORTS (X): Money coming into the domestic economy from
+           foreign buyers.
+
+ MACROECONOMIC EQUILIBRIUM
+    The economy is in equilibrium when total Injections equal total
+    Withdrawals:
+    Formula: J = W  =>  (I + G + X) = (S + T + M)
+
+    * IF J > W (Injections exceed Withdrawals):
+      - National Income (Y) will RISE.
+      - Economic growth occurs as firms increase production.
+    * IF W > J (Withdrawals exceed Injections):
+      - National Income (Y) will FALL.
+      - The economy enters a contraction/recession.
+
+ AS LEVEL EXAM TIP: THE THREE WAYS TO MEASURE GDP
+    Because of the circular flow, we can measure a country's wealth in
+    three ways that should theoretically give the same result:
+    1. THE OUTPUT METHOD: Value of all goods produced.
+    2. THE INCOME METHOD: Total of all wages, rents, interest, and profits.
+    3. THE EXPENDITURE METHOD: Total spending (C + I + G + [X-M]).
+
+AGGREGATE DEMAND AND AGGREGATE SUPPLY (AD-AS)
+
+ AGGREGATE DEMAND (AD)
+    AD is the total spending on all domestically produced goods and
+    services in an economy at a given price level.
+
+    - FORMULA: AD = C + I + G + (X - M)
+    - THE CURVE: Slopes downward. A change in the Price Level (PL)
+      causes a MOVEMENT along the curve (Expansion/Contraction).
+
+    - SHIFTS IN AD: Occur when C, I, G, or (X-M) change due to factors
+      OTHER than the price level.
+      * RIGHT SHIFT: Higher consumer confidence, lower taxes, or
+        increased government spending.
+      * LEFT SHIFT: Higher interest rates (reduces C and I), or a
+        recession in a major trading partner (reduces X).
+
+ SHORT-RUN AGGREGATE SUPPLY (SRAS)
+    SRAS is the total output producers are willing to supply at different
+    price levels, assuming factor prices (like wages) are FIXED.
+
+    - THE CURVE: Slopes upward. Producers increase output when prices
+      rise because profit margins expand in the short term.
+    - SHIFTS IN SRAS: Caused by changes in the COSTS OF PRODUCTION.
+      * RIGHT SHIFT: Lower oil prices, decrease in wages, or business
+        subsidies.
+      * LEFT SHIFT: Increase in raw material costs, higher minimum wage,
+        or indirect taxes.
+
+ MACROECONOMIC EQUILIBRIUM
+
+    Equilibrium occurs where AD = SRAS. This determines the equilibrium
+    Price Level (PL) and Real Output (Y).
+
+    * DEMAND-SIDE SHOCK: If AD shifts right, both PL and Y rise
+      (Demand-pull inflation).
+    * SUPPLY-SIDE SHOCK: If SRAS shifts left, PL rises and Y falls.
+      This is called STAGFLATION (Stagnation + Inflation).
+
+ LONG-RUN AGGREGATE SUPPLY (LRAS)
+    In the long run, the economy's capacity depends on the quantity and
+    quality of resources (factors of production).
+
+    A. KEYNESIAN PERSPECTIVE:
+    - The curve is horizontal at low levels of output (spare capacity).
+    - It becomes vertical at full employment (Ymax) because the economy
+      has run out of resources.
+
+
+    B. NEW CLASSICAL PERSPECTIVE:
+    - The curve is a VERTICAL line.
+    - In the long run, the economy always returns to its "Potential
+      Output," regardless of the price level.
+
+ SHIFTING THE LRAS (ECONOMIC GROWTH)
+    The LRAS only shifts if the productive POTENTIAL of the country
+    changes.
+    - FACTORS: Technological advances, improved education/skills,
+      discovery of new resources, or increased labor productivity.
+    - NOTE: A rightward shift in LRAS represents long-term economic
+      growth.
+
+ECONOMIC GROWTH
+
+ DEFINING ECONOMIC GROWTH
+
+    Economic growth is a sustained increase in the real output of an
+    economy over time.
+
+    - ACTUAL GROWTH: An increase in Real GDP (moving from a point inside
+      the PPC to a point closer to the boundary).
+    - POTENTIAL GROWTH: An increase in the economy’s capacity to produce
+      (shifting the PPC outward or shifting the LRAS to the right).
+
+ MEASURING GROWTH
+
+    Growth is measured as the percentage change in Real GDP.
+
+    - FORMULA (Real GDP Growth):
+      [(Real GDP Year 2 - Real GDP Year 1) / Real GDP Year 1] x 100
+
+    - REAL GDP PER CAPITA: The most important measure for "Living
+      Standards." It accounts for population size.
+      Formula: Real GDP / Total Population
+      * NOTE: If the population grows faster than Real GDP, the standard
+        of living (per capita income) actually falls.
+
+ DETERMINANTS OF LABOR PRODUCTIVITY
+
+    Productivity is the output per worker per hour. Growth depends on
+    making labor more effective through:
+
+    1. PHYSICAL CAPITAL: More and better machinery, equipment, and
+       infrastructure (Investment).
+    2. HUMAN CAPITAL: Improvements in the skills, education, and
+       health of the workforce.
+    3. TECHNOLOGICAL ADVANCEMENT: Innovation, R&D, and the
+       application of new processes (e.g., AI, automation).
+
+ INSTITUTIONAL FACTORS
+    For growth to occur, the "Economic Environment" must be stable:
+    - PROPERTY RIGHTS: Legal protection that encourages firms to invest.
+    - POLITICAL STABILITY: Reduces risk for domestic and foreign investors.
+    - INFRASTRUCTURE: Efficient transport and communication networks.
+    - EDUCATION/HEALTH: Ensuring a capable and reliable workforce.
+
+ AS LEVEL EXAM TIP: PPC VS. LRAS
+    You can show economic growth using two different diagrams:
+    - PPC DIAGRAM: An outward shift of the curve.
+    - AD-AS DIAGRAM: A rightward shift of the LRAS curve.
+    Both represent an increase in the "Potential Output" (Full Employment)
+    of the economy.
+
+UNEMPLOYMENT
+
+ KEY DEFINITIONS & FORMULAS
+    - WORKING-AGE POPULATION: Typically residents aged 15+.
+    - LABOR FORCE: The total number of people either working (Employed)
+      or actively seeking work (Unemployed).
+    - UNEMPLOYED: Those without a job who are BOTH available to work
+      and actively seeking employment.
+
+    * FORMULAS:
+      1. LABOR FORCE = Employed + Unemployed
+      2. UNEMPLOYMENT RATE = (Unemployed / Labor Force) x 100
+      3. LABOR FORCE PARTICIPATION RATE (LFPR) =
+         (Labor Force / Working-Age Population) x 100
+      4. EMPLOYMENT-TO-POPULATION RATIO =
+         (Employed / Working-Age Population) x 100
+
+ LIMITATIONS OF UNEMPLOYMENT STATISTICS
+    Official records often underestimate the true scale of the problem:
+    - DISCOURAGED WORKERS: "Hidden unemployed" who have given up
+      searching and are thus no longer counted in the labor force.
+    - UNDEREMPLOYMENT: Statistics do not distinguish between
+      full-time and part-time workers.
+    - INFORMAL ECONOMY: People working "off the books" may be
+      counted as unemployed despite having income.
+
+ TYPES OF UNEMPLOYMENT
+    A. NATURAL UNEMPLOYMENT: The level of unemployment that exists even
+       when the labor market is in equilibrium (Full Employment).
+       * FRICTIONAL: Short-term; people moving between jobs or
+         entering the workforce (e.g., recent graduates).
+       * STRUCTURAL: Long-term; caused by a mismatch between workers'
+         skills and the skills required by new technologies or industries.
+
+    B. UNNATURAL / EXCESS UNEMPLOYMENT:
+       * CYCLICAL (Demand-Deficient): Caused by a recession or a
+         fall in Aggregate Demand (AD).
+       * SEASONAL: Linked to certain times of year (Tourism, Agriculture).
+       * TECHNOLOGICAL: Result of automation or mechanization
+         replacing human labor.
+
+ THE ROLE OF WAGES
+    - MINIMUM WAGES: If set above the equilibrium market price, they
+      create a surplus of labor (Unemployment).
+    - EFFICIENCY WAGES: High wages paid by firms to increase
+      productivity and reduce worker turnover.
+
+ CONSEQUENCES OF UNEMPLOYMENT
+    - ECONOMIC:
+      * LOSS OF OUTPUT: Actual GDP falls below Potential GDP.
+      * FISCAL COST: Increased government spending on benefits and
+        lower tax revenue (Income Tax/VAT).
+    - SOCIAL/INDIVIDUAL:
+      * LOSS OF HUMAN CAPITAL: Skills fade during long-term
+        unemployment ("Hysteresis").
+      * SOCIAL INSTABILITY: Increased poverty and political tension.
+
+ STATISTICS & GROUPS (COVID-19 CASE STUDY)
+    The pandemic highlighted how unemployment is unequally distributed:
+    - MINORITIES & YOUTH: Often the first to be laid off in a crisis.
+    - GENDER GAP: Women were disproportionately affected due to
+      increases in unpaid childcare duties during lockdowns.
+    - RECOVERY STATS: Between 1999 and 2016, technology replaced
+      routine jobs but created over 23 million new jobs in Europe.
+
+PRICE STABILITY: INFLATION AND DEFLATION
+
+ KEY DEFINITIONS
+    - INFLATION: A sustained increase in the general price level over
+      time, leading to a fall in the purchasing power of money.
+    - DEFLATION: A decrease in the general price level.
+    - HYPERINFLATION: Extreme inflation (over 50% per month) where
+      money loses its value almost entirely, often leading to barter.
+
+    * TYPES OF INFLATION:
+      - Creeping: Low and stable (around 2%). Generally considered
+        healthy for an economy.
+      - Galloping: High rates (5% - 10%+). Discourages saving and
+        domestic investment.
+
+ MEASURING INFLATION: CONSUMER PRICE INDEX (CPI)
+    The CPI tracks the price changes of a "representative basket" of
+    goods and services bought by a typical household.
+
+    * CALCULATION STEPS:
+      1. Select the Basket: Based on household spending patterns.
+      2. Weighting: Assigning importance to items (e.g., Housing has
+         a higher weight than Bread).
+      3. Price Collection: Monthly data gathering.
+
+    * FORMULAS:
+      - CPI = (Cost of basket in current year / Cost in base year) x 100
+      - INFLATION RATE = [(CPI Year 2 - CPI Year 1) / CPI Year 1] x 100
+
+ LIMITATIONS (BIASES) OF CPI
+    - NEW PRODUCT BIAS: Slow to include new tech (e.g., streaming).
+    - QUALITY BIAS: Price rises may reflect better quality, not
+      just inflation.
+    - SUBSTITUTION BIAS: Consumers switch to cheaper alternatives
+      when prices rise, which the fixed basket may not reflect.
+
+ CAUSES OF INFLATION
+    A. DEMAND-PULL INFLATION:
+       - Caused by excessive Aggregate Demand (AD) shifting right.
+       - "Too much money chasing too few goods."
+       - Common in booming economies or due to high Govt spending.
+
+    B. COST-PUSH INFLATION:
+       - Caused by rising costs of production (wages, raw materials,
+         energy).
+       - Shifts the SRAS curve to the LEFT.
+       - Leads to "Stagflation" (Rising prices + Falling output).
+
+    C. MONETARIST VIEW:
+       - Inflation is caused by the money supply growing faster than
+         the production of goods and services.
+
+ CONSEQUENCES OF INFLATION
+    * NEGATIVE:
+      - REDISTRIBUTION: Harms fixed-income earners (pensioners) and
+        lenders; benefits borrowers (as the real value of debt falls).
+      - UNCERTAINTY: Firms may stop investing if they can't predict
+        future costs/prices.
+      - MENU COSTS: The cost to firms of physically changing price
+        tags and menus.
+      - SHOE-LEATHER COSTS: Time spent searching for better prices as
+        money loses value.
+
+    * POSITIVE (Moderate Inflation):
+      - Can encourage production if prices rise faster than costs.
+      - Reduces the real burden of national and private debt.
+
