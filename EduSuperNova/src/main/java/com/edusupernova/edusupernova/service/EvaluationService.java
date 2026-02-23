@@ -2,13 +2,13 @@ package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.TestQuestionsRepository;
 import com.edusupernova.edusupernova.model.TestQuestions;
+import com.edusupernova.edusupernova.service.GeminiService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,86 +16,61 @@ import java.util.stream.Collectors;
 public class EvaluationService {
 
     private final TestQuestionsRepository testQuestionRepo;
-    private final GeminiService groqService;  // o GeminiService / LlmService
+    private final GeminiService groqService;
 
-    // Ponderaciones (puedes mover a application.properties)
-    private static final double MULTIPLE_CHOICE_WEIGHT = 0.70;
-    private static final double OPEN_ENDED_WEIGHT = 0.30;
-    private static final int MAX_SCORE_MULTIPLE = 15;     // 15 preguntas × 1 punto
-    private static final int MAX_SCORE_OPEN_ENDED = 50;   // ej: 5 preguntas × 10 puntos
+    // Weights for final score calculation
+    private static final double MC_WEIGHT = 0.70;
+    private static final double OPEN_WEIGHT = 0.30;
 
-    /**
-     * Evalúa todo el test y actualiza la base de datos
-     * @return Resultado global con puntuación y feedback
-     */
-    public TestEvaluationResult evaluateTest(Integer testId) {
+    public TestEvaluationResult evaluateTest(Integer testId, String examType, String sectionName) {
         List<TestQuestions> allAnswers = testQuestionRepo.findByIdTestId(testId);
+        if (allAnswers.isEmpty()) throw new IllegalStateException("No answers for test: " + testId);
 
-        if (allAnswers.isEmpty()) {
-            throw new IllegalStateException("No hay respuestas para evaluar en el test " + testId);
-        }
-
-        // 1. Evaluar multiple choice (automático)
-        long correctMultiple = allAnswers.stream()
+        // 1. Evaluate Multiple Choice
+        List<TestQuestions> mcQuestions = allAnswers.stream()
                 .filter(a -> "multipleChoice".equals(a.getQuiz().getType()))
-                .filter(TestQuestions::getCorrectResponse)
-                .count();
-
-        double scoreMultiple = (double) correctMultiple / MAX_SCORE_MULTIPLE * 100 * MULTIPLE_CHOICE_WEIGHT;
-
-        // 2. Evaluar open-ended (con LLM)
-        List<TestQuestions> openEndedAnswers = allAnswers.stream()
-                .filter(a -> List.of("openEnded", "logicalProblems").contains(a.getQuiz().getType()))
                 .toList();
 
-        double totalOpenScore = 0.0;
+        long correctCount = mcQuestions.stream().filter(TestQuestions::getCorrectResponse).count();
+        double scoreMC = mcQuestions.isEmpty() ? 0 : ((double) correctCount / mcQuestions.size()) * 10.0;
+
+        // 2. Evaluate Open-Ended (Batch)
+        List<TestQuestions> openQuestions = allAnswers.stream()
+                .filter(a -> List.of("openEnded", "speaking", "writing").contains(a.getQuiz().getType()))
+                .toList();
+
+        double totalOpenScore = 0;
         StringBuilder feedbackBuilder = new StringBuilder();
 
-        for (TestQuestions answer : openEndedAnswers) {
-            String questionText = answer.getQuiz().getQuestionText();
-            String userResponse = answer.getUserResponse();
+        if (!openQuestions.isEmpty()) {
+            String context = String.format("Exam: %s, Section: %s", examType, sectionName);
+            List<GeminiService.EvaluationResult> results = groqService.evaluarLoteCompleto(openQuestions, context);
 
-            GeminiService.EvaluationResult llmResult = groqService.evaluarRespuestaAbierta(questionText, userResponse);
+            for (int i = 0; i < openQuestions.size(); i++) {
+                TestQuestions q = openQuestions.get(i);
+                GeminiService.EvaluationResult res = results.get(i);
 
-            double openScore = llmResult.getPuntuacion(); // 0-10
-            totalOpenScore += openScore;
+                q.setPunctuation((int) Math.round(res.getPuntuacion()));
+                q.setFeedbackIa(res.getFeedback());
+                q.setCorrectResponse(res.getPuntuacion() >= 6.0);
 
-            // Guardamos en BD
-            answer.setPunctuation((int) Math.round(openScore));
-            answer.setFeedbackIa(llmResult.getFeedback());
-            answer.setCorrectResponse(openScore >= 6.0); // umbral ejemplo
-
-            feedbackBuilder.append("Pregunta: ").append(questionText).append("\n")
-                    .append("Tu respuesta: ").append(userResponse).append("\n")
-                    .append("Puntuación: ").append(openScore).append("/10\n")
-                    .append("Feedback: ").append(llmResult.getFeedback()).append("\n\n");
+                totalOpenScore += res.getPuntuacion();
+                feedbackBuilder.append("- ").append(q.getQuiz().getQuestionText()).append(": ").append(res.getFeedback()).append("\n");
+            }
         }
 
-        // Normalizamos open-ended a porcentaje
-        double normalizedOpenScore = (totalOpenScore / (openEndedAnswers.size() * 10.0)) * 100 * OPEN_ENDED_WEIGHT;
+        double avgOpenScore = openQuestions.isEmpty() ? 0 : (totalOpenScore / openQuestions.size());
 
-        // 3. Puntuación global
-        double totalScore = scoreMultiple + normalizedOpenScore;
+        // 3. Final Calculation (Scale 0-10)
+        double finalScore = (scoreMC * MC_WEIGHT) + (avgOpenScore * OPEN_WEIGHT);
 
-        // 4. Guardar puntuación final en Tests (si tienes campo)
-        // Tests test = testRepo.findById(testId).orElseThrow();
-        // test.setPunctuation((int) Math.round(totalScore));
-        // testRepo.save(test);
-
-        // 5. Resultado consolidado
         return new TestEvaluationResult(
-                totalScore,
-                scoreMultiple,
-                normalizedOpenScore,
+                finalScore,
+                scoreMC,
+                avgOpenScore,
                 feedbackBuilder.toString()
         );
     }
 
-    // DTO simple para devolver al controlador / frontend
-    public record TestEvaluationResult(
-            double totalScore,          // 0-100
-            double multipleChoiceScore, // porcentaje ponderado
-            double openEndedScore,      // porcentaje ponderado
-            String detailedFeedback     // texto con todas las correcciones
-    ) {}
+    public record TestEvaluationResult(double totalScore, double mcScore, double openScore, String feedback) {}
 }

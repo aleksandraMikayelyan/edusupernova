@@ -24,14 +24,12 @@ public class ExamsService {
     @Transactional(readOnly = true)
     public List<Exams> search(String searchTerm) {
         if (searchTerm == null || searchTerm.trim().isEmpty()) {
-            return getDashboardExams(); // ← fallback útil
+            return getDashboardExams();
         }
 
         String term = searchTerm.trim();
-        List<Exams> results = examRepo.findByIsActiveTrueAndExamNameContainingIgnoreCaseOrDescriptionContainingIgnoreCaseOrderByExamnameAsc(term , "");
-
-        // Límite suave a 20 (puedes quitarlo si usas paginación)
-        return results.size() > 20 ? results.subList(0, 20) : results;
+        // Pass 'term' to both placeholders in the method name
+        return examRepo.findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc(term, term);
     }
 
     // Buscar un examen por ID
@@ -44,13 +42,13 @@ public class ExamsService {
     @Transactional
     public Exams createExam(Exams exam) {
         if (exam == null) {
-            throw new IllegalArgumentException("El examen no puede ser nulo");
+            throw new IllegalArgumentException("The exam cannot be null");
         }
         if (exam.getExamname() == null || exam.getExamname().trim().isEmpty()) {
-            throw new IllegalArgumentException("El nombre del examen es obligatorio");
+            throw new IllegalArgumentException("The name of the exam cannot be empty");
         }
         if (exam.getExamname().length() > 100) {
-            throw new IllegalArgumentException("El nombre no puede superar 100 caracteres");
+            throw new IllegalArgumentException("The name of the exam cannot be longer than 100 characters");
         }
 
         // Opcional: verificar si ya existe uno con el mismo nombre
@@ -64,7 +62,7 @@ public class ExamsService {
     @Transactional
     public void toggleActive(Integer examId, boolean active) {
         Exams exam = examRepo.findById(examId)
-                .orElseThrow(() -> new IllegalArgumentException("Examen no encontrado: " + examId));
+                .orElseThrow(() -> new IllegalArgumentException("Exam not found: " + examId));
 
         exam.setIsActive(active);
         examRepo.save(exam);
@@ -74,7 +72,7 @@ public class ExamsService {
     public Exams updateExam(Integer id, Exams updated) {
         Exams existing = findById(id);
         if (existing == null) {
-            throw new IllegalArgumentException("Examen no encontrado");
+            throw new IllegalArgumentException("Exam not found");
         }
 
         // Copiar campos permitidos

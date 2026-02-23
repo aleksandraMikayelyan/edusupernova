@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -15,9 +17,30 @@ public class QuizService {
     @Autowired
     private QuizRepository quizRepo;
 
-    // Ahora recibe courseId en lugar de examId
+
+
     public List<Quiz> generateRandomTest(int courseId) {
-        return quizRepo.generateRandomTest(courseId);
+        // 1. Fetch and Shuffle Multiple Choice
+        List<Quiz> allMc = quizRepo.findByCourseIdAndType(courseId, "multipleChoice");
+        Collections.shuffle(allMc);
+        List<Quiz> selectedMc = allMc.stream().limit(15).toList();
+
+        // 2. Fetch and Shuffle Open Ended / Logical
+        List<Quiz> allOpen = quizRepo.findByCourseIdAndTypeIn(
+                courseId, List.of("openEnded", "logicalProblems")
+        );
+        Collections.shuffle(allOpen);
+        List<Quiz> selectedOpen = allOpen.stream().limit(5).toList();
+
+        // 3. Combine both lists
+        List<Quiz> finalTest = new ArrayList<>();
+        finalTest.addAll(selectedMc);
+        finalTest.addAll(selectedOpen);
+
+        // Optional: Shuffle the final list so MC and Open Ended are mixed
+        Collections.shuffle(finalTest);
+
+        return finalTest;
     }
 
     // Conteo por tipo, ahora por curso

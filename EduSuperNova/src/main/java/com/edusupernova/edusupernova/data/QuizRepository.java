@@ -11,26 +11,13 @@ import java.util.List;
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
-    // Contar preguntas por tipo en un curso específico
+    // Fetch all questions of a specific type for a course
+    List<Quiz> findByCourseIdAndType(Integer courseId, String type);
+
+    // Fetch questions where the type is in a specific list (Open Ended OR Logical)
+    List<Quiz> findByCourseIdAndTypeIn(Integer courseId, List<String> types);
+
     long countByCourseIdAndType(Integer courseId, String type);
 
-    // Generar test aleatorio para un curso concreto
-    @Query(value = """
-        SELECT * FROM (
-            (SELECT * FROM Quizes
-             WHERE idCourse = :courseId
-             AND type = 'multipleChoice'
-             ORDER BY RAND() LIMIT 15)
-            UNION ALL
-            (SELECT * FROM Quizes
-             WHERE idCourse = :courseId
-             AND type IN ('openEnded', 'logicalProblems')
-             ORDER BY RAND() LIMIT 5)
-        ) AS selected_questions
-        """, nativeQuery = true)
-    List<Quiz> generateRandomTest(@Param("courseId") Integer courseId);
-
-    // Opcional: contar total de preguntas en un curso
     long countByCourseId(Integer courseId);
 }
-

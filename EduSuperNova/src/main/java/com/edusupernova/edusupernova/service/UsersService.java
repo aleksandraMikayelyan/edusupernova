@@ -21,16 +21,22 @@ public class UsersService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+    private final JwtTokenUtil jwtTokenUtil; // 1. Add JwtTokenUtil
 
-    public UsersService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+    public UsersService(UserRepository userRepository,
+                        PasswordEncoder passwordEncoder,
+                        AuthenticationManager authenticationManager,
+                        JwtTokenUtil jwtTokenUtil) { // 2. Inject it
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
+        this.jwtTokenUtil = jwtTokenUtil;
     }
 
     public AuthResponse register(RegisterRequest request) {
-        // Corrección: verificar si ya existe
-        if (userRepository.findByEmail(request.email()).isEnabled()) {
+        // 3. Robust existence check (assuming repository returns Optional or null)
+        Users existingUser = userRepository.findByEmail(request.email());
+        if (existingUser != null) {
             throw new IllegalArgumentException("Email already exists");
         }
 
@@ -42,20 +48,24 @@ public class UsersService {
 
         userRepository.save(user);
 
-        // Ahora funcionará porque Users implementará UserDetails
-        String token = JwtTokenUtil.generateToken(user);
+        // 4. Call via the injected instance
+        String token = jwtTokenUtil.generateToken(user);
         return new AuthResponse(token);
     }
 
     public AuthResponse login(LoginRequest request) {
+        // This validates the credentials
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.email(), request.password())
         );
 
-        // Corrección: manejar el Optional
         Users user = userRepository.findByEmail(request.email());
+        if (user == null) {
+            throw new IllegalArgumentException("User not found after authentication");
+        }
 
-        String token = JwtTokenUtil.generateToken(user);
+        // 5. Call via the injected instance
+        String token = jwtTokenUtil.generateToken(user);
         return new AuthResponse(token);
     }
 }

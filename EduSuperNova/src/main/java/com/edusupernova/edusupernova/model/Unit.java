@@ -21,6 +21,9 @@ public class Unit {
     @Column(nullable = false, length = 100)
     private String title;
 
+    @Column(nullable = false, length = 100)
+    private String pathname;
+
     @Column(columnDefinition = "INT DEFAULT 1")
     private Integer queue = 1;
 }

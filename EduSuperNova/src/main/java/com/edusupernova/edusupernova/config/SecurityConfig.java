@@ -20,35 +20,41 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfig {
 
-    // Crearemos esto después
     private final UserRepository userRepository;
+    private final JwtAuthenticationFilter jwtFilter;
 
     public SecurityConfig(JwtAuthenticationFilter jwtFilter, UserRepository userRepository) {
         this.userRepository = userRepository;
+        this.jwtFilter = jwtFilter;
     }
 
-    // 1. EL BEAN QUE TE FALTABA: Define cómo buscar al usuario
     @Bean
     public UserDetailsService userDetailsService() {
         return email -> {
             Users user = userRepository.findByEmail(email);
-            if (user.isEnabled()) {
+            // CORRECCIÓN: Si el usuario es null, lanzamos la excepción.
+            if (user == null) {
                 throw new UsernameNotFoundException("Usuario no encontrado: " + email);
             }
-            return user; // Aquí devuelve el objeto Users (que ya implementa UserDetails)
+            return user;
         };
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(JwtAuthenticationFilter jwtFilter,HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())  // Para API REST
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()  // Login/Register abiertos
-                        .anyRequest().authenticated()  // Resto protegido
+                        // AJUSTE: Permitir registro y login según tus rutas reales
+                        .requestMatchers("/api/users/register", "/api/users/login").permitAll()
+                        // Permitir ver los exámenes del dashboard sin estar logueado (opcional)
+                        // .requestMatchers("/api/exams/dashboard").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                // Añadimos el filtro JWT antes del filtro de usuario/contraseña
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
 

@@ -32,10 +32,10 @@ public class TestService {
     @Transactional
     public int crearTest(Integer userId, Integer courseId) {
         Users user = userRepo.findById(userId)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new RuntimeException("User Not Found"));
 
         Courses course = courseRepo.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Curso no encontrado"));
+                .orElseThrow(() -> new RuntimeException("Course Not Found"));
 
         // Opcional: validar que el usuario está inscrito en el examen del curso
         // examRepo.findById(course.getExam().getIdExam()) ...
@@ -54,13 +54,13 @@ public class TestService {
     public boolean saveAnswers(Integer testId, List<TestQuestions> answers) {
         try {
             Tests test = testRepo.findById(testId)
-                    .orElseThrow(() -> new RuntimeException("Test no encontrado"));
+                    .orElseThrow(() -> new RuntimeException("Test not found"));
 
             // Validación extra: todas las preguntas deben pertenecer al curso del test
             Integer courseId = test.getCourse().getId();
             for (TestQuestions tq : answers) {
                 if (tq.getQuiz() == null || !tq.getQuiz().getCourse().getId().equals(courseId)) {
-                    throw new IllegalArgumentException("Pregunta no pertenece al curso del test");
+                    throw new IllegalArgumentException("the questions you want to save is not in this course");
                 }
 
                 tq.setTest(test);
@@ -85,7 +85,7 @@ public class TestService {
     @Transactional
     public int calcularYGuardarPuntuacion(Integer testId) {
         Tests test = testRepo.findById(testId)
-                .orElseThrow(() -> new RuntimeException("Test no encontrado"));
+                .orElseThrow(() -> new RuntimeException("Test not found"));
 
         long correctas = testQuestionRepo.countByTestIdAndCorrectResponseTrue(testId);
         long total = testQuestionRepo.countByTestId(testId);
