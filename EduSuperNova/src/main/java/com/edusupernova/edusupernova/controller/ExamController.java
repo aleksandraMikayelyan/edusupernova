@@ -26,7 +26,7 @@ public class ExamController {
     }
 
     // 2. Nuevo: Obtener solo los exámenes donde el alumno ya está inscrito
-    @GetMapping("/my-exams/{userId}")
+    @GetMapping("/myexams/{userId}")
     public ResponseEntity<List<Exams>> getMyExams(@PathVariable int userId) {
         return ResponseEntity.ok(enrollmentService.getEnrolledExams(userId));
     }
