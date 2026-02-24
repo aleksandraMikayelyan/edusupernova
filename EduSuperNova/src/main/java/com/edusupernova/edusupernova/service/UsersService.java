@@ -50,7 +50,7 @@ public class UsersService {
 
         // 4. Call via the injected instance
         String token = jwtTokenUtil.generateToken(user);
-        return new AuthResponse(token);
+        return new AuthResponse(token , user.getRol().name());
     }
 
     public AuthResponse login(LoginRequest request) {
@@ -66,6 +66,6 @@ public class UsersService {
 
         // 5. Call via the injected instance
         String token = jwtTokenUtil.generateToken(user);
-        return new AuthResponse(token);
+        return new AuthResponse(token, user.getRol().name());
     }
 }
