@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/units")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UnitController {
 
     private final CourseService courseService;

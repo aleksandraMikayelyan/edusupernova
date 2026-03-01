@@ -65,5 +65,9 @@ public class CourseService {
     public List<Unit> getUnitsForCourse(Integer courseId) {
         return unitService.getUnitsByCourseId(courseId);
     }
+    @Transactional(readOnly = true)
+    public List<Courses> getCoursesByExamId(Integer examId) {
+        return courseRepository.findByExamId(examId);
+    }
 
 }

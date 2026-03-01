@@ -16,12 +16,11 @@ import java.util.Optional;
 public interface ExamRepository extends JpaRepository<Exams, Integer> {
 
     // 1. Standard listing for students
-    List<Exams> findAllByIsActiveTrueOrderByExamnameAsc();
+    //List<Exams> findAllByIsActiveTrueOrderByExamnameAsc();
 
     // 2. The Clean Code way to search: Use both flags
     // Note: We pass the 'term' twice to the service call
-    List<Exams> findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc(
-            String examname, String description);
+    List<Exams> findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc( String examname, String description);
 
     // 3. Counting utility
     long countByIsActiveTrue();

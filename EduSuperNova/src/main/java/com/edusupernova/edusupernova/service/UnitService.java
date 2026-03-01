@@ -5,15 +5,22 @@ import com.edusupernova.edusupernova.data.UnitRepository;
 import com.edusupernova.edusupernova.model.Courses;
 import com.edusupernova.edusupernova.model.Unit;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class UnitService {
 
     @Autowired
@@ -24,11 +31,40 @@ public class UnitService {
      * Este es el método principal que usa el CourseService para mostrar las unidades
      */
     public List<Unit> getUnitsByCourseId(Integer courseId) {
-        if (courseId == null) {
-            return Collections.emptyList();
+        List<Unit> units = unitRepo.findByCourseIdOrderByQueueAsc(courseId);
+        String rootPath = System.getProperty("user.dir");
+
+        for (Unit unit : units) {
+            try {
+                // 1. Limpiamos cualquier barra invertida que venga de la DB
+                String rawPath = unit.getSummary_path().trim();
+                String[] parts = rawPath.replace("\\", "/").split("/");
+
+                // 2. Construimos la ruta base
+                Path fullPath = Paths.get(rootPath, "EduSuperNova");
+
+                // 3. Añadimos cada pieza individualmente.
+                // Esto obliga a Windows a poner la "\" correctamente.
+                for (String part : parts) {
+                    if (!part.isEmpty()) {
+                        fullPath = fullPath.resolve(part);
+                    }
+                }
+
+                System.out.println("INTENTO DE CARGA: " + fullPath.toAbsolutePath());
+
+                if (Files.exists(fullPath)) {
+                    unit.setSummary_path(Files.readString(fullPath, StandardCharsets.UTF_8));
+                } else {
+                    unit.setSummary_path("ERROR: Archivo no encontrado en: " + fullPath.toAbsolutePath());
+                }
+            } catch (IOException e) {
+                unit.setSummary_path("ERROR: Fallo crítico al leer el archivo.");
+            }
         }
-        return unitRepo.findByCourseIdOrderByQueueAsc(courseId);
+        return units;
     }
+
 
     /**
      * Obtiene todas las unidades de un examen completo

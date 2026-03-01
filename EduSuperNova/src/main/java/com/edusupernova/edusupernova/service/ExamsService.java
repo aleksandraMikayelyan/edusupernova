@@ -17,7 +17,7 @@ public class ExamsService {
     // Dashboard: solo exámenes activos, ordenados por nombre
     @Transactional(readOnly = true)
     public List<Exams> getDashboardExams() {
-        return examRepo.findAllByIsActiveTrueOrderByExamnameAsc();
+        return examRepo.findAll();
     }
 
     // Búsqueda con fallback a todos los activos si no hay término

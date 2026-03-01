@@ -1,5 +1,8 @@
 package com.edusupernova.edusupernova.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.aspectj.weaver.ast.Test;
@@ -29,9 +32,11 @@ public class Exams {
 
     // Relaciones
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Courses> courses;
 
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Enrollment> enrollments;
 /*
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)

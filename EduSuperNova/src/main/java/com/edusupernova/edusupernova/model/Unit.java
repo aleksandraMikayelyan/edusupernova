@@ -1,4 +1,5 @@
 package com.edusupernova.edusupernova.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.aspectj.weaver.ast.Test;
@@ -16,13 +17,14 @@ public class Unit {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCourse", nullable = false)
+    @JsonBackReference
     private Courses course;
 
     @Column(nullable = false, length = 100)
     private String title;
 
     @Column(nullable = false, length = 100)
-    private String pathname;
+    private String summary_path;
 
     @Column(columnDefinition = "INT DEFAULT 1")
     private Integer queue = 1;

@@ -20,6 +20,7 @@ public class Users implements UserDetails { // 1. Implementa la interfaz
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idUser")
     private Integer id;
 
     @Column(nullable = false, length = 50)
