@@ -1,9 +1,11 @@
 package com.edusupernova.edusupernova.model;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Entity
 @Table(name = "Tests")
 @Data
@@ -26,5 +28,6 @@ public class Tests {
 
     // Relación con TestQuestion
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<TestQuestions> testQuestions;
 }

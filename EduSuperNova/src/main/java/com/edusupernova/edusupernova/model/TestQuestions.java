@@ -1,4 +1,5 @@
 package com.edusupernova.edusupernova.model;
+
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -6,6 +7,7 @@ import lombok.Getter;
 import org.aspectj.weaver.ast.Test;
 
 import java.util.List;
+
 @Entity
 @Table(name = "Test_Question")
 @Data
@@ -17,6 +19,7 @@ public class TestQuestions {
     @MapsId("testId")
     @JoinColumn(name = "idTest")
     @Getter(value = AccessLevel.PUBLIC, onMethod_ = @Column(name = "idTest"))
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private Tests test;
 
     @ManyToOne(fetch = FetchType.LAZY)

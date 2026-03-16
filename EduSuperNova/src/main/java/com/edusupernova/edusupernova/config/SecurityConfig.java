@@ -26,7 +26,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import java.util.Arrays;
 import java.util.List;
 
-
 @Configuration
 public class SecurityConfig {
 
@@ -61,16 +60,18 @@ public class SecurityConfig {
                         // 2. Permitimos explícitamente las rutas sin barras conflictivas
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/exams/**").permitAll()
-                        .requestMatchers("/api/units/**").permitAll() // Esto cubre /api/units/course/2
+                        .requestMatchers("/api/units/**").permitAll()
+                        .requestMatchers("/api/tests/**").permitAll()
+                        .requestMatchers("/api/tests/start").permitAll()
+                        .requestMatchers("/api/feedback/**").permitAll()
+                        .requestMatchers("/error").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .anyRequest().authenticated()
-                )
+                        .anyRequest().authenticated())
                 // 3. Manejo de excepciones: Si algo falla, que no nos tire un 403 genérico
                 .exceptionHandling(ex -> ex
                         .authenticationEntryPoint((request, response, authException) -> {
                             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Not authorized");
-                        })
-                )
+                        }))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
@@ -87,11 +88,10 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
-
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:8082"));   // ← aquí el truco
+        config.setAllowedOriginPatterns(List.of("*")); // Permitimos todos los patrones de origen
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);

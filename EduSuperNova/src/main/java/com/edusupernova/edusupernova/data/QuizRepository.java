@@ -14,6 +14,9 @@ public interface QuizRepository extends JpaRepository<Quiz, Integer> {
     // Fetch all questions of a specific type for a course
     List<Quiz> findByCourseIdAndType(Integer courseId, String type);
 
+    // Fetch all questions for a course regardless of type
+    List<Quiz> findByCourseId(Integer courseId);
+
     // Fetch questions where the type is in a specific list (Open Ended OR Logical)
     List<Quiz> findByCourseIdAndTypeIn(Integer courseId, List<String> types);
 
