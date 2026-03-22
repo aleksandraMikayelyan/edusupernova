@@ -88,6 +88,3 @@ public class GroqService {
         public GroqApiException(String message, Throwable cause) { super(message, cause); }
     }
 }
-
-
-//Api key= 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

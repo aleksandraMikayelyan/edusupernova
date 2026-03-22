@@ -2,86 +2,108 @@ package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.ExamRepository;
 import com.edusupernova.edusupernova.model.Exams;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Manages exam data: listing, searching, creation, and updates.
+ *
+ * SRP  – each method has a single, named responsibility.
+ * DIP  – depends on {@link ExamRepository} abstraction via constructor injection.
+ */
 @Service
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class ExamsService {
 
-    @Autowired
-    private ExamRepository examRepo;
+    private final ExamRepository examRepository;
 
-    // Dashboard: solo exámenes activos, ordenados por nombre
-    @Transactional(readOnly = true)
+    // ── Public API ────────────────────────────────────────────────────────────
+
+    /** Returns all exams available on the dashboard. */
     public List<Exams> getDashboardExams() {
-        return examRepo.findAll();
+        return examRepository.findAll();
     }
 
-    // Búsqueda con fallback a todos los activos si no hay término
-    @Transactional(readOnly = true)
+    /**
+     * Searches exams by name or description (case-insensitive).
+     * Falls back to all exams when {@code searchTerm} is blank.
+     */
     public List<Exams> search(String searchTerm) {
-        if (searchTerm == null || searchTerm.trim().isEmpty()) {
+        if (searchTerm == null || searchTerm.isBlank()) {
             return getDashboardExams();
         }
 
         String term = searchTerm.trim();
-        // Pass 'term' to both placeholders in the method name
-        return examRepo.findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc(term, term);
+        return examRepository
+                .findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc(
+                        term, term);
     }
 
-    // Buscar un examen por ID
-    @Transactional(readOnly = true)
+    /**
+     * Returns an exam by ID.
+     *
+     * @throws IllegalArgumentException if no exam exists with the given ID
+     */
     public Exams findById(Integer examId) {
-        return examRepo.findById(examId).orElse(null);
+        return examRepository.findById(examId)
+                .orElseThrow(() -> new IllegalArgumentException("Exam not found: " + examId));
     }
 
-    // Crear nuevo examen con validaciones básicas
+    /**
+     * Persists a new exam, setting it to active by default.
+     *
+     * @throws IllegalArgumentException if the exam is null or its name is
+     *                                  blank or exceeds 100 characters
+     */
     @Transactional
     public Exams createExam(Exams exam) {
-        if (exam == null) {
-            throw new IllegalArgumentException("The exam cannot be null");
-        }
-        if (exam.getExamname() == null || exam.getExamname().trim().isEmpty()) {
-            throw new IllegalArgumentException("The name of the exam cannot be empty");
-        }
-        if (exam.getExamname().length() > 100) {
-            throw new IllegalArgumentException("The name of the exam cannot be longer than 100 characters");
-        }
-
-        // Opcional: verificar si ya existe uno con el mismo nombre
-        // if (examRepo.existsByExamname(exam.getExamname())) { ... }
-
-        exam.setIsActive(true); // por defecto activo al crear
-        return examRepo.save(exam);
+        validateExam(exam);
+        exam.setIsActive(true);
+        return examRepository.save(exam);
     }
 
-    // Bonus: método para desactivar/activar (útil para admin)
+    /**
+     * Activates or deactivates an exam.
+     *
+     * @throws IllegalArgumentException if the exam does not exist
+     */
     @Transactional
     public void toggleActive(Integer examId, boolean active) {
-        Exams exam = examRepo.findById(examId)
-                .orElseThrow(() -> new IllegalArgumentException("Exam not found: " + examId));
-
+        Exams exam = findById(examId);
         exam.setIsActive(active);
-        examRepo.save(exam);
+        examRepository.save(exam);
     }
 
+    /**
+     * Updates the mutable fields (name, description, icon) of an existing exam.
+     * Active state is intentionally excluded — use {@link #toggleActive} instead.
+     *
+     * @throws IllegalArgumentException if the exam does not exist
+     */
     @Transactional
     public Exams updateExam(Integer id, Exams updated) {
         Exams existing = findById(id);
-        if (existing == null) {
-            throw new IllegalArgumentException("Exam not found");
-        }
-
-        // Copiar campos permitidos
         existing.setExamname(updated.getExamname());
         existing.setDescription(updated.getDescription());
         existing.setIcon(updated.getIcon());
-        // No tocar isActive aquí, mejor con toggleActive
+        return examRepository.save(existing);
+    }
 
-        return examRepo.save(existing);
+    // ── Private helpers ───────────────────────────────────────────────────────
+
+    private void validateExam(Exams exam) {
+        if (exam == null) {
+            throw new IllegalArgumentException("Exam cannot be null");
+        }
+        if (exam.getExamname() == null || exam.getExamname().isBlank()) {
+            throw new IllegalArgumentException("Exam name cannot be empty");
+        }
+        if (exam.getExamname().length() > 100) {
+            throw new IllegalArgumentException("Exam name cannot exceed 100 characters");
+        }
     }
 }
-

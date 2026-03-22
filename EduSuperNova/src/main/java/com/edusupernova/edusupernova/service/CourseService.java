@@ -2,72 +2,76 @@ package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.CourseRepository;
 import com.edusupernova.edusupernova.model.Courses;
-
 import com.edusupernova.edusupernova.model.Unit;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Handles course retrieval and course–unit composition.
+ *
+ * SRP  – owns course data access only; unit ordering is delegated to
+ *        {@link UnitService}, which owns that concern.
+ * DRY  – the two duplicate getUnitsFor* methods are merged into one.
+ * DIP  – all dependencies injected via constructor.
+ */
 @Service
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class CourseService {
 
-    @Autowired
-    private CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
+    private final UnitService      unitService;
 
-    @Autowired
-    private UnitService unitService;  // o UnitRepository directamente
+    // ── Public API ────────────────────────────────────────────────────────────
 
     /**
-     * Devuelve el curso completo con sus unidades cargadas
-     * (asumiendo que el frontend necesita ver nombre, descripción, icono y lista de unidades)
+     * Returns a course entity with its associations loaded.
+     * If the repository is annotated with {@code @EntityGraph}, related
+     * collections will be eagerly fetched in a single query.
+     *
+     * @throws RuntimeException if the course does not exist
      */
-    @Transactional(readOnly = true)
     public Courses getCourseWithUnits(Integer courseId) {
-        // Opción 1: usando @EntityGraph en el repository (recomendada)
-        Courses course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Curso no encontrado: " + courseId));
-
-        // Si no usas @EntityGraph, fuerza la carga de unidades aquí
-        // Hibernate.initialize(course.getUnits());  // ← alternativa manual
-
-        return course;
+        return courseRepository.findById(courseId)
+                .orElseThrow(() -> new RuntimeException("Course not found: " + courseId));
     }
 
     /**
-     * Versión alternativa: solo devuelve la lista de unidades del curso
-     * (muy útil si el frontend solo necesita ir a las unidades)
+     * Returns only the ordered list of units for a course.
+     * Preferred over {@link #getCourseWithUnits} when the caller needs
+     * units but not the course metadata.
+     *
+     * @throws RuntimeException if the course does not exist
      */
-    @Transactional(readOnly = true)
-    public List<Unit> getUnitsOfCourse(Integer courseId) {
-        // Validación ligera
-        if (!courseRepository.existsById(courseId)) {
-            throw new RuntimeException("Curso no encontrado: " + courseId);
-        }
-
-        // Aquí llamas al UnitService o al repository directamente
+    public List<Unit> getUnitsForCourse(Integer courseId) {
+        assertCourseExists(courseId);
         return unitService.getUnitsByCourseId(courseId);
-        // O si prefieres inyectar UnitRepository:
-        // return unitRepository.findByCourseIdOrderByQueueAsc(courseId);
     }
 
     /**
-     * Si necesitas solo la info básica del curso (sin unidades)
+     * Returns basic course metadata (name, icon, description) without
+     * loading associated collections.
+     *
+     * @throws RuntimeException if the course does not exist
      */
-    @Transactional(readOnly = true)
     public Courses getCourseBasicInfo(Integer courseId) {
         return courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Curso no encontrado"));
+                .orElseThrow(() -> new RuntimeException("Course not found: " + courseId));
     }
 
-    // O directamente devolver las unidades cuando el usuario quiere ver el contenido del curso
-    public List<Unit> getUnitsForCourse(Integer courseId) {
-        return unitService.getUnitsByCourseId(courseId);
-    }
-    @Transactional(readOnly = true)
+    /** Returns all courses linked to a given exam. */
     public List<Courses> getCoursesByExamId(Integer examId) {
         return courseRepository.findByExamId(examId);
     }
 
+    // ── Private helpers ───────────────────────────────────────────────────────
+
+    private void assertCourseExists(Integer courseId) {
+        if (!courseRepository.existsById(courseId)) {
+            throw new RuntimeException("Course not found: " + courseId);
+        }
+    }
 }

@@ -6,57 +6,82 @@ import com.edusupernova.edusupernova.data.UserRepository;
 import com.edusupernova.edusupernova.model.Enrollment;
 import com.edusupernova.edusupernova.model.EnrollmentId;
 import com.edusupernova.edusupernova.model.Exams;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Manages exam enrollment lifecycle: enroll, unenroll, status check,
+ * and enrolled-exam listing for a given user.
+ *
+ * DIP – all dependencies injected via constructor.
+ */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class EnrollmentService {
 
-    @Autowired
-    private EnrollmentRepository enrollmentRepo;
+    private final EnrollmentRepository enrollmentRepository;
+    private final UserRepository       userRepository;
+    private final ExamRepository       examRepository;
 
-    @Autowired
-    private UserRepository userRepo;
+    // ── Public API ────────────────────────────────────────────────────────────
 
-    @Autowired
-    private ExamRepository examRepo;
-
-    // Inscribir
+    /**
+     * Enrolls a user in an exam.
+     *
+     * @return {@code true} if enrollment was created, {@code false} if the
+     *         user was already enrolled
+     */
     public boolean enroll(int userId, int examId) {
-        if (enrollmentRepo.existsByUserIdAndExamId(userId, examId)) {
-            return false; // Ya estaba inscrito
-        }
-        Enrollment enrollment = new Enrollment();
-        EnrollmentId id = new EnrollmentId(userId, examId);
-        enrollment.setId(id);
-        enrollment.setUser(userRepo.findById(userId).orElseThrow());
-        enrollment.setExam(examRepo.findById(examId).orElseThrow());
-        enrollment.setEnrolledAt(LocalDateTime.now());
-        enrollmentRepo.save(enrollment);
-        return true;
-    }
-
-    // Desinscribir
-    public boolean unenroll(int userId, int examId) {
-        if (!enrollmentRepo.existsByUserIdAndExamId(userId, examId)) {
+        if (enrollmentRepository.existsByUserIdAndExamId(userId, examId)) {
             return false;
         }
-        enrollmentRepo.deleteByUserIdAndExamId(userId, examId);
+
+        Enrollment enrollment = buildEnrollment(userId, examId);
+        enrollmentRepository.save(enrollment);
         return true;
     }
 
-    // Obtener exams inscritos
-    public List<Exams> getEnrolledExams(int userId) {
-        return enrollmentRepo.findEnrolledExamsByUserId(userId);
+    /**
+     * Removes a user's enrollment from an exam.
+     *
+     * @return {@code true} if the enrollment was deleted, {@code false} if
+     *         no enrollment existed
+     */
+    public boolean unenroll(int userId, int examId) {
+        if (!enrollmentRepository.existsByUserIdAndExamId(userId, examId)) {
+            return false;
+        }
+        enrollmentRepository.deleteByUserIdAndExamId(userId, examId);
+        return true;
     }
 
-    // Comprobar inscripción
+    /** Returns all exams the user is currently enrolled in. */
+    @Transactional(readOnly = true)
+    public List<Exams> getEnrolledExams(int userId) {
+        return enrollmentRepository.findEnrolledExamsByUserId(userId);
+    }
+
+    /** Returns {@code true} if the user is enrolled in the given exam. */
+    @Transactional(readOnly = true)
     public boolean isEnrolled(int userId, int examId) {
-        return enrollmentRepo.existsByUserIdAndExamId(userId, examId);
+        return enrollmentRepository.existsByUserIdAndExamId(userId, examId);
+    }
+
+    // ── Private helpers ───────────────────────────────────────────────────────
+
+    private Enrollment buildEnrollment(int userId, int examId) {
+        Enrollment enrollment = new Enrollment();
+        enrollment.setId(new EnrollmentId(userId, examId));
+        enrollment.setUser(userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found: " + userId)));
+        enrollment.setExam(examRepository.findById(examId)
+                .orElseThrow(() -> new RuntimeException("Exam not found: " + examId)));
+        enrollment.setEnrolledAt(LocalDateTime.now());
+        return enrollment;
     }
 }

@@ -1,189 +1,190 @@
 package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.*;
-import com.edusupernova.edusupernova.model.Courses;
-import com.edusupernova.edusupernova.model.Quiz;
-import com.edusupernova.edusupernova.model.TestQuestionId;
-import com.edusupernova.edusupernova.model.TestQuestions;
-import com.edusupernova.edusupernova.model.Tests;
-import com.edusupernova.edusupernova.model.Users;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.edusupernova.edusupernova.model.*;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Manages the full lifecycle of a student test:
+ * creation, answer submission, scoring, and retrieval.
+ *
+ * SRP  – each method has one clear responsibility.
+ * DIP  – all dependencies injected via constructor; no concrete class wired
+ *        manually. QuizService is used for random question selection,
+ *        keeping quiz logic out of this service.
+ * DRY  – crearTest / crearTestByEmail were merged into a single internal
+ *        builder; public methods are thin entry points.
+ */
+@Slf4j
 @Service
+@RequiredArgsConstructor
+@Transactional
 public class TestService {
 
-    @Autowired
-    private TestRepository testRepo;
+    // ── Dependencies ─────────────────────────────────────────────────────────
 
-    @Autowired
-    private TestQuestionsRepository testQuestionRepo;
+    private final TestRepository          testRepository;
+    private final TestQuestionsRepository testQuestionsRepository;
+    private final UserRepository          userRepository;
+    private final CourseRepository        courseRepository;
+    private final QuizService             quizService;   // ← owns random-selection logic
 
-    @Autowired
-    private UserRepository userRepo;
+    // ── Public API ───────────────────────────────────────────────────────────
 
-    @Autowired
-    private CourseRepository courseRepo;
-
-    @Autowired
-    private QuizRepository quizRepo;
-
-    // 1. Crear test vacío para un curso específico
-    @Transactional
-    public int crearTest(Integer userId, Integer courseId) {
-        Users user = userRepo.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User Not Found"));
-
-        Courses course = courseRepo.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Course Not Found"));
-
-        // Opcional: validar que el usuario está inscrito en el examen del curso
-        // examRepo.findById(course.getExam().getIdExam()) ...
-
-        Tests test = new Tests(); // ← usa la clase con nombre singular
-        test.setUser(user);
-        test.setCourse(course);
-        test.setCreationDate(LocalDateTime.now());
-
-        Tests saved = testRepo.save(test);
-
-        List<Quiz> courseQuizzes = quizRepo.findByCourseId(courseId);
-        List<TestQuestions> newQuestions = new ArrayList<>();
-
-        for (Quiz q : courseQuizzes) {
-            TestQuestions tq = new TestQuestions();
-            TestQuestionId tqId = new TestQuestionId();
-            tqId.setTestId(saved.getId());
-            tqId.setQuizId(q.getId());
-
-            tq.setId(tqId);
-            tq.setTest(saved);
-            tq.setQuiz(q);
-            tq.setUserResponse("");
-            tq.setCorrectResponse(false);
-            tq.setPunctuation(0);
-
-            newQuestions.add(tq);
-        }
-
-        if (!newQuestions.isEmpty()) {
-            testQuestionRepo.saveAll(newQuestions);
-        }
-
-        return saved.getId(); // ← si usas idTest en la entidad
+    /**
+     * Creates a new test identified by numeric user ID.
+     * Randomly selects questions via {@link QuizService#generateRandomTest}.
+     *
+     * @return the persisted test ID
+     */
+    public int createTest(Integer userId, Integer courseId) {
+        Users user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+        return buildAndPersistTest(user, courseId);
     }
 
-    @Transactional
-    public int crearTestByEmail(String email, Integer courseId) {
-        Users user = userRepo.findByEmail(email);
+    /**
+     * Creates a new test identified by user e-mail address.
+     * Entry point called when the user clicks "Check my knowledge".
+     * Randomly selects questions via {@link QuizService#generateRandomTest}.
+     *
+     * @return the persisted test ID
+     */
+    public int createTestByEmail(String email, Integer courseId) {
+        Users user = userRepository.findByEmail(email);
         if (user == null) {
-            throw new RuntimeException("User Not Found with email: " + email);
+            throw new RuntimeException("User not found with email: " + email);
         }
-
-        Courses course = courseRepo.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Course Not Found"));
-
-        Tests test = new Tests();
-        test.setUser(user);
-        test.setCourse(course);
-        test.setCreationDate(LocalDateTime.now());
-
-        Tests saved = testRepo.save(test);
-
-        List<Quiz> courseQuizzes = quizRepo.findByCourseId(courseId);
-        List<TestQuestions> newQuestions = new ArrayList<>();
-
-        for (Quiz q : courseQuizzes) {
-            TestQuestions tq = new TestQuestions();
-            TestQuestionId tqId = new TestQuestionId();
-            tqId.setTestId(saved.getId());
-            tqId.setQuizId(q.getId());
-
-            tq.setId(tqId);
-            tq.setTest(saved);
-            tq.setQuiz(q);
-            tq.setUserResponse("");
-            tq.setCorrectResponse(false);
-            tq.setPunctuation(0);
-
-            newQuestions.add(tq);
-        }
-
-        if (!newQuestions.isEmpty()) {
-            testQuestionRepo.saveAll(newQuestions);
-        }
-
-        return saved.getId();
+        return buildAndPersistTest(user, courseId);
     }
 
-    // 2. Guardar respuestas (con validación básica)
-    @Transactional
-    public boolean saveAnswers(Integer testId, List<TestQuestions> answers) {
+    /**
+     * Persists the student answers received from the front-end.
+     *
+     * @return {@code true} if saved successfully, {@code false} on failure
+     */
+    public boolean saveAnswers(Integer testId, List<TestQuestions> incomingAnswers) {
         try {
-            Tests test = testRepo.findById(testId)
-                    .orElseThrow(() -> new RuntimeException("Test not found"));
+            assertTestExists(testId);
 
-            // Get existing questions for this test from the database
-            List<TestQuestions> existingQuestions = testQuestionRepo.findByIdTestId(testId);
+            List<TestQuestions> existingQuestions = testQuestionsRepository.findByIdTestId(testId);
+            mergeAnswers(existingQuestions, incomingAnswers);
+            testQuestionsRepository.saveAll(existingQuestions);
 
-            for (TestQuestions existingTq : existingQuestions) {
-                // Find the matching answer from the frontend payload
-                for (TestQuestions newTq : answers) {
-                    if (newTq.getId() != null && newTq.getId().getQuizId().equals(existingTq.getId().getQuizId())) {
-                        existingTq.setUserResponse(newTq.getUserResponse());
-                        break;
-                    }
-                }
-            }
-
-            testQuestionRepo.saveAll(existingQuestions);
+            log.info("Saved {} answers for testId={}", incomingAnswers.size(), testId);
             return true;
-        } catch (Exception e) {
-            // En producción: loggear mejor (logger.error(...))
-            e.printStackTrace();
+
+        } catch (Exception ex) {
+            log.error("Failed to save answers for testId={}", testId, ex);
             return false;
         }
     }
 
-    // 3. Calcular y guardar puntuación final (mejor que updatePunctuation)
-    @Transactional
-    public int calcularYGuardarPuntuacion(Integer testId) {
-        Tests test = testRepo.findById(testId)
-                .orElseThrow(() -> new RuntimeException("Test not found"));
-
-        long correctas = testQuestionRepo.countByTestIdAndCorrectResponseTrue(testId);
-        long total = testQuestionRepo.countByTestId(testId);
-
-        int puntuacion = total > 0 ? (int) Math.round((correctas * 100.0) / total) : 0;
-
-        // Si decides agregar campo punctuation a Test:
-        // test.setPunctuation(puntuacion);
-        // testRepo.save(test);
-
-        return puntuacion; // Devuelves el valor calculado
-    }
-
-    // Bonus: obtener test completo con respuestas
-    @Transactional
-    public Tests obtenerTestConRespuestas(Integer testId) {
-        return testRepo.findById(testId).orElse(null);
-        // Si necesitas eager loading de answers: usar @EntityGraph o fetch join en
-        // query
-    }
-
-    // Obtener la lista de preguntas vinculadas a un test específico
+    /**
+     * Returns all questions (with student responses) linked to a test.
+     *
+     * @throws RuntimeException if the test does not exist
+     */
+    @Transactional(readOnly = true)
     public List<TestQuestions> getQuestionsByTestId(Integer testId) {
-        // Verificamos primero si el test existe
-        if (!testRepo.existsById(testId)) {
-            throw new RuntimeException("Test not found with id: " + testId);
+        assertTestExists(testId);
+        return testQuestionsRepository.findByIdTestId(testId);
+    }
+
+    /**
+     * Calculates and returns the percentage score for a completed test.
+     */
+    @Transactional(readOnly = true)
+    public int calculateScore(Integer testId) {
+        assertTestExists(testId);
+        long correct = testQuestionsRepository.countByTestIdAndCorrectResponseTrue(testId);
+        long total   = testQuestionsRepository.countByTestId(testId);
+        return total > 0 ? (int) Math.round((correct * 100.0) / total) : 0;
+    }
+
+    // ── Private helpers ──────────────────────────────────────────────────────
+
+    /**
+     * Core builder: persists a Tests entity and attaches the randomly
+     * selected questions generated by {@link QuizService#generateRandomTest}.
+     *
+     * This single method replaces the two near-identical old methods,
+     * eliminating the duplication (DRY) and keeping the logic in one place.
+     */
+    private int buildAndPersistTest(Users user, Integer courseId) {
+        Courses course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new RuntimeException("Course not found with id: " + courseId));
+
+        Tests test = createTestEntity(user, course);
+        Tests savedTest = testRepository.save(test);
+
+        // ← KEY FIX: use QuizService to pick 15 MC + 5 open-ended RANDOMLY
+        List<Quiz> selectedQuizzes = quizService.generateRandomTest(courseId);
+        List<TestQuestions> testQuestions = mapQuizzesToTestQuestions(savedTest, selectedQuizzes);
+
+        if (!testQuestions.isEmpty()) {
+            testQuestionsRepository.saveAll(testQuestions);
         }
 
-        // Asumiendo que tu repository tiene este método derivado o una @Query
-        return testQuestionRepo.findByIdTestId(testId);
+        log.info("Created testId={} for userId={}, courseId={}, questions={}",
+                savedTest.getId(), user.getId(), courseId, testQuestions.size());
+
+        return savedTest.getId();
+    }
+
+    private Tests createTestEntity(Users user, Courses course) {
+        Tests test = new Tests();
+        test.setUser(user);
+        test.setCourse(course);
+        test.setCreationDate(LocalDateTime.now());
+        return test;
+    }
+
+    private List<TestQuestions> mapQuizzesToTestQuestions(Tests savedTest, List<Quiz> quizzes) {
+        return quizzes.stream()
+                .map(quiz -> buildTestQuestion(savedTest, quiz))
+                .toList();
+    }
+
+    private TestQuestions buildTestQuestion(Tests savedTest, Quiz quiz) {
+        TestQuestionId id = new TestQuestionId();
+        id.setTestId(savedTest.getId());
+        id.setQuizId(quiz.getId());
+
+        TestQuestions testQuestion = new TestQuestions();
+        testQuestion.setId(id);
+        testQuestion.setTest(savedTest);
+        testQuestion.setQuiz(quiz);
+        testQuestion.setUserResponse("");
+        testQuestion.setCorrectResponse(false);
+        testQuestion.setPunctuation(0);
+        return testQuestion;
+    }
+
+    /**
+     * Copies each incoming answer into the matching existing question row.
+     * Matching is done by quizId to avoid relying on fragile list ordering.
+     */
+    private void mergeAnswers(List<TestQuestions> existing, List<TestQuestions> incoming) {
+        incoming.stream()
+                .filter(answer -> answer.getId() != null)
+                .forEach(answer ->
+                        existing.stream()
+                                .filter(tq -> tq.getId().getQuizId().equals(answer.getId().getQuizId()))
+                                .findFirst()
+                                .ifPresent(tq -> tq.setUserResponse(answer.getUserResponse()))
+                );
+    }
+
+    private void assertTestExists(Integer testId) {
+        if (!testRepository.existsById(testId)) {
+            throw new RuntimeException("Test not found with id: " + testId);
+        }
     }
 }

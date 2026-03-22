@@ -2,25 +2,26 @@ package com.edusupernova.edusupernova.data;
 
 import com.edusupernova.edusupernova.model.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * FIX: All 'type' parameters changed from String → Quiz.QuestionType.
+ * Hibernate 6 validates parameter types strictly against the mapped entity
+ * field. Passing a String where the field is a Quiz.QuestionType enum causes:
+ *   QueryArgumentException: Argument did not match parameter type
+ */
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
-    // Fetch all questions of a specific type for a course
-    List<Quiz> findByCourseIdAndType(Integer courseId, String type);
+    List<Quiz> findByCourseIdAndType(Integer courseId, Quiz.QuestionType type);
 
-    // Fetch all questions for a course regardless of type
     List<Quiz> findByCourseId(Integer courseId);
 
-    // Fetch questions where the type is in a specific list (Open Ended OR Logical)
-    List<Quiz> findByCourseIdAndTypeIn(Integer courseId, List<String> types);
+    List<Quiz> findByCourseIdAndTypeIn(Integer courseId, List<Quiz.QuestionType> types);
 
-    long countByCourseIdAndType(Integer courseId, String type);
+    long countByCourseIdAndType(Integer courseId, Quiz.QuestionType type);
 
     long countByCourseId(Integer courseId);
 }

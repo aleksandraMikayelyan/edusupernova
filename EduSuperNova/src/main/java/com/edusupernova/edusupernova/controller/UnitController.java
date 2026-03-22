@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST controller for the Units screen.
+ * Returns course metadata and its ordered unit list in a single response.
+ *
+ * SRP – only handles HTTP concerns; data composition is done in the services.
+ */
 @RestController
 @RequestMapping("/api/units")
 @RequiredArgsConstructor
@@ -17,18 +23,15 @@ import java.util.List;
 public class UnitController {
 
     private final CourseService courseService;
-    private final UnitService unitService;
+    private final UnitService   unitService;
 
     /**
-     * Endpoint for the Units Screen.
-     * Returns the course info (Name, Icon) and the list of units.
+     * Returns the course display name, icon, and its ordered unit list.
+     * Used by the front-end Units screen to populate the header and content list.
      */
     @GetMapping("/course/{courseId}")
     public ResponseEntity<CourseUnitsResponse> getUnitsScreenData(@PathVariable Integer courseId) {
-        // 1. Get Course Info
         Courses course = courseService.getCourseBasicInfo(courseId);
-
-        // 2. Get Ordered Units
         List<Unit> units = unitService.getUnitsByCourseId(courseId);
 
         return ResponseEntity.ok(new CourseUnitsResponse(
@@ -38,7 +41,9 @@ public class UnitController {
         ));
     }
 
-    // DTO to make the frontend's life easier
+    // ── Response DTO ──────────────────────────────────────────────────────────
+
+    /** Projection returned to the front-end for the Units screen. */
     public record CourseUnitsResponse(
             String courseName,
             String courseIcon,

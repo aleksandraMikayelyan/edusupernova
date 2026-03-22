@@ -7,54 +7,55 @@ import com.edusupernova.edusupernova.dto.LoginRequest;
 import com.edusupernova.edusupernova.dto.RegisterRequest;
 import com.edusupernova.edusupernova.model.Role;
 import com.edusupernova.edusupernova.model.Users;
-import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.transaction.annotation.Transactional;
 
-
+/**
+ * Handles user registration and authentication, returning a JWT token
+ * on success.
+ *
+ * SRP  – only responsible for auth flows; token generation is delegated
+ *        to {@link JwtTokenUtil}.
+ * DIP  – constructor injection via {@code @RequiredArgsConstructor}.
+ */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class UsersService {
 
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final UserRepository        userRepository;
+    private final PasswordEncoder       passwordEncoder;
     private final AuthenticationManager authenticationManager;
-    private final JwtTokenUtil jwtTokenUtil; // 1. Add JwtTokenUtil
+    private final JwtTokenUtil          jwtTokenUtil;
 
-    public UsersService(UserRepository userRepository,
-                        PasswordEncoder passwordEncoder,
-                        AuthenticationManager authenticationManager,
-                        JwtTokenUtil jwtTokenUtil) { // 2. Inject it
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.authenticationManager = authenticationManager;
-        this.jwtTokenUtil = jwtTokenUtil;
-    }
+    // ── Public API ────────────────────────────────────────────────────────────
 
+    /**
+     * Registers a new user and returns a JWT token for immediate login.
+     *
+     * @throws IllegalArgumentException if the e-mail is already taken
+     */
     public AuthResponse register(RegisterRequest request) {
-        // 3. Robust existence check (assuming repository returns Optional or null)
-        Users existingUser = userRepository.findByEmail(request.email());
-        if (existingUser != null) {
-            throw new IllegalArgumentException("Email already exists");
+        if (userRepository.findByEmail(request.email()) != null) {
+            throw new IllegalArgumentException("Email already registered");
         }
 
-        Users user = new Users();
-        user.setUsername(request.username());
-        user.setEmail(request.email());
-        user.setPassword(passwordEncoder.encode(request.password()));
-        user.setRol(request.rol() != null ? request.rol() : Role.STUDENT);
-
+        Users user = buildUser(request);
         userRepository.save(user);
 
-        // 4. Call via the injected instance
-        String token = jwtTokenUtil.generateToken(user);
-        return new AuthResponse(token , user.getRol().name());
+        return new AuthResponse(jwtTokenUtil.generateToken(user), user.getRol().name());
     }
 
+    /**
+     * Authenticates a user by e-mail and password, returning a JWT token.
+     *
+     * @throws IllegalArgumentException if credentials are invalid
+     */
     public AuthResponse login(LoginRequest request) {
-        // This validates the credentials
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.email(), request.password())
         );
@@ -64,8 +65,17 @@ public class UsersService {
             throw new IllegalArgumentException("User not found after authentication");
         }
 
-        // 5. Call via the injected instance
-        String token = jwtTokenUtil.generateToken(user);
-        return new AuthResponse(token, user.getRol().name());
+        return new AuthResponse(jwtTokenUtil.generateToken(user), user.getRol().name());
+    }
+
+    // ── Private helpers ───────────────────────────────────────────────────────
+
+    private Users buildUser(RegisterRequest request) {
+        Users user = new Users();
+        user.setUsername(request.username());
+        user.setEmail(request.email());
+        user.setPassword(passwordEncoder.encode(request.password()));
+        user.setRol(request.rol() != null ? request.rol() : Role.STUDENT);
+        return user;
     }
 }
