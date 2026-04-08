@@ -22,7 +22,7 @@ public class Quiz {
     private Courses course;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idPaper", nullable = true)
+    @JoinColumn(name = "idPaper", nullable = false)
     @JsonIgnore
     private Paper paper;
 
