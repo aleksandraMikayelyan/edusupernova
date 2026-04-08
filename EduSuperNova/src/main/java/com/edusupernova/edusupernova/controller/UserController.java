@@ -1,8 +1,8 @@
 package com.edusupernova.edusupernova.controller;
 
-import com.edusupernova.edusupernova.dto.AuthResponse;
-import com.edusupernova.edusupernova.dto.LoginRequest;
-import com.edusupernova.edusupernova.dto.RegisterRequest;
+import com.edusupernova.edusupernova.dto.response.AuthResponse;
+import com.edusupernova.edusupernova.dto.request.LoginRequest;
+import com.edusupernova.edusupernova.dto.request.RegisterRequest;
 import com.edusupernova.edusupernova.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

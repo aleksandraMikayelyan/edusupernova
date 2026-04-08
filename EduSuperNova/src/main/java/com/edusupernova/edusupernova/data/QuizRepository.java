@@ -8,20 +8,33 @@ import java.util.List;
 
 /**
  * FIX: All 'type' parameters changed from String → Quiz.QuestionType.
- * Hibernate 6 validates parameter types strictly against the mapped entity
- * field. Passing a String where the field is a Quiz.QuestionType enum causes:
- *   QueryArgumentException: Argument did not match parameter type
+ * FIX: Method names corrected from ...AndType... → ...AndQuestionType...
+ *      to match the actual field name on the Quiz entity.
+ * ADDED: findByPaperId / findByPaperIdAndUnitId for paper-based test generation.
+ * ADDED: countByCourseIdAndQuestionTypeIn for canGenerateTest stats.
  */
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
-    List<Quiz> findByCourseIdAndType(Integer courseId, Quiz.QuestionType type);
+    // ── Course-based queries (used by legacy QuestionsController) ─────────────
 
     List<Quiz> findByCourseId(Integer courseId);
 
-    List<Quiz> findByCourseIdAndTypeIn(Integer courseId, List<Quiz.QuestionType> types);
+    List<Quiz> findByCourseIdAndQuestionType(Integer courseId, Quiz.QuestionType questionType);
 
-    long countByCourseIdAndType(Integer courseId, Quiz.QuestionType type);
+    List<Quiz> findByCourseIdAndQuestionTypeIn(Integer courseId, List<Quiz.QuestionType> questionTypes);
 
     long countByCourseId(Integer courseId);
+
+    long countByCourseIdAndQuestionType(Integer courseId, Quiz.QuestionType questionType);
+
+    long countByCourseIdAndQuestionTypeIn(Integer courseId, List<Quiz.QuestionType> questionTypes);
+
+    // ── Paper-based queries (used by TestService via QuizService) ─────────────
+
+    /** All questions for a paper, regardless of unit. */
+    List<Quiz> findByPaperId(Integer paperId);
+
+    /** Questions for a paper filtered to a specific unit. */
+    List<Quiz> findByPaperIdAndUnitId(Integer paperId, Integer unitId);
 }

@@ -29,4 +29,6 @@ public interface TestQuestionsRepository extends JpaRepository<TestQuestions, Te
     List<TestQuestions> findByIdTestId(Integer testId);
     List<TestQuestions> findByIdTestIdOrderByIdQuizIdAsc(Integer testId);
     boolean existsByIdTestIdAndIdQuizId(Integer testId, Integer quizId);
+
+    java.util.Optional<TestQuestions> findByIdTestIdAndIdQuizId(Integer testId, Integer quizId);
 }

@@ -96,7 +96,7 @@ public class TestService {
         if (questions.isEmpty()) {
             throw new IllegalStateException(
                     "No questions available for paperId=" + paper.getId()
-                    + (unit != null ? " unitId=" + unit.getId() : ""));
+                            + (unit != null ? " unitId=" + unit.getId() : ""));
         }
 
         // Persist placeholder TestQuestions rows (unanswered)
@@ -141,7 +141,7 @@ public class TestService {
                         "Question quizId=" + request.quizId() + " not in testId=" + testId));
 
         Quiz quiz = tq.getQuiz();
-        boolean isMCQ = isMCQType(quiz.getType());
+        boolean isMCQ = isMCQType(quiz.getQuestionType());
 
         // ── Evaluate ─────────────────────────────────────────────────────────
         boolean  isCorrect;
@@ -369,9 +369,7 @@ public class TestService {
     // ── Private — persistence helpers ─────────────────────────────────────────
 
     private TestQuestions buildTestQuestion(Tests test, Quiz quiz) {
-        TestQuestionId id = new TestQuestionId();
-        id.setTestId(test.getId());
-        id.setQuizId(quiz.getId());
+        TestQuestionId id = new TestQuestionId(test.getId(), quiz.getId());
 
         TestQuestions tq = new TestQuestions();
         tq.setId(id);
@@ -466,7 +464,7 @@ public class TestService {
                 quiz.getId(),
                 questionNumber,
                 quiz.getQuestionText(),
-                quiz.getType().name(),
+                quiz.getQuestionType().name(),
                 quiz.getDifficulty() != null ? quiz.getDifficulty().name() : "MEDIUM",
                 quiz.getOptionA(),
                 quiz.getOptionB(),
@@ -485,7 +483,7 @@ public class TestService {
                 questionNumber,
                 quiz.getId(),
                 quiz.getQuestionText(),
-                quiz.getType().name(),
+                quiz.getQuestionType().name(),
                 tq.getUserResponse(),
                 quiz.getCorrectAnswer(),
                 tq.getCorrectResponse(),
@@ -497,5 +495,50 @@ public class TestService {
 
     private int getQuestionNumber(List<TestQuestions> all, TestQuestions target) {
         return all.indexOf(target) + 1;
+    }
+
+    // ── Compatibility methods (used by legacy TestController / FeedbackController) ──
+
+    /**
+     * Batch-saves user responses for a list of TestQuestions.
+     * Used by the legacy submit flow in TestController and FeedbackController.
+     */
+    @Transactional
+    public boolean saveAnswers(Integer testId, List<TestQuestions> userAnswers) {
+        try {
+            userAnswers.forEach(ua -> {
+                if (ua.getId() != null && ua.getId().getQuizId() != null) {
+                    testQuestionsRepository
+                            .findByIdTestIdAndIdQuizId(testId, ua.getId().getQuizId())
+                            .ifPresent(tq -> {
+                                tq.setUserResponse(ua.getUserResponse());
+                                testQuestionsRepository.save(tq);
+                            });
+                }
+            });
+            return true;
+        } catch (Exception ex) {
+            log.error("saveAnswers failed for testId={}: {}", testId, ex.getMessage());
+            return false;
+        }
+    }
+
+    /** Returns all TestQuestions rows for a test (used by legacy TestController). */
+    @Transactional(readOnly = true)
+    public List<TestQuestions> getQuestionsByTestId(Integer testId) {
+        return testQuestionsRepository.findByIdTestId(testId);
+    }
+
+    /**
+     * Legacy entry point — creates a test by email + courseId only.
+     * The new API requires a paperId; this stub is retained so the old
+     * TestController compiles until it is rewritten.
+     *
+     * @deprecated use startTest(StartTestRequest, email) instead
+     */
+    @Deprecated
+    public Integer createTestByEmail(String email, Integer courseId) {
+        throw new UnsupportedOperationException(
+                "Deprecated — use POST /api/tests/start with StartTestRequest (paperId required)");
     }
 }

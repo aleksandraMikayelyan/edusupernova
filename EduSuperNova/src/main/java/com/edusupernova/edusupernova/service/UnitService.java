@@ -14,100 +14,63 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-/**
- * Handles unit retrieval and resolves each unit's summary content
- * from the filesystem at request time.
- *
- * SRP – file-content resolution is extracted into a dedicated private helper,
- *       keeping the public API clean and the logic independently testable.
- * DIP – depends on the UnitRepository abstraction via constructor injection.
- */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class UnitService {
 
-    // ── Constants ─────────────────────────────────────────────────────────────
-
-    private static final String BASE_FOLDER           = "EduSuperNova";
-    private static final String CONTENT_NOT_FOUND     = "ERROR: File not found at: ";
-    private static final String CONTENT_READ_FAILURE  = "ERROR: Critical failure reading file.";
-
-    // ── Dependencies ──────────────────────────────────────────────────────────
+    private static final String BASE_FOLDER          = "EduSuperNova";
+    private static final String CONTENT_NOT_FOUND    = "ERROR: File not found at: ";
+    private static final String CONTENT_READ_FAILURE = "ERROR: Critical failure reading file.";
 
     private final UnitRepository unitRepository;
 
-    // ── Public API ────────────────────────────────────────────────────────────
+    /** Internal record paired with UnitDTO at the controller boundary. */
+    public record UnitWithContent(Unit unit, String content) {}
 
-    /**
-     * Returns all units for a course ordered by queue position,
-     * with each unit's {@code summary_path} field replaced by the actual
-     * file content read from disk.
-     */
-    public List<Unit> getUnitsByCourseId(Integer courseId) {
-        List<Unit> units = unitRepository.findByCourseIdOrderByQueueAsc(courseId);
-        units.forEach(this::resolveFileContent);
-        return units;
+    public List<UnitWithContent> getUnitsByCourseId(Integer courseId) {
+        return unitRepository.findByCourseIdOrderByQueueAsc(courseId)
+                .stream()
+                .map(u -> new UnitWithContent(u, loadContent(u.getSummaryPath())))
+                .toList();
     }
 
-    /** Returns all units across every course belonging to an exam, ordered by queue. */
     public List<Unit> getByExamId(int examId) {
         return unitRepository.findByExamIdOrderByQueueAsc(examId);
     }
 
-    /** Returns a unit by ID, or {@code null} if not found. */
-    public Unit getById(int unitId) {
-        return unitRepository.findById(unitId).orElse(null);
-    }
-
-    /**
-     * Returns a unit by ID.
-     *
-     * @throws RuntimeException if the unit does not exist
-     */
+    /** Returns the unit or throws ResourceNotFoundException (added in msg 2). */
     public Unit getByIdOrThrow(int unitId) {
         return unitRepository.findById(unitId)
-                .orElseThrow(() -> new RuntimeException("Unit not found: " + unitId));
+                .orElseThrow(() -> new com.edusupernova.edusupernova.exception.ResourceNotFoundException(
+                        "Unit not found: " + unitId));
     }
 
-    // ── Private helpers ───────────────────────────────────────────────────────
+    public UnitWithContent getByIdWithContent(int unitId) {
+        Unit unit = getByIdOrThrow(unitId);
+        return new UnitWithContent(unit, loadContent(unit.getSummaryPath()));
+    }
 
-    /**
-     * Resolves the filesystem path stored in {@code unit.summary_path} and
-     * replaces the field value with the file's text content.
-     *
-     * Path segments are split on both slash styles to handle Windows paths
-     * stored in the database.
-     */
-    private void resolveFileContent(Unit unit) {
-        Path fullPath = buildFilePath(unit.getSummary_path());
-        log.debug("Attempting to load unit content from: {}", fullPath.toAbsolutePath());
-
+    private String loadContent(String rawDbPath) {
+        Path fullPath = buildFilePath(rawDbPath);
         try {
             if (Files.exists(fullPath)) {
-                unit.setSummary_path(Files.readString(fullPath, StandardCharsets.UTF_8));
-            } else {
-                log.warn("Unit content file not found: {}", fullPath.toAbsolutePath());
-                unit.setSummary_path(CONTENT_NOT_FOUND + fullPath.toAbsolutePath());
+                return Files.readString(fullPath, StandardCharsets.UTF_8);
             }
+            log.warn("Unit content file not found: {}", fullPath.toAbsolutePath());
+            return CONTENT_NOT_FOUND + fullPath.toAbsolutePath();
         } catch (IOException ex) {
             log.error("Failed to read unit content file: {}", fullPath.toAbsolutePath(), ex);
-            unit.setSummary_path(CONTENT_READ_FAILURE);
+            return CONTENT_READ_FAILURE;
         }
     }
 
-    /**
-     * Converts a raw DB path string (may contain backslashes) into a
-     * cross-platform {@link Path} rooted at {@code <working-dir>/EduSuperNova}.
-     */
     private Path buildFilePath(String rawDbPath) {
         String[] segments = rawDbPath.trim().replace("\\", "/").split("/");
         Path base = Paths.get(System.getProperty("user.dir"), BASE_FOLDER);
         for (String segment : segments) {
-            if (!segment.isEmpty()) {
-                base = base.resolve(segment);
-            }
+            if (!segment.isEmpty()) base = base.resolve(segment);
         }
         return base;
     }

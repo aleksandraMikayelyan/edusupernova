@@ -1,25 +1,21 @@
 package com.edusupernova.edusupernova.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
-import org.aspectj.weaver.ast.Test;
-
-import java.util.List;
 
 @Entity
 @Table(name = "Test_Question")
 @Data
 public class TestQuestions {
+
     @EmbeddedId
     private TestQuestionId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("testId")
     @JoinColumn(name = "idTest")
-    @Getter(value = AccessLevel.PUBLIC, onMethod_ = @Column(name = "idTest"))
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonIgnore
     private Tests test;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -38,4 +34,11 @@ public class TestQuestions {
 
     @Column(columnDefinition = "TEXT")
     private String feedbackIa;
+
+    /** AI score (0-10) for open-ended questions; null for MCQ. */
+    @Column
+    private Double aiScore;
+
+    @Column
+    private java.time.LocalDateTime answeredAt;
 }

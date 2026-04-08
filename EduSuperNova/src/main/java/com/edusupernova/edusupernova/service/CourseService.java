@@ -6,7 +6,7 @@ import com.edusupernova.edusupernova.model.Unit;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
 import java.util.List;
 
 /**
@@ -36,8 +36,8 @@ public class CourseService {
      */
     public Courses getCourseWithUnits(Integer courseId) {
         return courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Course not found: " + courseId));
-    }
+                .orElseThrow(() -> ResourceNotFoundException.of("Course", courseId));
+    }   
 
     /**
      * Returns only the ordered list of units for a course.
@@ -46,7 +46,7 @@ public class CourseService {
      *
      * @throws RuntimeException if the course does not exist
      */
-    public List<Unit> getUnitsForCourse(Integer courseId) {
+    public List<UnitService.UnitWithContent> getUnitsForCourse(Integer courseId) {
         assertCourseExists(courseId);
         return unitService.getUnitsByCourseId(courseId);
     }
@@ -59,7 +59,7 @@ public class CourseService {
      */
     public Courses getCourseBasicInfo(Integer courseId) {
         return courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Course not found: " + courseId));
+                .orElseThrow(() -> ResourceNotFoundException.of("Course", courseId));
     }
 
     /** Returns all courses linked to a given exam. */
@@ -71,7 +71,8 @@ public class CourseService {
 
     private void assertCourseExists(Integer courseId) {
         if (!courseRepository.existsById(courseId)) {
-            throw new RuntimeException("Course not found: " + courseId);
+            throw ResourceNotFoundException.of("Course", courseId);
         }
     }
+
 }

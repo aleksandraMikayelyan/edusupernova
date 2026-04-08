@@ -48,10 +48,8 @@ public class EvaluationService {
      */
     private static final Set<Quiz.QuestionType> OPEN_ENDED_TYPES = Set.of(
             Quiz.QuestionType.OPEN_ENDED,
-            Quiz.QuestionType.LOGICAL_PROBLEMS,
             Quiz.QuestionType.ESSAY,
-            Quiz.QuestionType.FILL_IN_BLANK,
-            Quiz.QuestionType.READING
+            Quiz.QuestionType.SHORT_ANSWER
     );
 
     private final TestQuestionsRepository testQuestionRepo;
@@ -196,7 +194,7 @@ public class EvaluationService {
         return new QuestionResult(
                 answer.getQuiz().getId(),
                 answer.getQuiz().getQuestionText(),
-                answer.getQuiz().getType(),
+                answer.getQuiz().getQuestionType(),
                 answer.getUserResponse(),
                 answer.getQuiz().getCorrectAnswer(),
                 isCorrect,
@@ -250,19 +248,19 @@ public class EvaluationService {
 
     private List<TestQuestions> filterByTypes(List<TestQuestions> answers, Set<Quiz.QuestionType> types) {
         return answers.stream()
-                .filter(a -> a.getQuiz() != null && types.contains(a.getQuiz().getType()))
+                .filter(a -> a.getQuiz() != null && types.contains(a.getQuiz().getQuestionType()))
                 .toList();
     }
 
     private List<TestQuestions> filterByNonOpenTypes(List<TestQuestions> answers) {
         return answers.stream()
-                .filter(a -> a.getQuiz() != null && !OPEN_ENDED_TYPES.contains(a.getQuiz().getType()))
+                .filter(a -> a.getQuiz() != null && !OPEN_ENDED_TYPES.contains(a.getQuiz().getQuestionType()))
                 .toList();
     }
 
     private QuestionResult toQuestionResult(TestQuestions row) {
         Quiz              quiz = row.getQuiz();
-        Quiz.QuestionType type = quiz != null ? quiz.getType() : Quiz.QuestionType.MULTIPLE_CHOICE;
+        Quiz.QuestionType type = quiz != null ? quiz.getQuestionType() : Quiz.QuestionType.MULTIPLE_CHOICE;
 
         int    storedScore = row.getPunctuation() != null ? row.getPunctuation() : PENDING_SCORE;
         String feedback    = row.getFeedbackIa()  != null ? row.getFeedbackIa()  : PENDING_FEEDBACK;
@@ -284,7 +282,7 @@ public class EvaluationService {
                 .map(a -> new QuestionResult(
                         a.getQuiz().getId(),
                         a.getQuiz().getQuestionText(),
-                        a.getQuiz().getType(),
+                        a.getQuiz().getQuestionType(),
                         a.getUserResponse(),
                         null, false, PENDING_FEEDBACK, -1.0))
                 .toList();

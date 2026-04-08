@@ -1,3 +1,14 @@
+package com.edusupernova.edusupernova.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+
+
 @Entity
 @Table(name = "Tests")
 @Data
@@ -30,7 +41,14 @@ public class Tests {
     private LocalDateTime creationDate = LocalDateTime.now();
 
     @Column
+    private LocalDateTime startedAt;
+
+    @Column
     private LocalDateTime completedAt;
+
+    /** Time limit for this session in minutes (copied from Paper or Exam at start time). */
+    @Column
+    private Integer timeLimitMinutes;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

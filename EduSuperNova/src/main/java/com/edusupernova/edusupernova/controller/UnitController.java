@@ -1,7 +1,6 @@
 package com.edusupernova.edusupernova.controller;
 
 import com.edusupernova.edusupernova.model.Courses;
-import com.edusupernova.edusupernova.model.Unit;
 import com.edusupernova.edusupernova.service.CourseService;
 import com.edusupernova.edusupernova.service.UnitService;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +31,7 @@ public class UnitController {
     @GetMapping("/course/{courseId}")
     public ResponseEntity<CourseUnitsResponse> getUnitsScreenData(@PathVariable Integer courseId) {
         Courses course = courseService.getCourseBasicInfo(courseId);
-        List<Unit> units = unitService.getUnitsByCourseId(courseId);
+        List<UnitService.UnitWithContent> units = unitService.getUnitsByCourseId(courseId);
 
         return ResponseEntity.ok(new CourseUnitsResponse(
                 course.getCoursename(),
@@ -47,6 +46,6 @@ public class UnitController {
     public record CourseUnitsResponse(
             String courseName,
             String courseIcon,
-            List<Unit> units
+            List<UnitService.UnitWithContent> units
     ) {}
 }

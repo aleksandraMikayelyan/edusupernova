@@ -1,4 +1,4 @@
-package com.edusupernova.edusupernova.dto.response;
+package com.edusupernova.edusupernova.dto.request.admin;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

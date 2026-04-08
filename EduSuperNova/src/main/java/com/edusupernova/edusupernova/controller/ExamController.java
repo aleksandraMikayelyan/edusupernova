@@ -1,5 +1,6 @@
 package com.edusupernova.edusupernova.controller;
 
+import com.edusupernova.edusupernova.dto.response.ExamDTO;
 import com.edusupernova.edusupernova.model.Courses;
 import com.edusupernova.edusupernova.model.Exams;
 import com.edusupernova.edusupernova.service.CourseService;
@@ -29,7 +30,7 @@ public class ExamController {
     // ── Dashboard ─────────────────────────────────────────────────────────────
 
     @GetMapping("/dashboard")
-    public ResponseEntity<List<Exams>> getActiveExams() {
+    public ResponseEntity<List<ExamDTO>> getActiveExams() {
         return ResponseEntity.ok(examsService.getDashboardExams());
     }
 
@@ -77,7 +78,7 @@ public class ExamController {
     // ── Admin ─────────────────────────────────────────────────────────────────
 
     @PostMapping
-    public ResponseEntity<Exams> create(@RequestBody Exams exam) {
+    public ResponseEntity<ExamDTO> create(@RequestBody Exams exam) {
         return ResponseEntity.ok(examsService.createExam(exam));
     }
 

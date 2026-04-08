@@ -19,6 +19,8 @@ public class JwtTokenUtil {
 
     private static final long EXPIRATION_TIME = 86400000; // 24 hours
 
+    public long getExpirationMs() { return EXPIRATION_TIME; }
+
     // Helper to get the signing key from the secret string
     private SecretKey getSigningKey() {
         byte[] keyBytes = secretString.getBytes(StandardCharsets.UTF_8);

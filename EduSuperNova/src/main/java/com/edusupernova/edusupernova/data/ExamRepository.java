@@ -16,7 +16,7 @@ import java.util.Optional;
 public interface ExamRepository extends JpaRepository<Exams, Integer> {
 
     // 1. Standard listing for students
-    //List<Exams> findAllByIsActiveTrueOrderByExamnameAsc();
+    List<Exams> findByIsActiveTrue();
 
     // 2. The Clean Code way to search: Use both flags
     // Note: We pass the 'term' twice to the service call

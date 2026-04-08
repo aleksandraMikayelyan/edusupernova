@@ -2,7 +2,6 @@ package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.PaperRepository;
 import com.edusupernova.edusupernova.data.CourseRepository;
-import com.edusupernova.edusupernova.dto.request.admin.PaperRequest;
 import com.edusupernova.edusupernova.dto.response.PaperDTO;
 import com.edusupernova.edusupernova.model.Courses;
 import com.edusupernova.edusupernova.model.Paper;
@@ -10,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
 import java.util.List;
 
 /**
@@ -44,20 +43,20 @@ public class PaperService {
     /**
      * Returns a Paper entity by ID.
      *
-     * @throws IllegalArgumentException if not found
+     * @throws ResourceNotFoundException if not found
      */
     public Paper findById(Integer paperId) {
         return paperRepository.findById(paperId)
-                .orElseThrow(() -> new IllegalArgumentException("Paper not found: " + paperId));
+                .orElseThrow(() -> ResourceNotFoundException.of("Paper", paperId));
     }
 
     /**
      * Creates a new Paper for a course (admin only).
      */
     @Transactional
-    public PaperDTO createPaper(PaperRequest request) {
-        Courses course = courseRepository.findById(request.courseId())
-                .orElseThrow(() -> new IllegalArgumentException("Course not found: " + request.courseId()));
+    public PaperDTO createPaper(Integer courseId, PaperDTO request) {
+        Courses course = courseRepository.findById(courseId)
+                .orElseThrow(() -> ResourceNotFoundException.of("Course", courseId));
 
         Paper paper = new Paper();
         paper.setCourse(course);
@@ -69,7 +68,7 @@ public class PaperService {
         paper.setOrderIndex(request.orderIndex());
 
         Paper saved = paperRepository.save(paper);
-        log.info("Created paper '{}' for courseId={}", saved.getPaperName(), request.courseId());
+        log.info("Created paper '{}' for courseId={}", saved.getPaperName(), courseId);
         return toDTO(saved);
     }
 
@@ -77,7 +76,7 @@ public class PaperService {
      * Updates a Paper's mutable fields (admin only).
      */
     @Transactional
-    public PaperDTO updatePaper(Integer paperId, PaperRequest request) {
+    public PaperDTO updatePaper(Integer paperId, PaperDTO request) {
         Paper paper = findById(paperId);
         paper.setPaperName(request.paperName());
         paper.setInstructions(request.instructions());
@@ -94,6 +93,9 @@ public class PaperService {
      */
     @Transactional
     public void deletePaper(Integer paperId) {
+        if (!paperRepository.existsById(paperId)) {
+            throw ResourceNotFoundException.of("Paper", paperId);
+        }
         paperRepository.deleteById(paperId);
         log.info("Deleted paperId={}", paperId);
     }
