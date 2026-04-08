@@ -27,6 +27,9 @@ public class Exams {
     @Column(length = 100)
     private String icon;
 
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 120")
+    private Integer timeLimitMinutes = 120;
+
     @Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
     private Boolean isActive = true;
 

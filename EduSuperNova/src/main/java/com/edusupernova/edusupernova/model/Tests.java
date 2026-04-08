@@ -1,15 +1,8 @@
-package com.edusupernova.edusupernova.model;
-
-import jakarta.persistence.*;
-import lombok.Data;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
 @Entity
 @Table(name = "Tests")
 @Data
 public class Tests {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idTest")
@@ -23,11 +16,38 @@ public class Tests {
     @JoinColumn(name = "idCourse", nullable = false)
     private Courses course;
 
+    // ← Student is doing Paper 1 of this course
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPaper", nullable = false)
+    private Paper paper;
+
+    // ← Optionally filtered to Unit 1 only (nullable = full paper)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idUnit", nullable = true)
+    private Unit unit;
+
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime creationDate = LocalDateTime.now();
 
-    // Relación con TestQuestion
+    @Column
+    private LocalDateTime completedAt;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TestStatus status = TestStatus.IN_PROGRESS;
+
+    @Column(columnDefinition = "DECIMAL(5,2) DEFAULT 0.00")
+    private Double finalScore = 0.0;
+
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private Integer totalCorrect = 0;
+
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private Integer totalAnswered = 0;
+
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     @com.fasterxml.jackson.annotation.JsonIgnore
     private List<TestQuestions> testQuestions;
+
+    public enum TestStatus { IN_PROGRESS, COMPLETED, ABANDONED }
 }
