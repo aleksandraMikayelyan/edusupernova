@@ -6,7 +6,7 @@ import com.edusupernova.edusupernova.model.Exams;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
 import java.util.List;
 
 /**
@@ -59,7 +59,7 @@ public class ExamsService {
      */
     public Exams findById(Integer examId) {
         return examRepository.findById(examId)
-                .orElseThrow(() -> new IllegalArgumentException("Exam not found: " + examId));
+            .orElseThrow(() -> ResourceNotFoundException.of("Exam", examId));
     }
 
     /**

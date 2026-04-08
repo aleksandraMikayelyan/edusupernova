@@ -9,7 +9,9 @@ import com.edusupernova.edusupernova.model.Exams;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
+import com.edusupernova.edusupernova.exception.BusinessRuleException;
+import org.springframework.dao.DataIntegrityViolationException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -40,10 +42,13 @@ public class EnrollmentService {
         if (enrollmentRepository.existsByUserIdAndExamId(userId, examId)) {
             return false;
         }
-
-        Enrollment enrollment = buildEnrollment(userId, examId);
-        enrollmentRepository.save(enrollment);
-        return true;
+        try {
+            enrollmentRepository.save(buildEnrollment(userId, examId));
+            return true;
+        } catch (DataIntegrityViolationException ex) {
+            // Concurrent request won the race — treat as "already enrolled"
+            return false;
+        }
     }
 
     /**
@@ -78,9 +83,9 @@ public class EnrollmentService {
         Enrollment enrollment = new Enrollment();
         enrollment.setId(new EnrollmentId(userId, examId));
         enrollment.setUser(userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found: " + userId)));
+                .orElseThrow(() -> ResourceNotFoundException.of("User", userId)));
         enrollment.setExam(examRepository.findById(examId)
-                .orElseThrow(() -> new RuntimeException("Exam not found: " + examId)));
+                .orElseThrow(() -> ResourceNotFoundException.of("Exam", examId)));
         enrollment.setEnrolledAt(LocalDateTime.now());
         return enrollment;
     }

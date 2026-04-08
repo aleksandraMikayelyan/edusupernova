@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
 import java.util.List;
 
 /**
@@ -48,8 +48,11 @@ public class PaperService {
      */
     public Paper findById(Integer paperId) {
         return paperRepository.findById(paperId)
-                .orElseThrow(() -> new IllegalArgumentException("Paper not found: " + paperId));
+                .orElseThrow(() -> ResourceNotFoundException.of("Paper", paperId));
     }
+
+    Courses course = courseRepository.findById(request.courseId())
+        .orElseThrow(() -> ResourceNotFoundException.of("Course", request.courseId()));
 
     /**
      * Creates a new Paper for a course (admin only).
@@ -94,6 +97,9 @@ public class PaperService {
      */
     @Transactional
     public void deletePaper(Integer paperId) {
+        if (!paperRepository.existsById(paperId)) {
+            throw ResourceNotFoundException.of("Paper", paperId);
+        }
         paperRepository.deleteById(paperId);
         log.info("Deleted paperId={}", paperId);
     }

@@ -14,7 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.edusupernova.edusupernova.exception.BusinessRuleException;
 /**
  * Handles user registration and authentication, returning a JWT token on success.
  *
@@ -44,7 +44,7 @@ public class UsersService {
      */
     public AuthResponse register(RegisterRequest request) {
         if (userRepository.findByEmail(request.email()) != null) {
-            throw new IllegalArgumentException("Email already registered");
+            throw new BusinessRuleException("Email already registered");
         }
 
         Users user = buildUser(request);
@@ -52,7 +52,6 @@ public class UsersService {
 
         return buildAuthResponse(user);
     }
-
     /**
      * Authenticates a user by e-mail and password, returning a JWT token.
      *

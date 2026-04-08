@@ -1,5 +1,5 @@
 package com.edusupernova.edusupernova.service;
-
+import com.edusupernova.edusupernova.exception.GroqApiException;
 import com.edusupernova.edusupernova.model.TestQuestions;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -82,9 +82,4 @@ public class GroqService {
         return choices.get(0).path("message").path("content").asText();
     }
 
-    // ── Typed exception so callers can handle Groq errors specifically ──
-    public static class GroqApiException extends RuntimeException {
-        public GroqApiException(String message) { super(message); }
-        public GroqApiException(String message, Throwable cause) { super(message, cause); }
-    }
 }

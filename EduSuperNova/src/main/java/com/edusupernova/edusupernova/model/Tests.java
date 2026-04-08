@@ -1,3 +1,14 @@
+package com.edusupernova.edusupernova.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+
+
 @Entity
 @Table(name = "Tests")
 @Data
