@@ -16,52 +16,48 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.IntStream;
 
 /**
- * Orchestrates the full test evaluation:
+ * Orchestrates full test evaluation (batch mode — used for legacy endpoints
+ * and for re-evaluating completed sessions from the admin panel).
  *
- *  PHASE 1 (synchronous, always runs):
- *    - Score ALL multiple-choice questions by comparing against the
- *      correct_answer column in the DB. No AI involved whatsoever.
- *    - Persist MC results immediately so they are never lost.
+ * For the normal per-question flow, evaluation is handled inside
+ * TestService.submitAnswer() instead.
  *
- *  PHASE 2 (asynchronous, runs independently):
- *    - Score open-ended / logical-problem questions via Groq AI.
- *    - Persisted separately once AI responds; failures do NOT affect MC scores.
- *
- *  POLLING:
- *    - buildResultFromPersistedRows() re-assembles the current DB state
- *      without triggering any new evaluation — used by GET /api/feedback/{testId}.
- *
- *  This split guarantees:
- *    • MC feedback is instant and deterministic.
- *    • A Groq outage/restriction never blocks or rolls back MC results.
- *    • The frontend can render MC results immediately and poll for AI results.
+ * CHANGED FROM ORIGINAL:
+ *   - OPEN_ENDED_TYPES now includes ESSAY, FILL_IN_BLANK, and READING
+ *     to cover IELTS Writing and other new paper formats.
+ *   - extractLetter() deduplicated from TestService into a shared static util.
+ *   - evaluateTest() signature extended with examName + paperName
+ *     (previously examType + sectionName) to match new model naming.
  */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class EvaluationService {
 
-    // ── Weights only matter when BOTH question types exist in a test ──────────
+    // ── Weights ────────────────────────────────────────────────────────────────
     private static final double MC_WEIGHT   = 0.70;
     private static final double OPEN_WEIGHT = 0.30;
 
-    /** Sentinel value: score == -1 means "AI has not evaluated this row yet". */
-    private static final int PENDING_SCORE = -1;
-
-    /** Groq sets this placeholder in feedbackIa while async evaluation is in flight. */
+    /** Sentinel: score == -1 means AI has not evaluated this row yet. */
+    private static final int    PENDING_SCORE    = -1;
     private static final String PENDING_FEEDBACK = "AI evaluation in progress...";
 
+    /**
+     * All question types that require AI evaluation.
+     * CHANGED: added ESSAY, FILL_IN_BLANK, READING to support new exam formats.
+     */
     private static final Set<Quiz.QuestionType> OPEN_ENDED_TYPES = Set.of(
             Quiz.QuestionType.OPEN_ENDED,
-            Quiz.QuestionType.LOGICAL_PROBLEMS
+            Quiz.QuestionType.LOGICAL_PROBLEMS,
+            Quiz.QuestionType.ESSAY,
+            Quiz.QuestionType.FILL_IN_BLANK,
+            Quiz.QuestionType.READING
     );
 
     private final TestQuestionsRepository testQuestionRepo;
     private final OpenEndedEvaluator      openEndedEvaluator;
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Public DTOs
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── Public DTOs ────────────────────────────────────────────────────────────
 
     public record QuestionResult(
             int               questionId,
@@ -74,10 +70,6 @@ public class EvaluationService {
             double            score           // -1.0 == pending
     ) {}
 
-    /**
-     * Returned immediately after Phase 1.
-     * {@code openEndedPending} tells the frontend whether to poll for AI results.
-     */
     public record TestEvaluationResult(
             double               mcScore,
             double               openScore,
@@ -86,43 +78,35 @@ public class EvaluationService {
             List<QuestionResult> questionResults
     ) {}
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // PHASE 1 — Multiple-Choice  (synchronous, @Transactional)
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── PHASE 1 — Multiple-Choice (synchronous) ────────────────────────────────
 
     /**
-     * Entry point called by the controller on test submission.
+     * Entry point for batch evaluation.
      * Returns instantly with MC results; triggers async AI evaluation if needed.
+     *
+     * @param testId     the test to evaluate
+     * @param examName   e.g. "A Levels"  (was examType)
+     * @param paperName  e.g. "Paper 3 - Essays"  (was sectionName)
      */
     @Transactional
-    public TestEvaluationResult evaluateTest(Integer testId, String examType, String sectionName) {
+    public TestEvaluationResult evaluateTest(Integer testId, String examName, String paperName) {
 
         List<TestQuestions> allAnswers  = loadAnswers(testId);
-        List<TestQuestions> mcAnswers   = filterByType(allAnswers, Quiz.QuestionType.MULTIPLE_CHOICE);
+        List<TestQuestions> mcAnswers   = filterByNonOpenTypes(allAnswers);
         List<TestQuestions> openAnswers = filterByTypes(allAnswers, OPEN_ENDED_TYPES);
 
-        // ── 1. Score MC questions — pure DB comparison, zero AI ──────────────
+        // Score MC instantly — zero AI involved
         List<QuestionResult> mcResults = evaluateMultipleChoice(mcAnswers);
-
-        // ── 2. Persist MC flags immediately inside THIS transaction ───────────
         persistMultipleChoiceResults(mcAnswers, mcResults);
 
         double  mcScore      = averageScore(mcResults);
         boolean hasPendingAI = !openAnswers.isEmpty();
 
-        // ── 3. Mark open-ended rows as pending in the DB ──────────────────────
-        //    This lets buildResultFromPersistedRows() detect them correctly
-        //    on subsequent polling calls before Groq has responded.
         if (hasPendingAI) {
             markOpenEndedAsPending(openAnswers);
+            triggerAsyncOpenEndedEvaluation(testId, openAnswers, examName, paperName);
         }
 
-        // ── 4. Fire-and-forget Groq evaluation ───────────────────────────────
-        if (hasPendingAI) {
-            triggerAsyncOpenEndedEvaluation(testId, openAnswers, examType, sectionName);
-        }
-
-        // ── 5. Build partial result list ─────────────────────────────────────
         List<QuestionResult> pendingOpenResults = buildPendingPlaceholders(openAnswers);
         List<QuestionResult> allResults         = mergeResults(mcResults, pendingOpenResults);
 
@@ -134,13 +118,7 @@ public class EvaluationService {
         return new TestEvaluationResult(mcScore, 0.0, totalScore, hasPendingAI, allResults);
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // POLLING — Rebuild result from current DB state (no new evaluation)
-    //
-    // Called by GET /api/feedback/{testId} every 4 s from FeedbackPage.
-    // Reads whatever is currently persisted; once Groq finishes writing,
-    // open-ended rows will have real scores and openEndedPending → false.
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── POLLING ────────────────────────────────────────────────────────────────
 
     public TestEvaluationResult buildResultFromPersistedRows(
             Integer testId,
@@ -150,14 +128,11 @@ public class EvaluationService {
                 .map(this::toQuestionResult)
                 .toList();
 
-        // A row is still pending if punctuation == PENDING_SCORE (-1)
-        // OR feedbackIa still contains the placeholder text.
         boolean openEndedPending = results.stream()
-                .anyMatch(r -> r.score() < 0
-                        || PENDING_FEEDBACK.equals(r.feedback()));
+                .anyMatch(r -> r.score() < 0 || PENDING_FEEDBACK.equals(r.feedback()));
 
         List<QuestionResult> mcResults   = results.stream()
-                .filter(r -> r.type() == Quiz.QuestionType.MULTIPLE_CHOICE)
+                .filter(r -> !OPEN_ENDED_TYPES.contains(r.type()))
                 .toList();
         List<QuestionResult> openResults = results.stream()
                 .filter(r -> OPEN_ENDED_TYPES.contains(r.type()))
@@ -172,51 +147,23 @@ public class EvaluationService {
         return new TestEvaluationResult(mcScore, openScore, total, openEndedPending, results);
     }
 
-    /** Converts a persisted TestQuestions row to a QuestionResult DTO. */
-    private QuestionResult toQuestionResult(TestQuestions row) {
-        Quiz              quiz  = row.getQuiz();
-        Quiz.QuestionType type  = quiz != null ? quiz.getType() : Quiz.QuestionType.MULTIPLE_CHOICE;
-        boolean           isMC  = type == Quiz.QuestionType.MULTIPLE_CHOICE;
+    // ── Async AI evaluation ────────────────────────────────────────────────────
 
-        // punctuation column stores -1 while pending, 0–10 once scored
-        int storedScore = row.getPunctuation() != null ? row.getPunctuation() : PENDING_SCORE;
-        String feedback = row.getFeedbackIa() != null ? row.getFeedbackIa() : PENDING_FEEDBACK;
-        boolean pending = storedScore == PENDING_SCORE || PENDING_FEEDBACK.equals(feedback);
-
-        return new QuestionResult(
-                quiz != null ? quiz.getId() : 0,
-                quiz != null ? quiz.getQuestionText() : "",
-                type,
-                row.getUserResponse(),
-                isMC && quiz != null ? quiz.getCorrectAnswer() : null, // no "correct" for open-ended
-                row.getCorrectResponse() != null && row.getCorrectResponse(),
-                feedback,
-                pending ? -1.0 : storedScore
-        );
-    }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // PHASE 2 — Open-Ended / AI  (async, separate transaction)
-    // ─────────────────────────────────────────────────────────────────────────
-
-    @Async("virtualThreadExecutor")
+    @Async
     public CompletableFuture<Void> triggerAsyncOpenEndedEvaluation(
-            Integer             testId,
+            Integer testId,
             List<TestQuestions> openAnswers,
-            String              examType,
-            String              sectionName) {
+            String examName,
+            String paperName) {
 
         try {
-            log.info("Test {} — starting async Groq evaluation for {} open-ended questions",
-                    testId, openAnswers.size());
-
-            String context = buildContext(examType, sectionName);
+            log.info("Test {} — Groq evaluation starting for {} open-ended questions", testId, openAnswers.size());
+            String context = String.format("Exam: %s, Paper: %s", examName, paperName);
 
             List<OpenEndedEvaluator.EvaluationResult> aiResults =
                     openEndedEvaluator.evaluateBatch(openAnswers, context);
 
             persistOpenEndedResults(openAnswers, aiResults);
-
             log.info("Test {} — Groq evaluation complete and persisted", testId);
 
         } catch (Exception ex) {
@@ -227,16 +174,13 @@ public class EvaluationService {
         return CompletableFuture.completedFuture(null);
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // MC evaluation
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── MC evaluation ──────────────────────────────────────────────────────────
 
     private List<QuestionResult> evaluateMultipleChoice(List<TestQuestions> answers) {
         return answers.stream().map(this::scoreOneMultipleChoice).toList();
     }
 
     private QuestionResult scoreOneMultipleChoice(TestQuestions answer) {
-        // extractLetter() handles both "D" and "D) Full text..." formats
         String userResponse  = extractLetter(answer.getUserResponse());
         String correctAnswer = extractLetter(answer.getQuiz().getCorrectAnswer());
 
@@ -252,7 +196,7 @@ public class EvaluationService {
         return new QuestionResult(
                 answer.getQuiz().getId(),
                 answer.getQuiz().getQuestionText(),
-                Quiz.QuestionType.MULTIPLE_CHOICE,
+                answer.getQuiz().getType(),
                 answer.getUserResponse(),
                 answer.getQuiz().getCorrectAnswer(),
                 isCorrect,
@@ -261,30 +205,20 @@ public class EvaluationService {
         );
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Persistence helpers
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── Persistence ────────────────────────────────────────────────────────────
 
-    /** Called inside Phase-1 @Transactional — committed immediately. */
     private void persistMultipleChoiceResults(
             List<TestQuestions> answers,
             List<QuestionResult> results) {
-
         IntStream.range(0, answers.size()).forEach(i -> {
-            TestQuestions  q      = answers.get(i);
-            QuestionResult result = results.get(i);
-            q.setCorrectResponse(result.isCorrect());
-            q.setPunctuation(result.isCorrect() ? 10 : 0);
-            q.setFeedbackIa(result.feedback());
+            TestQuestions  q = answers.get(i);
+            QuestionResult r = results.get(i);
+            q.setCorrectResponse(r.isCorrect());
+            q.setPunctuation(r.isCorrect() ? 10 : 0);
+            q.setFeedbackIa(r.feedback());
         });
-        // JPA dirty-checking flushes on Phase-1 commit
     }
 
-    /**
-     * Writes PENDING_SCORE and PENDING_FEEDBACK to open-ended rows so the
-     * polling endpoint can detect them correctly before Groq responds.
-     * Called inside Phase-1 @Transactional — committed before returning to client.
-     */
     private void markOpenEndedAsPending(List<TestQuestions> openAnswers) {
         openAnswers.forEach(q -> {
             q.setPunctuation(PENDING_SCORE);
@@ -293,12 +227,10 @@ public class EvaluationService {
         });
     }
 
-    /** Called from async method — needs its own @Transactional context. */
     @Transactional(jakarta.transaction.Transactional.TxType.REQUIRES_NEW)
     public void persistOpenEndedResults(
             List<TestQuestions> answers,
             List<OpenEndedEvaluator.EvaluationResult> aiResults) {
-
         IntStream.range(0, answers.size()).forEach(i -> {
             TestQuestions q  = answers.get(i);
             var           ai = aiResults.get(i);
@@ -308,28 +240,43 @@ public class EvaluationService {
         });
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Utility helpers
-    // ─────────────────────────────────────────────────────────────────────────
+    // ── Utility helpers ────────────────────────────────────────────────────────
 
     private List<TestQuestions> loadAnswers(Integer testId) {
         List<TestQuestions> answers = testQuestionRepo.findByIdTestId(testId);
-        if (answers.isEmpty()) {
-            throw new IllegalStateException("No answers found for testId: " + testId);
-        }
+        if (answers.isEmpty()) throw new IllegalStateException("No answers found for testId: " + testId);
         return answers;
-    }
-
-    private List<TestQuestions> filterByType(List<TestQuestions> answers, Quiz.QuestionType type) {
-        return answers.stream()
-                .filter(a -> a.getQuiz() != null && type == a.getQuiz().getType())
-                .toList();
     }
 
     private List<TestQuestions> filterByTypes(List<TestQuestions> answers, Set<Quiz.QuestionType> types) {
         return answers.stream()
                 .filter(a -> a.getQuiz() != null && types.contains(a.getQuiz().getType()))
                 .toList();
+    }
+
+    private List<TestQuestions> filterByNonOpenTypes(List<TestQuestions> answers) {
+        return answers.stream()
+                .filter(a -> a.getQuiz() != null && !OPEN_ENDED_TYPES.contains(a.getQuiz().getType()))
+                .toList();
+    }
+
+    private QuestionResult toQuestionResult(TestQuestions row) {
+        Quiz              quiz = row.getQuiz();
+        Quiz.QuestionType type = quiz != null ? quiz.getType() : Quiz.QuestionType.MULTIPLE_CHOICE;
+
+        int    storedScore = row.getPunctuation() != null ? row.getPunctuation() : PENDING_SCORE;
+        String feedback    = row.getFeedbackIa()  != null ? row.getFeedbackIa()  : PENDING_FEEDBACK;
+
+        return new QuestionResult(
+                quiz != null ? quiz.getId()           : 0,
+                quiz != null ? quiz.getQuestionText() : "",
+                type,
+                row.getUserResponse(),
+                quiz != null ? quiz.getCorrectAnswer() : "",
+                Boolean.TRUE.equals(row.getCorrectResponse()),
+                feedback,
+                storedScore
+        );
     }
 
     private List<QuestionResult> buildPendingPlaceholders(List<TestQuestions> openAnswers) {
@@ -339,11 +286,7 @@ public class EvaluationService {
                         a.getQuiz().getQuestionText(),
                         a.getQuiz().getType(),
                         a.getUserResponse(),
-                        null,
-                        false,
-                        PENDING_FEEDBACK,
-                        -1.0
-                ))
+                        null, false, PENDING_FEEDBACK, -1.0))
                 .toList();
     }
 
@@ -356,39 +299,17 @@ public class EvaluationService {
                 .orElse(0.0);
     }
 
-    private String buildContext(String examType, String sectionName) {
-        return String.format("Exam: %s, Section: %s", examType, sectionName);
-    }
-
     private List<QuestionResult> mergeResults(List<QuestionResult> mc, List<QuestionResult> open) {
         var merged = new ArrayList<>(mc);
         merged.addAll(open);
         return merged;
     }
 
-    private String normalize(String s) {
-        return s == null ? "" : s.trim();
-    }
-
-    /**
-     * Extracts the leading answer letter from an option string.
-     *
-     * Handles the mismatch between how the frontend stores the full selected
-     * option text ("D) The opportunity cost...") and how the DB stores the
-     * correct answer as a bare letter ("D").
-     *
-     * Examples:
-     *   "D) The opportunity cost is constant" → "D"
-     *   "A) 1: normative, 2: normative"       → "A"
-     *   "D"                                   → "D"
-     *   "d."                                  → "D"
-     */
     private String extractLetter(String response) {
         if (response == null || response.isBlank()) return "";
         String trimmed = response.trim();
         java.util.regex.Matcher m =
-                java.util.regex.Pattern.compile("^([A-Da-d])[).\\s]")
-                        .matcher(trimmed);
-        return m.find() ? m.group(1).toUpperCase() : trimmed.trim().toUpperCase();
+                java.util.regex.Pattern.compile("^([A-Da-d])[).\\s]").matcher(trimmed);
+        return m.find() ? m.group(1).toUpperCase() : trimmed.toUpperCase();
     }
 }

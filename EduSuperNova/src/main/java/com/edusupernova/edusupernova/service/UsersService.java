@@ -2,9 +2,10 @@ package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.config.JwtTokenUtil;
 import com.edusupernova.edusupernova.data.UserRepository;
-import com.edusupernova.edusupernova.dto.AuthResponse;
-import com.edusupernova.edusupernova.dto.LoginRequest;
-import com.edusupernova.edusupernova.dto.RegisterRequest;
+import com.edusupernova.edusupernova.dto.request.LoginRequest;
+import com.edusupernova.edusupernova.dto.request.RegisterRequest;
+import com.edusupernova.edusupernova.dto.response.AuthResponse;
+import com.edusupernova.edusupernova.dto.response.UserSummaryDTO;
 import com.edusupernova.edusupernova.model.Role;
 import com.edusupernova.edusupernova.model.Users;
 import lombok.RequiredArgsConstructor;
@@ -15,12 +16,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Handles user registration and authentication, returning a JWT token
- * on success.
+ * Handles user registration and authentication, returning a JWT token on success.
  *
- * SRP  – only responsible for auth flows; token generation is delegated
- *        to {@link JwtTokenUtil}.
- * DIP  – constructor injection via {@code @RequiredArgsConstructor}.
+ * CHANGES FROM ORIGINAL:
+ *   - RegisterRequest no longer accepts a `rol` field — every new user is
+ *     STUDENT by default. Admins are promoted via SQL/admin panel only.
+ *     This closes a security hole where anyone could self-register as ADMIN.
+ *   - AuthResponse now includes a UserSummaryDTO with basic profile info.
+ *   - DTO imports updated to new request/response package structure.
  */
 @Service
 @RequiredArgsConstructor
@@ -35,7 +38,7 @@ public class UsersService {
     // ── Public API ────────────────────────────────────────────────────────────
 
     /**
-     * Registers a new user and returns a JWT token for immediate login.
+     * Registers a new user as STUDENT and returns a JWT token for immediate login.
      *
      * @throws IllegalArgumentException if the e-mail is already taken
      */
@@ -47,7 +50,7 @@ public class UsersService {
         Users user = buildUser(request);
         userRepository.save(user);
 
-        return new AuthResponse(jwtTokenUtil.generateToken(user), user.getRol().name());
+        return buildAuthResponse(user);
     }
 
     /**
@@ -65,7 +68,7 @@ public class UsersService {
             throw new IllegalArgumentException("User not found after authentication");
         }
 
-        return new AuthResponse(jwtTokenUtil.generateToken(user), user.getRol().name());
+        return buildAuthResponse(user);
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────
@@ -75,7 +78,24 @@ public class UsersService {
         user.setUsername(request.username());
         user.setEmail(request.email());
         user.setPassword(passwordEncoder.encode(request.password()));
-        user.setRol(request.rol() != null ? request.rol() : Role.STUDENT);
+        // ← SECURITY FIX: rol is NEVER taken from the request body
+        //   Every new registration is always STUDENT.
+        //   To promote to ADMIN use: UPDATE users SET rol='ADMIN' WHERE email='...';
+        user.setRol(Role.STUDENT);
         return user;
+    }
+
+    private AuthResponse buildAuthResponse(Users user) {
+        String token = jwtTokenUtil.generateToken(user);
+        long expiresIn = jwtTokenUtil.getExpirationMs() / 1000; // convert to seconds
+
+        UserSummaryDTO summary = new UserSummaryDTO(
+                user.getId(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getRol().name()
+        );
+
+        return new AuthResponse(token, "Bearer", expiresIn, user.getRol().name(), summary);
     }
 }

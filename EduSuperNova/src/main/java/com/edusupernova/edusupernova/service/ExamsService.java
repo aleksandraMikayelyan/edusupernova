@@ -1,6 +1,7 @@
 package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.ExamRepository;
+import com.edusupernova.edusupernova.dto.response.ExamDTO;
 import com.edusupernova.edusupernova.model.Exams;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Manages exam data: listing, searching, creation, and updates.
+ * Manages exam data: listing, searching, creation, updates, and time limits.
  *
- * SRP  – each method has a single, named responsibility.
- * DIP  – depends on {@link ExamRepository} abstraction via constructor injection.
+ * CHANGED FROM ORIGINAL:
+ *   - updateExam() now also updates timeLimitMinutes
+ *   - getDashboardExams() returns List<ExamDTO> instead of List<Exams>
+ *     (never expose entities from controllers)
+ *   - Added toDTO() mapper
  */
 @Service
 @RequiredArgsConstructor
@@ -23,28 +27,33 @@ public class ExamsService {
 
     // ── Public API ────────────────────────────────────────────────────────────
 
-    /** Returns all exams available on the dashboard. */
-    public List<Exams> getDashboardExams() {
-        return examRepository.findAll();
+    /** Returns all active exams for the dashboard. */
+    public List<ExamDTO> getDashboardExams() {
+        return examRepository.findByIsActiveTrue()
+                .stream()
+                .map(this::toDTO)
+                .toList();
     }
 
     /**
      * Searches exams by name or description (case-insensitive).
-     * Falls back to all exams when {@code searchTerm} is blank.
+     * Falls back to all active exams when searchTerm is blank.
      */
-    public List<Exams> search(String searchTerm) {
+    public List<ExamDTO> search(String searchTerm) {
         if (searchTerm == null || searchTerm.isBlank()) {
             return getDashboardExams();
         }
-
         String term = searchTerm.trim();
         return examRepository
                 .findByIsActiveTrueAndExamnameContainingIgnoreCaseOrIsActiveTrueAndDescriptionContainingIgnoreCaseOrderByExamnameAsc(
-                        term, term);
+                        term, term)
+                .stream()
+                .map(this::toDTO)
+                .toList();
     }
 
     /**
-     * Returns an exam by ID.
+     * Returns an exam entity by ID (used internally by other services).
      *
      * @throws IllegalArgumentException if no exam exists with the given ID
      */
@@ -54,22 +63,20 @@ public class ExamsService {
     }
 
     /**
-     * Persists a new exam, setting it to active by default.
-     *
-     * @throws IllegalArgumentException if the exam is null or its name is
-     *                                  blank or exceeds 100 characters
+     * Creates a new exam (admin only).
      */
     @Transactional
-    public Exams createExam(Exams exam) {
+    public ExamDTO createExam(Exams exam) {
         validateExam(exam);
         exam.setIsActive(true);
-        return examRepository.save(exam);
+        if (exam.getTimeLimitMinutes() == null) {
+            exam.setTimeLimitMinutes(120); // 2-hour default
+        }
+        return toDTO(examRepository.save(exam));
     }
 
     /**
-     * Activates or deactivates an exam.
-     *
-     * @throws IllegalArgumentException if the exam does not exist
+     * Activates or deactivates an exam (admin only).
      */
     @Transactional
     public void toggleActive(Integer examId, boolean active) {
@@ -79,31 +86,43 @@ public class ExamsService {
     }
 
     /**
-     * Updates the mutable fields (name, description, icon) of an existing exam.
-     * Active state is intentionally excluded — use {@link #toggleActive} instead.
+     * Updates mutable fields of an existing exam (admin only).
      *
-     * @throws IllegalArgumentException if the exam does not exist
+     * CHANGED: now also updates timeLimitMinutes — admins set real
+     * times per exam (IELTS Listening = 40 min, A Levels = 120 min, etc.)
      */
     @Transactional
-    public Exams updateExam(Integer id, Exams updated) {
+    public ExamDTO updateExam(Integer id, Exams updated) {
         Exams existing = findById(id);
         existing.setExamname(updated.getExamname());
         existing.setDescription(updated.getDescription());
         existing.setIcon(updated.getIcon());
-        return examRepository.save(existing);
+        if (updated.getTimeLimitMinutes() != null) {
+            existing.setTimeLimitMinutes(updated.getTimeLimitMinutes());
+        }
+        return toDTO(examRepository.save(existing));
+    }
+
+    // ── Mapper ────────────────────────────────────────────────────────────────
+
+    public ExamDTO toDTO(Exams exam) {
+        return new ExamDTO(
+                exam.getId(),
+                exam.getExamname(),
+                exam.getDescription(),
+                exam.getIcon(),
+                exam.getIsActive(),
+                exam.getTimeLimitMinutes()
+        );
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────
 
     private void validateExam(Exams exam) {
-        if (exam == null) {
-            throw new IllegalArgumentException("Exam cannot be null");
-        }
-        if (exam.getExamname() == null || exam.getExamname().isBlank()) {
+        if (exam == null) throw new IllegalArgumentException("Exam cannot be null");
+        if (exam.getExamname() == null || exam.getExamname().isBlank())
             throw new IllegalArgumentException("Exam name cannot be empty");
-        }
-        if (exam.getExamname().length() > 100) {
+        if (exam.getExamname().length() > 100)
             throw new IllegalArgumentException("Exam name cannot exceed 100 characters");
-        }
     }
 }

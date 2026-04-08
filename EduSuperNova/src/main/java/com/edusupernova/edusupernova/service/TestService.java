@@ -1,6 +1,12 @@
 package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.*;
+import com.edusupernova.edusupernova.dto.request.StartTestRequest;
+import com.edusupernova.edusupernova.dto.request.SubmitAnswerRequest;
+import com.edusupernova.edusupernova.dto.response.AnswerFeedbackDTO;
+import com.edusupernova.edusupernova.dto.response.FeedBackDTO;
+import com.edusupernova.edusupernova.dto.response.TestQuestionDTO;
+import com.edusupernova.edusupernova.dto.response.TestSessionDTO;
 import com.edusupernova.edusupernova.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,18 +14,23 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 /**
  * Manages the full lifecycle of a student test:
- * creation, answer submission, scoring, and retrieval.
  *
- * SRP  – each method has one clear responsibility.
- * DIP  – all dependencies injected via constructor; no concrete class wired
- *        manually. QuizService is used for random question selection,
- *        keeping quiz logic out of this service.
- * DRY  – crearTest / crearTestByEmail were merged into a single internal
- *        builder; public methods are thin entry points.
+ *   1. startTest()     — create session, pick questions from Paper+Unit pool
+ *   2. submitAnswer()  — evaluate one answer, return AI feedback + next question
+ *   3. getSession()    — resume an in-progress test (reload on refresh)
+ *   4. getReport()     — final score breakdown after completion
+ *
+ * CHANGED FROM ORIGINAL:
+ *   - createTest/createTestByEmail merged into startTest(StartTestRequest, email)
+ *   - Question selection delegated to QuizService.generateTestForPaper (Paper+Unit aware)
+ *   - saveAnswers() replaced by per-question submitAnswer() for instant feedback
+ *   - Timer: timeLimitMinutes comes from Paper or falls back to Exam
+ *   - Tests now tracks status (IN_PROGRESS → COMPLETED), completedAt, finalScore
  */
 @Slf4j
 @Service
@@ -33,158 +44,458 @@ public class TestService {
     private final TestQuestionsRepository testQuestionsRepository;
     private final UserRepository          userRepository;
     private final CourseRepository        courseRepository;
-    private final QuizService             quizService;   // ← owns random-selection logic
+    private final PaperRepository         paperRepository;
+    private final UnitRepository          unitRepository;
+    private final QuizService             quizService;
+    private final GroqService             groqService;
+    private final OpenEndedEvaluator      openEndedEvaluator;
 
-    // ── Public API ───────────────────────────────────────────────────────────
+    // ── 1. START TEST ─────────────────────────────────────────────────────────
 
     /**
-     * Creates a new test identified by numeric user ID.
-     * Randomly selects questions via {@link QuizService#generateRandomTest}.
+     * Creates a new test session for a specific Paper, optionally filtered to a Unit.
      *
-     * @return the persisted test ID
-     */
-    public int createTest(Integer userId, Integer courseId) {
-        Users user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
-        return buildAndPersistTest(user, courseId);
-    }
-
-    /**
-     * Creates a new test identified by user e-mail address.
-     * Entry point called when the user clicks "Check my knowledge".
-     * Randomly selects questions via {@link QuizService#generateRandomTest}.
+     * Flow:
+     *   1. Resolve user from JWT email
+     *   2. Load Paper (defines format, totalQuestions, timeLimitMinutes)
+     *   3. Optionally load Unit (for "Paper 1 — Unit 1 only" mode)
+     *   4. Pick randomised questions via QuizService
+     *   5. Persist Tests + TestQuestions rows
+     *   6. Return TestSessionDTO with first question
      *
-     * @return the persisted test ID
+     * @param request StartTestRequest with courseId, paperId, optional unitId
+     * @param email   extracted from JWT in the controller — never from request body
      */
-    public int createTestByEmail(String email, Integer courseId) {
-        Users user = userRepository.findByEmail(email);
-        if (user == null) {
-            throw new RuntimeException("User not found with email: " + email);
-        }
-        return buildAndPersistTest(user, courseId);
-    }
+    public TestSessionDTO startTest(StartTestRequest request, String email) {
+        Users   user   = findUserByEmail(email);
+        Courses course = findCourse(request.courseId());
+        Paper   paper  = findPaper(request.paperId());
+        Unit    unit   = request.unitId() != null ? findUnit(request.unitId()) : null;
 
-    /**
-     * Persists the student answers received from the front-end.
-     *
-     * @return {@code true} if saved successfully, {@code false} on failure
-     */
-    public boolean saveAnswers(Integer testId, List<TestQuestions> incomingAnswers) {
-        try {
-            assertTestExists(testId);
+        // Resolve time limit: Paper overrides Exam default
+        int timeLimitMinutes = paper.getTimeLimitMinutes() != null
+                ? paper.getTimeLimitMinutes()
+                : course.getExam().getTimeLimitMinutes();
 
-            List<TestQuestions> existingQuestions = testQuestionsRepository.findByIdTestId(testId);
-            mergeAnswers(existingQuestions, incomingAnswers);
-            testQuestionsRepository.saveAll(existingQuestions);
-
-            log.info("Saved {} answers for testId={}", incomingAnswers.size(), testId);
-            return true;
-
-        } catch (Exception ex) {
-            log.error("Failed to save answers for testId={}", testId, ex);
-            return false;
-        }
-    }
-
-    /**
-     * Returns all questions (with student responses) linked to a test.
-     *
-     * @throws RuntimeException if the test does not exist
-     */
-    @Transactional(readOnly = true)
-    public List<TestQuestions> getQuestionsByTestId(Integer testId) {
-        assertTestExists(testId);
-        return testQuestionsRepository.findByIdTestId(testId);
-    }
-
-    /**
-     * Calculates and returns the percentage score for a completed test.
-     */
-    @Transactional(readOnly = true)
-    public int calculateScore(Integer testId) {
-        assertTestExists(testId);
-        long correct = testQuestionsRepository.countByTestIdAndCorrectResponseTrue(testId);
-        long total   = testQuestionsRepository.countByTestId(testId);
-        return total > 0 ? (int) Math.round((correct * 100.0) / total) : 0;
-    }
-
-    // ── Private helpers ──────────────────────────────────────────────────────
-
-    /**
-     * Core builder: persists a Tests entity and attaches the randomly
-     * selected questions generated by {@link QuizService#generateRandomTest}.
-     *
-     * This single method replaces the two near-identical old methods,
-     * eliminating the duplication (DRY) and keeping the logic in one place.
-     */
-    private int buildAndPersistTest(Users user, Integer courseId) {
-        Courses course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("Course not found with id: " + courseId));
-
-        Tests test = createTestEntity(user, course);
-        Tests savedTest = testRepository.save(test);
-
-        // ← KEY FIX: use QuizService to pick 15 MC + 5 open-ended RANDOMLY
-        List<Quiz> selectedQuizzes = quizService.generateRandomTest(courseId);
-        List<TestQuestions> testQuestions = mapQuizzesToTestQuestions(savedTest, selectedQuizzes);
-
-        if (!testQuestions.isEmpty()) {
-            testQuestionsRepository.saveAll(testQuestions);
-        }
-
-        log.info("Created testId={} for userId={}, courseId={}, questions={}",
-                savedTest.getId(), user.getId(), courseId, testQuestions.size());
-
-        return savedTest.getId();
-    }
-
-    private Tests createTestEntity(Users user, Courses course) {
+        // Build and persist the test entity
         Tests test = new Tests();
         test.setUser(user);
         test.setCourse(course);
+        test.setPaper(paper);
+        test.setUnit(unit);
+        test.setStatus(Tests.TestStatus.IN_PROGRESS);
         test.setCreationDate(LocalDateTime.now());
-        return test;
-    }
+        test.setStartedAt(LocalDateTime.now());
+        test.setTimeLimitMinutes(timeLimitMinutes);
+        Tests saved = testRepository.save(test);
 
-    private List<TestQuestions> mapQuizzesToTestQuestions(Tests savedTest, List<Quiz> quizzes) {
-        return quizzes.stream()
-                .map(quiz -> buildTestQuestion(savedTest, quiz))
+        // Pick randomised questions for this paper/unit
+        List<Quiz> questions = quizService.generateTestForPaper(
+                paper.getId(), request.unitId(), paper.getTotalQuestions());
+
+        if (questions.isEmpty()) {
+            throw new IllegalStateException(
+                    "No questions available for paperId=" + paper.getId()
+                    + (unit != null ? " unitId=" + unit.getId() : ""));
+        }
+
+        // Persist placeholder TestQuestions rows (unanswered)
+        List<TestQuestions> testQuestions = questions.stream()
+                .map(quiz -> buildTestQuestion(saved, quiz))
                 .toList();
+        testQuestionsRepository.saveAll(testQuestions);
+
+        log.info("Started testId={} userId={} paperId={} unitId={} questions={}",
+                saved.getId(), user.getId(), paper.getId(),
+                unit != null ? unit.getId() : "all", testQuestions.size());
+
+        return toSessionDTO(saved, testQuestions, paper, unit, timeLimitMinutes);
     }
 
-    private TestQuestions buildTestQuestion(Tests savedTest, Quiz quiz) {
-        TestQuestionId id = new TestQuestionId();
-        id.setTestId(savedTest.getId());
-        id.setQuizId(quiz.getId());
+    // ── 2. SUBMIT ANSWER ──────────────────────────────────────────────────────
 
-        TestQuestions testQuestion = new TestQuestions();
-        testQuestion.setId(id);
-        testQuestion.setTest(savedTest);
-        testQuestion.setQuiz(quiz);
-        testQuestion.setUserResponse("");
-        testQuestion.setCorrectResponse(false);
-        testQuestion.setPunctuation(0);
-        return testQuestion;
+    /**
+     * Evaluates a single answer and returns immediate feedback + the next question.
+     *
+     * For MCQ / TRUE_FALSE_NG / NUMERIC_INPUT:
+     *   - Evaluated instantly by comparing to correctAnswer column
+     *   - Groq called for a brief explanation (or falls back to stored explanation)
+     *
+     * For ESSAY / OPEN_ENDED:
+     *   - Evaluated by OpenEndedEvaluator (Groq batch call)
+     *   - aiScore populated (0-10)
+     *
+     * @param testId  the active test session
+     * @param request quizId + userResponse
+     * @param email   from JWT — used to verify ownership
+     */
+    public AnswerFeedbackDTO submitAnswer(Integer testId, SubmitAnswerRequest request, String email) {
+        Tests test = findTest(testId);
+        assertOwnership(test, email);
+        assertNotExpired(test);
+
+        // Find the matching TestQuestion row
+        TestQuestions tq = testQuestionsRepository
+                .findByIdTestIdAndIdQuizId(testId, request.quizId())
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Question quizId=" + request.quizId() + " not in testId=" + testId));
+
+        Quiz quiz = tq.getQuiz();
+        boolean isMCQ = isMCQType(quiz.getType());
+
+        // ── Evaluate ─────────────────────────────────────────────────────────
+        boolean  isCorrect;
+        String   aiFeedback;
+        Double   aiScore = null;
+
+        if (isMCQ) {
+            isCorrect  = evaluateMCQ(request.userResponse(), quiz.getCorrectAnswer());
+            aiFeedback = generateMCQFeedback(quiz, request.userResponse(), isCorrect);
+        } else {
+            // ESSAY / OPEN_ENDED — single-question AI evaluation
+            OpenEndedEvaluator.EvaluationResult result =
+                    openEndedEvaluator.evaluateBatch(List.of(tq),
+                            buildContext(test)).get(0);
+            isCorrect  = result.score() >= 6.0;
+            aiFeedback = result.feedback();
+            aiScore    = result.score();
+        }
+
+        // ── Persist answer ────────────────────────────────────────────────────
+        tq.setUserResponse(request.userResponse());
+        tq.setCorrectResponse(isCorrect);
+        tq.setFeedbackIa(aiFeedback);
+        tq.setAiScore(aiScore);
+        tq.setAnsweredAt(LocalDateTime.now());
+        testQuestionsRepository.save(tq);
+
+        // ── Update test totals ────────────────────────────────────────────────
+        test.setTotalAnswered(test.getTotalAnswered() + 1);
+        if (isCorrect) test.setTotalCorrect(test.getTotalCorrect() + 1);
+
+        // ── Check completion ──────────────────────────────────────────────────
+        List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
+        long unanswered = allQuestions.stream()
+                .filter(q -> q.getUserResponse() == null || q.getUserResponse().isBlank())
+                .count();
+
+        boolean complete = unanswered == 0;
+
+        if (complete) {
+            test.setStatus(Tests.TestStatus.COMPLETED);
+            test.setCompletedAt(LocalDateTime.now());
+            test.setFinalScore(calculatePercentage(test.getTotalCorrect(), allQuestions.size()));
+        }
+        testRepository.save(test);
+
+        // ── Find next unanswered question ─────────────────────────────────────
+        TestQuestionDTO nextQuestion = null;
+        if (!complete) {
+            nextQuestion = allQuestions.stream()
+                    .filter(q -> q.getUserResponse() == null || q.getUserResponse().isBlank())
+                    .findFirst()
+                    .map(q -> toQuestionDTO(q, getQuestionNumber(allQuestions, q)))
+                    .orElse(null);
+        }
+
+        log.debug("testId={} quizId={} correct={} complete={}", testId, request.quizId(), isCorrect, complete);
+
+        return new AnswerFeedbackDTO(
+                quiz.getId(),
+                isCorrect,
+                quiz.getCorrectAnswer(),
+                quiz.getExplanation(),
+                aiFeedback,
+                aiScore,
+                complete,
+                nextQuestion
+        );
+    }
+
+    // ── 3. GET SESSION ────────────────────────────────────────────────────────
+
+    /**
+     * Returns the current state of a test session.
+     * Used to restore state after a page refresh.
+     *
+     * @throws IllegalArgumentException if test not found
+     */
+    @Transactional(readOnly = true)
+    public TestSessionDTO getSession(Integer testId, String email) {
+        Tests test = findTest(testId);
+        assertOwnership(test, email);
+
+        List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
+        int timeLimitMinutes = test.getTimeLimitMinutes();
+
+        return toSessionDTO(test, allQuestions, test.getPaper(), test.getUnit(), timeLimitMinutes);
+    }
+
+    // ── 4. REPORT ─────────────────────────────────────────────────────────────
+
+    /**
+     * Builds the final report shown on the FeedbackPage.
+     * All questions including AI feedback are included.
+     */
+    @Transactional(readOnly = true)
+    public FeedBackDTO getReport(Integer testId, String email) {
+        Tests test = findTest(testId);
+        assertOwnership(test, email);
+
+        List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
+        int total = allQuestions.size();
+
+        long durationSeconds = test.getCompletedAt() != null
+                ? ChronoUnit.SECONDS.between(test.getStartedAt(), test.getCompletedAt())
+                : 0L;
+
+        List<FeedBackDTO.QuestionFeedbackDTO> questionFeedback = allQuestions.stream()
+                .map(tq -> toQuestionFeedbackDTO(tq, getQuestionNumber(allQuestions, tq)))
+                .toList();
+
+        double finalScore = calculatePercentage(test.getTotalCorrect(), total);
+        String grade = calculateGrade(finalScore);
+
+        return new FeedBackDTO(
+                test.getId(),
+                test.getCourse().getCoursename(),
+                test.getPaper() != null ? test.getPaper().getPaperName() : null,
+                test.getUnit()  != null ? test.getUnit().getTitle()      : null,
+                test.getTotalCorrect(),
+                total,
+                finalScore,
+                grade,
+                test.getStartedAt(),
+                test.getCompletedAt(),
+                durationSeconds,
+                questionFeedback
+        );
+    }
+
+    // ── Timer ─────────────────────────────────────────────────────────────────
+
+    /**
+     * Remaining seconds before the test session expires.
+     * Returns 0 if already expired.
+     */
+    public long getRemainingSeconds(Tests test) {
+        if (test.getStartedAt() == null || test.getTimeLimitMinutes() == null) return 0L;
+        LocalDateTime expiresAt = test.getStartedAt().plusMinutes(test.getTimeLimitMinutes());
+        long remaining = ChronoUnit.SECONDS.between(LocalDateTime.now(), expiresAt);
+        return Math.max(0L, remaining);
+    }
+
+    // ── Private — evaluation helpers ──────────────────────────────────────────
+
+    private boolean evaluateMCQ(String userResponse, String correctAnswer) {
+        String user    = extractLetter(userResponse);
+        String correct = extractLetter(correctAnswer);
+        return !user.isBlank() && user.equalsIgnoreCase(correct);
     }
 
     /**
-     * Copies each incoming answer into the matching existing question row.
-     * Matching is done by quizId to avoid relying on fragile list ordering.
+     * Calls Groq for a brief MCQ explanation.
+     * Falls back to the stored explanation if Groq is unavailable.
      */
-    private void mergeAnswers(List<TestQuestions> existing, List<TestQuestions> incoming) {
-        incoming.stream()
-                .filter(answer -> answer.getId() != null)
-                .forEach(answer ->
-                        existing.stream()
-                                .filter(tq -> tq.getId().getQuizId().equals(answer.getId().getQuizId()))
-                                .findFirst()
-                                .ifPresent(tq -> tq.setUserResponse(answer.getUserResponse()))
-                );
+    private String generateMCQFeedback(Quiz quiz, String userResponse, boolean isCorrect) {
+        if (quiz.getExplanation() != null && !quiz.getExplanation().isBlank()) {
+            // Use stored explanation as base — no Groq call needed
+            return (isCorrect ? "Correct! " : "Incorrect. ") + quiz.getExplanation();
+        }
+
+        try {
+            String prompt = """
+                    You are a concise exam tutor. A student answered a multiple-choice question.
+                    Question: %s
+                    Options: A) %s  B) %s  C) %s  D) %s
+                    Student answered: %s
+                    Correct answer: %s
+                    Result: %s
+                    
+                    Give a 2-3 sentence explanation. State whether correct, explain WHY the right answer is right,
+                    and add a brief memory tip if useful. Be encouraging and direct.
+                    """.formatted(
+                    quiz.getQuestionText(),
+                    quiz.getOptionA(), quiz.getOptionB(), quiz.getOptionC(), quiz.getOptionD(),
+                    userResponse, quiz.getCorrectAnswer(),
+                    isCorrect ? "CORRECT" : "INCORRECT"
+            );
+            return groqService.complete(prompt);
+        } catch (Exception ex) {
+            log.warn("Groq MCQ feedback failed for quizId={}, using fallback", quiz.getId());
+            return isCorrect
+                    ? "Correct! Well done."
+                    : "Incorrect. The correct answer was: " + quiz.getCorrectAnswer();
+        }
     }
 
-    private void assertTestExists(Integer testId) {
-        if (!testRepository.existsById(testId)) {
-            throw new RuntimeException("Test not found with id: " + testId);
+    private boolean isMCQType(Quiz.QuestionType type) {
+        return switch (type) {
+            case MULTIPLE_CHOICE, TRUE_FALSE_NG, NUMERIC_INPUT -> true;
+            default -> false;
+        };
+    }
+
+    private String buildContext(Tests test) {
+        return String.format("Exam: %s, Paper: %s",
+                test.getCourse().getExam().getExamname(),
+                test.getPaper() != null ? test.getPaper().getPaperName() : "General");
+    }
+
+    /**
+     * Extracts leading answer letter — handles "D) full text..." and bare "D" formats.
+     */
+    private String extractLetter(String response) {
+        if (response == null || response.isBlank()) return "";
+        String trimmed = response.trim();
+        java.util.regex.Matcher m =
+                java.util.regex.Pattern.compile("^([A-Da-d])[).\\s]").matcher(trimmed);
+        return m.find() ? m.group(1).toUpperCase() : trimmed.toUpperCase();
+    }
+
+    private double calculatePercentage(int correct, int total) {
+        return total > 0 ? Math.round((correct * 100.0) / total * 100.0) / 100.0 : 0.0;
+    }
+
+    private String calculateGrade(double percentage) {
+        if (percentage >= 90) return "A*";
+        if (percentage >= 80) return "A";
+        if (percentage >= 70) return "B";
+        if (percentage >= 60) return "C";
+        if (percentage >= 50) return "D";
+        return "U";
+    }
+
+    // ── Private — persistence helpers ─────────────────────────────────────────
+
+    private TestQuestions buildTestQuestion(Tests test, Quiz quiz) {
+        TestQuestionId id = new TestQuestionId();
+        id.setTestId(test.getId());
+        id.setQuizId(quiz.getId());
+
+        TestQuestions tq = new TestQuestions();
+        tq.setId(id);
+        tq.setTest(test);
+        tq.setQuiz(quiz);
+        tq.setCorrectResponse(false);
+        return tq;
+    }
+
+    // ── Private — finders ─────────────────────────────────────────────────────
+
+    private Users findUserByEmail(String email) {
+        Users user = userRepository.findByEmail(email);
+        if (user == null) throw new IllegalArgumentException("User not found: " + email);
+        return user;
+    }
+
+    private Courses findCourse(Integer courseId) {
+        return courseRepository.findById(courseId)
+                .orElseThrow(() -> new IllegalArgumentException("Course not found: " + courseId));
+    }
+
+    private Paper findPaper(Integer paperId) {
+        return paperRepository.findById(paperId)
+                .orElseThrow(() -> new IllegalArgumentException("Paper not found: " + paperId));
+    }
+
+    private Unit findUnit(Integer unitId) {
+        return unitRepository.findById(unitId)
+                .orElseThrow(() -> new IllegalArgumentException("Unit not found: " + unitId));
+    }
+
+    private Tests findTest(Integer testId) {
+        return testRepository.findById(testId)
+                .orElseThrow(() -> new IllegalArgumentException("Test not found: " + testId));
+    }
+
+    private void assertOwnership(Tests test, String email) {
+        if (!test.getUser().getEmail().equals(email)) {
+            throw new SecurityException("Test does not belong to user: " + email);
         }
+    }
+
+    private void assertNotExpired(Tests test) {
+        if (getRemainingSeconds(test) == 0 && test.getStatus() == Tests.TestStatus.IN_PROGRESS) {
+            test.setStatus(Tests.TestStatus.ABANDONED);
+            testRepository.save(test);
+            throw new IllegalStateException("Test time limit exceeded");
+        }
+    }
+
+    // ── Private — DTO mappers ─────────────────────────────────────────────────
+
+    private TestSessionDTO toSessionDTO(
+            Tests test,
+            List<TestQuestions> allQuestions,
+            Paper paper,
+            Unit unit,
+            int timeLimitMinutes) {
+
+        // Find first unanswered question
+        TestQuestionDTO currentQuestion = allQuestions.stream()
+                .filter(q -> q.getUserResponse() == null || q.getUserResponse().isBlank())
+                .findFirst()
+                .map(q -> toQuestionDTO(q, getQuestionNumber(allQuestions, q)))
+                .orElse(null);
+
+        long remainingSeconds = getRemainingSeconds(test);
+
+        return new TestSessionDTO(
+                test.getId(),
+                test.getCourse().getCoursename(),
+                paper  != null ? paper.getPaperName()  : null,
+                paper  != null ? paper.getFormat().name() : null,
+                unit   != null ? unit.getTitle()        : null,
+                allQuestions.size(),
+                (int) allQuestions.stream().filter(q -> q.getUserResponse() != null
+                        && !q.getUserResponse().isBlank()).count(),
+                test.getTotalCorrect(),
+                test.getStatus().name(),
+                test.getStartedAt(),
+                timeLimitMinutes,
+                remainingSeconds,
+                currentQuestion
+        );
+    }
+
+    private TestQuestionDTO toQuestionDTO(TestQuestions tq, int questionNumber) {
+        Quiz quiz = tq.getQuiz();
+        return new TestQuestionDTO(
+                tq.getId().getTestId(),
+                quiz.getId(),
+                questionNumber,
+                quiz.getQuestionText(),
+                quiz.getType().name(),
+                quiz.getDifficulty() != null ? quiz.getDifficulty().name() : "MEDIUM",
+                quiz.getOptionA(),
+                quiz.getOptionB(),
+                quiz.getOptionC(),
+                quiz.getOptionD(),
+                quiz.getOptionE(),
+                tq.getUserResponse(),
+                tq.getCorrectResponse(),
+                tq.getFeedbackIa()
+        );
+    }
+
+    private FeedBackDTO.QuestionFeedbackDTO toQuestionFeedbackDTO(TestQuestions tq, int questionNumber) {
+        Quiz quiz = tq.getQuiz();
+        return new FeedBackDTO.QuestionFeedbackDTO(
+                questionNumber,
+                quiz.getId(),
+                quiz.getQuestionText(),
+                quiz.getType().name(),
+                tq.getUserResponse(),
+                quiz.getCorrectAnswer(),
+                tq.getCorrectResponse(),
+                quiz.getExplanation(),
+                tq.getFeedbackIa(),
+                tq.getAiScore()
+        );
+    }
+
+    private int getQuestionNumber(List<TestQuestions> all, TestQuestions target) {
+        return all.indexOf(target) + 1;
     }
 }

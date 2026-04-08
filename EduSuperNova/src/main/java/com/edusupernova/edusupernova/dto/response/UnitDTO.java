@@ -1,12 +1,14 @@
 package com.edusupernova.edusupernova.dto.response;
 
 /**
- * Lightweight user info embedded in AuthResponse.
- * Never expose the password field.
+ * GET /courses/{courseId}/units
+ * Shown in the left sidebar of the Subject page.
  */
-public record UserSummaryDTO(
+public record UnitDTO(
         Integer id,
-        String username,
-        String email,
-        String rol              // "STUDENT" or "ADMIN"
+        String title,
+        String summaryPath,         // path to the .txt / .md summary file
+        Integer queue,              // display order
+        Integer courseId,
+        String courseName
 ) {}
