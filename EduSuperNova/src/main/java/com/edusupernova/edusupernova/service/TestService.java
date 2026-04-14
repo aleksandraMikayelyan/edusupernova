@@ -69,7 +69,9 @@ public class TestService {
     public TestSessionDTO startTest(StartTestRequest request, String email) {
         Users   user   = findUserByEmail(email);
         Courses course = findCourse(request.courseId());
-        Paper   paper  = findPaper(request.paperId());
+        Paper   paper  = request.paperId() != null
+                ? findPaper(request.paperId())
+                : findFirstPaperForCourse(request.courseId());
         Unit    unit   = request.unitId() != null ? findUnit(request.unitId()) : null;
 
         // Resolve time limit: Paper overrides Exam default
@@ -91,7 +93,7 @@ public class TestService {
 
         // Pick randomised questions for this paper/unit
         List<Quiz> questions = quizService.generateTestForPaper(
-                paper.getId(), request.unitId(), paper.getTotalQuestions());
+                paper, request.unitId(), paper.getTotalQuestions());
 
         if (questions.isEmpty()) {
             throw new IllegalStateException(
@@ -150,7 +152,7 @@ public class TestService {
 
         if (isMCQ) {
             isCorrect  = evaluateMCQ(request.userResponse(), quiz.getCorrectAnswer());
-            aiFeedback = generateMCQFeedback(quiz, request.userResponse(), isCorrect);
+            aiFeedback = generateMCQFeedback(quiz, isCorrect);
         } else {
             // ESSAY / OPEN_ENDED — single-question AI evaluation
             OpenEndedEvaluator.EvaluationResult result =
@@ -297,36 +299,14 @@ public class TestService {
      * Calls Groq for a brief MCQ explanation.
      * Falls back to the stored explanation if Groq is unavailable.
      */
-    private String generateMCQFeedback(Quiz quiz, String userResponse, boolean isCorrect) {
+    private String generateMCQFeedback(Quiz quiz, boolean isCorrect) {
+        String prefix = isCorrect ? "Correct! " : "Incorrect. ";
         if (quiz.getExplanation() != null && !quiz.getExplanation().isBlank()) {
-            // Use stored explanation as base — no Groq call needed
-            return (isCorrect ? "Correct! " : "Incorrect. ") + quiz.getExplanation();
+            return prefix + quiz.getExplanation();
         }
-
-        try {
-            String prompt = """
-                    You are a concise exam tutor. A student answered a multiple-choice question.
-                    Question: %s
-                    Options: A) %s  B) %s  C) %s  D) %s
-                    Student answered: %s
-                    Correct answer: %s
-                    Result: %s
-                    
-                    Give a 2-3 sentence explanation. State whether correct, explain WHY the right answer is right,
-                    and add a brief memory tip if useful. Be encouraging and direct.
-                    """.formatted(
-                    quiz.getQuestionText(),
-                    quiz.getOptionA(), quiz.getOptionB(), quiz.getOptionC(), quiz.getOptionD(),
-                    userResponse, quiz.getCorrectAnswer(),
-                    isCorrect ? "CORRECT" : "INCORRECT"
-            );
-            return groqService.complete(prompt);
-        } catch (Exception ex) {
-            log.warn("Groq MCQ feedback failed for quizId={}, using fallback", quiz.getId());
-            return isCorrect
-                    ? "Correct! Well done."
-                    : "Incorrect. The correct answer was: " + quiz.getCorrectAnswer();
-        }
+        return isCorrect
+                ? "Correct!"
+                : "Incorrect. The correct answer was: " + quiz.getCorrectAnswer();
     }
 
     private boolean isMCQType(Quiz.QuestionType type) {
@@ -397,6 +377,13 @@ public class TestService {
                 .orElseThrow(() -> new IllegalArgumentException("Paper not found: " + paperId));
     }
 
+    private Paper findFirstPaperForCourse(Integer courseId) {
+        List<Paper> papers = paperRepository.findByCourseIdOrderByOrderIndex(courseId);
+        if (papers.isEmpty())
+            throw new IllegalStateException("No papers found for courseId=" + courseId);
+        return papers.get(0);
+    }
+
     private Unit findUnit(Integer unitId) {
         return unitRepository.findById(unitId)
                 .orElseThrow(() -> new IllegalArgumentException("Unit not found: " + unitId));
@@ -459,6 +446,7 @@ public class TestService {
 
     private TestQuestionDTO toQuestionDTO(TestQuestions tq, int questionNumber) {
         Quiz quiz = tq.getQuiz();
+        QuestionGroup group = quiz.getQuestionGroup();
         return new TestQuestionDTO(
                 tq.getId().getTestId(),
                 quiz.getId(),
@@ -473,7 +461,14 @@ public class TestService {
                 quiz.getOptionE(),
                 tq.getUserResponse(),
                 tq.getCorrectResponse(),
-                tq.getFeedbackIa()
+                tq.getFeedbackIa(),
+                // group context — null for standalone MCQ questions
+                group != null ? group.getId()              : null,
+                group != null ? group.getTitle()           : null,
+                group != null ? group.getContextText()     : null,
+                group != null ? group.getContextImageUrl() : null,
+                quiz.getGroupOrderIndex(),
+                quiz.getMarks()
         );
     }
 

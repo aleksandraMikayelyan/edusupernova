@@ -1,0 +1,58 @@
+UNIT 9: REPRESENTATION OF DATA
+
+INTRODUCTION TO STATISTICS
+Statistics is the science of collecting, analyzing, and presenting data. To make data understandable, it must be organized into visual representations that reveal patterns and trends.
+
+DATA: A collection of facts, such as numbers, words, measurements, or observations.
+VARIABLE: A characteristic that can be measured or counted.
+
+CATEGORICAL AND NUMERICAL DATA
+Data is primarily classified into two types depending on the nature of the information being recorded.
+
+Categorical (Qualitative): Data that describes qualities or characteristics (e.g., color, gender).
+
+Numerical (Quantitative): Data that can be measured and given a numerical value.
+
+Discrete Data: Numerical data that can only take specific values (e.g., number of students).
+
+Continuous Data: Numerical data that can take any value within a range (e.g., height, time).
+
+STEM-AND-LEAF DIAGRAMS
+A stem-and-leaf diagram is a way to display data while preserving the individual data points.
+
+The "stem" is the first digit or digits of a number.
+
+The "leaf" is the final digit.
+
+Every diagram must include a key to explain how to read the values.
+
+HISTOGRAMS
+Histograms are used to represent continuous data that has been grouped into intervals or classes.
+
+DEFINITION: Frequency density is the ratio of the frequency to the class width (Frequency / Class Width).
+
+In a histogram, the area of each bar represents the frequency, not the height.
+
+The vertical axis is labeled as "Frequency Density."
+
+Bars must be joined together because the data is continuous.
+
+CUMULATIVE FREQUENCY GRAPHS
+A cumulative frequency graph (or ogive) shows the running total of frequencies.
+
+Points are plotted at the upper class boundaries of each interval.
+
+The graph is used to estimate the median, quartiles, and percentiles.
+
+The median is found at the 50% mark of the total frequency.
+
+BOX-AND-WHISKER PLOTS
+A box-and-whisker plot provides a visual summary of the distribution of a data set based on a five-number summary.
+
+The five numbers are: Minimum, Lower Quartile (Q1), Median (Q2), Upper Quartile (Q3), and Maximum.
+
+The "box" contains the middle 50% of the data (the Interquartile Range).
+
+The "whiskers" extend to the minimum and maximum values.
+
+REMEMBER: Comparing box plots allows for a quick visual comparison of the spread and central tendency of different data sets.

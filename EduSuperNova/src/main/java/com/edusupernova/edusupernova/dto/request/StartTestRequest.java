@@ -17,8 +17,7 @@ public record StartTestRequest(
         @NotNull
         Integer courseId,
 
-        @NotNull
-        Integer paperId,
+        Integer paperId,            // nullable — if null, first paper for the course is used
 
         Integer unitId              // nullable — null means full paper, no unit filter
 ) {}

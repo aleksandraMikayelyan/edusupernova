@@ -1,6 +1,7 @@
 package com.edusupernova.edusupernova.service;
 
 import com.edusupernova.edusupernova.data.QuizRepository;
+import com.edusupernova.edusupernova.model.Paper;
 import com.edusupernova.edusupernova.model.Quiz;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -91,14 +92,49 @@ public class QuizService {
      * Picks a randomised question set for a specific Paper, optionally filtered
      * to a single Unit. Total count is driven by Paper.totalQuestions.
      *
-     * @param paperId        paper whose pool to draw from
+     * Fallback: if no questions are linked to this paper (idPaper = NULL in DB),
+     * the method falls back to a course-level query filtered by question type —
+     * MCQ types for MCQ/numeric papers, open-ended types for essay papers.
+     *
+     * @param paper          paper entity (carries format, courseId, totalQuestions)
      * @param unitId         optional unit filter; null = all units in the paper
      * @param totalQuestions how many questions to return; if pool is smaller, returns all
      */
-    public List<Quiz> generateTestForPaper(Integer paperId, Integer unitId, Integer totalQuestions) {
+    public List<Quiz> generateTestForPaper(Paper paper, Integer unitId, Integer totalQuestions) {
+        Integer paperId  = paper.getId();
+        Integer courseId = paper.getCourse().getId();
+
+        // Primary: questions explicitly linked to this paper
         List<Quiz> pool = (unitId != null)
                 ? quizRepository.findByPaperIdAndUnitId(paperId, unitId)
                 : quizRepository.findByPaperId(paperId);
+
+        // Fallback 1: questions have idPaper = NULL → select by course + question type
+        if (pool.isEmpty()) {
+            log.warn("No questions linked to paperId={} — trying course {} + type fallback",
+                    paperId, courseId);
+            List<Quiz.QuestionType> types = isEssayFormat(paper.getFormat())
+                    ? OPEN_TYPES
+                    : MCQ_TYPES;
+            pool = (unitId != null)
+                    ? quizRepository.findByCourseIdAndQuestionTypeIn(courseId, types)
+                            .stream()
+                            .filter(q -> q.getUnit() != null && q.getUnit().getId().equals(unitId))
+                            .toList()
+                    : quizRepository.findByCourseIdAndQuestionTypeIn(courseId, types);
+        }
+
+        // Fallback 2: no questions of the expected type → use ANY questions for this course
+        if (pool.isEmpty()) {
+            log.warn("No type-matched questions for course {} — using all course questions as last resort",
+                    courseId);
+            pool = (unitId != null)
+                    ? quizRepository.findByCourseId(courseId)
+                            .stream()
+                            .filter(q -> q.getUnit() != null && q.getUnit().getId().equals(unitId))
+                            .toList()
+                    : quizRepository.findByCourseId(courseId);
+        }
 
         List<Quiz> shuffledPool = shuffled(pool);
         int count = (totalQuestions != null && totalQuestions < shuffledPool.size())
@@ -108,6 +144,13 @@ public class QuizService {
         log.debug("generateTestForPaper paperId={} unitId={} pool={} selected={}",
                 paperId, unitId, pool.size(), count);
         return new ArrayList<>(shuffledPool.subList(0, count));
+    }
+
+    private boolean isEssayFormat(Paper.PaperFormat format) {
+        return switch (format) {
+            case ESSAY, DATA_RESPONSE, SHORT_ANSWER, LISTENING, READING, SPEAKING -> true;
+            default -> false;
+        };
     }
 
     // ── Private ───────────────────────────────────────────────────────────────

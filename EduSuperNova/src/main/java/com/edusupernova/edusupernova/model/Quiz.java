@@ -76,6 +76,20 @@ public class Quiz {
     @JsonIgnore
     private List<TestQuestions> testQuestions;
 
+    /** The group this question belongs to (null for standalone MCQ questions). */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idQuestionGroup", nullable = true)
+    @JsonIgnore
+    private QuestionGroup questionGroup;
+
+    /** Position within the group: 1=(a), 2=(b), 3=(c)… Null for standalone questions. */
+    @Column
+    private Integer groupOrderIndex;
+
+    /** Marks this question is worth in the real exam. Null = unspecified. */
+    @Column
+    private Integer marks;
+
     public enum Difficulty { EASY, MEDIUM, HARD }
 
     /**

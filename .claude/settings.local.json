@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"Repository\\\\.\" /c/Users/alya1/IdeaProjects/edusupernova/EduSuperNova/src/main/java/com/edusupernova/edusupernova/service/*.java /c/Users/alya1/IdeaProjects/edusupernova/EduSuperNova/src/main/java/com/edusupernova/edusupernova/controller/*.java)"
+    ]
+  }
+}

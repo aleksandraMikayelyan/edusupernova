@@ -7,6 +7,10 @@ package com.edusupernova.edusupernova.dto.response;
  *
  * The correct answer is NEVER sent to the frontend here —
  * it is only revealed in AnswerFeedbackDTO after the student submits.
+ *
+ * Group fields (groupId … marks) are non-null only for questions that belong
+ * to a QuestionGroup (Paper 2 Data Response, Paper 3 Essay, IELTS passages…).
+ * Standalone MCQ questions have all group fields as null.
  */
 public record TestQuestionDTO(
         Integer testId,
@@ -26,5 +30,13 @@ public record TestQuestionDTO(
         // Already-answered state (for revisiting a test session)
         String userResponse,
         Boolean correctResponse,
-        String feedbackIa
+        String feedbackIa,
+
+        // Group context — null for standalone (MCQ) questions
+        Integer groupId,
+        String  groupTitle,         // e.g. "Extract A: The Global Coffee Market"
+        String  contextText,        // the passage / transcript the student must read
+        String  contextImageUrl,    // optional chart or table image URL
+        Integer groupOrderIndex,    // position within the group: 1=(a), 2=(b)…
+        Integer marks               // how many marks this sub-question is worth
 ) {}

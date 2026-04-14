@@ -1,12 +1,19 @@
 package com.edusupernova.edusupernova.controller;
 
+import com.edusupernova.edusupernova.dto.request.StartTestRequest;
+import com.edusupernova.edusupernova.dto.request.SubmitAnswerRequest;
+import com.edusupernova.edusupernova.dto.response.AnswerFeedbackDTO;
+import com.edusupernova.edusupernova.dto.response.FeedBackDTO;
 import com.edusupernova.edusupernova.dto.response.TestQuestionDTO;
+import com.edusupernova.edusupernova.dto.response.TestSessionDTO;
 import com.edusupernova.edusupernova.model.TestQuestions;
 import com.edusupernova.edusupernova.service.EvaluationService;
 import com.edusupernova.edusupernova.service.TestService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,13 +21,14 @@ import java.util.List;
 /**
  * REST controller for the test workflow.
  *
- * NOTE: This controller is scheduled for a full rewrite in the next phase
- * (JWT-based email extraction, per-question submitAnswer flow).
- * It is currently kept minimal to allow compilation.
+ * New endpoints (JWT-authenticated):
+ *   POST /api/tests/start                → start a test session
+ *   POST /api/tests/{testId}/answer      → submit one answer, get instant feedback
+ *   GET  /api/tests/{testId}/report      → final report after completion
  *
- * Endpoints:
- *   POST /api/tests/{id}/evaluate    → submit answers + receive AI score
- *   GET  /api/tests/{id}/questions   → retrieve questions for a test
+ * Legacy endpoints (kept for compatibility):
+ *   POST /api/tests/{testId}/evaluate    → batch submit + AI score
+ *   GET  /api/tests/{testId}/questions   → list all questions for a test
  */
 @Slf4j
 @RestController
@@ -32,10 +40,50 @@ public class TestController {
     private final TestService       testService;
     private final EvaluationService evaluationService;
 
+    // ── New endpoints ─────────────────────────────────────────────────────────
+
     /**
-     * Step 2 – User submits all answers at once.
-     * Saves responses and triggers AI evaluation.
+     * Starts a new test session for the authenticated student.
+     * Body: { courseId, paperId, unitId (optional) }
+     * Returns: session metadata + first question.
      */
+    @PostMapping("/start")
+    public ResponseEntity<TestSessionDTO> startTest(
+            @RequestBody @Validated StartTestRequest request,
+            Authentication auth) {
+
+        TestSessionDTO session = testService.startTest(request, auth.getName());
+        return ResponseEntity.ok(session);
+    }
+
+    /**
+     * Submits a single answer and returns immediate feedback + next question.
+     * Body: { quizId, userResponse }
+     */
+    @PostMapping("/{testId}/answer")
+    public ResponseEntity<AnswerFeedbackDTO> submitAnswer(
+            @PathVariable Integer testId,
+            @RequestBody @Validated SubmitAnswerRequest request,
+            Authentication auth) {
+
+        AnswerFeedbackDTO feedback = testService.submitAnswer(testId, request, auth.getName());
+        return ResponseEntity.ok(feedback);
+    }
+
+    /**
+     * Returns the full post-test report for the feedback/report page.
+     */
+    @GetMapping("/{testId}/report")
+    public ResponseEntity<FeedBackDTO> getReport(
+            @PathVariable Integer testId,
+            Authentication auth) {
+
+        FeedBackDTO report = testService.getReport(testId, auth.getName());
+        return ResponseEntity.ok(report);
+    }
+
+    // ── Legacy endpoints ──────────────────────────────────────────────────────
+
     @PostMapping("/{testId}/evaluate")
     public ResponseEntity<EvaluationService.TestEvaluationResult> submitAndEvaluate(
             @PathVariable Integer testId,
@@ -54,9 +102,6 @@ public class TestController {
         return ResponseEntity.ok(result);
     }
 
-    /**
-     * Retrieves all questions for a test, mapped to DTOs.
-     */
     @GetMapping("/{testId}/questions")
     public ResponseEntity<List<TestQuestionDTO>> getTestQuestions(@PathVariable Integer testId) {
         List<TestQuestions> questions = testService.getQuestionsByTestId(testId);
@@ -71,16 +116,17 @@ public class TestController {
         return ResponseEntity.ok(dtoList);
     }
 
-    // ── Private helpers ──────────────────────────────────────────────────────
+    // ── Private helpers ───────────────────────────────────────────────────────
 
     private TestQuestionDTO toDTO(TestQuestions q) {
-        var quiz = q.getQuiz();
+        var quiz  = q.getQuiz();
+        var group = quiz != null ? quiz.getQuestionGroup() : null;
         return new TestQuestionDTO(
                 q.getId().getTestId(),
                 q.getId().getQuizId(),
-                null,                                                    // questionNumber not available here
-                quiz != null ? quiz.getQuestionText()          : null,
-                quiz != null ? quiz.getQuestionType().name()   : null,
+                null,
+                quiz != null ? quiz.getQuestionText()        : null,
+                quiz != null ? quiz.getQuestionType().name() : null,
                 quiz != null && quiz.getDifficulty() != null
                         ? quiz.getDifficulty().name() : "MEDIUM",
                 quiz != null ? quiz.getOptionA() : null,
@@ -90,7 +136,14 @@ public class TestController {
                 quiz != null ? quiz.getOptionE() : null,
                 q.getUserResponse(),
                 q.getCorrectResponse(),
-                q.getFeedbackIa()
+                q.getFeedbackIa(),
+                // group context fields
+                group != null ? group.getId()              : null,
+                group != null ? group.getTitle()           : null,
+                group != null ? group.getContextText()     : null,
+                group != null ? group.getContextImageUrl() : null,
+                quiz  != null ? quiz.getGroupOrderIndex()  : null,
+                quiz  != null ? quiz.getMarks()            : null
         );
     }
 }

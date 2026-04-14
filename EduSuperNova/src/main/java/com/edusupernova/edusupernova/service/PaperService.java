@@ -50,9 +50,6 @@ public class PaperService {
                 .orElseThrow(() -> ResourceNotFoundException.of("Paper", paperId));
     }
 
-    Courses course = courseRepository.findById(request.courseId())
-        .orElseThrow(() -> ResourceNotFoundException.of("Course", request.courseId()));
-
     /**
      * Creates a new Paper for a course (admin only).
      */

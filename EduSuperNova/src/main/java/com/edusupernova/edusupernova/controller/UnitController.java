@@ -1,6 +1,9 @@
 package com.edusupernova.edusupernova.controller;
 
+import com.edusupernova.edusupernova.data.PaperRepository;
+import com.edusupernova.edusupernova.dto.response.PaperDTO;
 import com.edusupernova.edusupernova.model.Courses;
+import com.edusupernova.edusupernova.model.Paper;
 import com.edusupernova.edusupernova.service.CourseService;
 import com.edusupernova.edusupernova.service.UnitService;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +14,7 @@ import java.util.List;
 
 /**
  * REST controller for the Units screen.
- * Returns course metadata and its ordered unit list in a single response.
- *
- * SRP – only handles HTTP concerns; data composition is done in the services.
+ * Returns course metadata, ordered unit list, and available papers in one response.
  */
 @RestController
 @RequestMapping("/api/units")
@@ -21,31 +22,53 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UnitController {
 
-    private final CourseService courseService;
-    private final UnitService   unitService;
+    private final CourseService    courseService;
+    private final UnitService      unitService;
+    private final PaperRepository  paperRepository;
 
     /**
-     * Returns the course display name, icon, and its ordered unit list.
-     * Used by the front-end Units screen to populate the header and content list.
+     * Returns the course display name, icon, ordered unit list, and papers.
+     * Papers are used by the front-end to show "Check your knowledge" (MCQ)
+     * and "Practice essay" (ESSAY) buttons with the correct paperId.
      */
     @GetMapping("/course/{courseId}")
     public ResponseEntity<CourseUnitsResponse> getUnitsScreenData(@PathVariable Integer courseId) {
         Courses course = courseService.getCourseBasicInfo(courseId);
-        List<UnitService.UnitWithContent> units = unitService.getUnitsByCourseId(courseId);
+        List<UnitService.UnitWithContent> units  = unitService.getUnitsByCourseId(courseId);
+        List<PaperDTO>                    papers = paperRepository
+                .findByCourseIdOrderByOrderIndex(courseId)
+                .stream()
+                .map(this::toDTO)
+                .toList();
 
         return ResponseEntity.ok(new CourseUnitsResponse(
                 course.getCoursename(),
                 course.getIcon(),
-                units
+                units,
+                papers
         ));
     }
 
     // ── Response DTO ──────────────────────────────────────────────────────────
 
-    /** Projection returned to the front-end for the Units screen. */
     public record CourseUnitsResponse(
             String courseName,
             String courseIcon,
-            List<UnitService.UnitWithContent> units
+            List<UnitService.UnitWithContent> units,
+            List<PaperDTO> papers
     ) {}
+
+    // ── Mapper ────────────────────────────────────────────────────────────────
+
+    private PaperDTO toDTO(Paper p) {
+        return new PaperDTO(
+                p.getId(),
+                p.getPaperName(),
+                p.getInstructions(),
+                p.getFormat().name(),
+                p.getTotalQuestions(),
+                p.getTimeLimitMinutes(),
+                p.getOrderIndex()
+        );
+    }
 }

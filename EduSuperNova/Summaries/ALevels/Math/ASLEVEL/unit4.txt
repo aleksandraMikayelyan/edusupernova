@@ -1,0 +1,31 @@
+UNIT 4: CIRCULAR MEASURE
+
+INTRODUCTION TO CIRCULAR MEASURE
+Circular measure introduces the radian as a natural unit for measuring angles. It is extensively used in advanced circle geometry because it simplifies many mathematical calculations.
+
+RADIAN: The angle subtended at the center of a circle by an arc whose length is equal to the radius of the circle.
+
+- To convert between degrees and radians, use the relationship: π radians = 180°.
+- Angles measured in radians are often expressed as multiples of π.
+
+ARC LENGTH AND SECTOR AREA
+When the angle θ subtended at the center of a circle is measured in radians, the formulas for arc length and sector area become highly streamlined.
+
+- The length of an arc (s) is given by: s = rθ.
+- The area of a sector (A) is given by: A = 0.5 * r^2 * θ.
+- In these formulas, 'r' represents the radius and 'θ' must be in radians.
+
+TRIANGLES AND SEGMENTS
+Calculating the area of a segment involves finding the difference between a sector's area and the area of the triangle formed by the two radii and the chord.
+
+DEFINITION: A segment is the region of a circle bounded by a chord and the arc subtended by that chord.
+
+- The area of a triangle in a circle can be calculated as: Area = 0.5 * r^2 * sin(θ).
+- The area of a segment is then derived as: Area = 0.5 * r^2 * (θ - sin(θ)).
+
+GEOMETRIC PROBLEM SOLVING
+Complex circle problems often require combining circular measure formulas with standard trigonometric relations.
+
+NOTE: When a line is tangent to a circle at a point, it is always perpendicular to the radius at that point, forming a right-angled triangle which can be solved using tan(θ) or other trigonometric ratios.
+
+EXAMPLE: If an arc length is 7 cm and the radius is 4 cm, the angle θ is 7 / 4 = 1.75 radians. If a tangent is drawn at the end of a radius, the resulting right-angled triangle allows for the calculation of other lengths and shaded areas.

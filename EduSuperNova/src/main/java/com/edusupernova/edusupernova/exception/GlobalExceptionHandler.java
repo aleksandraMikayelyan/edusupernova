@@ -49,10 +49,10 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.BAD_REQUEST, "Validation Failed", message, request);
     }
 
-    // ── 400 (bad arguments from services) ──────────────────────────────────
-    @ExceptionHandler(IllegalArgumentException.class)
+    // ── 400 (bad arguments / bad state from services) ──────────────────────
+    @ExceptionHandler({IllegalArgumentException.class, IllegalStateException.class})
     public ResponseEntity<ApiErrorDTO> handleIllegalArgument(
-            IllegalArgumentException ex, HttpServletRequest request) {
+            RuntimeException ex, HttpServletRequest request) {
         return build(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage(), request);
     }
 

@@ -1,0 +1,42 @@
+UNIT 3: COORDINATE GEOMETRY
+
+INTRODUCTION TO COORDINATE GEOMETRY
+Coordinate geometry is the study of geometric figures by representing them using a given coordinate system. Geometric objects such as straight lines, curves, and circles can be analyzed using their algebraic representations.
+
+COORDINATE GEOMETRY: The representation of geometric figures using coordinates in a two-dimensional plane.
+
+LINE SEGMENTS
+A line segment is the part of a line that connects two specific points.
+
+- The length of a line segment PQ between points P(x, y) and Q(a, b) is calculated as: length PQ = √[(a - x)² + (b - y)²].
+- The midpoint M of the line segment PQ is given by the formula: M = [(x + a) / 2, (y + b) / 2].
+
+STRAIGHT LINES
+The equation of a straight line relates the coordinates of any point on that line.
+
+- The standard form of a non-vertical straight line is y = mx + c, where 'm' is the gradient and 'c' is the y-intercept.
+- A vertical line has the equation x = b, where 'b' is the x-intercept.
+- The point-gradient form of a line passing through point (a, b) with gradient 'm' is: y - b = m(x - a).
+
+PARALLEL AND PERPENDICULAR LINES
+The relationship between the gradients of two lines determines their geometric orientation relative to each other.
+
+- Parallel lines have the same gradient (m₁ = m₂).
+- Perpendicular lines have gradients that are negative reciprocals of each other (m₁ × m₂ = -1).
+
+CIRCLE EQUATIONS
+A circle can be represented algebraically based on its center and radius.
+
+DEFINITION: A circle is the set of all points in a plane that are at a fixed distance (radius) from a fixed point (center).
+
+- The equation of a circle with center (h, k) and radius 'r' is: (x - h)² + (y - k)² = r².
+- To find the center and radius from a general quadratic form, use the method of completing the square.
+
+POINTS OF INTERSECTION
+Algebraic methods can be used to find where geometric figures meet.
+
+- To find the intersection of a line and a circle, substitute the linear equation into the circle equation.
+- If the resulting quadratic equation has one repeated root, the line is a tangent to the circle.
+- If there are two distinct roots, the line intersects the circle at two points.
+
+NOTE: Coordinate geometry is a foundational tool in fields like astronomy, where it is used to describe the paths of planets and other celestial objects.

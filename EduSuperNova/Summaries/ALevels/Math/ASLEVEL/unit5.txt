@@ -1,0 +1,43 @@
+UNIT 5: TRIGONOMETRY
+
+INTRODUCTION TO TRIGONOMETRY
+Trigonometry is concerned with basic geometric objects such as triangles and circles, along with the application of periodic functions to geometric problems involving oscillations and waves.
+
+NOTE: Trigonometric functions are crucial for engineering and can describe the movement of light and sound.
+
+ELEMENTARY RATIOS AND EXACT VALUES
+For a right-angled triangle with an angle θ, the three primary trigonometric ratios are defined by the lengths of the opposite, adjacent, and hypotenuse sides.
+
+- sin θ = opposite / hypotenuse
+- cos θ = adjacent / hypotenuse
+- tan θ = opposite / adjacent
+
+EXACT VALUES: Standard exact values for sin, cos, and tan are defined for specific angles such as 30° (π/6), 45° (π/4), and 60° (π/3).
+
+TRIGONOMETRIC GRAPHS AND PROPERTIES
+The graphs of sine, cosine, and tangent functions have distinct periodic properties and symmetries.
+
+- Sine (y = sin x): Passes through the origin, reaches max 1 at 90°, min -1 at 270°, and has a period of 360°.
+- Cosine (y = cos x): Reaches max 1 at 0°, min -1 at 180°, and has a period of 360°.
+- Tangent (y = tan x): Has a period of 180° and contains vertical asymptotes where the function is undefined.
+
+INVERSE TRIGONOMETRIC FUNCTIONS
+To define inverse functions, the domains of the standard trigonometric functions must be restricted to ensure they are one-to-one.
+
+DEFINITION: Inverse functions are denoted as sin^-1 x (arcsin), cos^-1 x (arccos), and tan^-1 x (arctan).
+
+- The domain for sin^-1 x and cos^-1 x is -1 ≤ x ≤ 1.
+- The domain for tan^-1 x is all real numbers x.
+
+TRIGONOMETRIC IDENTITIES
+Identities are equations involving trigonometric functions that are true for all values of the variables.
+
+KEY CONCEPT: Two fundamental identities used to solve equations and prove further relations are:
+1. tan θ = sin θ / cos θ
+2. sin^2 θ + cos^2 θ = 1
+
+SOLVING TRIGONOMETRIC EQUATIONS
+Equations are typically solved for a specific range of values, such as 0° ≤ x ≤ 360° or 0 ≤ x ≤ 2π.
+
+- Find the principal value using the inverse function.
+- Use the unit circle or graph symmetries to find all other required solutions within the given interval.
