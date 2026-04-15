@@ -64,6 +64,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/tests/**").permitAll()
                         .requestMatchers("/api/tests/start").permitAll()
                         .requestMatchers("/api/feedback/**").permitAll()
+                        .requestMatchers("/api/progress/**").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())

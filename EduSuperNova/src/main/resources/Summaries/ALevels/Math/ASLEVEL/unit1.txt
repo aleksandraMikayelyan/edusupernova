@@ -1,0 +1,47 @@
+
+
+QUADRATIC EXPRESSIONS AND FUNCTIONS
+A quadratic expression is a polynomial of order 2. It has a maximum or minimum value, and its graph is a parabola with a characteristic curvature and symmetry[cite: 539, 541].
+
+QUADRATIC EXPRESSION: An expression of the form ax^2 + bx + c, where a, b, and c are real numbers and a ≠ 0[cite: 539].
+LEADING COEFFICIENT: The coefficient 'a' of the x^2 term in a quadratic expression[cite: 540].
+CONSTANT TERM: The term 'c' in a quadratic expression that does not contain the variable x[cite: 540].
+
+FACTORIZING AND SOLVING
+Factoring is the process of expressing a quadratic function as a product of two linear polynomials[cite: 548].
+
+- Common methods include splitting the middle term or using the quadratic formula[cite: 549, 550].
+- Solving a quadratic equation ax^2 + bx + c = 0 involves finding the values of x (roots) where the expression equals zero[cite: 547].
+- A quadratic equation can have zero, one (repeated), or two real roots[cite: 586].
+
+COMPLETING THE SQUARE
+Completing the square is a technique used to rewrite a quadratic expression in the form a(x + p)^2 + q[cite: 533].
+
+NOTE: This form is particularly useful for identifying the coordinates of the vertex (turning point) of the parabola and for solving equations that do not factorize easily[cite: 533, 535].
+
+THE DISCRIMINANT
+The discriminant allows you to determine the nature and number of roots of a quadratic equation without solving it[cite: 587].
+
+DEFINITION: The discriminant is the value b^2 - 4ac from the quadratic formula[cite: 587].
+
+- If b^2 - 4ac > 0: There are two distinct real roots[cite: 587].
+- If b^2 - 4ac = 0: There is exactly one real root (a repeated root)[cite: 587].
+- If b^2 - 4ac < 0: There are no real roots[cite: 587].
+
+SIMULTANEOUS EQUATIONS
+To solve a pair of equations where one is linear and the other is quadratic, use the method of substitution[cite: 534, 585].
+
+1. Rearrange the linear equation to express one variable in terms of the other.
+2. Substitute this expression into the quadratic equation.
+3. Solve the resulting single-variable quadratic equation.
+4. Substitute the found value(s) back into the linear equation to find the corresponding values for the second variable[cite: 572, 585].
+
+GRAPHS OF QUADRATIC FUNCTIONS
+The graph of a quadratic function is a parabola. The relationship between the algebraic equation and the graph is defined by the coefficients[cite: 535].
+
+- If a > 0: The parabola opens upwards (U-shape) and has a minimum point[cite: 541].
+- If a < 0: The parabola opens downwards (n-shape) and has a maximum point[cite: 541].
+- The x-intercepts of the graph correspond to the roots of the equation ax^2 + bx + c = 0[cite: 535].
+- The y-intercept is always at the point (0, c)[cite: 539, 540].
+
+KEY CONCEPT: The path of a projectile (trajectory) under gravity is modeled by a quadratic function, a discovery attributed to Galileo[cite: 542, 543].

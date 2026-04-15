@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.core.io.ClassPathResource;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -20,7 +20,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class UnitService {
 
-    private static final String BASE_FOLDER          = "EduSuperNova";
+    //private static final String BASE_FOLDER          = "EduSuperNova";
     private static final String CONTENT_NOT_FOUND    = "ERROR: File not found at: ";
     private static final String CONTENT_READ_FAILURE = "ERROR: Critical failure reading file.";
 
@@ -52,8 +52,14 @@ public class UnitService {
         return new UnitWithContent(unit, loadContent(unit.getSummaryPath()));
     }
 
-    private String loadContent(String rawDbPath) {
-        Path fullPath = buildFilePath(rawDbPath);
+    /*private String loadContent(String rawDbPath) {
+        Path fullPath;
+        // Si la ruta ya contiene EduSuperNova, no añadir BASE_FOLDER
+        if (rawDbPath.contains(BASE_FOLDER)) {
+            fullPath = Paths.get(System.getProperty("user.dir")).resolve(rawDbPath);
+        } else {
+            fullPath = buildFilePath(rawDbPath);
+        }
         try {
             if (Files.exists(fullPath)) {
                 return Files.readString(fullPath, StandardCharsets.UTF_8);
@@ -64,14 +70,36 @@ public class UnitService {
             log.error("Failed to read unit content file: {}", fullPath.toAbsolutePath(), ex);
             return CONTENT_READ_FAILURE;
         }
+    }*/
+   private String loadContent(String rawDbPath) {
+    String normalized = rawDbPath.trim().replace("\\", "/");
+    try {
+        var resource = new ClassPathResource(normalized);
+        if (resource.exists()) {
+            try (var is = resource.getInputStream()) {
+                return new String(is.readAllBytes(), StandardCharsets.UTF_8);
+            }
+        }
+        log.warn("Unit content not found in classpath: {}", normalized);
+        return CONTENT_NOT_FOUND + normalized;
+    } catch (IOException ex) {
+        log.error("Failed to read unit content: {}", normalized, ex);
+        return CONTENT_READ_FAILURE;
+    }
+   
+    }
+    private Path buildFilePath(String rawDbPath) {
+    String normalized = rawDbPath.trim().replace("\\", "/");
+    return Paths.get(System.getProperty("user.dir")).resolve(normalized).normalize();
     }
 
-    private Path buildFilePath(String rawDbPath) {
+    /*private Path buildFilePath(String rawDbPath) {
         String[] segments = rawDbPath.trim().replace("\\", "/").split("/");
         Path base = Paths.get(System.getProperty("user.dir"), BASE_FOLDER);
         for (String segment : segments) {
             if (!segment.isEmpty()) base = base.resolve(segment);
         }
         return base;
-    }
+    }*/
+
 }

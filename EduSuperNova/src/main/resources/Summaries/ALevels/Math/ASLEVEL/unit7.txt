@@ -1,0 +1,37 @@
+INTRODUCTION TO DIFFERENTIATION
+Differentiation is a primary branch of calculus that studies the rate at which quantities change. It was developed by Isaac Newton in the early 17th century and has extensive applications in various scientific disciplines, such as determining velocity from displacement in physics.
+
+DIFFERENTIATION: The process of finding the rate of change or the gradient of a curve.
+DERIVATIVE: The result of the differentiation process, which represents the gradient at any point on a curve.
+
+NOTATION
+Specific mathematical notations are used to represent the derivatives of a function f(x) or y.
+
+- f'(x): Denotes the first derivative of a function f(x).
+- f''(x): Denotes the second derivative, found by differentiating the first derivative again.
+- dy/dx: Represents the first derivative of y with respect to x.
+- d2y/dx2: Represents the second derivative.
+
+DIFFERENTIATION RULES
+General rules allow for the differentiation of various algebraic expressions.
+
+- Power Rule: For a term ax^n (where n is rational), the derivative is n * a * x^(n-1).
+- Chain Rule: Used to differentiate a composite function (a function of a function) by introducing a third variable u.
+- Addition Rule: The derivative of a sum of functions is the sum of their individual derivatives.
+
+TANGENTS AND NORMALS
+The derivative can be used to determine the exact equations of lines that touch or intersect a curve at a specific point.
+
+DEFINITION: A tangent is a straight line that touches a curve at a point and has a gradient equal to the derivative evaluated at that point.
+
+- Equation of a tangent: At point (a, b) with gradient m, the equation is y - b = m(x - a).
+- Normal: A line perpendicular to the tangent at the point of contact, with a gradient of -1/m.
+
+STATIONARY POINTS
+Stationary points are specific locations on a curve where the gradient is zero.
+
+- Maxima: A high point on a curve where it is concave downward.
+- Minima: A low point on a curve where it is concave upward.
+- Points of Inflexion: Points where the curve changes its concavity.
+
+NOTE: The nature of a stationary point (whether it is a maximum or minimum) can be determined using the second derivative.

@@ -28,10 +28,10 @@ public class Enrollment{
     @JoinColumn(name = "idExam")
     private Exams exam;
 
-    @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(columnDefinition =  "TIMESTAMP DEFAULT CURRENT_TIMESTAMP") /*"DATETIME DEFAULT CURRENT_TIMESTAMP" */
     private LocalDateTime enrolledAt = LocalDateTime.now();
 
-    @Column(precision = 5, scale = 2, columnDefinition = "DECIMAL(5,2) DEFAULT 0.00")
+    @Column(precision = 5, scale = 2, columnDefinition = "NUMERIC(5,2) DEFAULT 0.00") /*"DECIMAL(5,2) DEFAULT 0.00" */
     private BigDecimal progress = BigDecimal.ZERO;
 
     private LocalDateTime lastActivity;

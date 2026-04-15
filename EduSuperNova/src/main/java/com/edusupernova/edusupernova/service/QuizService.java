@@ -148,7 +148,8 @@ public class QuizService {
 
     private boolean isEssayFormat(Paper.PaperFormat format) {
         return switch (format) {
-            case ESSAY, DATA_RESPONSE, SHORT_ANSWER, LISTENING, READING, SPEAKING -> true;
+            case ESSAY, DATA_RESPONSE, SHORT_ANSWER, LISTENING, READING, SPEAKING,
+                 READING_WRITING, MULTI_ESSAY -> true;
             default -> false;
         };
     }

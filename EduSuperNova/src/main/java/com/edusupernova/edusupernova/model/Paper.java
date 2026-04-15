@@ -48,14 +48,16 @@ public class Paper {
     private List<Quiz> questions;
 
     public enum PaperFormat {
-        MCQ,            // A Levels Paper 1, SAT Reading
-        DATA_RESPONSE,  // A Levels Paper 2
-        ESSAY,          // A Levels Paper 3, IELTS Writing Task 2
-        SHORT_ANSWER,   // IELTS Writing Task 1
-        LISTENING,      // IELTS/TOEFL Listening (audio script)
-        READING,        // IELTS Reading (passage + questions)
-        SPEAKING,       // TOEFL Speaking (prompt based)
-        NUMERIC_INPUT,  // SAT Math grid-in
-        TRUE_FALSE_NG   // IELTS True/False/Not Given
+        MCQ,             // A Levels Paper 1, SAT Reading
+        DATA_RESPONSE,   // A Levels Paper 2
+        ESSAY,           // A Levels Paper 3, IELTS Writing Task 2
+        SHORT_ANSWER,    // IELTS Writing Task 1
+        LISTENING,       // IELTS/TOEFL Listening (audio script)
+        READING,         // IELTS Reading (passage + questions)
+        SPEAKING,        // TOEFL Speaking (prompt based)
+        NUMERIC_INPUT,   // SAT Math grid-in
+        TRUE_FALSE_NG,   // IELTS True/False/Not Given
+        READING_WRITING, // Per-question text toggle + multiple essays (English P1, IELTS/TOEFL Writing)
+        MULTI_ESSAY      // Shared passage + 2 main essays + random Q3 pool (English P2, ACT English)
     }
 }

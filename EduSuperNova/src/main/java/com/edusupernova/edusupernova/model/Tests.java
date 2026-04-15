@@ -37,7 +37,7 @@ public class Tests {
     @JoinColumn(name = "idUnit", nullable = true)
     private Unit unit;
 
-    @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP") /* */
     private LocalDateTime creationDate = LocalDateTime.now();
 
     @Column
@@ -54,7 +54,7 @@ public class Tests {
     @Column(nullable = false)
     private TestStatus status = TestStatus.IN_PROGRESS;
 
-    @Column(columnDefinition = "DECIMAL(5,2) DEFAULT 0.00")
+    @Column(columnDefinition = "NUMERIC(5,2) DEFAULT 0.00")
     private Double finalScore = 0.0;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
