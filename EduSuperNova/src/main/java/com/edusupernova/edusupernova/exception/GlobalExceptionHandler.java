@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -49,11 +50,30 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.BAD_REQUEST, "Validation Failed", message, request);
     }
 
+    // ── 403 ────────────────────────────────────────────────────────────────
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<ApiErrorDTO> handleForbidden(
+            ForbiddenException ex, HttpServletRequest request) {
+        return build(HttpStatus.FORBIDDEN, "Forbidden", ex.getMessage(), request);
+    }
+
     // ── 400 (bad arguments / bad state from services) ──────────────────────
     @ExceptionHandler({IllegalArgumentException.class, IllegalStateException.class})
     public ResponseEntity<ApiErrorDTO> handleIllegalArgument(
             RuntimeException ex, HttpServletRequest request) {
         return build(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage(), request);
+    }
+
+    // ── 403 (email not yet verified) ────────────────────────────────────────
+    // Spring Security throws DisabledException when isEnabled() returns false.
+    // We intercept it here so the client gets a clear, actionable message
+    // instead of a generic 401 or the default Spring error page.
+    @ExceptionHandler(DisabledException.class)
+    public ResponseEntity<ApiErrorDTO> handleDisabled(
+            DisabledException ex, HttpServletRequest request) {
+        return build(HttpStatus.FORBIDDEN, "Account Not Verified",
+                "Your email address has not been verified. " +
+                "Please check your inbox and enter the 6-digit code.", request);
     }
 
     // ── 401 ────────────────────────────────────────────────────────────────

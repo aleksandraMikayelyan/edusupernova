@@ -37,4 +37,7 @@ public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
     /** Questions for a paper filtered to a specific unit. */
     List<Quiz> findByPaperIdAndUnitId(Integer paperId, Integer unitId);
+
+    /** All questions belonging to a specific QuestionGroup (for "practice again"). */
+    List<Quiz> findByQuestionGroupId(Integer groupId);
 }

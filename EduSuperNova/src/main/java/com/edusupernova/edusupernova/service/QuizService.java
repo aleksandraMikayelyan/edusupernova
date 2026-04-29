@@ -10,7 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Provides question selection and test-generation logic.
@@ -100,7 +104,16 @@ public class QuizService {
      * @param unitId         optional unit filter; null = all units in the paper
      * @param totalQuestions how many questions to return; if pool is smaller, returns all
      */
-    public List<Quiz> generateTestForPaper(Paper paper, Integer unitId, Integer totalQuestions) {
+    /**
+     * @param excludeGroupIds QuestionGroup IDs the user has already completed for
+     *                        this paper — they are skipped so the student always
+     *                        gets fresh extracts/passages. If all groups have been
+     *                        done the exclusion resets automatically (all groups
+     *                        become eligible again).
+     */
+    public List<Quiz> generateTestForPaper(
+            Paper paper, Integer unitId, Integer totalQuestions,
+            Set<Integer> excludeGroupIds) {
         Integer paperId  = paper.getId();
         Integer courseId = paper.getCourse().getId();
 
@@ -136,14 +149,94 @@ public class QuizService {
                     : quizRepository.findByCourseId(courseId);
         }
 
+        log.debug("generateTestForPaper paperId={} unitId={} pool={} format={}",
+                paperId, unitId, pool.size(), paper.getFormat());
+
+        // Grouped formats: pick whole QuestionGroups so extracts/passages stay intact
+        if (isGroupedFormat(paper.getFormat())) {
+            List<Quiz> selected = selectByGroup(pool, totalQuestions, excludeGroupIds);
+            log.debug("generateTestForPaper (grouped) selected={} excludedGroups={}",
+                    selected.size(), excludeGroupIds.size());
+            return selected;
+        }
+
+        // Non-grouped formats: original random selection
         List<Quiz> shuffledPool = shuffled(pool);
         int count = (totalQuestions != null && totalQuestions < shuffledPool.size())
                 ? totalQuestions
                 : shuffledPool.size();
-
-        log.debug("generateTestForPaper paperId={} unitId={} pool={} selected={}",
-                paperId, unitId, pool.size(), count);
         return new ArrayList<>(shuffledPool.subList(0, count));
+    }
+
+    /**
+     * For DATA_RESPONSE / READING / MULTI_ESSAY / LISTENING papers, questions
+     * belong to QuestionGroups (extracts/passages). Selecting individual questions
+     * at random would orphan sub-questions from their extract context.
+     *
+     * This method shuffles the GROUPS and picks whole groups until totalQuestions
+     * is reached. Sub-questions within each group keep their groupOrderIndex order
+     * (a, b, c, d, e). If a question has no group it is treated as a group of one.
+     */
+    private List<Quiz> selectByGroup(List<Quiz> pool, Integer totalQuestions,
+                                     Set<Integer> excludeGroupIds) {
+        // Bucket questions by group id (preserves insertion order for stable output)
+        Map<Integer, List<Quiz>> byGroup = new LinkedHashMap<>();
+        List<Quiz> ungrouped = new ArrayList<>();
+
+        for (Quiz q : pool) {
+            if (q.getQuestionGroup() != null) {
+                byGroup.computeIfAbsent(q.getQuestionGroup().getId(), k -> new ArrayList<>())
+                       .add(q);
+            } else {
+                ungrouped.add(q);
+            }
+        }
+
+        // Sort sub-questions within each group by their display order (a→b→c…)
+        byGroup.values().forEach(group -> group.sort(
+                Comparator.comparingInt(q -> q.getGroupOrderIndex() != null ? q.getGroupOrderIndex() : 0)
+        ));
+
+        // Filter out groups the user has already completed for this paper
+        List<List<Quiz>> freshGroups = byGroup.entrySet().stream()
+                .filter(e -> !excludeGroupIds.contains(e.getKey()))
+                .map(Map.Entry::getValue)
+                .collect(java.util.stream.Collectors.toCollection(ArrayList::new));
+
+        // Auto-reset: if the student has done every group, let all groups back in
+        if (freshGroups.isEmpty() && !byGroup.isEmpty()) {
+            log.info("All QuestionGroups for this paper have been completed — resetting exclusion list");
+            freshGroups = new ArrayList<>(byGroup.values());
+        }
+
+        // Shuffle the groups themselves so each test gets a different extract combination
+        Collections.shuffle(freshGroups);
+
+        int target = (totalQuestions != null) ? totalQuestions : Integer.MAX_VALUE;
+        List<Quiz> result = new ArrayList<>();
+
+        // Add whole groups — never split a group mid-way
+        for (List<Quiz> group : freshGroups) {
+            if (result.size() >= target) break;
+            result.addAll(group);
+        }
+
+        // Top up with ungrouped questions if the pool was short
+        if (result.size() < target && !ungrouped.isEmpty()) {
+            Collections.shuffle(ungrouped);
+            int need = target - result.size();
+            result.addAll(ungrouped.subList(0, Math.min(need, ungrouped.size())));
+        }
+
+        return result;
+    }
+
+    /** Formats whose questions belong to QuestionGroups (extracts/passages). */
+    private boolean isGroupedFormat(Paper.PaperFormat format) {
+        return switch (format) {
+            case DATA_RESPONSE, READING, MULTI_ESSAY, LISTENING -> true;
+            default -> false;
+        };
     }
 
     private boolean isEssayFormat(Paper.PaperFormat format) {

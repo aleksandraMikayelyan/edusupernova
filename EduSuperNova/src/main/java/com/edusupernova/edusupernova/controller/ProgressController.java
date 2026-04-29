@@ -1,6 +1,7 @@
 package com.edusupernova.edusupernova.controller;
 
 import com.edusupernova.edusupernova.data.*;
+import com.edusupernova.edusupernova.dto.response.CompletedGroupDTO;
 import com.edusupernova.edusupernova.dto.response.CourseProgressDTO;
 import com.edusupernova.edusupernova.dto.response.ExamProgressDTO;
 import com.edusupernova.edusupernova.model.*;
@@ -34,11 +35,12 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class ProgressController {
 
-    private final UserRepository       userRepository;
-    private final EnrollmentRepository enrollmentRepository;
-    private final CourseRepository     courseRepository;
-    private final TestRepository       testRepository;
-    private final UnitRepository       unitRepository;
+    private final UserRepository           userRepository;
+    private final EnrollmentRepository    enrollmentRepository;
+    private final CourseRepository        courseRepository;
+    private final TestRepository          testRepository;
+    private final UnitRepository          unitRepository;
+    private final TestQuestionsRepository testQuestionsRepository;
 
     @GetMapping("/me")
     @Transactional(readOnly = true)
@@ -55,6 +57,51 @@ public class ProgressController {
                 .toList();
 
         log.debug("Progress requested for userId={}: {} exam(s)", user.getId(), result.size());
+        return ResponseEntity.ok(result);
+    }
+
+    // ── Completed groups (for profile "Practice again" panel) ─────────────────
+
+    /**
+     * GET /api/progress/completed-groups
+     *
+     * Returns every QuestionGroup (extract / passage / essay theme) the student
+     * has already finished at least once, across all papers.
+     *
+     * Each entry includes paperId + courseId so the frontend can build the
+     * "Practice again" call:
+     *   POST /api/tests/start  { courseId, paperId, forceGroupId }
+     */
+    @GetMapping("/completed-groups")
+    @Transactional(readOnly = true)
+    public ResponseEntity<List<CompletedGroupDTO>> getCompletedGroups(Authentication auth) {
+        if (auth == null) return ResponseEntity.status(401).build();
+
+        Users user = userRepository.findByEmail(auth.getName());
+        if (user == null) return ResponseEntity.notFound().build();
+
+        List<CompletedGroupDTO> result = testQuestionsRepository
+                .findCompletedGroupsByUser(user.getId())
+                .stream()
+                .map(group -> {
+                    Paper   paper  = group.getPaper();
+                    Courses course = paper.getCourse();
+                    String preview = group.getContextText() != null && group.getContextText().length() > 300
+                            ? group.getContextText().substring(0, 300) + "…"
+                            : group.getContextText();
+                    return new CompletedGroupDTO(
+                            group.getId(),
+                            group.getTitle(),
+                            preview,
+                            paper.getId(),
+                            paper.getPaperName(),
+                            course.getId(),
+                            course.getCoursename()
+                    );
+                })
+                .toList();
+
+        log.debug("Completed groups for userId={}: {}", user.getId(), result.size());
         return ResponseEntity.ok(result);
     }
 

@@ -30,8 +30,16 @@ public class Users implements UserDetails { // 1. Implementa la interfaz
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false) // Removí columnDefinition para evitar errores de dialecto si no es necesario
+    @Column(nullable = false)
     private Role rol = Role.STUDENT;
+
+    /**
+     * False until the user clicks the 6-digit code we send on registration.
+     * Spring Security's isEnabled() returns this value, so unverified users
+     * are rejected at the authentication layer before any JWT is issued.
+     */
+    @Column(name = "emailVerified", nullable = true)
+    private Boolean emailVerified = false;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Enrollment> enrollments;
@@ -71,6 +79,6 @@ public class Users implements UserDetails { // 1. Implementa la interfaz
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return Boolean.TRUE.equals(emailVerified);
     }
 }

@@ -30,4 +30,8 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+.vscode/launch.json
+
+### Secrets — never commit these ───────────────────────────────────────────────
+.env
+.env.*

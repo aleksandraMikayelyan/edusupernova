@@ -7,6 +7,8 @@ import com.edusupernova.edusupernova.dto.response.AnswerFeedbackDTO;
 import com.edusupernova.edusupernova.dto.response.FeedBackDTO;
 import com.edusupernova.edusupernova.dto.response.TestQuestionDTO;
 import com.edusupernova.edusupernova.dto.response.TestSessionDTO;
+import com.edusupernova.edusupernova.exception.ForbiddenException;
+import com.edusupernova.edusupernova.exception.ResourceNotFoundException;
 import com.edusupernova.edusupernova.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Manages the full lifecycle of a student test:
@@ -46,6 +50,7 @@ public class TestService {
     private final CourseRepository        courseRepository;
     private final PaperRepository         paperRepository;
     private final UnitRepository          unitRepository;
+    private final QuizRepository          quizRepository;
     private final QuizService             quizService;
     private final GroqService             groqService;
     private final OpenEndedEvaluator      openEndedEvaluator;
@@ -91,9 +96,24 @@ public class TestService {
         test.setTimeLimitMinutes(timeLimitMinutes);
         Tests saved = testRepository.save(test);
 
-        // Pick randomised questions for this paper/unit
-        List<Quiz> questions = quizService.generateTestForPaper(
-                paper, request.unitId(), paper.getTotalQuestions());
+        // Pick questions — behaviour depends on whether a specific group was requested
+        List<Quiz> questions;
+
+        if (request.forceGroupId() != null) {
+            // "Practice again" path: use only the requested QuestionGroup, ignore exclusions
+            questions = quizRepository.findByQuestionGroupId(request.forceGroupId());
+            questions.sort(java.util.Comparator.comparingInt(
+                    q -> q.getGroupOrderIndex() != null ? q.getGroupOrderIndex() : 0));
+            log.info("startTest forceGroupId={} → {} questions", request.forceGroupId(), questions.size());
+        } else {
+            // Normal path: exclude groups the user has already completed for this paper
+            Set<Integer> doneGroupIds = new HashSet<>(
+                    testQuestionsRepository.findCompletedGroupIdsByUserAndPaper(
+                            user.getId(), paper.getId()));
+            log.info("startTest paperId={} userId={} doneGroups={}", paper.getId(), user.getId(), doneGroupIds);
+            questions = quizService.generateTestForPaper(
+                    paper, request.unitId(), paper.getTotalQuestions(), doneGroupIds);
+        }
 
         if (questions.isEmpty()) {
             throw new IllegalStateException(
@@ -150,21 +170,30 @@ public class TestService {
         String   aiFeedback;
         Double   aiScore = null;
 
+        // Set the response on tq before evaluation so the AI sees the actual answer
+        tq.setUserResponse(request.userResponse());
+
         if (isMCQ) {
             isCorrect  = evaluateMCQ(request.userResponse(), quiz.getCorrectAnswer());
             aiFeedback = generateMCQFeedback(quiz, isCorrect);
         } else {
             // ESSAY / OPEN_ENDED — single-question AI evaluation
-            OpenEndedEvaluator.EvaluationResult result =
-                    openEndedEvaluator.evaluateBatch(List.of(tq),
-                            buildContext(test)).get(0);
-            isCorrect  = result.score() >= 6.0;
-            aiFeedback = result.feedback();
-            aiScore    = result.score();
+            try {
+                OpenEndedEvaluator.EvaluationResult result =
+                        openEndedEvaluator.evaluateBatch(List.of(tq),
+                                buildContext(test)).get(0);
+                isCorrect  = result.score() >= 6.0;
+                aiFeedback = result.feedback();
+                aiScore    = result.score();
+            } catch (RuntimeException e) {
+                log.warn("AI evaluation failed for quizId={}: {}", request.quizId(), e.getMessage());
+                isCorrect  = false;
+                aiFeedback = "AI feedback unavailable — please review your answer manually.";
+                aiScore    = -1.0;
+            }
         }
 
         // ── Persist answer ────────────────────────────────────────────────────
-        tq.setUserResponse(request.userResponse());
         tq.setCorrectResponse(isCorrect);
         tq.setFeedbackIa(aiFeedback);
         tq.setAiScore(aiScore);
@@ -184,9 +213,14 @@ public class TestService {
         boolean complete = unanswered == 0;
 
         if (complete) {
+            int correctCount = (int) allQuestions.stream()
+                    .filter(q -> Boolean.TRUE.equals(q.getCorrectResponse()))
+                    .count();
+            test.setTotalCorrect(correctCount);
+            test.setTotalAnswered(allQuestions.size());
             test.setStatus(Tests.TestStatus.COMPLETED);
             test.setCompletedAt(LocalDateTime.now());
-            test.setFinalScore(calculatePercentage(test.getTotalCorrect(), allQuestions.size()));
+            test.setFinalScore(calculatePercentage(correctCount, allQuestions.size()));
         }
         testRepository.save(test);
 
@@ -391,12 +425,12 @@ public class TestService {
 
     private Tests findTest(Integer testId) {
         return testRepository.findById(testId)
-                .orElseThrow(() -> new IllegalArgumentException("Test not found: " + testId));
+                .orElseThrow(() -> new ResourceNotFoundException("Test not found: " + testId));
     }
 
     private void assertOwnership(Tests test, String email) {
         if (!test.getUser().getEmail().equals(email)) {
-            throw new SecurityException("Test does not belong to user: " + email);
+            throw new ForbiddenException("Test does not belong to user: " + email);
         }
     }
 

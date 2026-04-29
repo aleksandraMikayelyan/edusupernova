@@ -19,5 +19,8 @@ public record StartTestRequest(
 
         Integer paperId,            // nullable — if null, first paper for the course is used
 
-        Integer unitId              // nullable — null means full paper, no unit filter
+        Integer unitId,             // nullable — null means full paper, no unit filter
+
+        Integer forceGroupId        // nullable — if set, generates test from this specific
+                                    // QuestionGroup only (used by "Practice again" in profile)
 ) {}

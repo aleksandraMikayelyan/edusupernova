@@ -236,6 +236,8 @@ public class EvaluationService {
             q.setFeedbackIa(ai.feedback());
             q.setCorrectResponse(ai.score() >= 6.0);
         });
+        // entities are detached in this new transaction — explicit save required
+        testQuestionRepo.saveAll(answers);
     }
 
     // ── Utility helpers ────────────────────────────────────────────────────────
