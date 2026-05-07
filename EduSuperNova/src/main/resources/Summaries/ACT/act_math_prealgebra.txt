@@ -1,0 +1,139 @@
+PRE-ALGEBRA AND ELEMENTARY ALGEBRA
+
+NUMBER PROPERTIES:
+
+ORDER OF OPERATIONS: PEMDAS — Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right)
+
+KEY CONCEPT: Multiplication and division are equal in priority — work left to right. Same for addition and subtraction.
+- 12 ÷ 4 × 3 = 3 × 3 = 9 (NOT 12 ÷ 12 = 1)
+
+TYPES OF NUMBERS:
+- Natural numbers: 1, 2, 3, ... (counting numbers)
+- Whole numbers: 0, 1, 2, 3, ...
+- Integers: ..., -3, -2, -1, 0, 1, 2, 3, ...
+- Rational numbers: any number expressible as a fraction p/q (includes terminating and repeating decimals)
+- Irrational numbers: cannot be expressed as a fraction (π, √2, √3)
+- Real numbers: all rational and irrational numbers
+
+PROPERTIES OF INTEGERS:
+- Even × anything = even
+- Odd × odd = odd
+- Even + even = even; odd + odd = even; even + odd = odd
+- Zero is even; zero is neither positive nor negative
+
+PRIME AND COMPOSITE NUMBERS:
+- PRIME: divisible only by 1 and itself (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47...)
+- 1 is NOT prime; 2 is the only even prime
+- COMPOSITE: has more than 2 factors (4, 6, 8, 9, 10, 12...)
+
+PRIME FACTORIZATION: Express a number as a product of primes
+- 360 = 8 × 45 = 2³ × 3² × 5
+
+GCF AND LCM:
+- GCF (Greatest Common Factor): largest factor shared by two numbers. Use prime factorization — take the LOWEST power of each shared prime.
+- LCM (Least Common Multiple): smallest multiple shared by two numbers. Take the HIGHEST power of each prime that appears.
+- GCF(12,18) = 6; LCM(12,18) = 36
+
+FRACTIONS:
+
+OPERATIONS WITH FRACTIONS:
+- Add/Subtract: find common denominator, then add/subtract numerators
+- Multiply: multiply numerators together, denominators together; simplify
+- Divide: multiply by the reciprocal of the divisor
+
+IMPORTANT: When dividing by a fraction, flip the second fraction and multiply: a/b ÷ c/d = a/b × d/c
+
+MIXED NUMBERS: Convert to improper fractions before calculating: 2⅓ = 7/3
+
+COMPARING FRACTIONS: Cross multiply or convert to decimals.
+
+DECIMALS, PERCENTS, AND FRACTIONS:
+
+KEY CONVERSIONS:
+- 1/4 = 0.25 = 25%
+- 1/3 = 0.333... = 33.3%
+- 1/2 = 0.5 = 50%
+- 2/3 = 0.667... = 66.7%
+- 3/4 = 0.75 = 75%
+- 1/5 = 0.2 = 20%
+- 1/8 = 0.125 = 12.5%
+
+PERCENT: means "per hundred." To convert: percent ÷ 100 = decimal; decimal × 100 = percent
+
+PERCENT CHANGE: ((New - Old) / Old) × 100
+- Percent increase: new value is larger
+- Percent decrease: new value is smaller
+
+IMPORTANT: Percent change is always calculated relative to the ORIGINAL value, not the new value.
+
+RATIOS AND PROPORTIONS:
+
+RATIO: comparison of two quantities. Can be written as a:b, a/b, or "a to b"
+- Part-to-part vs. part-to-whole: in a ratio of 3:5, total parts = 8
+
+PROPORTION: two equal ratios. Cross multiply to solve: if a/b = c/d, then ad = bc
+
+SCALE PROBLEMS: set up a proportion with consistent units on each side.
+
+DIRECT VARIATION: y = kx (as x increases, y increases proportionally; k is the constant of variation)
+INVERSE VARIATION: y = k/x (as x increases, y decreases)
+
+RATES:
+
+RATE: a ratio with different units. Distance = Rate × Time (D = RT)
+- If a car travels 300 miles in 5 hours: rate = 300/5 = 60 mph
+
+UNIT RATE: rate per single unit of one quantity
+- Miles per gallon, dollars per hour, beats per minute
+
+AVERAGE RATE: Total distance ÷ Total time (not the average of the individual rates)
+
+EXPONENTS:
+
+RULES OF EXPONENTS:
+- Product rule: xᵃ × xᵇ = x^(a+b)
+- Quotient rule: xᵃ ÷ xᵇ = x^(a-b)
+- Power rule: (xᵃ)ᵇ = x^(ab)
+- Zero exponent: x⁰ = 1 (for any x ≠ 0)
+- Negative exponent: x⁻ⁿ = 1/xⁿ
+- Fractional exponent: x^(m/n) = ⁿ√(xᵐ)
+
+SCIENTIFIC NOTATION: a × 10ⁿ where 1 ≤ a < 10
+- Moving decimal right → multiply by 10 with positive exponent
+- Moving decimal left → multiply by 10 with negative exponent
+
+SQUARE ROOTS AND RADICALS:
+
+√(ab) = √a × √b; √(a/b) = √a / √b
+- Simplify √72 = √(36 × 2) = 6√2
+
+IMPORTANT: √(a²) = |a| (absolute value, not just a, since a could be negative)
+
+ABSOLUTE VALUE: |x| = x if x ≥ 0; |x| = -x if x < 0
+- |x| = 5 means x = 5 or x = -5
+
+AVERAGES AND STATISTICS:
+
+MEAN: sum of values ÷ number of values
+MEDIAN: middle value when arranged in order; if even number of values, average the two middle values
+MODE: most frequently occurring value(s); a set can have no mode or multiple modes
+RANGE: largest value - smallest value
+
+KEY CONCEPT: If you know the mean and the number of values, you know the total sum. Use this to find a missing value.
+- If 5 numbers have a mean of 12, their sum = 60. If you know 4 of them, the 5th = 60 - (sum of the other 4).
+
+PROBABILITY:
+
+BASIC PROBABILITY: P(event) = (favorable outcomes) / (total possible outcomes)
+- Always between 0 and 1; multiply by 100 for percentage
+- P(not A) = 1 - P(A)
+
+INDEPENDENT EVENTS: P(A and B) = P(A) × P(B)
+DEPENDENT EVENTS: P(A then B) = P(A) × P(B|A), where P(B|A) means probability of B given A has occurred
+
+MUTUALLY EXCLUSIVE EVENTS: P(A or B) = P(A) + P(B)
+NON-MUTUALLY EXCLUSIVE: P(A or B) = P(A) + P(B) - P(A and B)
+
+COUNTING PRINCIPLE: If event A can occur in m ways and event B in n ways, both can occur in m × n ways.
+
+REMEMBER: On pre-algebra questions, the traps are usually in the details — sign errors, wrong order of operations, or misreading which value is the "original" in a percent change problem. Read carefully and check your arithmetic.

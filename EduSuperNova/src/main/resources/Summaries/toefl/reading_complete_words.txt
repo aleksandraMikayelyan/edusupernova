@@ -1,23 +1,160 @@
-TOEFL READING & VOCABULARY SUMMARY: ACADEMIC SUCCESS STRATEGIES
+READING COMPLETE WORDS AND VOCABULARY IN CONTEXT
 
-1. CORE OBJECTIVE:
-The "Complete Words" or Vocabulary in Context tasks test the ability to determine the meaning of specialized academic terms or high-level academic words based on surrounding context clues rather than prior memorization alone.
+Vocabulary in Context is one of the most consistent question types on the TOEFL Reading section, appearing 3 to 4 times per passage. The skill being tested is not vocabulary memorization — it is the ability to derive meaning from textual evidence. This is a learnable, systematic skill.
 
-2. KEY VOCABULARY STRATEGIES:
-- Contextual Clues: Look for definitions provided within the sentence, often separated by commas or dashes.
-- Contrast Indicators: Words like 'however,' 'despite,' or 'conversely' indicate the target word is the opposite of a known concept.
-- Restatement: Look for synonyms or parallel structures ('and', 'or', 'also') that mirror the target word's meaning.
+WHAT THE TASK TESTS
 
-3. ACADEMIC TEXT STRUCTURE (TOEFL STANDARD):
-- Introduction: Defines the phenomenon and presents the thesis.
-- Body Paragraphs: Each starts with a clear topic sentence followed by evidence/examples.
-- Transitions: Use of cohesive devices (e.g., 'furthermore', 'consequently') to link complex ideas.
+The question reads: "The word [X] in paragraph [Y] is closest in meaning to..." Four single words or short phrases are given as options. You must choose the one whose meaning in that specific context is closest to the highlighted word.
 
-4. COMMON ACADEMIC WORD FAMILIES:
-- Analysis/Analyze/Analytical
-- Hypothesis/Hypothetical
-- Significance/Significant/Signify
-- Implementation/Implement
+KEY CONCEPT: The correct answer is determined by CONTEXT, not by dictionary definition. A word may have five meanings in English. Only one meaning is active in this specific sentence. Your job is to identify that contextual meaning — even if you recognize the word, re-read the sentence as if you're encountering it for the first time.
 
-5. SUMMARY OF TASK REQUIREMENTS:
-To excel in the reading section, one must synthesize the main idea with the supporting evidence while maintaining a high degree of accuracy regarding the author's tone (usually objective/neutral).
+CONTEXTUAL CLUE TYPES
+
+DEFINITION CLUE: The text defines the word directly, often set off by punctuation.
+
+SIGNALS: "that is," "i.e.," "which means," "or," commas, dashes, or parentheses.
+
+EXAMPLE: "Obligate symbiosis — that is, a relationship in which both partners are entirely dependent on each other — is common in fungi." The word "obligate" is defined directly.
+
+RESTATEMENT CLUE: The author rephrases the idea using different words in the same sentence or the next.
+
+SIGNALS: "also," "in other words," "similarly," "likewise," parallel grammatical structures.
+
+CONTRAST CLUE: The word's meaning is the opposite of another word or phrase in the sentence.
+
+SIGNALS: "however," "but," "unlike," "in contrast to," "although," "whereas," "despite," "on the other hand."
+
+EXAMPLE: "The researcher expected the results to be consistent, but they proved erratic." Erratic means inconsistent or unpredictable — the contrast with "consistent" reveals it.
+
+EXAMPLE CLUE: The text provides examples that illustrate the meaning of the word.
+
+SIGNALS: "such as," "including," "for example," "for instance," "like."
+
+EXAMPLE: "Many arboreal creatures, such as monkeys, squirrels, and tree frogs, have adapted to life in forest canopies." Arboreal means tree-dwelling — the examples reveal this.
+
+CAUSE-AND-EFFECT CLUE: Understanding the word's meaning requires following a causal or logical chain.
+
+SIGNALS: "as a result," "because," "therefore," "leads to," "causes."
+
+GENERAL CONTEXT CLUE: No single signal word exists. Meaning must be inferred from the overall message of the sentence and paragraph.
+
+STRATEGY: Substitute your candidate meaning back into the sentence and check: does the sentence still make logical sense? Does it fit the paragraph's direction?
+
+THE FOUR-STEP VOCABULARY STRATEGY
+
+Step 1: Read the entire sentence containing the highlighted word plus the sentence before and after it.
+
+Step 2: Decide what the word means in this context. Use a synonym you already know or a paraphrase.
+
+Step 3: Check your candidate meaning against the answer choices. Find the closest match.
+
+Step 4: Substitute your chosen answer back into the original sentence to confirm. The sentence should still make sense and preserve the paragraph's logic.
+
+IMPORTANT: Never stop at Step 1. Students who just recognize the word and pick the most familiar meaning fall into the most common trap. The same word may mean something different in an academic context.
+
+ACADEMIC WORD LIST FAMILIES FOR TOEFL
+
+The Academic Word List (AWL) contains the most common words in academic English. Knowing these word families gives you a substantial advantage.
+
+ANALYSIS / ANALYZE / ANALYTICAL / ANALYST: The process of examining something in detail. "An analytical approach to the data revealed unexpected patterns."
+
+HYPOTHESIS / HYPOTHESIZE / HYPOTHETICAL: An untested explanatory statement. "The hypothesis was later confirmed by experimental evidence."
+
+CONCEPT / CONCEPTUAL / CONCEIVE / CONCEPTION: An abstract idea or mental category. "The concept of sustainability has evolved significantly."
+
+SIGNIFICANT / SIGNIFICANCE / SIGNIFY / INSIGNIFICANT: Important, meaningful. "The findings are statistically significant."
+
+ESTABLISH / ESTABLISHED / ESTABLISHMENT: To set up formally or to demonstrate conclusively. "Researchers have established a clear link between the two variables."
+
+DEMONSTRATE / DEMONSTRATION / DEMONSTRABLY: To show clearly. "The experiment demonstrated that light affects plant growth."
+
+ATTRIBUTE / ATTRIBUTION / ATTRIBUTABLE: To explain as caused by, or a quality belonging to something. "The decline was attributed to overfishing."
+
+ASSUME / ASSUMPTION / PRESUMABLY: To accept as true without proof. "The model assumes a linear relationship."
+
+VARY / VARIATION / VARIABLE / INVARIABLY: To differ or change. "Results varied significantly across different conditions."
+
+INDICATE / INDICATION / INDICATOR: To point toward or suggest. "High levels of cortisol may indicate chronic stress."
+
+INTERPRET / INTERPRETATION / INTERPRETIVE: To explain or give meaning. "Results are open to multiple interpretations."
+
+CONTRIBUTE / CONTRIBUTION / CONTRIBUTOR: To add to or play a role in. "Deforestation contributes significantly to carbon emissions."
+
+EVALUATE / EVALUATION / EVALUATIVE: To judge or assess carefully. "The committee evaluated the proposal based on four criteria."
+
+NOTE: For each family, learn the noun, verb, adjective, and adverb forms. TOEFL questions often ask for a synonym in a different form than you expect (e.g., the question highlights the noun form but the answer choices are verbs).
+
+ACADEMIC TEXT STRUCTURE AND HOW IT HELPS VOCABULARY
+
+Understanding paragraph structure helps you decode unfamiliar vocabulary faster.
+
+INTRODUCTION PARAGRAPHS: Define key terms and establish context. Vocabulary in introductions is often explicitly defined — look for signals like dashes, "which is," or "known as."
+
+BODY PARAGRAPHS: Follow the claim-evidence-example pattern. If a word appears in a topic sentence (claim), it names the main concept being developed. If it appears in an evidence sentence, it describes a relationship. If it appears in an example sentence, it names a concrete instance.
+
+CONTRAST PARAGRAPHS: Words in the contrasting clause (after "however," "but," "on the other hand") will mean the opposite of the word in the main clause.
+
+ACADEMIC TONE: Most TOEFL passages are written in an objective, neutral, formal register. Word choice is precise and non-emotive. If an answer choice has an emotional or casual tone, it is likely wrong regardless of its denotation.
+
+COMMONLY CONFUSED ACADEMIC WORD PAIRS
+
+AFFECT (verb) vs. EFFECT (noun): "The temperature affected the results" vs. "The effect was measurable."
+
+IMPLY (to suggest indirectly) vs. INFER (to draw a conclusion as a reader). Authors imply; readers infer.
+
+COMPRISE (to consist of) vs. COMPOSE (to make up). "The team comprises five members" = "Five members compose the team."
+
+FEWER (countable) vs. LESS (uncountable): "Fewer experiments" / "Less data."
+
+PRINCIPAL (main, primary) vs. PRINCIPLE (a rule or belief): "The principal reason" / "The principle of conservation."
+
+PRECEDE (to come before) vs. PROCEED (to continue or go forward).
+
+CONTIGUOUS (sharing a boundary) vs. CONTINUOUS (uninterrupted): "Contiguous territories" / "A continuous process."
+
+DIFFUSE (spread out, scattered) vs. DEFUSE (to remove tension): "Diffuse lighting" / "Defuse the conflict."
+
+REMEMBER: These confusions appear in both vocabulary questions and passage content. Sorting them out once and permanently is worth significant test performance.
+
+VOCABULARY FOR NATURAL SCIENCE PASSAGES
+
+EROSION: The gradual wearing away of rock or soil by natural forces.
+SEDIMENT: Material deposited by water, wind, or glaciers.
+ADAPTATION: A trait that improves an organism's survival in its environment.
+PHOTOSYNTHESIS: The process by which plants convert light into chemical energy.
+ECOSYSTEM: A biological community of interacting organisms and their environment.
+BIODIVERSITY: The variety of life in a particular habitat or on Earth.
+PRECIPITATION: Any form of water (rain, snow, sleet) falling from the atmosphere.
+STRATUM (pl. STRATA): A layer of rock, soil, or other material.
+TRAJECTORY: The path followed by a moving object; by extension, a pattern of development.
+
+VOCABULARY FOR SOCIAL SCIENCE PASSAGES
+
+PARADIGM: A typical example or model, or a framework of thought.
+EMPIRICAL: Based on observation and experiment, not theory.
+CORRELATION: A mutual relationship between two variables, not necessarily causal.
+ETHNOGRAPHY: The systematic study of a culture through direct observation.
+DEMOGRAPHIC: Relating to population statistics.
+INFRASTRUCTURE: The basic systems supporting a community (roads, utilities, communications).
+SUBSISTENCE: Maintaining the minimum needed to survive.
+URBANIZATION: The process of populations moving from rural to urban areas.
+
+TOP STRATEGIES FOR VOCABULARY IN CONTEXT
+
+Strategy: Never answer from memory alone. Always re-read the sentence, because the context may be using a non-primary meaning of the word.
+
+Strategy: Use the contrast clue as your first check. If there is a "however" or "but" near the highlighted word, the answer is likely an antonym of what precedes or follows.
+
+Strategy: Eliminate answers with the wrong register (too casual, too emotional, too informal for academic writing).
+
+Strategy: When two answers seem equally valid, check which one fits the broader paragraph direction — not just the sentence.
+
+Strategy: Build your Academic Word List vocabulary steadily before the test. Even 15 new words per week for 8 weeks gives you 120 high-frequency academic words.
+
+COMMON MISTAKES TO AVOID
+
+- Using the most common meaning of a word without checking context
+- Choosing an answer that sounds academic and sophisticated but doesn't fit the specific sentence
+- Ignoring contrast and concession signals that reveal the word's meaning
+- Mistaking a word's part of speech (choosing a verb when a noun is needed)
+- Selecting an answer based on its relationship to the passage topic, not its meaning in the sentence

@@ -1,0 +1,73 @@
+ORGANIZATION
+
+PARAGRAPH AND ESSAY STRUCTURE: Organization questions ask you to evaluate where sentences belong, in what order information should be presented, and whether the structure of the passage is logical and effective.
+
+THE THREE LEVELS OF ORGANIZATION:
+1. Sentence level — word order within a sentence
+2. Paragraph level — sentence order within a paragraph
+3. Essay level — paragraph order within the whole passage
+
+SENTENCE PLACEMENT QUESTIONS:
+
+When asked where to place a new sentence or move an existing one, follow this process:
+1. Read the sentence to understand its content and purpose
+2. Look for clues: transition words, pronouns (it, they, this, these), logical connections
+3. Check each proposed location — does the sentence connect naturally to what comes before AND after?
+4. The sentence must fit the surrounding context both logically and grammatically
+
+KEY CONCEPT: Pronouns as clues — if a sentence uses "it" or "they" without a clear antecedent, it can't come first. Find the sentence that introduces the noun the pronoun refers to.
+
+ORDERING SENTENCES IN A PARAGRAPH:
+
+Chronological order — for narratives and processes, events should follow time order. Watch for time signal words: first, then, next, later, afterward, finally, before, after, during.
+
+Logical order — for arguments and explanations, start with a claim or topic, then provide supporting evidence or details. Don't put examples before the point they illustrate.
+
+Order of importance — can go from least to most important (for persuasive build-up) or most to least (for emphasis).
+
+PARAGRAPH PLACEMENT QUESTIONS:
+
+When asked where a paragraph fits in the essay:
+- Read the first and last sentences of each paragraph to map the flow
+- Identify the essay's overall structure (chronological? thematic? problem-solution?)
+- The new paragraph should connect naturally to what comes before and after
+- Look for transition words at the start of the paragraph — they signal the relationship to the preceding paragraph
+
+TRANSITIONS: Transitions connect ideas within and between sentences and paragraphs. The ACT tests whether you can identify the correct relationship between ideas and choose the appropriate transition.
+
+ADDITION: furthermore, moreover, in addition, also, besides, additionally
+CONTRAST: however, nevertheless, on the other hand, yet, although, despite, in contrast, conversely, while, whereas
+CAUSE AND EFFECT: therefore, consequently, as a result, thus, hence, because, since, so
+SEQUENCE/TIME: first, then, next, finally, afterward, previously, simultaneously, subsequently
+EXAMPLE: for example, for instance, specifically, in particular, to illustrate
+EMPHASIS: indeed, in fact, certainly, above all, most importantly
+CONCESSION: admittedly, granted, it is true that, even though
+
+IMPORTANT: Wrong transition words are a frequent ACT trap. Read both the sentence before AND the sentence after the transition to determine the actual logical relationship.
+
+Test each transition: "however" signals contrast — are the ideas actually contrasting? "Therefore" signals conclusion — is the second idea actually a consequence of the first?
+
+OPENING AND CLOSING SENTENCES:
+
+A strong opening:
+- Introduces the topic clearly
+- Engages the reader
+- Does NOT begin with an irrelevant detail
+
+A strong conclusion:
+- Wraps up the main idea
+- May offer a broader implication or call to action
+- Does NOT introduce completely new information
+- Does NOT abruptly end or trail off without closure
+
+RELEVANCE: The ACT asks whether a sentence or detail should be included in a paragraph.
+
+Ask: Does this sentence relate to the main topic of the paragraph? Does it advance the paragraph's purpose? If a detail is interesting but off-topic, it should be deleted.
+
+If asked whether to add a sentence, evaluate: Does it serve the paragraph's purpose? Does it fit the tone? Is it specific enough to add value?
+
+UNITY: Each paragraph should have one clear main idea. Every sentence should support that idea directly.
+
+COHERENCE: Ideas within and between paragraphs should flow logically. One idea should lead naturally to the next.
+
+REMEMBER: Always read the full paragraph (and sometimes the full essay) before answering organization questions. Understanding the overall purpose is essential to placing sentences and paragraphs correctly.

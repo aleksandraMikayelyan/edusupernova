@@ -1,0 +1,109 @@
+SENTENCE STRUCTURE
+
+CLAUSES AND PHRASES: Understanding the basic units of sentences is essential for identifying and correcting structural errors.
+
+INDEPENDENT CLAUSE: A complete thought with a subject and a verb. Can stand alone as a sentence.
+- "The scientist published her findings."
+
+DEPENDENT CLAUSE: Has a subject and verb but cannot stand alone. Introduced by subordinating conjunctions (because, although, since, when, if, while, unless, until, after, before, as, that, which, who) or relative pronouns.
+- "Because the results were unexpected..."
+- "Although she had studied..."
+
+PHRASE: A group of words without a subject-verb pair. Cannot stand alone.
+- Prepositional phrase: "in the morning," "under the table"
+- Participial phrase: "Running down the street," "Exhausted by the effort"
+- Infinitive phrase: "to complete the assignment"
+- Gerund phrase: "Swimming in the ocean"
+
+SENTENCE TYPES:
+
+SIMPLE: One independent clause
+- "She runs every morning."
+
+COMPOUND: Two or more independent clauses joined by a coordinating conjunction, semicolon, or colon
+- "She runs every morning, and she swims in the afternoon."
+
+COMPLEX: One independent clause + one or more dependent clauses
+- "Although she was tired, she finished the race."
+
+COMPOUND-COMPLEX: Two or more independent clauses + at least one dependent clause
+- "She was tired, but she finished the race because she had trained for months."
+
+SENTENCE FRAGMENTS: A fragment is an incomplete sentence — it lacks a subject, lacks a verb, or is a dependent clause standing alone.
+
+Fragment types:
+- Missing subject: "Ran across the field." → Who ran?
+- Missing verb: "The tall building on the corner." → What about it?
+- Dependent clause alone: "Although the weather was perfect." → This needs an independent clause
+- Participial phrase alone: "Running along the shore." → Needs a main clause
+
+KEY CONCEPT: Fragments can be fixed by: adding the missing element, connecting to an adjacent sentence, or restructuring.
+
+RUN-ON SENTENCES: Two independent clauses incorrectly joined.
+
+FUSED SENTENCE: No punctuation between clauses
+- "She studied all night she aced the exam." → WRONG
+
+COMMA SPLICE: Only a comma between clauses
+- "She studied all night, she aced the exam." → WRONG
+
+Fixes:
+1. Period: "She studied all night. She aced the exam."
+2. Semicolon: "She studied all night; she aced the exam."
+3. Comma + conjunction: "She studied all night, and she aced the exam."
+4. Subordination: "Because she studied all night, she aced the exam."
+
+SUBORDINATION AND COORDINATION:
+
+COORDINATION joins equal ideas (and, but, or, nor, for, yet, so)
+SUBORDINATION makes one idea dependent on another (because, although, if, when, since, unless)
+
+Choosing between them affects emphasis:
+- "It rained, and the picnic was cancelled." (both ideas equal weight)
+- "Because it rained, the picnic was cancelled." (rain is the cause; cancellation is the result)
+
+PARALLELISM IN STRUCTURE:
+
+Items joined by coordinating conjunctions or listed in a series must be grammatically parallel.
+
+WITH VERBS: "She likes to sing, dance, and act" ✓ / "She likes singing, dancing, and to act" ✗
+WITH NOUNS: "The job requires skill, patience, and determination" ✓
+WITH CLAUSES: "He said that he was tired and that he needed rest" ✓ / "He said that he was tired and needed rest" — acceptable if the subject is the same
+
+CORRELATIVE CONJUNCTIONS must link parallel structures:
+- Both X and Y
+- Either X or Y
+- Neither X nor Y
+- Not only X but also Y
+- Whether X or Y
+
+"Not only did she win the award, but she also received a scholarship" ✓
+"Not only winning the award, but she also received a scholarship" ✗ (not parallel)
+
+SENTENCE COMBINING AND REDUCTION:
+
+The ACT may ask you to combine two sentences. The best combination:
+- Preserves all essential information from both sentences
+- Eliminates redundant words
+- Uses subordination or coordination to clearly show the relationship
+- Results in a smooth, grammatically correct sentence
+
+When reducing wordy constructions:
+- Relative clauses → participial phrases: "The man who was standing at the door" → "The man standing at the door"
+- Passive constructions → active: "It was observed by researchers" → "Researchers observed"
+
+APPOSITIVE PHRASES:
+
+An appositive renames or explains the noun it follows. Set off with commas if non-restrictive:
+- "My sister, a talented musician, performs every weekend."
+- "The author Toni Morrison won the Nobel Prize." (no commas — the name is restrictive/essential)
+
+ABSOLUTE PHRASES:
+
+An absolute phrase modifies the entire sentence (not just one word). It consists of a noun + participial phrase:
+- "His hands trembling, he opened the envelope."
+- "The work finished, they celebrated."
+
+These are grammatically correct and can add sophistication to writing.
+
+REMEMBER: For structure questions, identify whether the underlined portion is a clause or phrase, determine if it can stand alone, and check whether its connection to the rest of the sentence is grammatically sound.

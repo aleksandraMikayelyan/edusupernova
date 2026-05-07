@@ -1,7 +1,7 @@
 package com.edusupernova.edusupernova.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference; // Añade esta
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -32,8 +32,10 @@ public class Courses {
     @Column(columnDefinition = "INT DEFAULT 0")
     private Integer totalQuestions = 0;
 
-    // --- ESTO ES LO QUE FALTA ---
-    // mappedBy debe coincidir con el nombre del campo en la clase Unit (que es "course")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "section", length = 2)
+    private ALevelSection section;
+
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Unit> units;

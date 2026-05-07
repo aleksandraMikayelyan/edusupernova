@@ -1,0 +1,192 @@
+CRAFT AND STRUCTURE
+
+This domain makes up about 28% of Reading & Writing questions. It tests your ability to analyze HOW an author writes — word choice, text structure, purpose, and the reasoning behind authorial decisions. These questions require close reading and attention to context.
+
+WHAT THIS DOMAIN COVERS
+
+Craft and Structure questions include:
+- Words in Context (choosing the most precise word for a given context)
+- Text Structure and Purpose (identifying how a passage is organized and why)
+- Cross-Text Connections (comparing two related passages)
+- Author's Purpose and Perspective (understanding why an author wrote something and how they feel about it)
+
+KEY CONCEPT: These questions cannot be answered by skimming. You must understand not just what the author says, but why they say it in that particular way. Slow down and read for purpose, not just content.
+
+WORDS IN CONTEXT
+
+APPROACH FOR VOCABULARY QUESTIONS:
+- Read the entire sentence, not just the word in question
+- Read the surrounding sentences for additional context
+- Think of a word you would use before looking at the choices
+- Match your word to the closest answer choice
+- Insert the answer choice into the sentence and re-read it to confirm
+
+IMPORTANT: SAT vocabulary questions rarely test obscure words. They test whether you can choose the most precise, contextually appropriate word. The wrong answers are often words that are related to the correct answer but slightly off in meaning or tone.
+
+Common vocabulary question traps:
+- Words that look like the answer but have a slightly different meaning (e.g., "allude" vs. "elude")
+- Words that are related to the topic but wrong in context (e.g., "famous" vs. "notorious" — both mean well-known, but notorious has a negative connotation)
+- Words that match the literal meaning but not the tone (formal vs. informal, positive vs. negative)
+
+CONNOTATION VS. DENOTATION:
+- DENOTATION: The literal dictionary meaning of a word
+- CONNOTATION: The emotional associations and implications a word carries
+
+NOTE: SAT word-in-context questions frequently test connotation. "Slim," "skinny," and "slender" all share a denotation (thin) but carry different connotations. Choose the word whose connotation matches the passage's tone and the author's attitude.
+
+KEY CONCEPT: Pay attention to whether the passage is positive, negative, or neutral in tone when answering vocabulary questions. A word with the right denotation but wrong connotation is always wrong.
+
+TONE AND AUTHOR'S ATTITUDE
+
+TONE: The author's attitude toward the subject. It can be detected through word choice (diction), sentence structure, and the examples or evidence chosen.
+
+Common tones you should recognize:
+- Admiring, reverent, laudatory (positive toward subject)
+- Critical, skeptical, dismissive (negative toward subject)
+- Objective, detached, neutral (balanced, factual)
+- Ironic, satirical (says one thing but means another)
+- Nostalgic (longing for the past)
+- Urgent, alarming (calling for action)
+- Melancholic, somber (sad or mournful)
+
+IMPORTANT: To identify tone, look at word choice first. Are the verbs and adjectives predominantly positive or negative? Are they neutral and technical? Does the author use strong emotional language or restrained, measured language?
+
+REMEMBER: An author can have a complex or mixed tone — both concerned and hopeful, for example. Don't force a simplistic label if the evidence shows nuance.
+
+TEXT STRUCTURE AND PURPOSE
+
+COMMON RHETORICAL STRUCTURES:
+
+CLAIM-EVIDENCE: The author makes an assertion and then supports it with data, examples, or expert opinion.
+
+COMPARE AND CONTRAST: The author examines similarities and differences between two or more things.
+
+PROBLEM-SOLUTION: The author identifies an issue and proposes a remedy.
+
+CAUSE AND EFFECT: The author explains what leads to a particular outcome.
+
+CHRONOLOGICAL: Events are presented in time order.
+
+DESCRIPTION/DEFINITION: The author introduces and explains a concept, process, or thing.
+
+COUNTERARGUMENT: The author acknowledges an opposing view before refuting it.
+
+KEY CONCEPT: Recognizing structure helps you predict where information will be and understand the logical flow of an argument. Ask: What did the author do in this paragraph? How does it relate to the paragraph before it?
+
+PARAGRAPH-LEVEL FUNCTIONS:
+
+Common functions a paragraph can serve:
+- Introduce the central claim or thesis
+- Provide background information or context
+- Offer supporting evidence or examples
+- Acknowledge and refute a counterargument
+- Draw a conclusion or implication
+- Transition between ideas
+
+EXAMPLE: "The author presents the counterargument in paragraph 3 in order to..." — The answer will describe a purpose that strengthens the overall argument, such as "to acknowledge a potential objection before dismissing it with stronger evidence."
+
+AUTHOR'S PURPOSE
+
+PURPOSE QUESTIONS ask why the author wrote the passage or a specific part of it. Common purposes:
+- To inform or explain (neutral, informational tone)
+- To persuade or argue (opinion-driven, uses evidence and reasoning)
+- To analyze or interpret (breaks down a complex topic)
+- To describe or narrate (tells a story or describes an experience)
+- To entertain or engage (creative or literary writing)
+
+NOTE: An author's PURPOSE is not the same as the topic. "This passage is about climate change" describes the topic. "This passage argues that immediate government action is required to address climate change" describes both the topic and the purpose.
+
+RHETORICAL APPEALS
+
+LOGOS: Appeals to logic and reason. Uses evidence, statistics, data, and logical arguments.
+
+ETHOS: Appeals to credibility and authority. Cites expert opinions, establishes the author's expertise, or appeals to shared values.
+
+PATHOS: Appeals to emotion. Uses vivid descriptions, personal stories, emotionally charged language to connect with the reader.
+
+KEY CONCEPT: SAT passages often combine multiple rhetorical appeals. An effective argument typically uses logos as its foundation but employs ethos and pathos to strengthen its persuasiveness. Questions may ask you to identify which appeal a specific sentence or paragraph uses.
+
+FIGURATIVE LANGUAGE
+
+METAPHOR: A direct comparison without "like" or "as." "Life is a journey."
+
+SIMILE: A comparison using "like" or "as." "The news spread like wildfire."
+
+PERSONIFICATION: Giving human qualities to non-human things. "The wind whispered through the trees."
+
+HYPERBOLE: Deliberate exaggeration for effect. "I've told you a million times."
+
+IRONY: A contrast between what is said and what is meant (verbal irony/sarcasm), or between what is expected and what occurs (situational irony).
+
+UNDERSTATEMENT: Deliberately describing something as less than it is, often for ironic effect.
+
+ALLUSION: A reference to a well-known person, place, text, or event.
+
+IMPORTANT: When a figurative language question appears, identify the literary device first, then determine its PURPOSE in context. "The metaphor in the second paragraph serves to..." — answers describe effect and purpose, not just what the device is.
+
+CROSS-TEXT CONNECTIONS
+
+Paired passage questions ask you to compare two texts on a related topic. The texts may:
+- Present two different perspectives on the same issue
+- Offer complementary information on the same topic
+- Reflect different time periods, disciplines, or genres
+- Use different evidence types for similar claims
+
+APPROACH FOR PAIRED PASSAGES:
+- Read Passage 1 fully, summarize its main point and author's stance
+- Read Passage 2 fully, summarize its main point and author's stance
+- Note points of agreement, disagreement, and complementarity
+- Answer single-passage questions before cross-text questions
+
+COMMON CROSS-TEXT QUESTION TYPES:
+- "How would Author 2 likely respond to the claim made in Passage 1?"
+- "Both authors agree that..."
+- "Unlike Author 1, Author 2 emphasizes..."
+- "The relationship between the two passages is best described as..."
+
+KEY CONCEPT: For "how would Author 2 respond" questions, first confirm Author 2's position. Then find the specific claim from Passage 1 referenced in the question. Finally, determine whether Author 2 would agree, disagree, qualify, or remain neutral — based strictly on what Passage 2 says.
+
+EVIDENCE AND REASONING
+
+CLAIM: An assertion that requires support.
+
+EVIDENCE: Facts, data, expert opinions, examples, or research that supports a claim.
+
+REASONING: The logical connection between the evidence and the claim. It explains WHY the evidence supports the claim.
+
+WARRANT: The underlying assumption that makes the logical connection valid.
+
+IMPORTANT: Strong arguments have clear reasoning. Weak arguments may have evidence but fail to explain how it connects to the claim, OR rely on assumptions that could be questioned.
+
+NOTE: On the SAT, questions about evidence ask you to evaluate whether a piece of evidence actually supports the claim being made. A common wrong answer presents real evidence that is accurate but irrelevant to the specific claim.
+
+INTERPRETING FIGURATIVE AND NUANCED MEANING
+
+IMPLICIT MEANING: What the author implies without stating directly. Reading between the lines.
+
+EXPLICIT MEANING: What the author states directly.
+
+INFERENCE: A conclusion drawn from evidence and reasoning. On the SAT, inferences must be strongly supported by the text — don't over-read or assume.
+
+KEY CONCEPT: SAT inference questions have correct answers that are directly implied by the text. If you cannot point to specific textual evidence for your inference, it's probably wrong. The answer is never a big logical leap.
+
+TOP STRATEGIES FOR CRAFT AND STRUCTURE
+
+Strategy: For word-in-context questions, cover the choices and think of your own word first. This prevents you from being attracted to "trap" words that look right but are slightly off.
+
+Strategy: For structure questions, read the passage with a question in mind: "What is the author doing in this section?" Label each paragraph's function before answering.
+
+Strategy: For tone questions, note 3-5 key words or phrases that signal the author's attitude before choosing an answer.
+
+Strategy: For paired passages, don't assume the two authors disagree. They may agree overall but differ in emphasis, focus, or evidence type.
+
+Strategy: When asked about author's purpose, look at the entire passage — the opening, the examples chosen, and the conclusion all reflect the author's overarching intent.
+
+COMMON MISTAKES TO AVOID
+
+- Choosing a vocabulary word based on general knowledge of the word, without checking context
+- Confusing the topic of a passage with its purpose
+- Answering rhetorical purpose questions based on what the paragraph says, not what it does
+- Over-inferring: choosing an answer that goes beyond what the text actually supports
+- Treating the two paired passages as one text and losing track of which author said what
+- Letting your own opinions about the topic influence your answer — all answers must be grounded in the text

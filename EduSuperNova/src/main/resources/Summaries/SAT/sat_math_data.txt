@@ -1,0 +1,172 @@
+DATA ANALYSIS, STATISTICS, AND PROBABILITY
+
+This domain makes up roughly 25% of SAT Math questions. Many students underestimate it — these questions reward careful reading and data interpretation over complex calculation.
+
+STATISTICAL MEASURES
+
+MEASURES OF CENTER
+
+MEAN: The arithmetic average. Sum of all values divided by the number of values. Most sensitive to outliers.
+
+MEDIAN: The middle value when data is ordered from least to greatest. If there are two middle values, the median is their average. Resistant to outliers.
+
+MODE: The value that appears most often. A dataset can have no mode, one mode, or multiple modes.
+
+RANGE: Max value minus min value. Measures spread, not center.
+
+KEY CONCEPT: The SAT often tests which measure is MOST appropriate to describe a dataset. If a dataset has extreme outliers (like salaries in a company with one billionaire CEO), the median is more representative than the mean. Always justify your choice of measure.
+
+IMPORTANT: When values are added to or removed from a dataset, recalculate carefully. Adding the mean of a dataset does not change the mean. Adding a value greater than the mean raises the mean.
+
+STANDARD DEVIATION: Measures how spread out data values are from the mean. Higher standard deviation = more spread. Lower = more clustered around the mean. You do not need to calculate standard deviation by hand on the SAT — you need to compare and interpret it.
+
+MEASURES OF SPREAD
+
+INTERQUARTILE RANGE (IQR): Q3 - Q1. The range of the middle 50% of data. IQR: resistant to outliers.
+
+QUARTILES: Q1 is the median of the lower half; Q3 is the median of the upper half.
+
+OUTLIER: A value more than 1.5 × IQR below Q1 or above Q3 is considered an outlier.
+
+NOTE: Box plots (box-and-whisker plots) display the five-number summary: minimum, Q1, median, Q3, and maximum. Practice reading these — they appear frequently on the SAT.
+
+DATA REPRESENTATIONS
+
+READING TABLES AND GRAPHS
+
+Two-way tables, bar charts, histograms, scatterplots, and line graphs all appear on the SAT. In each case:
+- Read the title and axis labels before analyzing data
+- Note the units on each axis
+- Check whether values represent counts, percentages, or other quantities
+- Be careful with scale — axes don't always start at zero
+
+TWO-WAY TABLE: Shows the frequency of two categorical variables together. To find a conditional probability, identify the correct row or column as your new total.
+
+RELATIVE FREQUENCY: A proportion or percentage of the total. Divide a frequency by the total count.
+
+HISTOGRAMS VS. BAR CHARTS:
+- Bar charts: categorical data, bars can be in any order, gaps between bars
+- Histograms: numerical data in intervals (bins), no gaps between bars
+
+KEY CONCEPT: When a histogram shows a left skew, the mean is pulled to the LEFT (toward the tail), and the mean < median. When right-skewed, the mean > median. The tail points in the direction of the skew.
+
+SCATTERPLOTS AND LINE OF BEST FIT
+
+SCATTERPLOT: A graph showing the relationship between two quantitative variables. Each point represents one observation.
+
+LINE OF BEST FIT (REGRESSION LINE): The line that minimizes the total distance from all points. Used to model and predict.
+
+POSITIVE ASSOCIATION: As x increases, y tends to increase. Points slope upward.
+
+NEGATIVE ASSOCIATION: As x increases, y tends to decrease. Points slope downward.
+
+NO ASSOCIATION: No discernible pattern between x and y.
+
+CORRELATION COEFFICIENT (r): Measures the strength and direction of a linear association. Ranges from -1 to 1. Close to ±1 = strong linear relationship. Close to 0 = weak linear relationship. r does NOT measure the slope.
+
+IMPORTANT: Correlation does NOT imply causation. Even a strong correlation (r close to ±1) does not mean one variable causes the other. The SAT tests this concept regularly. Common confounders and lurking variables can explain correlations.
+
+USING THE LINE OF BEST FIT:
+- Slope = rate of change between the two variables (with units!)
+- y-intercept = predicted value of y when x = 0 (interpret with caution in context)
+- To predict: substitute x into the equation of the line
+- Interpolation (within the data range) is more reliable than extrapolation (outside)
+
+RESIDUALS: The vertical distance between an actual data point and the predicted value on the line of best fit. Residual = Actual - Predicted. A positive residual means the actual value is above the line.
+
+KEY CONCEPT: The SAT will give you a regression equation like y = 2.5x + 10 and ask you to interpret the slope or y-intercept in context. The slope always means "for every one unit increase in x, y increases/decreases by [slope] units." Name both variables and include units in your interpretation.
+
+PROBABILITY
+
+BASIC PROBABILITY: P(event) = (number of favorable outcomes) / (total number of outcomes). Always between 0 and 1.
+
+COMPLEMENTARY EVENTS: P(A) + P(not A) = 1. Often it's easier to find P(not A) and subtract.
+
+MUTUALLY EXCLUSIVE EVENTS: Cannot happen at the same time. P(A or B) = P(A) + P(B).
+
+NON-MUTUALLY EXCLUSIVE EVENTS: Can both occur. P(A or B) = P(A) + P(B) - P(A and B).
+
+INDEPENDENT EVENTS: One event does not affect the other. P(A and B) = P(A) × P(B).
+
+CONDITIONAL PROBABILITY: P(A|B) = P(A and B) / P(B). The probability of A given that B has already occurred.
+
+REMEMBER: For conditional probability from a two-way table, the "given" condition becomes your new denominator. If asked "what fraction of students who passed the test also attended tutoring?", your denominator is ONLY the students who passed — not the entire sample.
+
+EXAMPLE: A two-way table shows 200 students: 80 attended tutoring, 120 did not. Of those who attended tutoring, 70 passed. Of those who didn't attend, 60 passed. P(passed | attended tutoring) = 70/80 = 0.875.
+
+COUNTING AND COMBINATIONS
+
+FUNDAMENTAL COUNTING PRINCIPLE: If event A can occur in m ways and event B can occur in n ways, then A followed by B can occur in m × n ways.
+
+PERMUTATION: An ordered arrangement. P(n,r) = n! / (n-r)!. Use when ORDER matters (e.g., race finishing positions).
+
+COMBINATION: An unordered selection. C(n,r) = n! / (r! × (n-r)!). Use when ORDER does not matter (e.g., choosing a committee).
+
+KEY CONCEPT: Ask yourself: does switching the order create a new outcome? If yes, use permutations. If no, use combinations.
+
+SAMPLING AND STUDY DESIGN
+
+POPULATION: The entire group being studied.
+
+SAMPLE: A subset of the population used to draw conclusions.
+
+RANDOM SAMPLE: Every member of the population has an equal chance of being selected. Results can be generalized to the entire population.
+
+VOLUNTARY RESPONSE SAMPLE: Participants choose to participate. Highly biased — those with strong opinions are overrepresented.
+
+CONVENIENCE SAMPLE: Selecting whoever is easiest to reach. May not represent the population.
+
+OBSERVATIONAL STUDY: Researchers observe without intervening. Can identify associations but CANNOT establish causation.
+
+EXPERIMENT: Researchers assign treatments randomly. CAN establish causation if properly controlled.
+
+CONFOUNDING VARIABLE: A variable related to both the independent and dependent variables that may explain an observed association.
+
+IMPORTANT: Only a well-designed randomized controlled experiment can establish causation. Survey and observational studies can only identify correlations or associations. The SAT tests whether students know the limits of each study type.
+
+NOTE: If a study uses a random sample from a population, conclusions can be generalized to that population. If subjects are randomly assigned to treatments, causal conclusions can be drawn. Both conditions must be met to generalize a causal conclusion to a population.
+
+MAKING INFERENCES AND DRAWING CONCLUSIONS
+
+MARGIN OF ERROR: Reflects uncertainty in a survey estimate. A result of 45% ± 3% means the true value is likely between 42% and 48%.
+
+CONFIDENCE INTERVAL: A range of plausible values for the true population parameter.
+
+STATISTICAL SIGNIFICANCE: A result is statistically significant if it's unlikely to have occurred by chance alone. The SAT does not require calculation — it asks you to interpret the meaning.
+
+KEY CONCEPT: The SAT loves questions where you must identify the appropriate conclusion from a study. Watch for overgeneralizations: you can only generalize results to the specific population that was sampled. A study of one city's residents cannot be generalized to the entire country.
+
+RATES AND PROPORTIONAL REASONING
+
+UNIT RATE: A rate with denominator 1. (e.g., $12 per hour, 30 miles per gallon)
+
+UNIT CONVERSION: Multiply by conversion factors (fractions equal to 1). Set up the fractions so unwanted units cancel.
+
+DIRECT PROPORTION: y = kx. Doubling x doubles y. The ratio y/x is constant.
+
+INVERSE PROPORTION: y = k/x. Doubling x halves y. The product xy is constant.
+
+WEIGHTED AVERAGE: When groups have different sizes, multiply each group's average by its size, sum the products, divide by total size.
+
+EXAMPLE: 20 students averaged 82 on a test; 30 students averaged 90. Combined average = (20 × 82 + 30 × 90) / 50 = (1640 + 2700) / 50 = 4340 / 50 = 86.8.
+
+TOP STRATEGIES FOR DATA ANALYSIS
+
+Strategy: On scatterplot and table questions, slow down and re-read the question. These are reading comprehension questions as much as math questions.
+
+Strategy: For probability questions, list out the sample space when the numbers are small. A tree diagram can prevent errors.
+
+Strategy: When asked to compare two datasets, compare them on ALL relevant measures: center (mean, median), spread (range, IQR, standard deviation), and shape (symmetric, skewed).
+
+Strategy: Before interpreting a regression equation, always identify what each variable represents and its units. Then plug in and interpret the result in those units.
+
+Strategy: For "which conclusion is best supported" questions, eliminate any answer that uses absolute language ("proves," "causes") or overgeneralizes beyond the study's sample.
+
+COMMON MISTAKES TO AVOID
+
+- Confusing mean with median — they are only equal in symmetric distributions
+- Using the wrong denominator in conditional probability — make sure to use the "given" group as the denominator
+- Saying correlation implies causation — it never does on the SAT
+- Forgetting to check axis labels and units before reading a graph
+- Confusing the number of successes with the probability
+- Generalizing results from a non-random sample to a broader population

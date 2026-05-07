@@ -1,0 +1,88 @@
+READING — SOCIAL SCIENCE PASSAGES
+
+OVERVIEW: The Social Science passage on the ACT Reading test covers topics from disciplines such as psychology, economics, sociology, history, anthropology, political science, and education. These passages present research findings, historical arguments, or analyses of social phenomena.
+
+CHARACTERISTICS OF SOCIAL SCIENCE PASSAGES:
+
+Social science passages tend to:
+- Present a thesis or central argument about human behavior, society, or history
+- Support claims with research studies, statistics, expert opinions, or historical examples
+- Use academic but accessible language
+- Sometimes present conflicting interpretations or competing theories
+
+CRITICAL READING SKILLS FOR SOCIAL SCIENCE:
+
+IDENTIFYING THE ARGUMENT: Social science passages usually make a claim. Identify it early — often in the first or last paragraph of the introduction.
+
+DISTINGUISHING CLAIM FROM EVIDENCE:
+- CLAIM: what the author (or researchers cited) assert
+- EVIDENCE: the data, studies, examples, or logic used to support the claim
+- Questions often ask you to identify which is which, or to evaluate how well the evidence supports the claim
+
+UNDERSTANDING RESEARCH: Social science passages frequently describe studies or experiments.
+- Identify the methodology: who was studied, how, and why
+- Note the findings: what was observed or measured
+- Be alert to limitations or alternative explanations the author may acknowledge
+
+KEY CONCEPT: The ACT will sometimes ask whether a specific piece of evidence supports a particular conclusion. Evaluate whether the evidence actually proves the claim, or merely suggests it.
+
+CORRELATION vs. CAUSATION: A classic social science distinction.
+- Correlation: two things occur together, but one may not cause the other
+- Causation: one thing directly produces the other
+- Research studies showing correlation cannot definitively establish causation without controlled experiments
+
+IMPORTANT: If a passage says "X is associated with Y" or "studies found a link between X and Y," that's correlation — not proof that X causes Y. The ACT may test this distinction.
+
+AUTHOR PERSPECTIVE IN SOCIAL SCIENCE:
+
+Even in apparently neutral, academic-sounding passages, authors have perspectives. Look for:
+- Evaluative language: words like "troubling," "encouraging," "surprisingly," "merely"
+- Which evidence the author emphasizes
+- How the author frames competing viewpoints — are they treated as equally valid or is one favored?
+
+COMMON STRUCTURES IN SOCIAL SCIENCE PASSAGES:
+
+PROBLEM-SOLUTION: Identifies a social issue and proposes or evaluates solutions
+COMPARE-CONTRAST: Presents two competing theories, approaches, or historical interpretations
+CAUSE-EFFECT: Explains why a social phenomenon occurred or what its consequences were
+CHRONOLOGICAL: Traces the development of a social movement, institution, or theory over time
+CLAIM-EVIDENCE-COUNTERCLAIM: Makes a case, supports it, then addresses objections
+
+PAIRED SOCIAL SCIENCE PASSAGES:
+
+If two passages are paired, they often represent:
+- Two different scholarly interpretations of the same historical event or social phenomenon
+- A general claim (Passage A) and a specific challenge to it (Passage B)
+- Two different methodological approaches to a similar question
+
+For paired passages, ask: On what fundamental question do the authors disagree? What evidence does each rely on? Is there anything they agree on?
+
+VOCABULARY IN SOCIAL SCIENCE PASSAGES:
+
+Social science texts use discipline-specific vocabulary. Common terms include:
+- Empirical: based on observation or experiment
+- Quantitative: dealing with measurable quantities
+- Qualitative: dealing with non-numerical qualities or experiences
+- Hypothesis: a testable prediction
+- Control group: the group in an experiment that does not receive the intervention
+- Variable: a factor that can change in an experiment
+- Bias: systematic error or prejudice that affects results
+- Representative sample: a sample that accurately reflects the broader population
+
+IMPORTANT: You don't need to know these terms in advance — you can often figure out their meaning from context. But familiarity helps you read these passages faster.
+
+QUESTION STRATEGIES FOR SOCIAL SCIENCE:
+
+MAIN IDEA: Identify the overall claim or theme, not just the topic.
+- Wrong: "This passage is about social media." (topic)
+- Right: "This passage argues that social media has measurably worsened adolescent mental health outcomes." (main idea)
+
+FUNCTION QUESTIONS: "The author mentions X in order to..."
+- Pinpoint the paragraph and read the surrounding sentences
+- Is X an example? A counterargument? Evidence? A definition?
+
+ATTITUDE/TONE: Social science authors can be enthusiastic, cautious, skeptical, or critical. Look for evaluative words.
+
+INFERENCE QUESTIONS: These ask what the passage implies — not what it states. The answer is supported by evidence in the text, but requires you to draw a conclusion one step beyond what's written.
+
+REMEMBER: In Social Science passages, the trap answers often make a reasonable-sounding claim that goes slightly beyond or contradicts what the passage actually says. Ground every answer in specific textual evidence.

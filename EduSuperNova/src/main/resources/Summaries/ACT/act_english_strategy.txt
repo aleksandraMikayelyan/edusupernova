@@ -1,0 +1,86 @@
+STRATEGY
+
+RHETORICAL STRATEGY: Strategy questions ask whether specific choices — adding, deleting, or keeping a sentence, detail, or phrase — serve the writer's purpose effectively. These questions require you to think about the passage as a whole.
+
+THE STRATEGY QUESTION FORMAT:
+
+Strategy questions often ask:
+- "Should the writer add/delete this sentence?"
+- "Which choice best achieves the goal of...?"
+- "The writer wants to accomplish [X]. Which choice best achieves this goal?"
+- "Does this sentence accomplish what the writer intends?"
+
+These questions have YES/NO or A/B/C/D answers paired with reasons. You must evaluate BOTH the decision (yes/no) AND the reason.
+
+KEY CONCEPT: Even if a sentence is grammatically correct and interesting, it might be wrong for the passage. Ask: Does it serve the specific purpose stated in the question?
+
+ADDING SENTENCES:
+
+A sentence should be added if it:
+- Provides specific, relevant support for the paragraph's main idea
+- Adds necessary context or clarification
+- Creates a smooth transition
+- Answers a gap in the passage's logic
+
+A sentence should NOT be added if it:
+- Repeats information already stated
+- Introduces an off-topic tangent
+- Contradicts the passage's tone or purpose
+- Is too vague to add value ("Many people have different opinions.")
+
+DELETING SENTENCES:
+
+A sentence should be deleted if it:
+- Repeats information already stated
+- Digresses from the paragraph's focus
+- Contradicts the passage's overall argument
+- Is irrelevant to the essay's purpose
+
+A sentence should NOT be deleted if it:
+- Provides an important example or supporting detail
+- Creates a necessary transition
+- Introduces or develops the main idea
+
+PURPOSE QUESTIONS:
+
+Some questions give a specific goal and ask which option achieves it:
+- "best emphasizes the difficulty of the task" → look for strong, vivid language
+- "most effectively introduces the main topic" → look for broad, orienting language
+- "most specifically describes the scientist's method" → look for concrete, precise detail
+- "best maintains the essay's humorous tone" → look for witty or light phrasing
+
+IMPORTANT: The answer must match the stated goal EXACTLY. An option might be well-written but fail to achieve the specific purpose. Process of elimination is essential here.
+
+AUDIENCE AWARENESS:
+
+Some strategy questions ask whether a choice is appropriate for the intended audience. Consider:
+- An essay for a scientific journal: use technical vocabulary, formal tone, citation-ready phrasing
+- An essay for a general audience: explain technical terms, use accessible language
+- A personal essay: conversational, reflective tone is appropriate
+
+ESSAY-LEVEL STRATEGY QUESTIONS:
+
+Some questions ask about the essay as a whole:
+- "Does this essay successfully argue [X]?"
+- "Would this essay be appropriate for [publication Y]?"
+- "Does the essay fulfill the goal stated in the prompt?"
+
+For these, you must evaluate whether the ENTIRE essay — not just one paragraph — achieves the stated purpose.
+
+THE SELF-CONTAINED STRATEGY: Use the passage, not outside knowledge, to evaluate strategy questions. Don't bring in assumptions about what the essay "should" do based on your own preferences. Judge it on whether it achieves its OWN stated goals.
+
+TRANSITIONS AS STRATEGY:
+
+Transition words are also a strategy choice — they signal the relationship between ideas. Ask:
+- Does this transition accurately reflect the logical relationship?
+- "However" implies contrast — is there actually a contrast?
+- "Therefore" implies a conclusion — does the second idea actually follow from the first?
+- "For example" implies illustration — is the second idea an example of the first?
+
+RELEVANCE AS A STRATEGY SKILL:
+
+The most common strategy error is including details that are interesting but irrelevant. Every sentence should earn its place by advancing the paragraph's or essay's purpose.
+
+Test: Could the paragraph do its job perfectly well without this sentence? If yes, and the question asks about deleting it, the answer is probably "Yes, delete it."
+
+REMEMBER: Strategy questions are about PURPOSE, not just grammar. Always identify what the essay is trying to accomplish before evaluating whether a choice helps or hurts that goal.

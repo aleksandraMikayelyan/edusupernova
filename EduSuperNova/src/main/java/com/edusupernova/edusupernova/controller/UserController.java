@@ -3,7 +3,6 @@ package com.edusupernova.edusupernova.controller;
 import com.edusupernova.edusupernova.dto.request.GoogleAuthRequest;
 import com.edusupernova.edusupernova.dto.request.LoginRequest;
 import com.edusupernova.edusupernova.dto.request.RegisterRequest;
-import com.edusupernova.edusupernova.dto.request.VerifyEmailRequest;
 import com.edusupernova.edusupernova.dto.response.AuthResponse;
 import com.edusupernova.edusupernova.dto.response.MessageResponse;
 import com.edusupernova.edusupernova.service.UsersService;
@@ -47,15 +46,6 @@ public class UserController {
     public ResponseEntity<MessageResponse> register(@Valid @RequestBody RegisterRequest request) {
         MessageResponse response = usersService.register(request);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
-    }
-
-    /**
-     * Step 2 of registration: submits the 6-digit code and, on success, returns
-     * a JWT so the user is immediately logged in.
-     */
-    @PostMapping("/verify-email")
-    public ResponseEntity<AuthResponse> verifyEmail(@Valid @RequestBody VerifyEmailRequest request) {
-        return ResponseEntity.ok(usersService.verifyEmail(request));
     }
 
     /**

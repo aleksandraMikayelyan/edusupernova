@@ -1,0 +1,82 @@
+SCIENCE — CONFLICTING VIEWPOINTS
+
+OVERVIEW: The Conflicting Viewpoints passage is UNIQUE on the ACT Science test — there is exactly one per test, and it works very differently from the other science passages. Instead of graphs and data, it presents two or more written scientific explanations, hypotheses, or theories that disagree with each other. You are tested on your ability to understand, compare, and evaluate these competing scientific views.
+
+STRUCTURE OF CONFLICTING VIEWPOINTS PASSAGES:
+
+A typical Conflicting Viewpoints passage presents:
+- A brief introduction explaining a scientific phenomenon or question
+- Two to four "viewpoints" (labeled Scientist 1, Scientist 2, Student 1, Student 2, etc.), each arguing for a different explanation or hypothesis
+
+Each viewpoint typically:
+- States a position or hypothesis
+- Provides reasoning and evidence to support it
+- May explicitly or implicitly disagree with the other viewpoints
+
+KEY CONCEPT: In Conflicting Viewpoints, reading skills matter as much as science skills. Understanding each scientist's argument — their claim, their evidence, and their assumptions — is the core task.
+
+HOW TO APPROACH CONFLICTING VIEWPOINTS:
+
+STEP 1 — Read the introduction carefully. It establishes the phenomenon being explained and often defines key terms. Time spent here is never wasted.
+
+STEP 2 — Read each viewpoint separately and completely before looking at the questions. As you read each scientist's view, ask:
+- What is their central claim?
+- What evidence or reasoning do they use?
+- What do they assume?
+
+STEP 3 — Identify the core disagreement between the scientists. What exactly do they disagree on? This is usually one fundamental question (e.g., what caused an extinction, whether a process is fast or slow, which variable is most important).
+
+STEP 4 — Note points of AGREEMENT. Scientists who disagree on a conclusion may share certain assumptions or accept the same basic facts.
+
+STEP 5 — Answer the questions, returning to the passage as needed.
+
+QUESTION TYPES FOR CONFLICTING VIEWPOINTS:
+
+VIEWPOINT COMPREHENSION: "According to Scientist 1, ..."
+- These are detail questions about ONE viewpoint. Read that viewpoint carefully and locate the specific claim.
+- Strategy: Ignore the other viewpoints. Focus only on the one named in the question.
+
+AGREE/DISAGREE QUESTIONS: "Both scientists would agree that..." or "Scientist 1 and Scientist 2 disagree about..."
+- Find the specific issue or claim and check each scientist's position on it.
+- Strategy: For agreement questions, look for the common ground — facts or assumptions both scientists share. For disagreement questions, find where their explanations diverge.
+
+HYPOTHETICAL EVIDENCE QUESTIONS: "If [new finding] were true, it would most support Scientist ___'s viewpoint because..."
+- Evaluate which scientist's hypothesis would be STRENGTHENED by the new information.
+- Strategy: Ask which scientist's view depends on or predicts the new finding.
+
+WEAKENING EVIDENCE QUESTIONS: "Which new finding would most challenge Scientist 2's hypothesis?"
+- Find what Scientist 2 depends on and look for evidence that contradicts it.
+- Strategy: Identify the key assumption or prediction of the hypothesis and find what would undermine it.
+
+COMPARING VIEWPOINTS: "How do Scientist 1 and Scientist 2 differ in their explanations of X?"
+- Articulate the specific difference in how each scientist explains the named phenomenon.
+
+ASSUMPTION QUESTIONS: "Scientist 1's hypothesis assumes which of the following?"
+- Look for what the scientist takes for granted that they don't explicitly state.
+- Strategy: If the hypothesis is "X causes Y," the assumption might be that "Y doesn't also cause X" or that the conditions are controlled.
+
+KEY SKILLS FOR CONFLICTING VIEWPOINTS:
+
+UNDERSTANDING SCIENTIFIC HYPOTHESES: A hypothesis is a proposed explanation for a phenomenon. It's not random — it's based on logic and evidence. Every hypothesis has:
+- A claim (what it proposes)
+- Reasoning (why the scientist thinks this)
+- Predictions (what should be true if the hypothesis is correct)
+
+EVALUATING EVIDENCE: Does the evidence presented actually support the claim? Is it consistent? Could it support the other scientist's view instead?
+
+IDENTIFYING ASSUMPTIONS: What must be true for the hypothesis to work? These often involve what the scientist takes for granted but doesn't state.
+
+REMAINING OBJECTIVE: Don't decide which scientist is "right" based on outside knowledge. Evaluate each view strictly on what's written in the passage.
+
+COMMON TRAPS:
+
+- Confusing one scientist's view with another's (especially in 3- or 4-viewpoint passages)
+- Using outside scientific knowledge to "correct" a scientist's view — only use the passage
+- Choosing an answer that weakens a hypothesis when the question asks what supports it, or vice versa
+- Overlooking partial agreement — two scientists can agree on some things and disagree on others
+
+STRATEGY FOR TIME MANAGEMENT:
+
+Conflicting Viewpoints passages are time-consuming because they require reading carefully. Budget approximately 5-6 minutes for this passage. If you find it taking too long, skip to questions about single viewpoints (these are faster) and return to comparison questions.
+
+REMEMBER: Unlike the other science passages, Conflicting Viewpoints is almost entirely a READING COMPREHENSION task. The scientist who makes the clearest, best-supported argument in the passage is the one whose view the evidence supports — regardless of what you know from biology or physics class.

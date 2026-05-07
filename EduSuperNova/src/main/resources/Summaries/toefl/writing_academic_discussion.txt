@@ -1,0 +1,134 @@
+WRITING FOR AN ACADEMIC DISCUSSION
+
+OVERVIEW: The Academic Discussion task is the longest and most important writing task in the TOEFL 2026 Writing section. You have 10 minutes to write a response to a professor's question, after reading two other students' replies. Your goal is to contribute a meaningful, original idea to the ongoing academic conversation.
+
+THE TASK FORMAT:
+
+You will see:
+- A professor's question on an academic topic (usually a debate or opinion question)
+- Two short responses from fictional students (Student A and Student B)
+- A text box where you write your own reply
+
+You have 10 minutes. Aim for 120 to 150 words — more than the 100-word minimum, but focused and well-developed. Quality matters more than length.
+
+KEY CONCEPT: Your response must ADD something new to the discussion. Do not simply repeat what Student A or Student B already said. Read their posts carefully before you write.
+
+WHAT THE TASK IS TESTING:
+
+- Your ability to state and defend a clear opinion
+- Your ability to use academic vocabulary and varied sentence structure
+- Your ability to support an argument with a reason and a concrete example
+- Your ability to engage with the discussion — acknowledging other views or building on them
+- Grammatical accuracy and cohesion
+
+THE THREE QUESTION TYPES:
+
+TYPE 1 — AGREE OR DISAGREE: "Do you agree or disagree with the following statement?"
+- Take a clear position. Do not sit on the fence.
+- Support with ONE well-developed reason and a specific example.
+
+TYPE 2 — CHOOSE A PREFERENCE: "Which option do you think is better/more important/more effective?"
+- Choose ONE option clearly. Briefly explain why the other has limits, then develop your own choice.
+
+TYPE 3 — OPEN-ENDED OPINION: "What do you think is the most important factor/challenge/benefit?"
+- State your view directly. Develop it with a reason and example.
+- The students may have chosen different factors — choose a different one or argue for the same one from a new angle.
+
+HOW TO STRUCTURE YOUR RESPONSE:
+
+A high-scoring response typically follows this three-part structure:
+
+PART 1 — State your position (1-2 sentences):
+- Introduce your opinion clearly and directly.
+- You may briefly acknowledge the discussion context.
+- Do not restate the professor's question word for word.
+
+PART 2 — Develop your argument (3-5 sentences):
+- Give ONE main reason that supports your opinion.
+- Explain the reason with logic and/or evidence.
+- Include a specific example — personal, academic, hypothetical, or from current events.
+- Make the example concrete: name a place, a situation, a field of study, or a specific scenario.
+
+PART 3 — Reinforce or extend (1-2 sentences):
+- Briefly reaffirm your position or state a broader implication.
+- Optionally, briefly reference or respond to a student's point to show engagement.
+- Do NOT introduce a brand-new argument at the end.
+
+IMPORTANT: You do NOT need a formal conclusion paragraph. This is a discussion post, not an essay. One well-developed paragraph is the standard format.
+
+ENGAGING WITH THE OTHER STUDENTS:
+
+You are not required to respond to the other students, but doing so naturally earns engagement credit. Options:
+
+AGREEING AND ADDING: "While I agree with [Student]'s point about X, I believe there is another dimension worth considering..."
+POLITE DISAGREEMENT: "Although [Student] raises a valid point, I would argue that..."
+BUILDING ON: "To add to what [Student] mentioned about X, this is especially true in the context of..."
+
+IMPORTANT: Do NOT dismiss or attack the other students. Academic tone is always respectful and analytical.
+
+VOCABULARY AND LANGUAGE:
+
+USE PRECISE, ACADEMIC VOCABULARY:
+- Instead of "good" → beneficial, advantageous, effective, valuable, instrumental
+- Instead of "bad" → detrimental, problematic, counterproductive, harmful
+- Instead of "think" → argue, contend, maintain, believe, posit
+- Instead of "show" → demonstrate, indicate, suggest, reveal, highlight
+- Instead of "important" → crucial, essential, significant, fundamental, pivotal
+
+USEFUL PHRASES FOR STATING YOUR POSITION:
+- "In my view, ..."
+- "I would argue that ..."
+- "From my perspective, ..."
+- "I firmly believe that ..."
+
+USEFUL PHRASES FOR SUPPORTING YOUR ARGUMENT:
+- "This is because ..."
+- "The reason for this is ..."
+- "To illustrate this point, ..."
+- "For instance, ..."
+- "Consider the case of ..."
+
+USEFUL PHRASES FOR EXTENDING OR QUALIFYING:
+- "Furthermore, ..."
+- "What is particularly significant is ..."
+- "This is especially true when ..."
+- "Even if one were to argue X, ..."
+
+SENTENCE VARIETY: Mix simple and complex sentences. A common mistake is writing only short, simple sentences. Use at least one subordinate clause construction in your response.
+
+EXAMPLES:
+- "Although technological advances have made education more accessible, they have also widened the digital divide."
+- "While governments play an important role, it is ultimately individuals who must adapt their behavior."
+- "Given that universities are increasingly focused on employability, practical skills have become more valuable than ever."
+
+COMMON MISTAKES TO AVOID:
+
+MISTAKE 1 — Repeating what the students said: Read their responses and make sure your argument is genuinely different.
+MISTAKE 2 — Being too vague: "It is good for society" is too general. Say WHY it is good and for WHOM specifically.
+MISTAKE 3 — Using informal language: Avoid contractions (don't, can't, it's), slang, and overly casual phrasing.
+MISTAKE 4 — Going off-topic: Stay focused on the professor's question. Don't drift into unrelated ideas.
+MISTAKE 5 — Not having a clear opinion: TOEFL scorers need to identify your stance immediately.
+MISTAKE 6 — Writing too much or too little: Fewer than 100 words is penalized; more than 200 words with padding is inefficient.
+
+THE AI SCORING SYSTEM:
+
+TOEFL Writing is scored by AI using a band scale of 1 to 6. The AI evaluates:
+- TASK COMPLETION: Did you answer the professor's question with a clear opinion?
+- COHERENCE AND COHESION: Does the response flow logically? Are transitions used correctly?
+- LEXICAL RESOURCE: Did you use varied and precise vocabulary?
+- GRAMMATICAL ACCURACY: Are your sentences correctly structured, with varied syntax?
+- RELEVANCE: Is your content clearly connected to the topic?
+
+KEY CONCEPT: The AI cannot be fooled by templates with blanks filled in. It detects and penalizes mechanical, repetitive language. Genuine, specific content scores higher than polished-sounding but vague filler.
+
+EXAMPLE HIGH-SCORING RESPONSE:
+
+Professor's question: "Should universities require all students to take courses outside their major field of study?"
+
+Student A argued: Yes, for personal development.
+Student B argued: No, it wastes time.
+
+YOUR RESPONSE:
+"I agree with the idea of requiring cross-disciplinary courses, though for different reasons than those already mentioned. In my view, the most compelling argument is that many of today's most pressing challenges — climate change, public health, artificial intelligence ethics — cannot be solved from within a single discipline. A student studying computer science who has no exposure to philosophy or sociology may design systems that are technically brilliant but socially harmful. I have seen this firsthand in discussions with engineering classmates who were surprised by the ethical dimensions of the technologies they were developing. Requiring exposure to humanities or social science courses is not a distraction from one's major — it is precisely what makes specialists more capable of doing their work responsibly."
+
+REMEMBER: The best responses are specific, confident, and demonstrate genuine engagement with the topic. Write as if you are a thoughtful student contributing to a real university seminar discussion.

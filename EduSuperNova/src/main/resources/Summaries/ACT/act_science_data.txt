@@ -1,0 +1,109 @@
+SCIENCE — DATA REPRESENTATION
+
+OVERVIEW: Data Representation passages present scientific information through graphs, tables, charts, and figures. You are expected to read, interpret, and analyze visual data without needing specialized scientific knowledge. These passages typically come with 5-6 questions.
+
+WHAT DATA REPRESENTATION TESTS:
+
+- Reading values from graphs, tables, and charts accurately
+- Understanding trends and patterns in data
+- Interpolating (finding values between data points)
+- Extrapolating (predicting values beyond the range of data)
+- Comparing data across multiple figures
+- Understanding what axes, labels, and legends mean
+- Identifying experimental variables
+
+KEY CONCEPT: You do NOT need to know chemistry, biology, or physics to answer Data Representation questions. Everything you need is in the passage. Read the figures, labels, and any introductory text carefully.
+
+TYPES OF GRAPHS:
+
+LINE GRAPHS:
+- Show how a variable changes continuously (often over time or as another variable changes)
+- The slope indicates the rate of change: steeper slope = faster change
+- Positive slope: as x increases, y increases
+- Negative slope: as x increases, y decreases
+- Flat line: no change in y as x changes
+- A curve that levels off indicates the variable is approaching a limit or plateau
+
+BAR GRAPHS:
+- Compare discrete categories or groups
+- Read the height of each bar against the y-axis
+- Compare bars to identify the largest, smallest, or greatest difference
+
+SCATTER PLOTS:
+- Show the relationship between two continuous variables
+- Look for the overall trend: positive correlation, negative correlation, or no correlation
+- Data points that don't fit the trend are OUTLIERS
+
+PIE CHARTS:
+- Show proportions of a whole (each slice = a percentage)
+- Useful for identifying what fraction of the total each category represents
+
+TABLES:
+- Organized rows and columns; find the intersection of the correct row and column
+- Pay close attention to units — converting between units is a common trap
+
+IMPORTANT: Always read axis labels, units, and titles before interpreting any graph. A graph showing "distance (km)" is very different from one showing "distance (m)."
+
+READING GRAPHS ACCURATELY:
+
+INTERPOLATION: Finding a value between two known data points.
+- Look at where the curve or line sits between plotted points
+- Use the trend of the data to estimate
+
+EXTRAPOLATION: Extending the trend beyond the available data.
+- Only valid if the trend appears consistent
+- ACT questions sometimes ask you to predict what would happen at a value beyond the graph — follow the established pattern
+
+FINDING SPECIFIC VALUES: Use a ruler-like approach — mentally draw a vertical line from the x-value to the curve, then a horizontal line to the y-axis.
+
+TRENDS AND PATTERNS:
+
+DIRECT RELATIONSHIP (positive correlation): As one variable increases, the other increases.
+INVERSE RELATIONSHIP (negative correlation): As one variable increases, the other decreases.
+NO RELATIONSHIP: No clear pattern — the data appears scattered.
+
+RATE OF CHANGE:
+- On a line graph, rate of change is the slope between two points: (y₂ - y₁)/(x₂ - x₁)
+- A steeper line means a faster rate of change
+
+MAXIMUM AND MINIMUM: Identify the highest and lowest points. These are often tested directly ("At what temperature was the reaction rate highest?")
+
+COMPARING MULTIPLE DATA SETS:
+
+Many figures show two or more lines, bars, or data series. Questions ask you to:
+- Compare the magnitude of different values
+- Identify where two lines intersect
+- Determine which variable had the greatest effect
+- Find conditions where two measurements were equal or had the same relationship
+
+IMPORTANT: When comparing multiple lines on a graph, use the legend and distinguish the lines carefully. Mixing up which line represents which condition is one of the most common data representation errors.
+
+EXPERIMENTAL VARIABLES:
+
+INDEPENDENT VARIABLE: The one the experimenter deliberately changes. Usually on the x-axis.
+DEPENDENT VARIABLE: The one being measured; it "depends on" the independent variable. Usually on the y-axis.
+CONTROLLED VARIABLES: All other factors kept constant to ensure a fair experiment.
+
+KEY CONCEPT: On the ACT, identifying what was held constant versus what was varied is essential for understanding what each experiment actually tested.
+
+UNITS AND CONVERSIONS:
+
+Read units carefully. Common unit relationships:
+- km vs. m vs. cm (×1000 and ×100)
+- g vs. mg vs. kg
+- seconds vs. minutes vs. hours
+- °C vs. K (Kelvin = Celsius + 273)
+- mL vs. L (×1000)
+
+IMPORTANT: When a question asks you to compare data from two different figures, check whether the units are the same. If one uses g and another uses mg, you must convert before comparing.
+
+PROCESS FOR DATA REPRESENTATION QUESTIONS:
+
+1. Read the title of the figure and any introductory text (30 seconds max)
+2. Identify what each axis represents and what units are used
+3. Read the legend if multiple data series are shown
+4. For each question, identify what specific information you need and where in the figure to find it
+5. Read the value precisely — pay attention to scale divisions
+6. Eliminate clearly wrong answers before confirming the right one
+
+REMEMBER: ACT Science is not about memorizing scientific facts. It's a reading comprehension test with graphs and tables. Students who slow down to read every axis, legend, and label carefully outperform those who jump straight to the questions.

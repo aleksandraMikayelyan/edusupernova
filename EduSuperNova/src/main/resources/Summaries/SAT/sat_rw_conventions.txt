@@ -1,0 +1,196 @@
+CONVENTIONS OF STANDARD ENGLISH
+
+This domain tests grammar, punctuation, and sentence structure. It makes up about 26% of Reading & Writing questions. Every question gives you a short passage and asks you to choose the option that best follows the conventions of Standard English. The goal is not style — it's correctness.
+
+THE CORE APPROACH
+
+For every Conventions question:
+- Read the sentence with each answer choice inserted
+- Ask: Is this grammatically correct? Does it say what it intends to say?
+- Eliminate choices that create run-on sentences, fragments, or comma errors
+- The shortest grammatically correct option is usually right
+
+IMPORTANT: The SAT tests a finite set of grammar rules. Once you know all the rules, these become the most predictable questions on the entire test.
+
+PUNCTUATION
+
+COMMA RULES
+
+A comma is used:
+- Before a coordinating conjunction (FANBOYS: For, And, Nor, But, Or, Yet, So) joining two independent clauses
+- After an introductory phrase or clause
+- To separate items in a list of three or more
+- Around a nonrestrictive (nonessential) clause or phrase
+- To separate coordinate adjectives (adjectives that independently modify the same noun)
+
+A comma is NOT used:
+- Between a subject and its verb
+- Between a verb and its object or complement
+- To join two independent clauses without a conjunction (this creates a comma splice)
+- Before a restrictive (essential) clause
+
+NONRESTRICTIVE VS. RESTRICTIVE CLAUSES:
+- NONRESTRICTIVE: Adds extra information that could be removed without changing the meaning. Set off with commas. "My sister, who lives in Paris, is visiting." (I have one sister.)
+- RESTRICTIVE: Identifies which one. No commas. "The student who scored highest received the award." (Removes the clause and the meaning changes.)
+
+KEY CONCEPT: If the clause begins with "which," it is almost always nonrestrictive and needs commas. If it begins with "that," it is always restrictive and never takes commas. "Who" can be either, depending on context.
+
+SEMICOLONS
+
+A semicolon joins two independent clauses. Both sides of a semicolon must be able to stand alone as complete sentences.
+
+SEMICOLON WITH CONJUNCTIVE ADVERB: Use a semicolon before and a comma after words like however, therefore, furthermore, moreover, consequently, nevertheless, in fact, indeed.
+
+IMPORTANT: Never use a semicolon where a comma is needed (between items in a list). Never use a semicolon to connect a dependent clause to an independent clause.
+
+COLONS
+
+A colon introduces a list, explanation, or elaboration. The material BEFORE the colon must be a complete independent clause.
+
+CORRECT: The bag contained three items: a notebook, a pen, and a ruler.
+INCORRECT: The bag contained: a notebook, a pen, and a ruler.
+
+NOTE: After a colon, you may use a capital letter if what follows is a complete sentence; if it's a list or fragment, use lowercase.
+
+DASHES
+
+AN EM DASH (—) can:
+- Set off nonessential information (like commas or parentheses)
+- Introduce a list or elaboration (like a colon)
+- Create emphasis
+
+If dashes enclose a phrase, the phrase must be removable. The sentence must make sense with the dashes and their content removed.
+
+REMEMBER: Single dash = introduces; paired dashes = encloses. If you open with a dash, you must close with a dash (not a comma or parenthesis).
+
+APOSTROPHES
+
+POSSESSIVE NOUNS:
+- Singular: add 's (the cat's tail, James's book)
+- Plural ending in s: add only ' (the students' notebooks)
+- Plural not ending in s: add 's (the children's toys)
+
+CONTRACTIONS: An apostrophe replaces the omitted letter(s). it's = it is / it has. they're = they are. you're = you are. who's = who is.
+
+IMPORTANT PAIRS TO DISTINGUISH:
+- its (possessive) vs. it's (it is)
+- their (possessive) vs. they're (they are) vs. there (place)
+- your (possessive) vs. you're (you are)
+- whose (possessive) vs. who's (who is)
+
+KEY CONCEPT: On the SAT, if you see a word with an apostrophe, test whether it expands to "it is" or "they are." If the expansion makes sense in context, use the contraction. If not, use the possessive form without an apostrophe.
+
+SENTENCE STRUCTURE
+
+FRAGMENTS AND RUN-ONS
+
+SENTENCE FRAGMENT: A group of words that does not form a complete sentence. It is missing a subject, a verb, or both, OR it is a dependent clause standing alone.
+
+RUN-ON SENTENCE: Two or more independent clauses joined without proper punctuation or a conjunction.
+
+Ways to fix a run-on:
+- Add a period (make two sentences)
+- Add a semicolon
+- Add a comma + coordinating conjunction (FANBOYS)
+- Subordinate one clause (add a subordinating conjunction)
+
+INDEPENDENT CLAUSE: Has a subject and verb and expresses a complete thought.
+
+DEPENDENT CLAUSE: Has a subject and verb but does NOT express a complete thought. Cannot stand alone. Begins with a subordinating conjunction (because, although, when, since, while, if, unless, etc.) or a relative pronoun (who, which, that).
+
+NOTE: "However" and "therefore" are NOT coordinating conjunctions — they cannot join two independent clauses with just a comma. They require a semicolon (or a period) before them.
+
+PARALLEL STRUCTURE
+
+PARALLELISM: Items in a list or comparison must have the same grammatical form. If one item is a noun, all must be nouns. If one is an infinitive (to run), all must be infinitives. If one is a gerund (running), all must be gerunds.
+
+CORRECT: She enjoys hiking, swimming, and cycling.
+INCORRECT: She enjoys hiking, to swim, and cycling.
+
+Parallelism also applies to correlative conjunctions: not only...but also, either...or, neither...nor, both...and. The grammatical structure after each conjunction must match.
+
+EXAMPLE: She was not only talented but also worked hard. — WRONG. She was not only talented but also hardworking. — CORRECT.
+
+MODIFIER PLACEMENT
+
+MISPLACED MODIFIER: A modifier placed too far from the word it describes, causing confusion.
+
+DANGLING MODIFIER: A modifier that has no logical subject to modify in the sentence.
+
+EXAMPLE OF DANGLING MODIFIER: "Exhausted from the race, the couch looked inviting." (The couch was not exhausted.) Corrected: "Exhausted from the race, she found the couch inviting."
+
+KEY CONCEPT: An introductory participial phrase must modify the SUBJECT of the main clause — the noun immediately following the comma. If it doesn't, it's dangling. This is one of the SAT's most tested modifier rules.
+
+MODIFYING PHRASES should be placed as close as possible to what they modify.
+
+SUBJECT-VERB AGREEMENT
+
+A verb must agree in number with its subject (singular subject → singular verb; plural subject → plural verb).
+
+COMMON AGREEMENT TRAPS:
+- Prepositional phrases between subject and verb: "The box of chocolates was unopened." (Subject is "box," not "chocolates")
+- Inverted sentences: "There are many reasons." (Subject is "reasons," not "there")
+- Compound subjects with "or/nor": the verb agrees with the closer noun — "Neither the coach nor the players were ready."
+- Collective nouns (team, group, committee): treated as singular in American English — "The team plays tonight."
+- Indefinite pronouns: each, every, either, neither, one, anyone, everyone, someone, no one → singular verb. Both, few, many, several → plural verb. Some, all, most, none → depends on the noun following "of"
+
+REMEMBER: Mentally cross out everything between the subject and verb to check agreement. "The list of requirements has been updated" — cross out "of requirements," and you see "The list has" — correct.
+
+PRONOUN RULES
+
+PRONOUN-ANTECEDENT AGREEMENT: A pronoun must agree with its antecedent in number and gender.
+
+INDEFINITE PRONOUN ANTECEDENTS: Each, every, everyone, someone, anyone → use singular pronouns (he, she, his, her, it, its, him, her). Modern convention increasingly accepts "they" as singular.
+
+AMBIGUOUS PRONOUN REFERENCE: A pronoun must clearly refer to one specific antecedent. If it's unclear which noun the pronoun refers to, rewrite using a noun.
+
+PRONOUN CASE:
+- Nominative (subject): I, he, she, we, they, who
+- Objective (object): me, him, her, us, them, whom
+- Possessive: my, his, her, our, their, whose
+
+TEST FOR WHO VS. WHOM: Replace with "he/him." If "he" fits → use who. If "him" fits → use whom. (Both end in m.)
+
+VERB TENSE AND MOOD
+
+TENSE CONSISTENCY: Maintain the same tense throughout a passage unless there is a logical reason to shift.
+
+SUBJUNCTIVE MOOD: Used for hypothetical, wished-for, or contrary-to-fact conditions. "If I were president..." (NOT "was"). "She wishes that he were here." (NOT "was").
+
+PERFECT TENSES:
+- PAST PERFECT (had + past participle): Use for an action completed before another past action. "By the time she arrived, he had already left."
+- PRESENT PERFECT (has/have + past participle): Use for actions starting in the past that continue to the present, or for actions at an unspecified past time. "She has lived here for five years."
+
+COMMONLY CONFUSED WORDS
+
+lie vs. lay: LIE means to recline (intransitive — no object). LAY means to place something (transitive — needs an object). "I lie down. I lay the book down."
+
+who vs. whom: who = subject; whom = object. (See pronoun case section above.)
+
+affect vs. effect: AFFECT is usually a verb (to influence). EFFECT is usually a noun (a result).
+
+fewer vs. less: FEWER for countable items ("fewer students"). LESS for uncountable amounts ("less water").
+
+between vs. among: BETWEEN for two items. AMONG for three or more.
+
+TOP STRATEGIES FOR CONVENTIONS
+
+Strategy: Read the WHOLE sentence out loud in your head with each answer choice. Your ear will often catch errors.
+
+Strategy: For punctuation questions, identify what's on either side of the mark. Two independent clauses? A semicolon or period works. One clause and one phrase? A comma (or no punctuation) works.
+
+Strategy: When in doubt, choose the option with the LEAST punctuation. The SAT tends to reward clean, uncluttered sentences.
+
+Strategy: For modifier questions, find the subject of the main clause and check if the opening phrase logically describes it.
+
+Strategy: Eliminate obvious errors first. If an answer has a comma splice or a dangling modifier, cross it out immediately.
+
+COMMON MISTAKES TO AVOID
+
+- Using a comma instead of a semicolon to join two independent clauses (comma splice)
+- Writing "it's" when you mean "its" (possessive)
+- Adding a comma between subject and verb
+- Using "which" without a comma for restrictive clauses
+- Forgetting to make a verb agree with the true subject (not the noun in the prepositional phrase)
+- Shifting verb tenses without reason
+- Using "who" when "whom" is required (and vice versa)

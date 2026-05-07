@@ -1,0 +1,178 @@
+EXPRESSION OF IDEAS
+
+This domain tests your ability to improve the clarity, precision, and effectiveness of written passages. It makes up about 20% of Reading & Writing questions. Unlike Conventions (which tests correctness), Expression of Ideas tests effectiveness — whether writing achieves its intended purpose as clearly and concisely as possible.
+
+WHAT THIS DOMAIN COVERS
+
+Expression of Ideas questions include:
+- Rhetorical Synthesis (combining notes or information into an effective sentence)
+- Transitions (choosing the correct connecting word between ideas)
+- Concision and Precision (removing redundancy, choosing precise language)
+- Sentence Organization (deciding where to place information in a sentence)
+- Adding and Revising Details (evaluating whether adding or changing information helps or hurts)
+
+THE CORE QUESTION TO ASK
+
+For every Expression of Ideas question, ask: Does this version communicate the intended meaning as clearly, concisely, and accurately as possible? If yes, it's likely correct. If it's wordy, redundant, vague, or illogical, it's wrong.
+
+TRANSITIONS
+
+TRANSITION: A word or phrase that signals the relationship between two ideas.
+
+TYPES OF TRANSITIONS AND THEIR RELATIONSHIPS:
+
+Contrast/Concession: however, although, despite, while, whereas, on the other hand, even so, nevertheless, nonetheless, yet, but, still, in contrast, conversely, regardless
+
+Addition: furthermore, moreover, additionally, in addition, also, and, besides, likewise, similarly
+
+Cause/Effect: therefore, thus, consequently, as a result, because, since, so, hence
+
+Illustration/Example: for example, for instance, specifically, namely, in particular, to illustrate
+
+Emphasis: indeed, in fact, certainly, above all, most importantly, notably
+
+Sequence/Time: first, then, next, finally, meanwhile, subsequently, previously, at the same time, eventually
+
+Conclusion/Summary: in conclusion, in summary, overall, ultimately, to summarize, in short
+
+KEY CONCEPT: For transition questions, do not just match the "feeling" of the transition. Identify the LOGICAL RELATIONSHIP between the two ideas. Ask: does the second idea contrast with the first? Continue it? Explain it? Follow from it? Then choose the transition that matches that precise relationship.
+
+IMPORTANT: "However" signals contrast. "Therefore" signals consequence. "Furthermore" signals addition. These are not interchangeable. The SAT exploits students who choose transitions based on vague instinct rather than logical analysis.
+
+EXAMPLE: "The experiment had a small sample size; [transition], the results were still statistically significant." The second clause CONCEDES a potential weakness — it says despite the first limitation, the outcome was valid. Correct transition: "nevertheless" or "even so." NOT "therefore" (which implies the small sample caused significance).
+
+RHETORICAL SYNTHESIS
+
+RHETORICAL SYNTHESIS questions give you a set of notes (like a student's bullet-point research) and ask you to combine them into a single sentence that accomplishes a specific goal.
+
+Steps for Rhetorical Synthesis:
+- Read the goal stated in the question carefully ("Which choice most effectively uses relevant information from the notes to accomplish this goal?")
+- Identify what information the goal requires
+- Match only choices that include the required information
+- Eliminate choices that include irrelevant information, even if accurate
+- Among remaining choices, prefer the option that expresses the information most clearly and directly
+
+IMPORTANT: A wrong answer in Synthesis is often accurate but irrelevant to the stated goal. Just because a fact appears in the notes doesn't mean it belongs in a sentence designed for a different purpose. Stay focused on what the question asks for.
+
+KEY CONCEPT: Rhetorical Synthesis is not about which sentence sounds best — it's about which sentence best accomplishes the specific stated goal. Keep the goal in front of you as you evaluate each option.
+
+COMMON SYNTHESIS GOALS:
+- "To introduce the topic to an audience unfamiliar with it" → define key terms, provide context
+- "To emphasize the significance of a finding" → lead with the finding, include supporting context
+- "To compare two things" → include information about BOTH things, use comparative language
+- "To provide supporting evidence for a claim" → include specific data, not vague assertions
+
+CONCISION
+
+CONCISION: Expressing an idea in as few words as needed without losing meaning.
+
+REDUNDANCY: Saying the same thing twice in different words. The SAT always eliminates redundancy.
+
+Common redundant phrases to avoid:
+- "advance planning" (planning is always in advance)
+- "past history" (history is always past)
+- "unexpected surprise" (surprises are always unexpected)
+- "end result" (results come at the end)
+- "basic fundamentals" (fundamentals are by definition basic)
+- "close proximity" (proximity means nearness)
+- "completely destroyed" (destroyed is already absolute)
+- "consensus of opinion" (consensus is already about opinion)
+
+KEY CONCEPT: When comparing answer choices for concision, the shortest option that preserves full meaning is almost always correct. Cutting filler words, redundant phrases, and unnecessary elaboration is always a good move.
+
+NOTE: Concision does NOT mean incomplete. If removing words changes the meaning or removes necessary information, the shorter version is wrong. Length is a signal, not an absolute rule.
+
+PRECISION
+
+PRECISE LANGUAGE: Using words that convey exactly the intended meaning. Avoid vague language when specific language is available.
+
+The SAT tests precision in word choice:
+- Avoid vague quantifiers ("some," "many," "a lot") when specific numbers are available
+- Choose words that match the exact meaning required, not just a close relative
+- Prefer concrete, specific language over abstract, general language
+
+EXAMPLE: "The company grew a lot" → imprecise. "The company's revenue increased by 40%" → precise.
+
+SENTENCE ORGANIZATION AND STRUCTURE
+
+EFFECTIVE SENTENCE ORGANIZATION: Information within a sentence should flow logically. The most important or surprising information often comes at the end (the "stress position").
+
+MODIFIERS: Modifying phrases must be placed as close as possible to what they modify. (See also Conventions section.)
+
+PARALLEL STRUCTURE: Items in lists and comparisons should use the same grammatical form. This is both a correctness rule and an effectiveness principle.
+
+SUBORDINATION: A less important idea should be in a dependent clause; the main clause should carry the most important information.
+
+EXAMPLE: "Although the study was small, its implications were profound" effectively subordinates the limitation and emphasizes the main point. Compare to: "The study was profound in its implications, although it was small" — this structure buries the main point.
+
+ADDING AND REVISING INFORMATION
+
+ADD/DELETE QUESTIONS ask: Should this sentence be added, kept, or deleted? Does it help or hurt?
+
+A sentence should be ADDED or KEPT if it:
+- Directly supports the main idea of the paragraph
+- Provides a specific example of a general claim made in the paragraph
+- Addresses a potential counterargument
+- Transitions logically between the ideas before and after it
+
+A sentence should be DELETED if it:
+- Repeats information already stated
+- Introduces a topic not relevant to the paragraph
+- Contradicts the paragraph's tone or purpose
+- Creates a logical gap or disrupts the flow
+
+KEY CONCEPT: For add/delete questions, the answer is never about whether the information is interesting or true — it's about whether it serves the paragraph's specific purpose. An accurate, fascinating fact that belongs in a different paragraph should still be deleted.
+
+DESTINATION QUESTIONS ask where in a paragraph a sentence should be placed. Approach these by:
+- Identifying what the sentence introduces or follows up on
+- Looking for the sentence immediately before the proposed location (it should logically lead into the new sentence)
+- Looking for the sentence immediately after (the new sentence should logically lead into it)
+
+EFFECTIVE INTRODUCTIONS AND CONCLUSIONS
+
+An effective introductory sentence:
+- Clearly introduces the main idea of the paragraph
+- Is specific enough to be meaningful
+- Sets up the evidence or examples that follow
+
+An effective concluding sentence:
+- Summarizes or synthesizes the key point
+- Does not introduce new information
+- Refers back to the idea introduced at the opening
+
+NOTE: SAT "introduction" and "conclusion" questions are asking about paragraph-level sentences, not essay-level structure. Focus on the single paragraph's content and purpose.
+
+ACHIEVING RHETORICAL GOALS
+
+The SAT sometimes gives you the author's intended goal and asks which revision best achieves it. Common goals:
+
+"To emphasize the contrast between X and Y" → The revision must explicitly set up the contrast, usually with a transition like "whereas" or "unlike."
+
+"To highlight the practical application" → The revision must include a concrete, real-world example or use.
+
+"To establish a formal tone" → The revision avoids colloquial language, slang, and contractions.
+
+"To convey a sense of urgency" → The revision uses strong, action-oriented language and direct address.
+
+IMPORTANT: Match the revision to the stated goal, not to your personal sense of good writing. A revision can be well-written and still wrong if it achieves a different goal than the one specified.
+
+TOP STRATEGIES FOR EXPRESSION OF IDEAS
+
+Strategy: For transition questions, reduce each idea to its core: "Idea 1 says X. Idea 2 says Y. The relationship between them is ___." Then match that relationship to a transition word.
+
+Strategy: For concision questions, read all four options and identify which one conveys the full meaning in the fewest words. Eliminate any option that drops necessary information.
+
+Strategy: For synthesis questions, re-read the stated goal before reading the answer choices. Then eliminate choices that ignore the goal, even if they sound good.
+
+Strategy: For add/delete questions, ask: "What is this paragraph about?" Then ask: "Does this sentence directly serve that purpose?" If not, delete.
+
+Strategy: For placement questions, number the sentences and try the new sentence in each position. The correct placement is where the surrounding sentences flow most naturally into and out of it.
+
+COMMON MISTAKES TO AVOID
+
+- Choosing a transition based on feel rather than logical relationship
+- Keeping redundant phrasing because it "sounds more formal"
+- Adding irrelevant (but accurate) information because it seems interesting
+- Choosing a longer answer thinking more explanation is always better
+- Ignoring the stated goal in synthesis questions and choosing based on general quality
+- Placing a sentence where it introduces a topic before that topic has been set up by the surrounding text

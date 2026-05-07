@@ -1,0 +1,139 @@
+ALGEBRA FUNDAMENTALS
+
+VARIABLES AND EXPRESSIONS:
+
+VARIABLE: A letter representing an unknown quantity or a quantity that can change.
+
+ALGEBRAIC EXPRESSION: A combination of variables, numbers, and operations. No equals sign.
+- Examples: 3x + 5, 2a² - 7b, (x + 1)/y
+
+EQUATION: A statement that two expressions are equal. Contains an equals sign.
+
+POLYNOMIAL EXPRESSIONS:
+- MONOMIAL: one term (5x², -3a, 7)
+- BINOMIAL: two terms (x + 3, 2a - b)
+- TRINOMIAL: three terms (x² + 3x - 5)
+
+COMBINING LIKE TERMS: Terms with the same variable raised to the same power.
+- 3x² + 5x - 2x² + x = x² + 6x (combine x² terms, combine x terms)
+
+DISTRIBUTIVE PROPERTY: a(b + c) = ab + ac
+- 3(x + 4) = 3x + 12
+- -(x - 5) = -x + 5 (distributing a negative flips all signs)
+
+IMPORTANT: The distributive property is used constantly. Always distribute BEFORE combining like terms.
+
+SOLVING LINEAR EQUATIONS:
+
+GOAL: Isolate the variable on one side.
+
+STEPS:
+1. Distribute and remove parentheses
+2. Combine like terms on each side
+3. Move variable terms to one side (add/subtract)
+4. Move constants to the other side
+5. Divide or multiply to solve for the variable
+
+EXAMPLE: 3(2x - 1) = 4x + 9
+→ 6x - 3 = 4x + 9
+→ 2x = 12
+→ x = 6
+
+CHECK: Substitute back. 3(12 - 1) = 33; 24 + 9 = 33 ✓
+
+EQUATIONS WITH FRACTIONS: Multiply both sides by the LCD (Least Common Denominator) to eliminate fractions.
+- x/3 + x/4 = 7 → multiply by 12 → 4x + 3x = 84 → 7x = 84 → x = 12
+
+LITERAL EQUATIONS: Equations with multiple variables. Solve for one variable in terms of the others.
+- Solve A = ½bh for h: multiply both sides by 2 → 2A = bh → h = 2A/b
+
+WORD PROBLEMS — SETTING UP EQUATIONS:
+
+STRATEGY:
+1. Identify the unknown — assign it a variable
+2. Express all other quantities in terms of that variable
+3. Write an equation based on the relationship described
+4. Solve and check your answer against the original problem
+
+COMMON SETUPS:
+- Number problems: "One number is 3 more than twice another" → y = 2x + 3
+- Age problems: set up equation at the stated time; use d years ago (subtract) or d years from now (add)
+- Consecutive integers: n, n+1, n+2; consecutive even/odd: n, n+2, n+4
+- Coin/mixture problems: value = quantity × unit value; set up equation for total value or total amount
+
+INEQUALITIES:
+
+LINEAR INEQUALITY: Solve like an equation. CRITICAL RULE: flip the inequality sign when multiplying or dividing by a negative number.
+- -3x + 2 ≤ 11 → -3x ≤ 9 → x ≥ -3 (sign flipped when dividing by -3)
+
+GRAPHING ON A NUMBER LINE:
+- < or >: open circle (point not included)
+- ≤ or ≥: closed circle (point included)
+- Shade in the direction of the solution
+
+COMPOUND INEQUALITIES:
+- "AND": Both conditions true simultaneously → intersection → shaded segment between two values
+- "OR": At least one condition true → union → shaded in two separate directions
+
+SYSTEMS OF INEQUALITIES: Graph each inequality (shade the region) and find the overlapping shaded region.
+
+EXPONENTS AND POLYNOMIALS:
+
+ADDING/SUBTRACTING POLYNOMIALS: Combine like terms only.
+- (3x² + 2x - 5) + (x² - 4x + 1) = 4x² - 2x - 4
+
+MULTIPLYING POLYNOMIALS:
+- Monomial × polynomial: distribute
+- Binomial × binomial: FOIL
+- (x + 2)(x - 3) = x² - 3x + 2x - 6 = x² - x - 6
+
+SPECIAL PRODUCTS (know these by sight):
+- (a + b)² = a² + 2ab + b²
+- (a - b)² = a² - 2ab + b²
+- (a + b)(a - b) = a² - b² ← Difference of Squares — very common on ACT!
+
+FACTORING:
+
+FACTORING OUT THE GCF: Always look for this first.
+- 6x² + 9x = 3x(2x + 3)
+
+FACTORING TRINOMIALS (x² + bx + c):
+- Find two numbers that MULTIPLY to c and ADD to b
+- x² + 5x + 6 = (x + 2)(x + 3) since 2 × 3 = 6 and 2 + 3 = 5
+
+FACTORING WITH LEADING COEFFICIENT (ax² + bx + c):
+- Multiply a and c → find factors that sum to b → rewrite the middle term → factor by grouping
+- 2x² + 5x + 3: a×c = 6; 2 and 3 multiply to 6 and add to 5 → 2x² + 2x + 3x + 3 = 2x(x+1) + 3(x+1) = (2x+3)(x+1)
+
+DIFFERENCE OF SQUARES: a² - b² = (a + b)(a - b)
+- x² - 25 = (x + 5)(x - 5)
+- 4x² - 9 = (2x + 3)(2x - 3)
+
+PERFECT SQUARE TRINOMIALS:
+- a² + 2ab + b² = (a + b)²
+- a² - 2ab + b² = (a - b)²
+
+IMPORTANT: Always check your factoring by multiplying back out (FOIL).
+
+RATIONAL EXPRESSIONS:
+
+SIMPLIFYING: Factor numerator and denominator, then cancel common factors.
+- (x² - 4)/(x + 2) = (x+2)(x-2)/(x+2) = x - 2 (for x ≠ -2)
+
+MULTIPLYING: Factor all, cancel across numerators and denominators, multiply remaining factors.
+
+ADDING/SUBTRACTING: Find LCD, rewrite each fraction with LCD, add/subtract numerators.
+
+SOLVING RATIONAL EQUATIONS: Multiply both sides by LCD to clear fractions. CHECK solutions — values that make any denominator zero are EXCLUDED.
+
+WORD PROBLEMS WITH ALGEBRA:
+
+RATE AND WORK PROBLEMS: If A does a job in a hours, A's rate = 1/a (fraction of job per unit time).
+- Together: 1/a + 1/b = 1/t, where t is the time working together
+
+MIXTURE PROBLEMS: Amount of substance = concentration × volume
+- Set up: (amount in solution 1) + (amount in solution 2) = (amount in final mixture)
+
+DISTANCE-RATE-TIME: D = RT; use a table to organize values for each traveler/object.
+
+REMEMBER: Algebra is the backbone of the ACT Math section. Fast, confident algebraic manipulation is the single most important skill — practice until factoring and solving feel automatic.

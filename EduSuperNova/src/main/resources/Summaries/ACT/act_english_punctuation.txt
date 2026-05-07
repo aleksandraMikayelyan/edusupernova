@@ -1,0 +1,84 @@
+PUNCTUATION
+
+COMMA RULES: The ACT tests commas extensively. Know exactly when commas are required and when they create errors.
+
+THE FOUR CORRECT USES OF COMMAS:
+
+Use 1 — Independent clauses joined by coordinating conjunctions (FANBOYS: For, And, Nor, But, Or, Yet, So):
+- "She studied hard, and she passed the exam."
+- No comma needed if the second clause shares the same subject: "She studied hard and passed the exam."
+
+Use 2 — After introductory elements (words, phrases, clauses):
+- "However, the results were surprising."
+- "After the long hike, we rested."
+- "Although it rained, we continued."
+
+Use 3 — Around non-restrictive (non-essential) elements:
+- "My brother, who lives in Paris, is visiting." (clause is extra info; remove it and the sentence still makes sense)
+- "The book, a national bestseller, was made into a film."
+- NEVER put commas around restrictive (essential) clauses: "Students who study hard tend to succeed." (no commas — the clause defines which students)
+
+Use 4 — Between items in a series:
+- "She bought apples, oranges, and bananas."
+- The ACT accepts the Oxford comma (before "and" in a list) — be consistent
+
+KEY CONCEPT: The two most common comma errors on the ACT
+1. Comma splice — using only a comma to join two independent clauses (WRONG): "She was tired, she went to bed." Fix: add a conjunction, use a semicolon, or split into two sentences.
+2. Unnecessary comma between subject and verb: "The tall man with the hat, walked slowly." — WRONG. Never separate a subject from its verb with a single comma.
+
+SEMICOLONS: A semicolon joins two closely related independent clauses without a conjunction.
+- "She studied for weeks; her hard work paid off."
+- A semicolon can replace a period — both clauses must be complete sentences
+- Semicolons also separate items in complex lists that already contain commas: "The team included Ali, the captain; Ben, the goalie; and Cara, the striker."
+
+IMPORTANT: Do NOT use a semicolon before a dependent clause or a list introduced by a colon.
+
+COLONS: A colon introduces a list, an explanation, or an elaboration. What comes before the colon must be a complete independent clause.
+- Correct: "She needed three things: time, money, and patience."
+- Incorrect: "She needed: time, money, and patience." (subject + verb alone is NOT a complete independent clause with "needed")
+
+A colon can also introduce a single item for emphasis: "There was only one problem: she had no money."
+
+DASHES: Dashes (em dashes —) work like super-commas or super-parentheses. They signal a strong pause or set off an abrupt interruption.
+- Around a non-restrictive phrase: "The solution — the only viable one — required sacrifice."
+- Before an elaboration: "She had one goal — to win."
+- RULE: If you open with a dash, you must close with a dash (not a comma or parenthesis) within the same sentence.
+
+APOSTROPHES: Two uses only — possession and contractions.
+
+Possession rules:
+- Singular nouns: add 's → dog's, James's, the company's
+- Plural nouns ending in s: add ' only → dogs', the companies'
+- Plural nouns NOT ending in s: add 's → children's, men's, women's
+
+Contractions:
+- it's = it is / it has (NEVER possession)
+- its = possession (no apostrophe)
+- they're = they are; their = possession; there = location
+- you're = you are; your = possession
+- who's = who is / who has; whose = possession
+
+REMEMBER: Possessive pronouns NEVER have apostrophes: its, his, hers, ours, theirs, yours, whose
+
+QUOTATION MARKS: 
+- Periods and commas go INSIDE quotation marks (American English)
+- Colons and semicolons go OUTSIDE quotation marks
+- Question marks and exclamation points go inside if part of the quote, outside if not
+
+PERIODS AND END PUNCTUATION:
+- Only one end mark per sentence — never "!?" or ".." 
+- Ellipses (...) indicate omitted text or a trailing off
+
+END-OF-SENTENCE BOUNDARIES: The ACT heavily tests whether you can identify where one sentence ends and another begins. Watch for:
+- Run-on sentences: two independent clauses with only a comma (comma splice) or no punctuation (fused sentence)
+- Sentence fragments: a group of words that lacks a subject, a verb, or both, or is a dependent clause standing alone
+
+Fixing run-ons — four strategies:
+1. Add a period and start a new sentence
+2. Add a semicolon
+3. Add a comma + coordinating conjunction (FANBOYS)
+4. Subordinate one clause with a conjunction (because, although, while, etc.)
+
+IMPORTANT: "Therefore," "however," "moreover," "furthermore," "consequently," and "thus" are conjunctive adverbs, NOT coordinating conjunctions. You need a semicolon (or period) before them when they join independent clauses, and a comma after them.
+- Correct: "She was tired; however, she continued."
+- Incorrect: "She was tired, however, she continued." (comma splice)

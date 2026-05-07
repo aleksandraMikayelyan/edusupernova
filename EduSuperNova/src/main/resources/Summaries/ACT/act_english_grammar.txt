@@ -1,0 +1,99 @@
+GRAMMAR AND USAGE
+
+SUBJECT-VERB AGREEMENT: The verb must agree in number with its subject, not with words that come between them.
+
+The key rule is to identify the true subject and ignore prepositional phrases, clauses, or parenthetical elements that separate the subject from the verb.
+
+Common traps:
+- Phrases beginning with "along with," "as well as," "in addition to," "together with" do NOT make a singular subject plural
+- Inverted sentences (verb before subject): "There are many reasons" — "reasons" is the subject
+- Collective nouns (team, group, jury, family) take singular verbs when acting as one unit
+
+EXAMPLES OF SUBJECT-VERB TRAPS:
+- "The box of chocolates [are/is] on the table" → IS (subject is "box," not "chocolates")
+- "Neither the players nor the coach [was/were] ready" → WAS (verb agrees with the closer noun "coach")
+- "The jury [have/has] reached a verdict" → HAS (jury acting as one unit)
+
+KEY CONCEPT: Indefinite pronouns as subjects
+- Always singular: each, every, either, neither, one, anyone, anyone, everyone, someone, no one, nobody, everybody, somebody, anything, everything, something, nothing
+- Always plural: both, few, many, several, others
+- Either singular or plural depending on context: all, any, most, none, some (look at what follows "of")
+
+PRONOUN-ANTECEDENT AGREEMENT: A pronoun must agree with its antecedent in number, gender, and person.
+
+- Singular antecedents require singular pronouns
+- Collective nouns generally take singular pronouns
+- Indefinite pronoun antecedents follow the same rules as subject-verb agreement
+
+IMPORTANT: "Their" is NOT acceptable for a singular antecedent in formal ACT writing. Use "his or her" for indefinite pronoun antecedents, or rewrite the sentence to use a plural noun.
+
+PRONOUN CASE: Pronouns change form depending on their grammatical role.
+
+SUBJECT PRONOUNS: I, he, she, we, they, who
+OBJECT PRONOUNS: me, him, her, us, them, whom
+
+The trick for compound constructions: Remove the other person and test the pronoun alone.
+- "She gave the award to John and [I/me]" → Remove "John and" → "She gave the award to me" → ME is correct
+
+IMPORTANT: After prepositions, always use object pronouns.
+- "between you and me" (NEVER "between you and I")
+- "for him and her"
+- "with us students"
+
+WHO vs. WHOM:
+- WHO = subject (does the action): "Who called?" → He called → WHO
+- WHOM = object (receives the action): "Whom did you call?" → You called him → WHOM
+
+VERB TENSES: Verbs must be consistent in tense throughout a passage unless a shift in time is clearly indicated.
+
+SIMPLE TENSES: past, present, future
+PERFECT TENSES: past perfect (had + past participle), present perfect (have/has + past participle), future perfect (will have + past participle)
+
+IMPORTANT: Past perfect shows that one past action happened BEFORE another past action.
+- "By the time she arrived, he had already left."
+
+Use present tense when discussing literature, film, or art: "In the novel, the character struggles with identity." (not "struggled")
+
+MODIFIER PLACEMENT: Modifiers should be placed as close as possible to what they modify.
+
+MISPLACED MODIFIER: A modifier placed too far from the word it modifies.
+- Incorrect: "Running down the street, the rain soaked her dress."
+- Correct: "Running down the street, she was soaked by the rain."
+
+DANGLING MODIFIER: A modifier that has nothing to logically modify in the sentence.
+- Incorrect: "After studying all night, the test seemed easy."
+- Correct: "After studying all night, she found the test easy."
+
+KEY CONCEPT: The subject of a modifying participial phrase must be the subject of the main clause.
+
+PARALLEL STRUCTURE: Items in a series or paired elements must be in the same grammatical form.
+
+In lists: "She likes hiking, swimming, and to run" → WRONG
+Corrected: "She likes hiking, swimming, and running" (all gerunds)
+
+With correlative conjunctions (not only...but also, either...or, neither...nor, both...and):
+- "Not only did she sing, but she also danced" ✓
+- "Not only singing but also to dance" ✗
+
+COMPARISONS: Always complete comparisons clearly and correctly.
+- Incorrect: "Her score is higher than any student." (compares score to student — illogical)
+- Correct: "Her score is higher than that of any other student."
+
+ADJECTIVES vs. ADVERBS:
+- Adjectives modify nouns and pronouns
+- Adverbs modify verbs, adjectives, and other adverbs (often end in -ly)
+- After linking verbs (feel, look, seem, appear, taste, smell), use adjectives: "The soup tastes good" (not "well")
+- "Well" is an adjective when referring to health: "She doesn't feel well."
+
+DOUBLE NEGATIVES: ACT English follows standard written English rules — avoid double negatives.
+- "I don't have no money" → "I don't have any money" or "I have no money"
+- Barely, hardly, scarcely function as negatives — don't pair with "not"
+
+COMMONLY CONFUSED WORDS:
+- AFFECT (verb) vs. EFFECT (noun): "The cold affects my mood." / "The effect was significant."
+- LAY (to place something) vs. LIE (to recline): "Lay the book down." / "Lie down and rest."
+- FEWER vs. LESS: Fewer = countable items; Less = uncountable quantities
+- AMONG vs. BETWEEN: Among = 3+ items; Between = 2 items (though "between" can apply to multiple distinct entities)
+- THAT vs. WHICH: That introduces restrictive clauses (no comma); Which introduces non-restrictive clauses (with comma)
+
+REMEMBER: On the ACT, "NO CHANGE" is correct about 25% of the time. Don't assume something must be changed just because it's underlined.

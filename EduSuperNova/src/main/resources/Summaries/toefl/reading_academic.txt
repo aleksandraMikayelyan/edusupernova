@@ -1,18 +1,123 @@
-TOEFL ACADEMIC READING SUMMARY
-TOPIC: THE EVOLUTION OF SYMBIOTIC RELATIONSHIPS
+READING ACADEMIC PASSAGES
 
-1. MAIN THESIS:
-The passage discusses symbiosis as a fundamental biological interaction, categorized into three distinct types: mutualism, commensalism, and parasitism, each defined by the benefit or harm experienced by the participating organisms.
+Academic reading is the foundation of the TOEFL. Each passage is approximately 700 words on a college-level academic topic. You will have 3 to 4 passages per test with 10 questions each, to be completed in 54 to 72 minutes. These passages are dense, technical, and written at university textbook level.
 
-2. KEY POINTS:
-- MUTUALISM: Both species benefit. The passage highlights the relationship between nitrogen-fixing bacteria and legumes, noting how it enhances soil fertility and plant growth.
-- COMMENSALISM: One species benefits while the other is unaffected. An example provided is the cattle egret, which eats insects stirred up by grazing livestock without impacting the livestock's health.
-- PARASITISM: One species (the parasite) benefits at the expense of the host. The text emphasizes that unlike predators, parasites usually do not kill their hosts immediately to ensure a long-term resource.
+WHAT TO EXPECT
 
-3. VOCABULARY & TERMINOLOGY:
-- Obligate Symbiosis: Interactions where species are entirely dependent on each other for survival.
-- Facultative Symbiosis: Interactions where species can survive independently but benefit from the association.
-- Host: The larger organism in a symbiotic relationship.
+TOPIC AREAS: Natural science (biology, geology, astronomy, chemistry), social science (economics, anthropology, psychology, sociology), and humanities (art history, literature, cultural studies). You need no prior knowledge — all answers are in the passage.
 
-4. SYNTHESIS FOR TOEFL WRITING/SPEAKING:
-To summarize effectively for TOEFL, focus on the classification of these relationships. The author uses specific biological examples to illustrate how natural selection favors traits that improve an organism's chances of survival through these varied interactions.
+QUESTION COUNT: 10 questions per passage. The final question is often a prose summary or fill-in-a-table task worth 2 to 3 points.
+
+TIME MANAGEMENT: Approximately 18 minutes per passage. Spend 3 to 4 minutes on a first focused read, then answer questions using targeted re-reads. Do not read the entire passage twice.
+
+THE ACADEMIC PASSAGE STRUCTURE
+
+Introduction paragraph: Introduces the topic and often contains the thesis or central organizing idea. Read this slowly and carefully.
+
+Body paragraphs: Each typically begins with a topic sentence stating the paragraph's main point. The rest of the paragraph provides evidence, examples, and elaboration.
+
+Concluding paragraph: Summarizes the argument or synthesizes findings. May introduce implications or future directions.
+
+KEY CONCEPT: The topic sentence of each paragraph is the single most important sentence in that paragraph for TOEFL purposes. Reading topic sentences gives you a roadmap of the entire passage without reading every word. Before answering questions, make sure you know what each paragraph is about.
+
+PASSAGE EXAMPLE: THE EVOLUTION OF SYMBIOTIC RELATIONSHIPS
+
+The following illustrates how academic content is structured and tested on the TOEFL.
+
+SYMBIOSIS: A close and often long-term biological interaction between two different species. The three major categories are mutualism, commensalism, and parasitism.
+
+MUTUALISM: Both species benefit from the interaction. A classic example is the relationship between nitrogen-fixing bacteria of the genus Rhizobium and leguminous plants. The bacteria convert atmospheric nitrogen into a form the plant can use; in return, the plant provides the bacteria with carbohydrates. This relationship enhances soil fertility and plant growth while sustaining bacterial populations.
+
+COMMENSALISM: One species benefits while the other is unaffected. The cattle egret exemplifies this: the bird follows grazing cattle and feeds on insects disturbed by the livestock's movement. The cattle receive no benefit, but they experience no harm either.
+
+PARASITISM: One species (the parasite) benefits at the expense of the host. Unlike predators, parasites typically do not kill their hosts — immediate host death would eliminate the parasite's resource. Instead, parasites extract resources gradually, often over extended periods. The host may be weakened but survives long enough to sustain the parasite.
+
+OBLIGATE SYMBIOSIS: A relationship in which one or both species cannot survive without the other. For example, mycorrhizal fungi form obligate associations with many plants.
+
+FACULTATIVE SYMBIOSIS: A relationship that is beneficial but not essential. Each partner can survive independently but thrives more with the association.
+
+NOTE: The TOEFL passage on symbiosis tests multiple concepts: the ability to distinguish between the three types, to identify the correct example for each type, to understand vocabulary in context (what does "obligate" mean here?), and to complete a table or prose summary organizing the information.
+
+QUESTION TYPES AND STRATEGIES
+
+FACTUAL INFORMATION QUESTIONS: "According to paragraph X, what is true about Y?" The answer is stated explicitly. Locate the relevant paragraph, read carefully, and match content — not paraphrase loosely.
+
+NEGATIVE FACTUAL QUESTIONS: "According to the passage, which of the following is NOT true about Y?" Three answers are true. One is false or not mentioned. Read all four options before marking. Do not choose an answer just because it sounds wrong — verify by checking the text.
+
+VOCABULARY IN CONTEXT QUESTIONS: "The word X in paragraph Y is closest in meaning to..." Do NOT rely on your general knowledge of the word. Read the surrounding sentences and determine the word's meaning from context. The correct answer is the word that best fits that specific context.
+
+INFERENCE QUESTIONS: "What can be inferred from paragraph X about Y?" The answer is implied, not stated. Choose the most conservative, most directly supported inference. Avoid answers that require additional assumptions beyond what the passage provides.
+
+RHETORICAL PURPOSE QUESTIONS: "Why does the author mention X in paragraph Y?" These test your understanding of WHY information was included. Common purposes: to provide an example, to introduce a contrast, to refute a possible objection, to define a term, to illustrate scale or significance.
+
+SENTENCE SIMPLIFICATION QUESTIONS: "Which of the following best expresses the essential information in the highlighted sentence?" The correct answer preserves the CORE meaning and logical relationship. Wrong answers omit essential information, change the relationship (e.g., cause to effect), or add new information.
+
+SENTENCE INSERTION QUESTIONS: "Where would the following sentence best fit in paragraph X?" Look for the position where the logical flow is most natural. Check what comes before (the inserted sentence must connect to it) and what comes after (it must lead naturally into the next sentence). Watch for pronouns — a new sentence with "this" or "these" must follow a sentence that introduces the referent.
+
+PROSE SUMMARY QUESTIONS (worth up to 3 points): Select three sentences from six that best represent the main ideas of the passage. Wrong answers are: too specific (details or examples, not main ideas), not supported by the passage, or contain information that contradicts the passage.
+
+FILL-IN-A-TABLE QUESTIONS: Assign statements to categories in a table. This tests whether you understand which examples, characteristics, or features belong to which category. Use your paragraph-by-paragraph notes to sort correctly.
+
+ACTIVE READING STRATEGIES
+
+PARAGRAPH MAPPING: After reading each paragraph, write a 3-to-5-word summary in the margin. Example: "Para 2: mutualism — bacteria/plants." This map makes question-answering far faster.
+
+THESIS IDENTIFICATION: After the introduction, state the main argument in your own words. Every subsequent question about the passage should connect to this central idea.
+
+CONTRAST TRACKING: Academic passages often discuss multiple theories, categories, or time periods. Whenever the text shifts from one to another, mark it in your notes.
+
+EXAMPLE TRACKING: Link every example to the concept it illustrates. Exam questions frequently test whether you know which example goes with which concept.
+
+SIGNAL WORD AWARENESS: Academic writing uses transition words that signal logical relationships:
+- Addition: furthermore, moreover, in addition, also
+- Contrast: however, on the other hand, in contrast, despite, whereas
+- Cause/Effect: therefore, as a result, consequently, thus, because
+- Example: for example, to illustrate, specifically, such as
+- Concession: although, even though, while it is true that
+
+VOCABULARY BUILDING FOR ACADEMIC READING
+
+High-frequency TOEFL academic vocabulary families:
+
+ANALYSIS: analyze, analytical, analyst, analysis, analyzable
+HYPOTHESIS: hypothesize, hypothesis, hypothetical, hypothetically
+SIGNIFICANCE: significant, significantly, signify, significance, insignificant
+ESTABLISH: establish, established, establishment, re-establish
+DEMONSTRATE: demonstrate, demonstration, demonstrable, demonstrably
+ATTRIBUTE: attribute (verb), attribute (noun), attributable, attribution
+ASSUME: assume, assumption, assumed, presumably
+VARY: vary, variation, variable, varied, invariably
+CONTRIBUTE: contribute, contribution, contributor, contributory
+
+REMEMBER: You will not know every word in a TOEFL passage. Academic vocabulary is vast. What you CAN do is use context clues systematically: look for definitions set off by commas or dashes, contrast signals, restatement synonyms, and root words you recognize.
+
+TIME MANAGEMENT FOR READING
+
+Allocation per passage: 18 minutes total.
+- First read (mapping): 4 minutes — read actively, map each paragraph
+- Factual and vocabulary questions: 1 minute each
+- Inference and purpose questions: 1.5 minutes each
+- Prose summary or table: 3 minutes — requires reviewing whole passage
+
+IMPORTANT: Prose summary and fill-in-a-table questions are worth more points than other questions. Do not rush these. Allocate at least 3 minutes.
+
+TOP STRATEGIES FOR ACADEMIC READING
+
+Strategy: Read topic sentences first (a "topic sentence skim") before deep-reading. This gives you the passage structure before you dive into details.
+
+Strategy: For vocabulary questions, cover the answer choices and decide what the word means from context first. Then match your meaning to the closest option.
+
+Strategy: For sentence insertion questions, test each position by reading the preceding and following sentences aloud with the new sentence in between. The right position will feel seamless.
+
+Strategy: For prose summary questions, eliminate answers that describe specific details or examples rather than main ideas.
+
+Strategy: Manage time actively — if a question is taking more than 2 minutes, mark it and come back. Do not sacrifice 5 questions for 1.
+
+COMMON MISTAKES TO AVOID
+
+- Reading the entire passage before looking at any questions (inefficient)
+- Choosing vocabulary answers based on general knowledge of the word outside its context
+- Selecting "true in general" answers for factual questions — the answer must be true according to THIS passage
+- Missing the main idea of prose summary by including details that are too specific
+- Ignoring the logical direction of the sentence insertion — both the sentence before AND after matter
+- Running out of time on prose summary because you spent too long on earlier questions

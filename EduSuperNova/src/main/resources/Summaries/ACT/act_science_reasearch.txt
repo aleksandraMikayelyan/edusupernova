@@ -1,0 +1,111 @@
+SCIENCE — RESEARCH SUMMARIES
+
+OVERVIEW: Research Summary passages are the most common type in the ACT Science section — typically 3 out of 6 passages. Each describes one or more scientific experiments: their design, procedure, results, and sometimes conclusions. You must interpret the experimental design, understand the results, and draw appropriate conclusions from the data.
+
+WHAT RESEARCH SUMMARIES TEST:
+
+- Understanding experimental design (what was tested and how)
+- Reading results from tables, figures, and written descriptions
+- Drawing valid conclusions from experimental data
+- Understanding the purpose of controls and controlled variables
+- Determining what additional experiments would test or support a hypothesis
+- Identifying the limitations of an experimental design
+
+KEY CONCEPT: Research Summary passages always describe REAL experimental logic, even if the topic is unfamiliar. Focus on understanding the STRUCTURE of the experiment (what changed, what was measured, what was held constant) rather than the science itself.
+
+ANATOMY OF AN EXPERIMENT:
+
+HYPOTHESIS: The predicted outcome or the question being tested. Sometimes stated explicitly; sometimes you must infer it from the experimental setup.
+
+INDEPENDENT VARIABLE: The factor deliberately changed by the experimenter. Look for what differs between experimental groups or trials.
+
+DEPENDENT VARIABLE: The factor being measured. It "responds to" or "depends on" the independent variable.
+
+CONTROLLED VARIABLES: All other factors kept constant. Their purpose is to ensure that any change in the dependent variable is caused by the independent variable, not by some other factor.
+
+CONTROL GROUP: A baseline group that does NOT receive the experimental treatment. Compare results to the control group to determine whether the treatment had an effect.
+
+EXPERIMENTAL GROUP: The group that DOES receive the treatment or variable being tested.
+
+IMPORTANT: On the ACT, you will often be asked to identify what was controlled (held constant). Look for conditions that were kept the same across all trials.
+
+READING EXPERIMENTAL RESULTS:
+
+Most research summary passages present results as tables or graphs. Apply all your data representation skills:
+- Read axis labels and units carefully
+- Identify the independent variable (usually on the x-axis or in separate columns/rows)
+- Identify the dependent variable (usually on the y-axis or in data cells)
+- Note trends: does the dependent variable increase, decrease, or fluctuate as the independent variable changes?
+
+IMPORTANT: Don't interpret the data before you read it. Note what you observe objectively — what the numbers actually show — before drawing any conclusions.
+
+DRAWING CONCLUSIONS:
+
+A valid conclusion must be:
+1. Supported by the data presented
+2. Within the scope of what was tested (don't over-generalize)
+3. Consistent with the experimental design
+
+COMMON CONCLUSION ERRORS:
+- Over-generalization: "All species respond this way" based on a study of two species
+- Causation error: "X causes Y" when the data only shows correlation
+- Confounded conclusion: ignoring an uncontrolled variable that could explain the result
+- Extrapolation beyond data range without justification
+
+KEY CONCEPT: "The data suggests..." is safer than "The data proves..." on the ACT. Conclusions from a single experiment are always tentative.
+
+ANALYZING EXPERIMENTAL DESIGN:
+
+GOOD EXPERIMENTAL DESIGN features:
+- One independent variable changed at a time
+- All other variables controlled
+- An appropriate control group
+- Sufficient sample size to detect real effects
+- Reproducibility (results can be repeated)
+
+FLAWED EXPERIMENTAL DESIGN may have:
+- Multiple variables changing simultaneously (confounding variables)
+- No control group (nothing to compare results to)
+- Too small a sample
+- Measurement error or inconsistent procedures
+
+QUESTION TYPES:
+
+DESIGN UNDERSTANDING: "What was the purpose of Experiment 2?" or "Why did the researchers use a control group?"
+- Identify what the experiment was designed to test
+- Understand the role of each element (control, variable, repetition)
+
+RESULT INTERPRETATION: "According to the results of Experiment 1, as temperature increased, the rate of reaction..."
+- Read the data directly from the table or figure
+- Answer based on the evidence, not prior knowledge
+
+CONCLUSION QUESTIONS: "Which conclusion is best supported by the results of the experiments?"
+- Evaluate each option against the data
+- Eliminate conclusions that go beyond the scope of the experiments
+
+ADDITIONAL EXPERIMENT QUESTIONS: "Which of the following experiments would best test whether X affects Y?"
+- Identify what variable would need to change and what would need to be measured
+- The best additional experiment isolates one new variable while controlling everything else
+
+HYPOTHESIS EVALUATION: "If the researchers' hypothesis is correct, which result would be expected?"
+- Understand what the hypothesis predicts
+- Identify which answer matches that prediction
+
+MULTI-EXPERIMENT PASSAGES:
+
+Some research summary passages contain 2-3 related experiments. Questions may ask:
+- How the experiments differ from each other (different independent variable? Different conditions?)
+- What experiment 2 adds to the conclusions of experiment 1
+- Which experiment best supports or contradicts a given claim
+
+IMPORTANT: Treat each experiment separately before comparing them. Understand what each one tested and found, then look at the relationships between them.
+
+STRATEGY FOR RESEARCH SUMMARIES:
+
+1. Read the introduction — it gives context and often the hypothesis
+2. For each experiment, identify: What changed? What was measured? What were the conditions?
+3. Note the results briefly (trend, not every number)
+4. Go to the questions — they will direct you to specific data
+5. Always return to the passage to verify — don't answer from memory
+
+REMEMBER: ACT Science Research Summaries are fundamentally about logic: the logic of experimental design and the logic of drawing conclusions from evidence. You don't need to know biology or chemistry — you need to think like a scientist.

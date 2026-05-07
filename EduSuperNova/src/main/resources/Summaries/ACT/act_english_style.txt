@@ -1,0 +1,86 @@
+STYLE
+
+STYLE ON THE ACT: Style questions ask you to evaluate the effectiveness of word choices, sentence structures, and phrasing — not just whether something is grammatically correct, but whether it's the best choice for the passage's purpose, audience, and tone.
+
+CONCISENESS AND PRECISION:
+
+The ACT's most reliable style principle: shorter is better, as long as meaning is preserved.
+
+When two options are both grammatically correct, the more concise one is almost always right. Ask yourself: does this longer version add any new meaning, or just more words?
+
+REDUNDANCY: Watch for words and phrases that say the same thing twice.
+- "He was a true and genuine leader" → "He was a genuine leader"
+- "She whispered quietly" → "She whispered" (whispering is already quiet)
+- "They collaborated together" → "They collaborated"
+- "The biography of her life" → "Her biography"
+- "unexpected surprise" → "surprise"
+
+VAGUENESS vs. SPECIFICITY:
+
+Vague language weakens writing. Specific language strengthens it.
+- Weak: "The results were good." / Strong: "The results exceeded expectations."
+- Weak: "Many people think..." / Strong: "Researchers have found..."
+
+When a question asks which option best achieves a specific purpose (e.g., "conveys the researcher's excitement"), choose the option with the most vivid and precise language.
+
+TONE CONSISTENCY: Each ACT passage has a specific voice and tone. Maintain that tone when selecting wording.
+
+A formal academic essay should not suddenly use:
+- Slang: "The experiment was super cool."
+- Colloquialisms: "The results were kind of surprising."
+- Overly casual address: "You can see that the data shows..."
+
+A personal narrative should not suddenly shift to:
+- Overly technical jargon without explanation
+- Cold, detached scientific language
+
+IMPORTANT: When evaluating style, read several sentences around the underlined portion to get a feel for the passage's established tone.
+
+SENTENCE VARIETY AND RHYTHM:
+
+Well-crafted writing varies sentence length and structure. Short sentences create punch and emphasis. Longer sentences can develop complex ideas and show relationships between them.
+
+The ACT may ask you to choose a revision that improves sentence variety. Watch for:
+- A series of short, choppy sentences that could be combined
+- A single extremely long sentence that could be broken up or restructured
+- Monotonous sentence openings (all starting with "The" or all starting with a subject)
+
+COMBINING SENTENCES: When asked to combine two sentences, the best option:
+- Preserves all essential information
+- Eliminates unnecessary words
+- Uses the most logical connective word to show the relationship
+- Results in a smooth, natural-sounding sentence
+
+FIGURATIVE LANGUAGE: Similes, metaphors, and other figurative devices can strengthen writing — but only if they fit naturally. Watch for:
+- Mixed metaphors (combining two incompatible images): "We need to iron out the bottlenecks." (ironing and bottlenecks don't mix)
+- Clichés that weaken rather than strengthen the writing
+- Figurative language that clashes with a factual or scientific tone
+
+PARALLELISM IN STYLE: Beyond grammar, parallel structure creates rhythmic flow and clarity.
+- "The project required creativity, dedication, and [to work hard]" → should be "hard work"
+- Lists and paired ideas should feel balanced and symmetrical
+
+ACTIVE AND PASSIVE VOICE:
+
+Active voice is almost always preferable in ACT style.
+- Passive: "Mistakes were made." (vague, weak)
+- Active: "The team made mistakes." (clear, direct)
+
+Passive voice is acceptable when the doer is unknown or irrelevant: "The artifact was discovered in 1923."
+
+EMPHASIS AND FOCUS:
+
+The part of a sentence that comes at the end receives the most emphasis. Good writers strategically place important information at the end.
+- "Despite the setbacks, she won." (emphasis on winning)
+- "She won, despite the setbacks." (emphasis on setbacks)
+
+When an ACT question asks which revision "best emphasizes" something, look for the option that places that information in the most prominent position.
+
+AVOIDING AWKWARD PHRASING:
+
+Trust your ear. If something sounds awkward when you read it aloud (even mentally), it's probably wrong. Common awkward constructions:
+- Split infinitives that create awkwardness (though not always wrong): "to quickly and carefully analyze"
+- Unnecessarily complex noun phrases: "the analysis of the results by the researchers" → "the researchers' analysis of the results"
+- Awkward passive constructions: "It was decided by the committee" → "The committee decided"
+
+REMEMBER: Style questions don't have a simple rule to apply. You must read in context, consider the passage's purpose and tone, and ask what makes the writing clearest, most precise, and most natural-sounding.

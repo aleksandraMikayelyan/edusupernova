@@ -1,0 +1,140 @@
+BUILD A SENTENCE
+
+OVERVIEW: Build a Sentence is the first task in the TOEFL 2026 Writing section. It is a drag-and-drop task in which you are given a set of scrambled words and must rearrange them into a grammatically correct sentence. The sentences form part of a short conversation between students, so understanding the conversational context is just as important as knowing grammar rules.
+
+WHAT THE TASK LOOKS LIKE:
+
+On screen, you see individual word tiles — for example: "professor / the / rescheduled / has / our / meeting" — and you drag them into the correct order. The completed sentence fits logically into a brief student conversation shown above.
+
+There are typically 7 to 8 sentences per task. Difficulty increases as sentences get longer and grammatical structures become more complex.
+
+KEY CONCEPT: Context matters. A sentence that is grammatically possible in isolation may be wrong in the context of the conversation. Always read the surrounding exchange before finalizing your answer.
+
+ENGLISH WORD ORDER — THE FOUNDATIONS:
+
+BASIC SVO ORDER: English sentences follow Subject → Verb → Object order.
+- "The student submitted the assignment." (NOT "Submitted the student the assignment.")
+
+This seems simple, but English word order becomes significantly more complex with:
+- Adjectives before nouns
+- Adverb placement
+- Auxiliary verbs and perfect/continuous tenses
+- Relative clauses
+- Questions vs. statements
+
+ADJECTIVE ORDER: When multiple adjectives modify a noun, they follow a strict sequence:
+Quantity → Opinion → Size → Age → Shape → Color → Origin → Material → Purpose + NOUN
+- "Two beautiful large old oval brown Italian leather handbags" (correct order)
+- In practice, rarely more than 2-3 adjectives are stacked
+
+IMPORTANT: A common mistake is placing adjectives in the wrong order. "A red big car" is incorrect; "a big red car" is correct. The adjective closest to the noun is the most specific category (material, origin, purpose).
+
+ADVERB PLACEMENT:
+
+Adverbs of frequency (always, usually, often, sometimes, rarely, never) go:
+- BEFORE the main verb: "She always studies in the library."
+- AFTER the verb "to be": "He is often late."
+- BETWEEN the auxiliary and the main verb: "She has never visited Paris." / "They are always working."
+
+Adverbs of manner (quickly, carefully, loudly) typically go:
+- After the verb or at the end of the clause: "She completed the task quickly."
+
+Adverbs of time (yesterday, soon, now, recently) typically go:
+- At the beginning or end of the sentence: "Yesterday, the professor announced the results." / "The professor announced the results yesterday."
+
+IMPORTANT: Never place a frequency adverb between the verb and its object. "She reads always books" is wrong. "She always reads books" is correct.
+
+AUXILIARY VERBS AND TENSE STRUCTURE:
+
+PRESENT PERFECT: Subject + have/has + past participle
+- "The professor has changed the deadline."
+- "We have not received the email yet."
+
+PAST PERFECT: Subject + had + past participle
+- "By the time the lecture started, she had already read the chapter."
+
+PRESENT CONTINUOUS: Subject + am/is/are + verb-ing
+- "They are waiting outside the classroom."
+
+FUTURE WITH "WILL": Subject + will + base verb
+- "The exam will be held next Thursday."
+
+PASSIVE VOICE: Subject + be (conjugated) + past participle
+- "The assignments were collected by the teaching assistant."
+- "The results will be announced next week."
+
+KEY CONCEPT: In the passive voice, the agent (doer) often comes last with "by." In Build a Sentence, passive constructions are common in academic conversational contexts.
+
+QUESTION FORMATION:
+
+In questions, the auxiliary verb moves before the subject:
+- "Has the professor posted the grades yet?" (auxiliary "has" before subject "professor")
+- "Is the library open on Sunday?" (auxiliary "is" before subject "library")
+
+Indirect questions use statement word order, not question word order:
+- "Do you know when the meeting is?" (NOT "Do you know when is the meeting?")
+- "She asked whether the exam would be rescheduled." (NOT "She asked whether would the exam be rescheduled.")
+
+IMPORTANT: Indirect questions are a very frequent Build a Sentence trap. After reporting verbs (asked, wondered, wanted to know), revert to statement word order.
+
+RELATIVE CLAUSES:
+
+Relative clauses add information about a noun. They must be placed immediately after the noun they modify.
+
+RESTRICTIVE (no commas): "The student who submitted the assignment early received a bonus."
+NON-RESTRICTIVE (with commas): "Professor Chen, who teaches linguistics, wrote a bestselling grammar book."
+
+WHO: refers to people
+WHICH: refers to things
+THAT: refers to things (in restrictive clauses only — never use "that" in a non-restrictive clause with commas)
+
+PARTICIPLE PHRASES: Shortened relative clauses
+- "The book written by Professor Lee is required reading." (= "The book which was written by...")
+- "The students waiting in the hall will be admitted shortly." (= "The students who are waiting...")
+
+NOUN CLAUSES:
+
+A noun clause functions as a noun — as a subject, object, or complement.
+- "What the professor said surprised everyone." (subject)
+- "I don't understand why the exam was postponed." (object)
+- "The issue is that nobody submitted the form." (complement after "is")
+
+IMPORTANT: Noun clauses beginning with "that" are very common in academic English. "I believe that the results are significant." The word "that" can sometimes be omitted informally, but in TOEFL contexts, include it.
+
+CONDITIONAL STRUCTURES:
+
+REAL CONDITIONAL (likely/general): If + present simple, will + base verb
+- "If you submit the form today, you will receive confirmation."
+
+UNREAL CONDITIONAL (hypothetical): If + past simple, would + base verb
+- "If I had more time, I would revise the entire chapter."
+
+PAST UNREAL CONDITIONAL: If + past perfect, would have + past participle
+- "If she had studied harder, she would have passed the exam."
+
+KEY CONCEPT: In conditional sentences, the "if" clause can come first or second. When it comes first, separate the clauses with a comma: "If it rains, we will cancel the event." When the main clause comes first, no comma is needed: "We will cancel the event if it rains."
+
+PARALLEL STRUCTURE IN SENTENCES:
+
+Items joined by conjunctions or listed in a series must be in the same grammatical form.
+- Correct: "She needs to read the article, complete the worksheet, and submit the report."
+- Incorrect: "She needs to read the article, completing the worksheet, and to submit the report."
+
+COMMON BUILD A SENTENCE TRAPS:
+
+TRAP 1 — Adjective order: Arrange adjectives in the correct sequence (opinion before size before age before color, etc.)
+TRAP 2 — Adverb placement: Frequency adverbs go before the main verb, not between verb and object.
+TRAP 3 — Indirect question word order: After "asked/wondered/knew," use statement word order.
+TRAP 4 — Passive voice confusion: Remember the structure be + past participle; don't confuse with active voice.
+TRAP 5 — Relative clause position: A relative clause must follow IMMEDIATELY after the noun it modifies.
+TRAP 6 — Context ignoring: A grammatically correct sentence may be wrong for the conversation. Read the context.
+
+PREPARATION STRATEGY:
+
+DAILY PRACTICE: Take any sentence from an academic article or textbook, scramble the words yourself on paper, then reconstruct the original. Compare with the source sentence to identify any ordering errors.
+
+GRAMMAR FOCUS: If you struggle with a specific structure (indirect questions, passive voice, adjective order), make a focused list of examples and practice daily.
+
+CONTEXT READING: Practice reading short text conversations (academic forums, student discussion boards) and notice how sentences connect logically to one another.
+
+REMEMBER: Speed matters in Build a Sentence because the entire Writing section is timed at 23 minutes. Practice until common sentence structures feel automatic so you do not lose time hesitating over basic word order.

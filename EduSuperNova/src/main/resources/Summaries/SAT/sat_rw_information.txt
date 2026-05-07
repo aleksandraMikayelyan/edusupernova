@@ -1,0 +1,178 @@
+INFORMATION AND IDEAS
+
+This domain makes up about 26% of Reading & Writing questions. It tests your ability to read carefully, understand explicit information, draw valid inferences, and evaluate arguments and evidence. This is the most foundational reading domain — the skills here underpin every other part of the test.
+
+WHAT THIS DOMAIN COVERS
+
+Information and Ideas questions include:
+- Central Ideas and Details (understanding main points and specific supporting information)
+- Command of Evidence — Textual (finding the best evidence to support a claim)
+- Command of Evidence — Quantitative (interpreting graphs, charts, or tables alongside a passage)
+- Inferences (drawing logical conclusions from textual evidence)
+- Evaluating Arguments (assessing the strength, relevance, and implications of evidence)
+
+THE CORE READING APPROACH
+
+Active reading strategy:
+- Before reading: glance at the question to know what to look for
+- While reading: mark the central claim and key supporting points
+- After reading: mentally summarize what the passage argues in one sentence
+- When answering: treat every question as text-based; every correct answer is supported by the passage
+
+KEY CONCEPT: SAT reading questions are not opinion questions. There is always a correct answer that is directly supported by the text. If you cannot point to specific words or sentences that back up your answer, reconsider your choice.
+
+CENTRAL IDEAS AND DETAILS
+
+CENTRAL IDEA: The main point the author is making. It is broader than any single detail and is supported by the entire passage.
+
+SUPPORTING DETAIL: A specific fact, example, or piece of evidence that supports the central idea. It is narrower than the main point.
+
+IDENTIFYING THE CENTRAL IDEA:
+- Ask: What does the author want the reader to understand or believe after reading this?
+- It should be specific enough to differentiate this passage from others on the same topic
+- It is usually NOT stated in the first sentence — that sentence often provides context or a hook
+
+Wrong answer types for central idea questions:
+- Too broad (covers more than the passage discusses)
+- Too narrow (describes only one detail or example from the passage)
+- Accurate but irrelevant (true, but not what the passage focuses on)
+- Contradicts the passage
+
+IMPORTANT: The correct central idea answer will be supported by the ENTIRE passage, not just one paragraph. If an answer only reflects one section of the text, it is probably too narrow.
+
+DETAIL QUESTIONS ask about specific information in the passage. The answer is always explicitly stated — you just need to find it.
+
+Strategy for detail questions: Use the question as a search guide. Identify a key term or concept in the question, locate it in the passage, and read a few sentences before and after it carefully.
+
+COMMAND OF EVIDENCE — TEXTUAL
+
+EVIDENCE questions present a claim and ask which quotation from the passage best supports it. Or they give a quotation and ask what it most directly illustrates or supports.
+
+APPROACH FOR EVIDENCE QUESTIONS:
+- Identify the claim that needs to be supported
+- Ask: which quote, if true, would make this claim most believable or most logically connected?
+- The correct quote will contain information directly relevant to the claim, not just adjacent to it
+
+IMPORTANT: A wrong evidence answer often comes from the correct paragraph but quotes a sentence that is related to the topic but doesn't actually support the specific claim. The relevance must be direct and clear, not inferential.
+
+KEY CONCEPT: Evidence must be sufficient to support the claim AND specific to it. General statements about a topic do not support specific claims about one aspect of that topic.
+
+COMMAND OF EVIDENCE — QUANTITATIVE
+
+These questions pair a passage with a graph, table, or chart and ask you to:
+- Identify what the data shows
+- Determine whether the data supports, weakens, or is irrelevant to the passage's claim
+- Complete a claim using specific information from the graphic
+
+APPROACH FOR DATA QUESTIONS:
+- Read the passage claim being referenced first
+- Read the graphic: title, axes labels, units, data trend
+- Find the specific data point or trend that matches (or doesn't match) the claim
+
+IMPORTANT: Do not use general knowledge about the topic when reading graphs. Use ONLY what the graphic shows. Pay attention to what is measured (exact variable names) and the range of data shown.
+
+Common wrong answer traps:
+- The data shows a different variable than what the claim discusses
+- The data shows a correlation that doesn't directly support a causal claim
+- The data covers a different time period or sample than the claim references
+- Students read the graph backwards (confusing x and y axes)
+
+NOTE: A data point that shows an EXCEPTION to the general trend should not be used to support the general trend. Identify whether the question asks for supporting data or complicating/limiting data.
+
+INFERENCES
+
+INFERENCE: A conclusion that logically follows from the information given, even if not stated directly.
+
+SAT INFERENCE RULES:
+- The correct inference must be strongly implied by the text
+- It cannot require outside knowledge beyond the passage
+- It should be the most logical conclusion, not just a possible one
+- It should not overstate or overextend what the passage says
+
+Strong inference test: Can you point to specific sentences that, taken together, make this conclusion almost certain?
+
+TYPES OF INFERENCES ON THE SAT:
+- What can be inferred about a character or person's attitude?
+- What does the passage suggest about a cause or reason?
+- What does the evidence imply about a broader pattern or principle?
+
+EXAMPLE: If a passage states that scientists have found the same protein structure in organisms from multiple different ecosystems, a valid inference is that the protein structure is widespread or conserved across species. An INVALID inference would be that the protein causes certain behaviors — the passage provides no basis for that conclusion.
+
+REMEMBER: Inferences must be conservative. The SAT rewards the most cautious, most directly supported conclusion. If you're choosing between a bold inference and a modest one, and both are consistent with the text, the modest one is almost always right.
+
+EVALUATING ARGUMENTS
+
+ARGUMENT STRUCTURE: A good argument has a clear CLAIM, supported by EVIDENCE, connected by REASONING. The SAT tests whether you can identify each component and evaluate their relationship.
+
+EVALUATING EVIDENCE QUESTIONS ask:
+- Which new finding would STRENGTHEN the author's claim?
+- Which new finding would WEAKEN or CHALLENGE the author's claim?
+- Which piece of evidence is MOST relevant to the conclusion?
+
+To strengthen a claim: find new evidence that supports the same conclusion, eliminates an alternative explanation, or increases the sample size/generalizability.
+
+To weaken a claim: find evidence that supports an alternative explanation, shows an exception to the stated pattern, or reveals a methodological flaw.
+
+KEY CONCEPT: To weaken an argument, you do not need to prove the conclusion is wrong. You just need to make it less certain or less well-supported. A single strong counterexample or alternative explanation is enough to weaken.
+
+ANALOGY QUESTIONS present a scenario in one context and ask which scenario in a different context follows the same logical pattern. These require abstracting the underlying principle.
+
+APPROACH FOR ANALOGY QUESTIONS:
+- State the logical principle in the original passage in abstract terms (e.g., "limited resource leads to competition between groups")
+- Find the answer choice that follows the same abstract principle in a different context
+- Ignore surface similarities (same words, same topic) — focus on the logical relationship
+
+TYPES OF PASSAGES AND HOW TO READ THEM
+
+LITERARY FICTION: Focus on character motivation, narrative voice, theme, and imagery. Ask: How does the narrator feel? What does this scene reveal about the character?
+
+SOCIAL SCIENCE: Focus on the main argument, evidence type (study, data, expert opinion), and the author's stance. Ask: What is being claimed? Is the evidence sufficient?
+
+NATURAL SCIENCE: Focus on the central scientific finding or process and what it explains. Ask: What phenomenon is being described? What evidence supports the explanation?
+
+HISTORY/SOCIAL STUDIES: May include primary sources (speeches, letters, historical documents). Focus on the author's historical purpose, audience, and the implicit assumptions being made.
+
+HUMANITIES: Often analytical essays about art, literature, or culture. Focus on the author's interpretation and the evidence used to support it.
+
+KEY CONCEPT: You do not need to know the science, history, or literature being discussed. Every answer is in the passage. Approach every passage as if you're seeing the topic for the first time, because the SAT expects you to answer from the text, not from memory.
+
+READING FOR MAIN POINT AND STRUCTURE
+
+PARAGRAPH-BY-PARAGRAPH MAPPING: As you read, briefly note what each paragraph does. This gives you a mental map to find information quickly when answering questions.
+
+A TYPICAL ARGUMENTATIVE PASSAGE STRUCTURE:
+- Paragraph 1: Hook, context, or problem setup
+- Middle paragraphs: Evidence, examples, analysis
+- Final paragraph: Conclusion, implications, call to action
+
+A TYPICAL SCIENTIFIC PASSAGE STRUCTURE:
+- Introduction: What phenomenon or question is being investigated
+- Background: Existing knowledge or previous research
+- Methods/Findings: What was found (may be implicit in explanatory passages)
+- Significance: What the finding means or implies
+
+NOTE: Knowing typical structures helps you predict where answers will be found. Main idea questions → think about the whole passage. Detail questions → use the passage map to locate the relevant section.
+
+TOP STRATEGIES FOR INFORMATION AND IDEAS
+
+Strategy: Always read the question before re-reading the passage. This turns your re-reading into a targeted search, not passive rereading.
+
+Strategy: For central idea questions, eliminate answers that are too broad or too narrow by checking: is this supported by the whole passage? If only by one paragraph, it's too narrow.
+
+Strategy: For inference questions, eliminate answers that require information not in the passage, or that go further than the passage warrants.
+
+Strategy: For evidence questions, ask "does this quote directly address the claim?" Don't choose quotes that are from the same section but don't logically connect to the specific assertion.
+
+Strategy: For data questions, read the axis labels before looking at the data. The specific variable being measured often determines whether the data is relevant.
+
+Strategy: For strengthen/weaken questions, identify the gap in the argument — the assumption that's being made. Evidence that validates the assumption strengthens; evidence that challenges it weakens.
+
+COMMON MISTAKES TO AVOID
+
+- Choosing a central idea answer that only reflects one paragraph
+- Bringing in outside knowledge not supported by the passage
+- Choosing an "inference" that is too extreme or speculative
+- Picking evidence that is in the right area of the passage but doesn't directly support the claim
+- Reading graphs without checking units, axis labels, or which variable is which
+- Confusing what a passage says with what you believe about the topic
+- Choosing an answer that weakens a claim simply because it sounds negative — it must specifically undermine the argument's logic

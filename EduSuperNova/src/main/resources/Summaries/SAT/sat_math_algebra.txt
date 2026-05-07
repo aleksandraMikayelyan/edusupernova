@@ -1,0 +1,166 @@
+ALGEBRA
+
+This section covers the largest single domain on SAT Math. Expect 13-15 questions per test. Mastering algebra means mastering the entire Math section.
+
+CORE BUILDING BLOCKS
+
+LINEAR EQUATIONS AND EXPRESSIONS
+
+LINEAR EQUATION: An equation where the variable has an exponent of 1, producing a straight line when graphed.
+
+SLOPE-INTERCEPT FORM: y = mx + b, where m is slope and b is the y-intercept.
+
+STANDARD FORM: Ax + By = C, useful for finding intercepts quickly.
+
+POINT-SLOPE FORM: y - y1 = m(x - x1), used when you know one point and the slope.
+
+SLOPE: The rate of change; calculated as (y2 - y1) / (x2 - x1), also written as rise over run.
+
+KEY CONCEPT: For every linear equation question, ask yourself: what does the slope mean in context? The SAT loves questions where slope = real-world rate of change (e.g., dollars per hour, miles per gallon).
+
+Solving linear equations:
+- Isolate the variable by performing inverse operations
+- Whatever you do to one side, do to the other
+- Distribute and combine like terms first
+- Check your answer by substituting back
+
+IMPORTANT: If an equation has no solution, the variable cancels and you get a false statement like 3 = 7. If it has infinite solutions, you get a true statement like 0 = 0. These appear frequently on the SAT.
+
+SYSTEMS OF LINEAR EQUATIONS
+
+SYSTEM OF EQUATIONS: Two or more equations with the same variables, solved simultaneously.
+
+SUBSTITUTION METHOD: Solve one equation for one variable, substitute into the other.
+
+ELIMINATION METHOD: Add or subtract equations to cancel one variable. Multiply first if needed to align coefficients.
+
+CONSISTENT SYSTEM: Has exactly one solution — the lines intersect at one point.
+
+INCONSISTENT SYSTEM: Has no solution — the lines are parallel (same slope, different y-intercepts).
+
+DEPENDENT SYSTEM: Has infinite solutions — the lines are identical (same slope, same y-intercept).
+
+KEY CONCEPT: To determine how many solutions a system has WITHOUT solving, compare the ratios of coefficients. For ax + by = c and dx + ey = f: if a/d = b/e ≠ c/f → no solution; if a/d = b/e = c/f → infinite solutions; if a/d ≠ b/e → one solution.
+
+REMEMBER: The SAT often asks about systems in word problem form. Define variables carefully, write two equations, then solve. Label your answer with units.
+
+WORD PROBLEMS AND MODELING
+
+Strategy for word problems:
+- Read the entire problem before writing anything
+- Identify what the variable represents and define it explicitly
+- Translate key phrases: "more than" = +, "times as many" = ×, "less than" = -, "is" or "equals" = =
+- Write the equation, solve, check against the problem context
+
+TOTAL VALUE SETUP: quantity × unit value = total value. Classic for coin, ticket, and mixture problems.
+
+RATE × TIME = DISTANCE for motion problems.
+
+KEY CONCEPT: "How many more" means subtract. "Combined" means add. "Product" means multiply. These translation errors cause more wrong answers than calculation mistakes.
+
+LINEAR INEQUALITIES
+
+Solving inequalities works like equations with one critical rule: FLIP THE INEQUALITY SIGN when multiplying or dividing by a negative number.
+
+COMPOUND INEQUALITY: Two inequalities joined by "and" (intersection) or "or" (union). On a number line: "and" = overlap region; "or" = both regions combined.
+
+ABSOLUTE VALUE INEQUALITY:
+- |x| < a means -a < x < a (between)
+- |x| > a means x < -a or x > a (outside)
+
+IMPORTANT: On the SAT, inequality answers often appear as number line graphs. Practice reading these carefully — open circles mean the endpoint is NOT included (< or >), closed circles mean it IS included (≤ or ≥).
+
+POLYNOMIALS AND FACTORING
+
+POLYNOMIAL: An expression with one or more terms, each being a product of a number and variables raised to non-negative integer exponents.
+
+DEGREE: The highest exponent of the variable. Determines the shape and number of solutions.
+
+FOIL METHOD: First, Outer, Inner, Last — multiply two binomials. (a+b)(c+d) = ac + ad + bc + bd.
+
+Factoring strategies (try in this order):
+- Factor out the GCF first — always
+- Difference of squares: a² - b² = (a+b)(a-b)
+- Perfect square trinomial: a² + 2ab + b² = (a+b)²
+- Standard trinomial: x² + bx + c = (x+p)(x+q) where p×q=c and p+q=b
+- Factor by grouping for 4-term polynomials
+
+KEY CONCEPT: Factoring is the gateway to solving quadratic equations. If a quadratic is set equal to zero, factor it and use the Zero Product Property: if (x-a)(x-b) = 0, then x = a or x = b.
+
+QUADRATIC EQUATIONS
+
+QUADRATIC EQUATION: ax² + bx + c = 0, where a ≠ 0.
+
+QUADRATIC FORMULA: x = (-b ± √(b² - 4ac)) / 2a. Memorize this — it always works.
+
+DISCRIMINANT: b² - 4ac tells you how many real solutions exist.
+- Discriminant > 0: two distinct real solutions
+- Discriminant = 0: one real solution (repeated root)
+- Discriminant < 0: no real solutions (two complex solutions)
+
+COMPLETING THE SQUARE: Rewrite ax² + bx + c in vertex form a(x-h)² + k. Add (b/2a)² to both sides.
+
+VERTEX FORM: y = a(x-h)² + k, where (h, k) is the vertex. If a > 0, opens upward (minimum at vertex). If a < 0, opens downward (maximum at vertex).
+
+REMEMBER: The x-coordinate of the vertex = -b/2a. This is faster than completing the square when you just need the vertex x-value.
+
+NOTE: The sum of roots = -b/a and product of roots = c/a. Useful for checking answers without solving.
+
+FUNCTIONS
+
+FUNCTION: A relation where every input (x-value) has exactly one output (y-value).
+
+FUNCTION NOTATION: f(x) means "the value of f at x." f(3) means substitute 3 for x.
+
+DOMAIN: All valid input values (x-values). Watch for division by zero and square roots of negatives.
+
+RANGE: All possible output values (y-values).
+
+COMPOSITION OF FUNCTIONS: f(g(x)) means apply g first, then apply f to that result. Work from the inside out.
+
+INVERSE FUNCTION: f⁻¹(x) reverses the function. To find: swap x and y, then solve for y.
+
+KEY CONCEPT: On SAT function problems, the answer is often found by careful substitution, not complex algebra. If f(x) = 2x + 1 and they ask for f(3), just compute 2(3) + 1 = 7. Avoid over-thinking.
+
+LINEAR FUNCTION TRANSFORMATIONS:
+- f(x) + k shifts UP by k
+- f(x) - k shifts DOWN by k
+- f(x + k) shifts LEFT by k
+- f(x - k) shifts RIGHT by k
+- -f(x) reflects over x-axis
+- f(-x) reflects over y-axis
+
+RATIOS, PROPORTIONS, AND PERCENTAGES
+
+RATIO: A comparison of two quantities. Can be written as a:b or a/b.
+
+PROPORTION: Two equal ratios. Cross-multiply to solve: if a/b = c/d, then ad = bc.
+
+PERCENT CHANGE: (New - Old) / Old × 100%. Positive = increase, negative = decrease.
+
+PERCENT OF A PERCENT: Multiply the decimals. "30% of 40%" = 0.30 × 0.40 = 0.12 = 12%.
+
+IMPORTANT: "What percent of x is y?" translates to y/x × 100. Identify which quantity is the "whole" (denominator) every time.
+
+TOP STRATEGIES FOR ALGEBRA
+
+Strategy: When an equation looks complicated, check if plugging in 0 or 1 simplifies it quickly.
+
+Strategy: For systems, if the question asks for x + y rather than individual values, add the equations directly — you may not need to find x and y separately.
+
+Strategy: On multiple-choice algebra, you can always substitute the answer choices back into the equation to check. This is slower but catches errors.
+
+Strategy: Translate word problems into math line by line. Don't try to write the equation all at once.
+
+Strategy: If a question gives you a graph of a linear function and asks for the equation, identify two clear integer points first, find slope, then use point-slope form.
+
+EXAMPLE: A store sells pencils for $0.25 each and pens for $1.50 each. A customer buys 20 items total and spends $13.75. How many pencils did the customer buy? Set up: p + n = 20 and 0.25p + 1.50n = 13.75. Multiply first equation by 0.25: 0.25p + 0.25n = 5. Subtract: 1.25n = 8.75, so n = 7. Therefore p = 13.
+
+COMMON MISTAKES TO AVOID
+
+- Forgetting to flip the inequality sign when multiplying or dividing by a negative
+- Distributing a negative sign incorrectly: -(x - 3) = -x + 3, NOT -x - 3
+- Confusing "no solution" with "solution of zero" — x = 0 IS a solution
+- Misidentifying the vertex from standard form — use -b/2a, not b/2a
+- Dropping the ± in the quadratic formula
+- Misreading function composition order — f(g(x)) applies g FIRST

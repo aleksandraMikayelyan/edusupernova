@@ -1,0 +1,128 @@
+TRIGONOMETRY
+
+THE UNIT CIRCLE AND RADIAN MEASURE:
+
+RADIAN MEASURE: An alternative to degrees. The radian measure of an angle equals the arc length it subtends in a unit circle (radius = 1).
+
+KEY CONVERSIONS:
+- π radians = 180°
+- To convert degrees to radians: multiply by π/180
+- To convert radians to degrees: multiply by 180/π
+
+MUST-KNOW CONVERSIONS:
+- 30° = π/6
+- 45° = π/4
+- 60° = π/3
+- 90° = π/2
+- 120° = 2π/3
+- 135° = 3π/4
+- 150° = 5π/6
+- 180° = π
+- 270° = 3π/2
+- 360° = 2π
+
+THE UNIT CIRCLE: A circle with radius 1 centered at the origin. For any angle θ, the point on the unit circle is (cos θ, sin θ).
+
+RIGHT TRIANGLE TRIGONOMETRY:
+
+THE THREE BASIC RATIOS — SOH CAH TOA:
+
+SOH: sin(θ) = Opposite / Hypotenuse
+CAH: cos(θ) = Adjacent / Hypotenuse
+TOA: tan(θ) = Opposite / Adjacent
+
+MEMORY AID: "Some Old Hippos Can Always Hide Their Old Age"
+
+RECIPROCAL FUNCTIONS:
+- csc(θ) = 1/sin(θ) = Hypotenuse / Opposite
+- sec(θ) = 1/cos(θ) = Hypotenuse / Adjacent
+- cot(θ) = 1/tan(θ) = Adjacent / Opposite
+
+KEY CONCEPT: tan(θ) = sin(θ)/cos(θ); cot(θ) = cos(θ)/sin(θ)
+
+IMPORTANT TRIG VALUES — MEMORIZE THESE:
+
+For 30° (π/6): sin = 1/2, cos = √3/2, tan = 1/√3 = √3/3
+For 45° (π/4): sin = √2/2, cos = √2/2, tan = 1
+For 60° (π/3): sin = √3/2, cos = 1/2, tan = √3
+
+MEMORY TIP: For sin at 30°, 45°, 60° → √1/2, √2/2, √3/2. Just put √1, √2, √3 over 2.
+Cos goes in reverse: √3/2, √2/2, √1/2.
+
+THE FOUR QUADRANTS:
+
+Angles in standard position (measured counterclockwise from positive x-axis):
+- Quadrant I (0° to 90°): ALL trig functions positive
+- Quadrant II (90° to 180°): only SIN positive (and csc)
+- Quadrant III (180° to 270°): only TAN positive (and cot)
+- Quadrant IV (270° to 360°): only COS positive (and sec)
+
+MEMORY AID: "All Students Take Calculus" (All, Sin, Tan, Cos — Q1, Q2, Q3, Q4)
+
+REFERENCE ANGLES: The acute angle between the terminal side of an angle and the x-axis. Use reference angles to find trig values in any quadrant:
+1. Find the reference angle (always between 0° and 90°)
+2. Find the trig value for the reference angle
+3. Apply the correct sign based on the quadrant
+
+EXAMPLES:
+- sin(150°): reference angle = 30°; Q2 so sin is positive → sin(150°) = sin(30°) = 1/2
+- cos(240°): reference angle = 60°; Q3 so cos is negative → cos(240°) = -cos(60°) = -1/2
+- tan(315°): reference angle = 45°; Q4 so tan is negative → tan(315°) = -tan(45°) = -1
+
+PYTHAGOREAN IDENTITIES:
+
+sin²(θ) + cos²(θ) = 1 ← THE MOST IMPORTANT IDENTITY ON THE ACT
+1 + tan²(θ) = sec²(θ)
+1 + cot²(θ) = csc²(θ)
+
+IMPORTANT: These are derived from the first identity by dividing through by cos²θ or sin²θ. You only need to memorize the first one.
+
+GRAPHS OF TRIG FUNCTIONS:
+
+SINE FUNCTION: y = a sin(bx + c) + d
+- Period = 2π/b (how long before the pattern repeats)
+- Amplitude = |a| (distance from midline to maximum)
+- Phase shift = -c/b (horizontal shift)
+- Vertical shift = d
+
+COSINE FUNCTION: y = a cos(bx + c) + d — same parameters, different starting position
+- Cosine starts at maximum (at x=0, y=a when c=0)
+- Sine starts at midline (at x=0, y=0 when c=0)
+
+TANGENT FUNCTION: Period = π/b; vertical asymptotes where cosine = 0; no amplitude.
+
+KEY CONCEPT: If the period doubles, b is halved. If the period halves, b doubles. The period is INVERSELY related to b.
+
+INVERSE TRIG FUNCTIONS:
+
+- arcsin(x) or sin⁻¹(x): gives the angle whose sine is x. Range: -90° to 90°
+- arccos(x) or cos⁻¹(x): gives the angle whose cosine is x. Range: 0° to 180°
+- arctan(x) or tan⁻¹(x): gives the angle whose tangent is x. Range: -90° to 90°
+
+EXAMPLE: arcsin(√2/2) = 45° because sin(45°) = √2/2
+
+LAW OF SINES AND COSINES:
+
+LAW OF SINES: a/sin(A) = b/sin(B) = c/sin(C)
+- Use when you know two angles and one side (AAS or ASA), or two sides and a non-included angle (SSA — watch for ambiguous case)
+
+LAW OF COSINES: c² = a² + b² - 2ab·cos(C)
+- Use when you know two sides and the included angle (SAS), or all three sides (SSS)
+- Special case: if C = 90°, cos(C) = 0, and this reduces to the Pythagorean theorem!
+
+AREA OF A TRIANGLE WITH TRIG:
+Area = ½ab·sin(C) where C is the angle between sides a and b.
+
+SOLVING TRIG EQUATIONS:
+
+STRATEGY:
+1. Isolate the trig function
+2. Find the reference angle using inverse trig
+3. Determine all angles in the given range that satisfy the equation, using ASTC quadrant rules
+
+EXAMPLE: 2sin(x) - 1 = 0 for 0 ≤ x < 360°
+→ sin(x) = 1/2
+→ Reference angle = 30°
+→ Sin is positive in Q1 and Q2 → x = 30° or x = 150°
+
+REMEMBER: Trig appears on about 4-5 questions on the ACT (roughly 7% of the math section). Focus on right triangle trig, the unit circle values, the Pythagorean identity, and reading graphs. The Law of Sines/Cosines and graphing transformations are tested but less frequently.

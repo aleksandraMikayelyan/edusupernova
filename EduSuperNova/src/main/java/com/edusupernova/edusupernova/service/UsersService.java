@@ -5,7 +5,6 @@ import com.edusupernova.edusupernova.data.UserRepository;
 import com.edusupernova.edusupernova.dto.request.GoogleAuthRequest;
 import com.edusupernova.edusupernova.dto.request.LoginRequest;
 import com.edusupernova.edusupernova.dto.request.RegisterRequest;
-import com.edusupernova.edusupernova.dto.request.VerifyEmailRequest;
 import com.edusupernova.edusupernova.dto.response.AuthResponse;
 import com.edusupernova.edusupernova.dto.response.MessageResponse;
 import com.edusupernova.edusupernova.dto.response.UserSummaryDTO;
@@ -55,7 +54,6 @@ public class UsersService {
     private final PasswordEncoder         passwordEncoder;
     private final AuthenticationManager   authenticationManager;
     private final JwtTokenUtil            jwtTokenUtil;
-    private final EmailVerificationService emailVerificationService;
 
     @Value("${google.oauth2.client-id}")
     private String googleClientId;
@@ -78,34 +76,11 @@ public class UsersService {
         Users user = buildUser(request);
         userRepository.save(user);
 
-        emailVerificationService.sendCode(request.email());
+        // TODO: Email verification service will be added later
+        // emailVerificationService.sendCode(request.email());
 
         return new MessageResponse(
-                "Account created. A 6-digit verification code has been sent to " +
-                request.email() + ". Please enter it to activate your account.");
-    }
-
-    /**
-     * Validates the 6-digit code, marks the account as verified, and returns a JWT.
-     *
-     * @throws ResourceNotFoundException if no account exists for the given email
-     * @throws BusinessRuleException     if the code is wrong or expired
-     */
-    public AuthResponse verifyEmail(VerifyEmailRequest request) {
-        Users user = userRepository.findByEmail(request.email());
-        if (user == null) {
-            throw new ResourceNotFoundException("No account found for email: " + request.email());
-        }
-        if (Boolean.TRUE.equals(user.getEmailVerified())) {
-            throw new BusinessRuleException("Email is already verified. Please log in.");
-        }
-
-        emailVerificationService.verifyCode(request.email(), request.code());
-
-        user.setEmailVerified(true);
-        userRepository.save(user);
-
-        return buildAuthResponse(user);
+                "Account created. Please log in to continue.");
     }
 
     /**

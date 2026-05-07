@@ -1,0 +1,132 @@
+INTERMEDIATE ALGEBRA AND COORDINATE GEOMETRY
+
+SOLVING EQUATIONS AND INEQUALITIES:
+
+LINEAR EQUATIONS: Isolate the variable using inverse operations.
+- Whatever you do to one side, do to the other
+- Distribute first if there are parentheses
+- Combine like terms on each side before moving terms across
+
+LINEAR INEQUALITIES: Solve like equations, but FLIP the inequality sign when multiplying or dividing by a negative number.
+- 3 - 2x > 7 → -2x > 4 → x < -2 (sign flipped when dividing by -2)
+
+COMPOUND INEQUALITIES:
+- "And" (intersection): both conditions must be true → -3 < x < 5
+- "Or" (union): at least one condition must be true → x < -3 or x > 5
+
+ABSOLUTE VALUE EQUATIONS AND INEQUALITIES:
+- |x| = 5 → x = 5 or x = -5
+- |x| < 5 → -5 < x < 5 (and: between)
+- |x| > 5 → x < -5 or x > 5 (or: outside)
+- |x - a| = b → x - a = b or x - a = -b → x = a+b or x = a-b
+
+KEY CONCEPT: Always check your solutions for absolute value equations by plugging back in — extraneous solutions occur frequently.
+
+SYSTEMS OF EQUATIONS:
+
+SUBSTITUTION METHOD: Solve one equation for one variable, substitute into the other equation. Best when one variable has a coefficient of 1.
+
+ELIMINATION METHOD: Add or subtract equations to cancel one variable. Multiply one or both equations first if needed. Best when coefficients are easy to match.
+
+NUMBER OF SOLUTIONS:
+- One solution: lines intersect at one point
+- No solution: lines are parallel (same slope, different y-intercepts)
+- Infinitely many solutions: lines are the same (same slope, same y-intercept)
+
+GRAPHICAL INTERPRETATION: The solution to a system is the point(s) where the graphs intersect.
+
+QUADRATIC EQUATIONS AND FUNCTIONS:
+
+STANDARD FORM: y = ax² + bx + c
+- If a > 0: parabola opens upward (minimum at vertex)
+- If a < 0: parabola opens downward (maximum at vertex)
+- y-intercept: (0, c)
+
+VERTEX FORM: y = a(x - h)² + k, where (h, k) is the vertex
+
+VERTEX USING STANDARD FORM: x-coordinate of vertex = -b/(2a); substitute to find y-coordinate.
+
+FACTORING QUADRATICS:
+- Look for GCF first
+- Difference of squares: a² - b² = (a + b)(a - b)
+- Perfect square trinomial: a² + 2ab + b² = (a + b)²
+- Standard trinomial: x² + bx + c → find two numbers that multiply to c and add to b
+
+QUADRATIC FORMULA: x = (-b ± √(b² - 4ac)) / (2a)
+- Use when factoring is difficult or impossible
+- DISCRIMINANT = b² - 4ac:
+  - Positive discriminant: 2 real solutions
+  - Zero discriminant: 1 real solution (the vertex touches the x-axis)
+  - Negative discriminant: no real solutions (parabola doesn't cross x-axis)
+
+IMPORTANT: The quadratic formula always works. When factoring, verify by multiplying back out.
+
+ZEROS/ROOTS/X-INTERCEPTS: These all mean the same thing — the x-values where the function equals zero.
+
+POLYNOMIAL OPERATIONS:
+
+FOIL (First, Outer, Inner, Last): for multiplying two binomials
+- (x + 3)(x - 5) = x² - 5x + 3x - 15 = x² - 2x - 15
+
+SPECIAL PRODUCTS (memorize):
+- (a + b)² = a² + 2ab + b²
+- (a - b)² = a² - 2ab + b²
+- (a + b)(a - b) = a² - b²
+
+POLYNOMIAL LONG DIVISION: Divide just like long division with numbers.
+
+FUNCTIONS:
+
+FUNCTION NOTATION: f(x) means "the output when x is the input"
+- f(3) means substitute x = 3 into the function
+
+DOMAIN: all valid input values (x-values). Watch for:
+- Division by zero (denominator ≠ 0)
+- Square roots of negatives (expression under radical ≥ 0)
+- Logarithms of non-positives (argument > 0)
+
+RANGE: all possible output values (y-values)
+
+COMPOSITION OF FUNCTIONS: f(g(x)) means apply g first, then f to the result.
+- If f(x) = x² and g(x) = x + 1, then f(g(2)) = f(3) = 9
+
+INVERSE FUNCTIONS: f⁻¹ "undoes" f. To find the inverse: swap x and y, then solve for y.
+- Domain of f = Range of f⁻¹; Range of f = Domain of f⁻¹
+- The graph of f⁻¹ is the reflection of the graph of f over the line y = x.
+
+TRANSFORMATIONS OF FUNCTIONS:
+
+Starting with y = f(x):
+- y = f(x) + k → shift UP k units
+- y = f(x) - k → shift DOWN k units
+- y = f(x + h) → shift LEFT h units (counterintuitive!)
+- y = f(x - h) → shift RIGHT h units
+- y = -f(x) → reflect over x-axis
+- y = f(-x) → reflect over y-axis
+- y = af(x) → vertical stretch (|a| > 1) or compression (0 < |a| < 1)
+
+LOGARITHMS:
+
+DEFINITION: logₐ(b) = c means aᶜ = b
+- log₁₀ is written as "log"; logₑ is written as "ln"
+- log(10) = 1; log(100) = 2; log(1) = 0; log(1/10) = -1
+
+LOGARITHM RULES:
+- log(xy) = log(x) + log(y)
+- log(x/y) = log(x) - log(y)
+- log(xⁿ) = n × log(x)
+- logₐ(a) = 1; logₐ(1) = 0
+
+EXPONENTIAL AND LOGARITHMIC EQUATIONS:
+- To solve 2ˣ = 8: recognize 8 = 2³, so x = 3
+- To solve 2ˣ = 10: take log of both sides → x = log(10)/log(2)
+
+MATRICES (basic):
+
+ADDITION: Add corresponding elements (matrices must be same size)
+SCALAR MULTIPLICATION: Multiply every element by the scalar
+MULTIPLICATION: (m×n) matrix × (n×p) matrix = (m×p) matrix; row × column → element
+
+DETERMINANT of 2×2 matrix [a b; c d] = ad - bc
+
+REMEMBER: The ACT's hardest algebra questions often involve functions and their transformations, or quadratics requiring the discriminant. Practice recognizing which tool to use quickly — don't spend 5 minutes trying to factor what should be solved with the quadratic formula.

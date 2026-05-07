@@ -229,15 +229,18 @@ public class EvaluationService {
     public void persistOpenEndedResults(
             List<TestQuestions> answers,
             List<OpenEndedEvaluator.EvaluationResult> aiResults) {
+        log.info("Persisting {} AI evaluation results", answers.size());
         IntStream.range(0, answers.size()).forEach(i -> {
             TestQuestions q  = answers.get(i);
             var           ai = aiResults.get(i);
             q.setPunctuation((int) Math.round(ai.score()));
             q.setFeedbackIa(ai.feedback());
             q.setCorrectResponse(ai.score() >= 6.0);
+            log.debug("  [{}] Quiz {} → score: {}, feedback: {}", i, q.getQuiz().getId(), ai.score(), ai.feedback());
         });
         // entities are detached in this new transaction — explicit save required
         testQuestionRepo.saveAll(answers);
+        log.info("Persisted {} results to database", answers.size());
     }
 
     // ── Utility helpers ────────────────────────────────────────────────────────

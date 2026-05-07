@@ -1,0 +1,179 @@
+ADVANCED MATH
+
+This domain tests your ability to work with complex equations and functions beyond basic algebra. Expect 13-15 questions. These are typically the hardest Math questions on the SAT — but they are very learnable with the right framework.
+
+ADVANCED EXPRESSIONS AND OPERATIONS
+
+EQUIVALENT EXPRESSIONS
+
+Two expressions are equivalent if they produce the same value for every substitution of the variable. On the SAT, "which expression is equivalent to…" questions are solved by simplifying, factoring, or expanding.
+
+RATIONAL EXPRESSIONS: Fractions containing polynomials. Treat them like numeric fractions — factor both numerator and denominator, cancel common factors.
+
+To add or subtract rational expressions:
+- Find the LCD (Least Common Denominator)
+- Rewrite each fraction with the LCD
+- Add or subtract numerators
+- Simplify the result
+
+IMPORTANT: When you cancel a factor from a rational expression, note that the original expression is undefined where that factor equals zero. The SAT sometimes asks about these excluded values.
+
+POLYNOMIAL DIVISION
+
+LONG DIVISION OF POLYNOMIALS: Divide the leading term of the dividend by the leading term of the divisor; multiply back; subtract; repeat. Just like numeric long division.
+
+REMAINDER THEOREM: If polynomial P(x) is divided by (x - a), the remainder equals P(a). This is a huge time-saver on the SAT.
+
+FACTOR THEOREM: (x - a) is a factor of P(x) if and only if P(a) = 0. So to check if (x - 2) is a factor, just check if P(2) = 0.
+
+KEY CONCEPT: If the SAT asks "what is the remainder when f(x) is divided by (x - 3)?", just compute f(3). No long division needed.
+
+EXPONENTS AND RADICALS
+
+EXPONENT RULES (must be automatic):
+- a^m × a^n = a^(m+n)
+- a^m / a^n = a^(m-n)
+- (a^m)^n = a^(mn)
+- (ab)^n = a^n × b^n
+- a^0 = 1 (for any a ≠ 0)
+- a^(-n) = 1/a^n
+- a^(1/n) = nth root of a
+- a^(m/n) = (nth root of a)^m
+
+RADICAL SIMPLIFICATION: Factor out perfect squares. √72 = √(36 × 2) = 6√2.
+
+RATIONALIZING THE DENOMINATOR: Multiply numerator and denominator by the conjugate to eliminate radicals from the denominator.
+
+REMEMBER: Fractional exponents bridge radicals and exponents. x^(2/3) means cube root of x², not square root of x³. The denominator is the root, the numerator is the power.
+
+QUADRATIC FUNCTIONS IN DEPTH
+
+The three forms of a quadratic and when to use each:
+- STANDARD FORM y = ax² + bx + c: y-intercept is c; vertex x-coordinate is -b/2a
+- VERTEX FORM y = a(x-h)² + k: vertex is (h, k); easy to see maximum/minimum
+- FACTORED FORM y = a(x-r)(x-s): roots (x-intercepts) are r and s
+
+KEY CONCEPT: Convert between forms strategically. If a question asks for the minimum value, use vertex form. If it asks for x-intercepts, use factored form or the quadratic formula. Choose the right form for the question being asked.
+
+PARABOLA PROPERTIES:
+- Axis of symmetry: x = -b/2a = (r+s)/2 (halfway between the roots)
+- Vertex is on the axis of symmetry
+- If a > 0: opens up, minimum value at vertex
+- If a < 0: opens down, maximum value at vertex
+- |a| controls width: larger |a| = narrower parabola
+
+IMPORTANT: The SAT frequently asks you to identify the number of solutions to a quadratic from its graph. No x-intercepts = no real solutions (discriminant < 0). One x-intercept = one solution (discriminant = 0). Two x-intercepts = two solutions (discriminant > 0).
+
+HIGHER-DEGREE POLYNOMIALS
+
+DEGREE AND ROOTS: A polynomial of degree n has at most n real roots and at most n-1 turning points.
+
+END BEHAVIOR:
+- Even degree, positive leading coefficient: both ends go UP
+- Even degree, negative leading coefficient: both ends go DOWN
+- Odd degree, positive leading coefficient: left DOWN, right UP
+- Odd degree, negative leading coefficient: left UP, right DOWN
+
+MULTIPLICITY OF ROOTS:
+- Odd multiplicity: graph CROSSES the x-axis at that root
+- Even multiplicity: graph TOUCHES (bounces off) the x-axis at that root
+
+KEY CONCEPT: If a polynomial has roots at x = 1, 2, and 3, one form is f(x) = a(x-1)(x-2)(x-3). Use a given point to find a. The SAT will give you enough information to determine a completely.
+
+EXPONENTIAL FUNCTIONS
+
+EXPONENTIAL FUNCTION: f(x) = a × b^x, where a is the initial value and b is the growth/decay factor.
+
+EXPONENTIAL GROWTH: b > 1. The function increases rapidly.
+
+EXPONENTIAL DECAY: 0 < b < 1. The function decreases toward zero.
+
+GROWTH/DECAY RATE: If b = 1 + r, then r is the growth rate (as a decimal). If b = 1 - r, then r is the decay rate.
+
+PERCENT GROWTH MODEL: A(t) = A₀(1 + r)^t where A₀ is the initial amount, r is the rate, and t is time.
+
+COMPOUND INTEREST: A = P(1 + r/n)^(nt), where n is the number of compounding periods per year.
+
+NOTE: The SAT uses exponential models in real-world contexts. "Doubles every 3 years" means b = 2 and the exponent includes dividing by 3: f(t) = a × 2^(t/3).
+
+EXAMPLE: A population of bacteria doubles every 4 hours. If there are 500 bacteria initially, the model is P(t) = 500 × 2^(t/4). After 12 hours: P(12) = 500 × 2^3 = 500 × 8 = 4000.
+
+LOGARITHMS (appear occasionally)
+
+LOGARITHM DEFINITION: log_b(x) = y means b^y = x. The log answers the question "what power gives me x?"
+
+NATURAL LOG: ln(x) = log_e(x), where e ≈ 2.718.
+
+COMMON LOG: log(x) = log_10(x).
+
+LOG RULES:
+- log(xy) = log(x) + log(y)
+- log(x/y) = log(x) - log(y)
+- log(x^n) = n × log(x)
+- log_b(b) = 1
+- log_b(1) = 0
+
+KEY CONCEPT: Use logs to solve exponential equations. If 3^x = 20, take log of both sides: x × log(3) = log(20), so x = log(20)/log(3).
+
+NONLINEAR SYSTEMS OF EQUATIONS
+
+A nonlinear system has at least one equation that is not linear. Common SAT type: one linear and one quadratic.
+
+Solving strategy:
+- Solve the linear equation for one variable
+- Substitute into the quadratic equation
+- Solve the resulting quadratic
+- Substitute back to find the corresponding values
+
+The number of solutions = number of intersection points:
+- Two solutions: line crosses the parabola at two points
+- One solution: line is tangent to the parabola (discriminant = 0)
+- No solutions: line doesn't intersect the parabola (discriminant < 0)
+
+IMPORTANT: When solving nonlinear systems, always substitute your x-values back to find y-values. Then verify both values satisfy BOTH original equations. The SAT sometimes includes extraneous solutions.
+
+COMPLEX NUMBERS (occasional)
+
+IMAGINARY UNIT: i = √(-1), so i² = -1, i³ = -i, i⁴ = 1. The pattern repeats every 4.
+
+COMPLEX NUMBER: a + bi, where a is the real part and b is the imaginary part.
+
+ARITHMETIC WITH COMPLEX NUMBERS:
+- Add/subtract: combine real parts and imaginary parts separately
+- Multiply: FOIL, then substitute i² = -1
+- Divide: multiply numerator and denominator by the conjugate (a - bi)
+
+NOTE: If i^n appears, find the remainder when n is divided by 4. Remainder 0 → 1, remainder 1 → i, remainder 2 → -1, remainder 3 → -i.
+
+FUNCTION BEHAVIOR AND ANALYSIS
+
+INCREASING AND DECREASING INTERVALS: A function increases where its slope is positive and decreases where its slope is negative.
+
+ZEROS OF A FUNCTION: x-values where f(x) = 0. On a graph, these are the x-intercepts.
+
+EVEN FUNCTION: f(-x) = f(x). Symmetric about the y-axis. Examples: x², cos(x).
+
+ODD FUNCTION: f(-x) = -f(x). Symmetric about the origin. Examples: x³, sin(x).
+
+KEY CONCEPT: SAT questions about function behavior often give you a graph and ask about intervals of increase/decrease, or the sign of f(a) for a specific value. Read graphs carefully, noting scale.
+
+TOP STRATEGIES FOR ADVANCED MATH
+
+Strategy: For polynomial questions, try plugging in specific values (like x = 0 or x = 1) to eliminate wrong answer choices quickly.
+
+Strategy: When working with equivalent expressions, expand the answer choices and compare to the given expression. This is often faster than algebraic manipulation.
+
+Strategy: Know the three forms of quadratics cold. Identify which form answers the specific question being asked, then convert if necessary.
+
+Strategy: For exponential models, identify the initial value (when t = 0, what is f(0)?) and the base first. Context clues tell you whether it's growth or decay.
+
+Strategy: On function transformation questions, test with a specific point. If f(2) = 5, then f(2+3) shifts the input, not the output.
+
+COMMON MISTAKES TO AVOID
+
+- Applying the exponent rule (ab)^n = a^n b^n to sums: (a+b)^n ≠ a^n + b^n
+- Forgetting to check for extraneous solutions after solving equations with radicals or rational expressions
+- Misreading vertex form: y = (x-3)² + 2 has vertex at (3, 2), not (-3, 2)
+- Confusing the root with the factor: if x = 3 is a root, the factor is (x-3), not (x+3)
+- Calculating i^n without using the cycle of 4
+- Treating log(a+b) as log(a) + log(b) — this is FALSE

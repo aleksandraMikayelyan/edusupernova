@@ -234,7 +234,7 @@ public class QuizService {
     /** Formats whose questions belong to QuestionGroups (extracts/passages). */
     private boolean isGroupedFormat(Paper.PaperFormat format) {
         return switch (format) {
-            case DATA_RESPONSE, READING, MULTI_ESSAY, LISTENING -> true;
+            case DATA_RESPONSE, READING, MULTI_ESSAY, LISTENING, MCQ -> true;
             default -> false;
         };
     }
