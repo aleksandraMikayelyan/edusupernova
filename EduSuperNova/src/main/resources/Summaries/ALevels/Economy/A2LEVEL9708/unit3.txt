@@ -1,0 +1,58 @@
+NATIONAL INCOME AND THE MACROECONOMY
+
+MEASURING NATIONAL INCOME
+GDP (Gross Domestic Product): Total value of goods and services produced within a country in a year.
+Three approaches (all should give the same result):
+  Expenditure approach: GDP = C + I + G + (X - M)
+  Output (production) approach: Sum of value added at each stage of production.
+  Income approach: Sum of all factor incomes (wages + profits + rent + interest).
+GNP (Gross National Product): GDP + net income from abroad.
+NNP (Net National Product): GNP - depreciation (capital consumption).
+GDP per capita: GDP divided by population; used to compare living standards.
+
+LIMITATIONS OF GDP AS A WELFARE MEASURE
+Does not capture: income distribution, non-market activity (e.g. household work), leisure, environmental damage.
+Better alternatives: Human Development Index (HDI), Genuine Progress Indicator (GPI).
+
+AGGREGATE DEMAND (AD)
+AD = C + I + G + (X - M)
+Consumption (C): Influenced by income, interest rates, wealth, expectations, taxes.
+Investment (I): Influenced by interest rates, business confidence, technology, accelerator effect.
+Government spending (G): Fiscal policy instrument.
+Net exports (X - M): Influenced by exchange rates, foreign income, relative prices.
+AD curve slopes downward: higher price level reduces real value of wealth, raises interest rates, reduces export competitiveness.
+
+AGGREGATE SUPPLY (AS)
+Short-run AS (SRAS): Slopes upward — higher prices increase profitability, encouraging more output.
+Long-run AS (LRAS): Vertical at full employment — determined by productive capacity (land, labour, capital, enterprise).
+Shifts of LRAS: Technology, education and training, immigration, capital investment.
+
+MACROECONOMIC EQUILIBRIUM
+Occurs where AD = AS.
+Keynesian view: Economy can be stuck below full employment in short run; need for government intervention.
+Classical view: Economy self-corrects to full employment in long run via flexible wages and prices.
+
+THE MULTIPLIER
+Initial increase in injections (I, G, or X) leads to a larger final increase in national income.
+Multiplier (k) = 1 / (1 - MPC) = 1 / MPS + MPT + MPM
+MPC: Marginal Propensity to Consume; MPS: to Save; MPT: to Tax; MPM: to Import.
+Larger MPC → larger multiplier.
+
+THE ACCELERATOR
+Investment depends on the rate of change of national income.
+Rising income → businesses invest to meet demand → further income growth.
+Interaction of multiplier and accelerator → trade cycle (boom and bust).
+
+MACROECONOMIC OBJECTIVES
+Economic growth: Sustained increase in real GDP or GDP per capita.
+Low unemployment: Target usually around 4-5% (natural rate of unemployment).
+Low and stable inflation: Typically 2% target in many countries.
+Balance of payments equilibrium: Sustainable current account position.
+Equitable income distribution: Reducing inequality between groups.
+
+TYPES OF UNEMPLOYMENT
+Frictional: Short-term as workers move between jobs.
+Structural: Mismatch between skills and available jobs (industry decline).
+Cyclical (demand-deficient): Insufficient aggregate demand in the economy.
+Seasonal: Demand fluctuates with seasons.
+Real-wage: Wages held above equilibrium (e.g. by minimum wage or unions).

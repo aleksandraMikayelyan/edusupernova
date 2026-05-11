@@ -1,0 +1,46 @@
+ADVANCED DIFFERENTIATION AND INTEGRATION
+
+IMPLICIT DIFFERENTIATION
+Used when y cannot be made the subject easily (e.g. x² + y² = 25).
+Differentiate both sides with respect to x; use chain rule on y terms: d/dx[f(y)] = f'(y) · dy/dx.
+Example: d/dx(y²) = 2y · dy/dx
+
+PARAMETRIC EQUATIONS
+A curve defined by x = f(t) and y = g(t) where t is a parameter.
+dy/dx = (dy/dt) / (dx/dt)
+d²y/dx² = d/dx(dy/dx) = [d/dt(dy/dx)] / (dx/dt)
+Eliminating the parameter: Substitute to get y in terms of x directly.
+
+FURTHER DIFFERENTIATION
+Chain rule: d/dx[f(g(x))] = f'(g(x)) · g'(x)
+Product rule: d/dx[uv] = u'v + uv'
+Quotient rule: d/dx[u/v] = (u'v - uv') / v²
+Key derivatives:
+  d/dx(eˣ) = eˣ; d/dx(ln x) = 1/x; d/dx(aˣ) = aˣ ln a
+  d/dx(sin x) = cos x; d/dx(cos x) = -sin x; d/dx(tan x) = sec²x
+  d/dx(arcsin x) = 1/√(1-x²); d/dx(arctan x) = 1/(1+x²)
+
+INTEGRATION TECHNIQUES
+Integration by substitution: Let u = g(x); replace du = g'(x)dx.
+  Definite integrals: Change limits when substituting.
+Integration by parts: ∫u dv = uv - ∫v du; use LIATE rule (Log, Inverse trig, Algebra, Trig, Exponential) to choose u.
+Using partial fractions: Split rational functions → integrate each fraction separately.
+Using trigonometric identities: Replace sin²x with (1-cos 2x)/2, etc.
+Standard results:
+  ∫eˣ dx = eˣ + C; ∫(1/x) dx = ln|x| + C
+  ∫sin x dx = -cos x + C; ∫cos x dx = sin x + C; ∫sec²x dx = tan x + C
+  ∫1/(1+x²) dx = arctan x + C; ∫1/√(1-x²) dx = arcsin x + C
+
+VOLUMES OF REVOLUTION
+Rotation about x-axis: V = π ∫ y² dx
+Rotation about y-axis: V = π ∫ x² dy
+Parametric: V = π ∫ y² (dx/dt) dt
+
+MACLAURIN AND TAYLOR SERIES (where required)
+Maclaurin series: f(x) = f(0) + f'(0)x + f''(0)x²/2! + f'''(0)x³/3! + ...
+Key expansions:
+  eˣ = 1 + x + x²/2! + x³/3! + ... (all x)
+  sin x = x - x³/3! + x⁵/5! - ... (all x)
+  cos x = 1 - x²/2! + x⁴/4! - ... (all x)
+  ln(1+x) = x - x²/2 + x³/3 - ... (|x| ≤ 1, x ≠ -1)
+  (1+x)ⁿ = 1 + nx + n(n-1)x²/2! + ... (|x| < 1 for non-integer n)

@@ -1,0 +1,55 @@
+DEVELOPMENT ECONOMICS
+
+ECONOMIC DEVELOPMENT VS ECONOMIC GROWTH
+Economic growth: Increase in real GDP or GDP per capita over time.
+Economic development: Broader concept including improvements in living standards, health, education, freedom, equality, and sustainability.
+Sustainable development: Growth that meets present needs without compromising future generations.
+
+CHARACTERISTICS OF DEVELOPING ECONOMIES
+Low GDP per capita and low incomes.
+High proportion of population in agriculture.
+Rapid population growth; high dependency ratio.
+Poor infrastructure (roads, electricity, internet).
+Limited access to healthcare and education → low HDI.
+High levels of absolute poverty and income inequality.
+Dependence on primary commodity exports → vulnerable to price fluctuations.
+Large informal sector; limited financial markets.
+
+MEASURING DEVELOPMENT
+Human Development Index (HDI): Composite of life expectancy, education (mean and expected years of schooling), and GNI per capita.
+  HDI close to 1 = high development; close to 0 = low development.
+Multidimensional Poverty Index (MPI): Measures poverty across health, education, and living standards.
+Gini coefficient: Measures income inequality; 0 = perfect equality; 1 = perfect inequality.
+Lorenz Curve: Graphical representation of income distribution.
+Absolute poverty: Living below a minimum standard (e.g. under $2.15/day, World Bank threshold).
+Relative poverty: Living below a defined proportion of average income in a society.
+
+BARRIERS TO DEVELOPMENT
+Primary product dependency: Volatile prices, declining terms of trade (Prebisch-Singer hypothesis).
+Capital flight: Wealthy individuals move assets overseas → less domestic investment.
+Debt burden: High external debt repayments reduce government spending on development.
+Political instability: Discourages investment and disrupts economic activity.
+Brain drain: Skilled workers emigrate → loss of human capital.
+Poor governance: Corruption diverts resources from development.
+Population growth: Rapid growth reduces GDP per capita and strains public services.
+
+STRATEGIES FOR DEVELOPMENT
+Industrialisation: Shift from agriculture to manufacturing (Lewis model: labour moves from low-productivity agriculture to higher-productivity industry).
+Import Substitution Industrialisation (ISI): Protect domestic industries behind tariffs to develop own manufacturing base.
+Export-led growth: Use comparative advantage to expand exports (East Asian Tigers model).
+Microfinance: Small loans to entrepreneurs in developing countries.
+Foreign Direct Investment (FDI): Brings capital, technology, and jobs; risk of profit repatriation.
+Official Development Assistance (ODA / Aid):
+  Bilateral aid: Government to government.
+  Multilateral aid: Through international organisations (IMF, World Bank, UN agencies).
+  Arguments for: Fills savings gap, funds infrastructure, provides expertise.
+  Arguments against: Creates dependency, may be tied to donor conditions, corruption.
+Debt relief: HIPC initiative — cancellation of unpayable debts of heavily indebted poor countries.
+Trade liberalisation: Giving developing countries access to rich country markets.
+Institutional reform: Property rights, rule of law, transparent governance.
+
+ROLE OF INTERNATIONAL INSTITUTIONS
+IMF (International Monetary Fund): Provides short-term balance of payments support; structural adjustment conditions.
+World Bank: Long-term development loans for infrastructure and poverty reduction.
+WTO: Oversees trade rules; developing countries argue rules favour rich nations.
+NGOs: Non-governmental organisations provide targeted local development assistance.

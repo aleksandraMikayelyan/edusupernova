@@ -1,0 +1,53 @@
+ADVANCED TRIGONOMETRY AND DIFFERENTIAL EQUATIONS
+
+COMPOUND AND DOUBLE ANGLE FORMULAE
+sin(A ± B) = sin A cos B ± cos A sin B
+cos(A ± B) = cos A cos B ∓ sin A sin B
+tan(A ± B) = (tan A ± tan B) / (1 ∓ tan A tan B)
+
+Double angle formulae:
+  sin 2A = 2 sin A cos A
+  cos 2A = cos²A - sin²A = 1 - 2sin²A = 2cos²A - 1
+  tan 2A = 2 tan A / (1 - tan²A)
+
+Half-angle substitution: t = tan(θ/2) → sin θ = 2t/(1+t²), cos θ = (1-t²)/(1+t²)
+
+R sin(θ + α) FORM
+a sin θ + b cos θ = R sin(θ + α) where R = √(a²+b²) and tan α = b/a
+a sin θ - b cos θ = R sin(θ - α)
+a cos θ + b sin θ = R cos(θ - α) where tan α = b/a
+Uses: finding maximum/minimum values, solving equations of the form a sin θ + b cos θ = c.
+
+INVERSE TRIGONOMETRIC FUNCTIONS
+arcsin x: inverse of sin x; domain [-1, 1]; range [-π/2, π/2].
+arccos x: inverse of cos x; domain [-1, 1]; range [0, π].
+arctan x: inverse of tan x; domain ℝ; range (-π/2, π/2).
+Derivatives: d/dx(arcsin x) = 1/√(1-x²); d/dx(arccos x) = -1/√(1-x²); d/dx(arctan x) = 1/(1+x²).
+
+DIFFERENTIAL EQUATIONS
+First-order separable: dy/dx = f(x)g(y) → separate variables and integrate.
+  dy/g(y) = f(x) dx → ∫ dy/g(y) = ∫ f(x) dx + C
+General solution: Contains an arbitrary constant C.
+Particular solution: Found by substituting given initial conditions.
+
+First-order linear: dy/dx + P(x)y = Q(x)
+  Integrating factor: μ = e^∫P(x)dx
+  Multiply through by μ: d(μy)/dx = μQ(x) → integrate both sides.
+
+Second-order linear with constant coefficients (if required):
+  ay'' + by' + cy = 0
+  Auxiliary equation: am² + bm + c = 0
+  Distinct real roots m₁, m₂: y = Ae^(m₁x) + Be^(m₂x)
+  Repeated root m: y = (A + Bx)e^(mx)
+  Complex roots α ± βi: y = e^(αx)(A cos βx + B sin βx)
+
+NUMERICAL METHODS (where applicable)
+Newton-Raphson method: xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)
+  Converges quickly for well-behaved functions; fails if f'(xₙ) = 0.
+Step-by-step (Euler's method): yₙ₊₁ = yₙ + h·f(xₙ, yₙ) for dy/dx = f(x,y).
+
+FURTHER IDENTITIES
+sec²θ = 1 + tan²θ (from dividing sin²θ + cos²θ = 1 by cos²θ)
+cosec²θ = 1 + cot²θ (from dividing by sin²θ)
+Product-to-sum: sin A cos B = ½[sin(A+B) + sin(A-B)]
+Sum-to-product: sin A + sin B = 2 sin((A+B)/2) cos((A-B)/2)

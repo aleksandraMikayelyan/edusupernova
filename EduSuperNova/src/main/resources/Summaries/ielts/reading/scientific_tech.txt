@@ -1,0 +1,165 @@
+SCIENTIFIC AND TECHNOLOGY PASSAGES IN IELTS READING
+
+Scientific and technological texts appear in every IELTS Academic Reading test and frequently in General Training tests at the harder end. These passages discuss research findings, biological processes, technological developments, environmental systems, and scientific debates. Many students find them intimidating because of the technical vocabulary — but with the right approach, they are highly predictable and very manageable.
+
+WHAT THESE PASSAGES COVER
+
+BIOLOGY AND LIFE SCIENCES: Evolution, genetics, ecology, animal behaviour, plant biology, marine biology, physiology, neuroscience, microbiology, biodiversity, symbiosis, adaptation.
+
+EARTH AND ENVIRONMENTAL SCIENCE: Climate change, oceanography, geology, plate tectonics, erosion, atmospheric science, natural disasters, conservation, renewable energy, pollution.
+
+PHYSICS AND CHEMISTRY: Materials science, nanotechnology, quantum mechanics (conceptually), chemical reactions, energy systems, light and optics.
+
+TECHNOLOGY AND ENGINEERING: Artificial intelligence, robotics, computing history, infrastructure, medical technology, space exploration, telecommunications, biotechnology.
+
+MEDICINE AND HEALTH SCIENCE: Disease mechanisms, pharmaceutical research, nutrition science, neurology, public health, epidemiology.
+
+KEY CONCEPT: You are not expected to have specialist knowledge of any of these fields. The passage provides all the information you need. Your task is to read the text carefully and answer the questions from that text — not from memory. In fact, prior knowledge can be dangerous if it leads you to answer what you know rather than what the passage says.
+
+UNDERSTANDING SCIENTIFIC PASSAGE STRUCTURE
+
+Scientific texts follow recognisable organisational patterns. Identifying the pattern immediately improves your ability to locate information and understand argument structure.
+
+IMRAD STRUCTURE (most common in research-based passages):
+- Introduction: Background and the research question or problem
+- Methods: How the research was conducted
+- Results: What the research found
+- And Discussion: What the findings mean
+
+PROCESS DESCRIPTION STRUCTURE:
+- Definition of the process
+- Step-by-step stages in sequence
+- Outcomes or products of the process
+- Applications or significance
+
+CLASSIFICATION STRUCTURE:
+- Introduction of a category
+- Sub-categories with their defining features
+- Examples of each sub-category
+- Comparison between sub-categories
+
+CAUSE AND EFFECT STRUCTURE:
+- Identification of a phenomenon
+- Causal factors (what causes it)
+- Effects or consequences (what it causes)
+- Chain reactions or cascading effects
+
+THEORY-EVIDENCE STRUCTURE:
+- Statement of a scientific theory or hypothesis
+- Evidence supporting it
+- Counterevidence or competing theories
+- Current consensus or unresolved debate
+
+KEY CONCEPT: Identifying the structure in the first paragraph or two lets you predict where specific information will be. A cause-and-effect passage will have causes in early paragraphs and effects later. A classification passage will have category definitions early and comparisons or applications later.
+
+SCIENTIFIC VOCABULARY — CORE CATEGORIES
+
+RESEARCH PROCESS VOCABULARY:
+
+HYPOTHESIS: A proposed explanation that can be tested. Distinct from theory (well-supported) and law (universally observed).
+EMPIRICAL: Based on observation and experiment rather than theory.
+METHODOLOGY: The systematic approach used to conduct research.
+VARIABLE: A factor that can change and is measured in an experiment. Independent variable = what is manipulated. Dependent variable = what is measured.
+CONTROL GROUP: The group in an experiment not exposed to the treatment, used for comparison.
+CORRELATION: A relationship between two variables. Does not imply causation.
+CAUSATION: One variable directly causing change in another.
+PEER REVIEW: Evaluation of research by qualified experts before publication.
+REPLICATION: Repeating an experiment to confirm its results.
+LONGITUDINAL STUDY: Research conducted over a long period of time.
+META-ANALYSIS: A study that combines and analyses data from multiple previous studies.
+
+BIOLOGICAL PROCESS VOCABULARY:
+
+PHOTOSYNTHESIS: Conversion of light energy to chemical energy by plants.
+CELLULAR RESPIRATION: Process by which cells produce energy from glucose.
+HOMEOSTASIS: Maintenance of stable internal conditions in an organism.
+OSMOSIS: Movement of water across a semi-permeable membrane.
+NATURAL SELECTION: The mechanism of evolution by which organisms better adapted to their environment reproduce more successfully.
+GENE EXPRESSION: The process by which information in a gene is used to produce a functional product.
+BIODIVERSITY: The variety of living species in a habitat or ecosystem.
+ECOSYSTEM SERVICES: Benefits that ecosystems provide to humans, such as clean water, pollination, and climate regulation.
+
+ENVIRONMENTAL AND EARTH SCIENCE VOCABULARY:
+
+CARBON SEQUESTRATION: The process of capturing and storing atmospheric carbon dioxide.
+ALBEDO: The reflectivity of a surface. High albedo (white snow) reflects more sunlight; low albedo (dark ocean) absorbs more.
+TROPHIC LEVEL: A position in the food chain (producer, primary consumer, secondary consumer, etc.).
+PLATE TECTONICS: The theory that Earth's lithosphere consists of moving plates.
+EROSION: The process by which natural forces (wind, water, ice) wear away rock and soil.
+PERMAFROST: Ground that remains frozen throughout the year.
+ACIDIFICATION: The process of becoming more acidic. Ocean acidification occurs as CO₂ dissolves in seawater.
+
+TECHNOLOGY VOCABULARY:
+
+ALGORITHM: A step-by-step procedure for solving a problem or performing a task.
+MACHINE LEARNING: A form of artificial intelligence in which systems learn from data without explicit programming.
+BANDWIDTH: The capacity of a communication channel, measured in data transmitted per second.
+SEMICONDUCTOR: A material with conductivity between that of a conductor and an insulator, fundamental to electronics.
+NANOTECHNOLOGY: Manipulation of matter at the atomic or molecular scale (nanometres).
+AUTOMATION: The use of machines or software to perform tasks that previously required human intervention.
+
+READING STRATEGIES FOR SCIENTIFIC PASSAGES
+
+PROCESS AND SEQUENCE QUESTIONS: When a passage describes a process, questions often test the order of steps. Sequence signal words are critical: "initially," "subsequently," "following this," "as a result," "which in turn," "finally," "ultimately."
+
+Draw or annotate the process sequence in the margin as you read. When a question asks "what happens after X?" you can check your sequence diagram rather than re-reading the whole passage.
+
+CAUSE-AND-EFFECT TRACKING: Scientific passages build causal chains. Mark causes with "→" in your notes and effects with arrows. When a question asks why something happened or what resulted from a process, your causal chain diagram gives you the answer instantly.
+
+DEFINITION LOCATION: Technical terms are usually defined close to where they first appear — often in the same sentence or the next one. When a vocabulary or definition question appears, return to the term's first appearance in the passage.
+
+COMPARISON TRACKING: When a passage compares two theories, organisms, technologies, or time periods, maintain a mental (or written) two-column summary. Which column does each detail belong to? Comparison questions test whether you have this structure clear.
+
+QUANTITATIVE INFORMATION: Numbers, percentages, and measurements appear frequently in scientific passages. These are anchor points for scanning — they are unique and visually distinct. When a question involves a number, scan for numerals in the passage to locate the right section instantly.
+
+HANDLING UNFAMILIAR TECHNICAL TERMS
+
+The most important skill for scientific reading is NOT vocabulary knowledge — it is contextual reading when vocabulary is unfamiliar.
+
+STRATEGY 1 — USE DEFINITION SIGNALS: "Cryosphere — the portion of Earth's surface where water exists in solid form — plays a crucial role in regulating global temperatures." The dashes signal an embedded definition.
+
+STRATEGY 2 — USE CONTRAST: "Unlike exothermic reactions, which release energy, endothermic reactions absorb energy from their surroundings." You can understand endothermic from its contrast with the defined term.
+
+STRATEGY 3 — USE EXAMPLES: "Several keystone species, such as sea otters, wolves, and elephants, have disproportionate effects on their ecosystems." Even if "keystone species" is unfamiliar, the examples tell you it refers to particularly influential animals.
+
+STRATEGY 4 — USE ROOTS AND AFFIXES: Many scientific terms use Greek or Latin roots. Photo- (light), bio- (life), -logy (study of), thermo- (heat), hydro- (water), -osis (process), -itis (inflammation), nano- (billionth). Recognising roots helps decode unfamiliar combinations.
+
+STRATEGY 5 — ACCEPT PARTIAL UNDERSTANDING: You do not need to fully understand a technical term to answer a question about it. You need to understand it well enough to match the question's claim to the passage's content. Focus on the relationship being tested, not the term itself.
+
+IMPORTANT: IELTS marking does not penalise lack of scientific knowledge. It rewards careful reading. A student who has never heard of mycorrhizal fungi can still answer correctly if they read the passage's explanation attentively.
+
+SCIENTIFIC ARGUMENT STRUCTURE
+
+Academic scientists do not just report data — they argue for interpretations. Understanding the structure of scientific argument helps you locate main ideas, identify evidence, and evaluate claims.
+
+CLAIM: A statement asserting something is true.
+EVIDENCE: Data, observations, or experiments that support the claim.
+WARRANT: The principle that connects the evidence to the claim.
+COUNTEREVIDENCE: Data that contradicts or complicates the claim.
+REBUTTAL: The author's response to counterevidence.
+CONCLUSION: The final position after weighing all evidence.
+
+KEY CONCEPT: IELTS questions on scientific passages often test the RELATIONSHIP between claim and evidence, not just isolated facts. "What evidence does the author provide for X?" tests whether you can distinguish claims from evidence. "The author concedes that Y, but argues that Z" tests whether you followed the rebuttal structure.
+
+TOP STRATEGIES FOR SCIENTIFIC AND TECHNOLOGY PASSAGES
+
+Strategy: Identify the passage structure in the first two paragraphs. This gives you a map for the whole text.
+
+Strategy: For process questions, annotate sequences directly on your reading paper. Arrows and numbers are faster than notes.
+
+Strategy: Use numbers and technical terms as scanning anchors — they are visually distinct and locate the right section instantly.
+
+Strategy: When a technical term is unfamiliar, read the surrounding two sentences before attempting the question. Definitions are almost always close.
+
+Strategy: Do not let scientific content intimidate you into re-reading extensively. Answer from the text, not from attempts to understand the science completely.
+
+Strategy: For cause-and-effect passages, trace the full chain. Questions often ask about links in the middle of the chain, not just the beginning or end.
+
+COMMON MISTAKES TO AVOID
+
+- Applying prior scientific knowledge instead of reading what the passage actually says
+- Spending too long trying to understand an unfamiliar term rather than answering from context
+- Confusing correlation with causation in the passage — these are different claims and IELTS tests the distinction
+- Missing qualifiers like "may," "might," "could," and "in some cases" that weaken a scientific claim
+- Assuming the passage's conclusion matches scientific consensus — answer from the passage, not your knowledge
+- Losing track of which organism, substance, or technology a pronoun refers to in complex multi-entity passages

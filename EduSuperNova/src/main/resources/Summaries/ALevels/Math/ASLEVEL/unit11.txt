@@ -1,0 +1,56 @@
+INTRODUCTION TO PROBABILITY AND COUNTING
+This unit covers the mathematical rules for calculating probabilities and the counting methods used to determine the number of possible outcomes in arrangements and selections.
+
+PROBABILITY: A measure of how likely an event is to occur, expressed as a value between 0 (impossible) and 1 (certain).
+
+BASIC PROBABILITY RULES
+For any event A in a sample space S:
+
+- P(A) = (number of favourable outcomes) / (total number of outcomes)
+- P(not A) = 1 - P(A)
+- 0 ≤ P(A) ≤ 1 for all events A.
+
+COMBINED EVENTS
+Probabilities of combined events follow specific addition and multiplication rules.
+
+ADDITION RULE:
+- P(A or B) = P(A) + P(B) - P(A and B)
+- If A and B are mutually exclusive (cannot both occur): P(A or B) = P(A) + P(B)
+
+MULTIPLICATION RULE:
+- If A and B are independent events: P(A and B) = P(A) × P(B)
+- If they are not independent: P(A and B) = P(A) × P(B|A), where P(B|A) is the conditional probability of B given A has occurred.
+
+CONDITIONAL PROBABILITY
+The probability of event B occurring given that event A has already occurred.
+
+DEFINITION: P(B|A) = P(A and B) / P(A)
+
+PERMUTATIONS
+A permutation is an arrangement of objects where the order matters.
+
+- The number of ways to arrange n distinct objects is n! (n factorial).
+- The number of ways to arrange r objects chosen from n distinct objects is: nPr = n! / (n - r)!
+
+COMBINATIONS
+A combination is a selection of objects where the order does not matter.
+
+DEFINITION: The number of ways to choose r objects from n distinct objects is: nCr = n! / [r! × (n - r)!]
+
+- nCr is also written as C(n, r) or (n r) (binomial coefficient notation).
+- Key property: nCr = nC(n-r)
+
+THE BINOMIAL DISTRIBUTION
+A discrete random variable X follows a binomial distribution when:
+1. There are a fixed number of trials n.
+2. Each trial has exactly two outcomes: success or failure.
+3. The probability of success p is constant for each trial.
+4. Trials are independent.
+
+NOTATION: X ~ B(n, p)
+
+- P(X = r) = nCr × p^r × (1 - p)^(n-r) for r = 0, 1, 2, ..., n
+- Mean (expected value): E(X) = np
+- Variance: Var(X) = np(1 - p)
+
+NOTE: The binomial distribution is only valid when the conditions above are all satisfied. Carefully verify independence and constant probability before applying it.

@@ -1,0 +1,49 @@
+ALGEBRA AND FUNCTIONS (PURE 2 & 3)
+
+THE MODULUS FUNCTION
+|x|: The absolute value of x; always non-negative.
+|x| = x if x ≥ 0; |x| = -x if x < 0.
+Graph of y = |f(x)|: Reflect any portion of y = f(x) below the x-axis in the x-axis.
+Graph of y = f(|x|): Replace the left half with a mirror of the right half.
+Solving |ax + b| = c: Split into two cases: ax + b = c and ax + b = -c.
+Solving |ax + b| < c: Equivalent to -c < ax + b < c.
+
+POLYNOMIALS
+Polynomial division: Divide p(x) by (x - a) using long division or synthetic division.
+Remainder Theorem: When p(x) is divided by (x - a), the remainder is p(a).
+Factor Theorem: (x - a) is a factor of p(x) if and only if p(a) = 0.
+Factorising cubics: Use the factor theorem to find one root, then factorise the quotient.
+
+EXPONENTIAL AND LOGARITHMIC FUNCTIONS
+Exponential function: y = aˣ (a > 0, a ≠ 1); passes through (0, 1); always positive.
+  y = eˣ: The natural exponential; its gradient equals itself at every point.
+Logarithmic function: y = logₐx is the inverse of y = aˣ.
+  ln x = logₑx: Natural logarithm; ln(eˣ) = x and e^(ln x) = x.
+Laws of logarithms:
+  log(AB) = log A + log B
+  log(A/B) = log A - log B
+  log(Aⁿ) = n log A
+  log A = log B → A = B
+
+SOLVING EXPONENTIAL EQUATIONS
+Take logarithms of both sides: aˣ = b → x = log b / log a = ln b / ln a.
+Exponential equations reducible to quadratics: let y = eˣ, solve the quadratic in y.
+
+EXPONENTIAL GROWTH AND DECAY
+Growth model: y = Aeᵏᵗ (k > 0); quantity increases proportionally to itself.
+Decay model: y = Ae⁻ᵏᵗ (k > 0); quantity decreases proportionally to itself.
+Half-life: Time for quantity to halve; t₁/₂ = ln 2 / k.
+Doubling time: t = ln 2 / k.
+
+FURTHER TRANSFORMATIONS OF FUNCTIONS
+Composite functions: f(g(x)) — apply g first, then f.
+Inverse functions: f⁻¹(x) — reflect y = f(x) in the line y = x; domain and range swap.
+  f(x) must be one-to-one for inverse to exist; may need to restrict domain.
+  ff⁻¹(x) = f⁻¹f(x) = x.
+
+PARTIAL FRACTIONS (Pure 3)
+Used to split a rational function into simpler fractions for integration or differentiation.
+Case 1 — distinct linear factors: A/(x+a) + B/(x+b)
+Case 2 — repeated linear factor: A/(x+a) + B/(x+a)²
+Case 3 — irreducible quadratic factor: A/(x+a) + (Bx+C)/(x²+bx+c)
+Improper fractions: If degree of numerator ≥ degree of denominator, divide first.

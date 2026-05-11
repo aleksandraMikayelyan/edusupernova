@@ -7,8 +7,13 @@ import com.edusupernova.edusupernova.model.Paper;
 import com.edusupernova.edusupernova.service.CourseService;
 import com.edusupernova.edusupernova.service.UnitService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import java.util.List;
 
@@ -19,12 +24,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/units")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UnitController {
 
     private final CourseService    courseService;
     private final UnitService      unitService;
     private final PaperRepository  paperRepository;
+
+    @Value("${app.file.upload-dir}")
+    private String uploadDir;
 
     /**
      * Returns the course display name, icon, ordered unit list, and papers.
@@ -41,11 +48,15 @@ public class UnitController {
                 .map(this::toDTO)
                 .toList();
 
+        Path sheetPath = Paths.get(uploadDir, "formula-sheets", courseId + ".pdf");
+        boolean hasFormulaSheet = Files.exists(sheetPath);
+
         return ResponseEntity.ok(new CourseUnitsResponse(
                 course.getCoursename(),
                 course.getIcon(),
                 units,
-                papers
+                papers,
+                hasFormulaSheet
         ));
     }
 
@@ -55,7 +66,8 @@ public class UnitController {
             String courseName,
             String courseIcon,
             List<UnitService.UnitWithContent> units,
-            List<PaperDTO> papers
+            List<PaperDTO> papers,
+            boolean hasFormulaSheet
     ) {}
 
     // ── Mapper ────────────────────────────────────────────────────────────────

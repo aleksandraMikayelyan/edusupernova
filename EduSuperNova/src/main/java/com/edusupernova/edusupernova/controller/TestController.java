@@ -4,6 +4,7 @@ import com.edusupernova.edusupernova.dto.request.StartTestRequest;
 import com.edusupernova.edusupernova.dto.request.SubmitAnswerRequest;
 import com.edusupernova.edusupernova.dto.response.AnswerFeedbackDTO;
 import com.edusupernova.edusupernova.dto.response.FeedBackDTO;
+import com.edusupernova.edusupernova.dto.response.TestHistoryDTO;
 import com.edusupernova.edusupernova.dto.response.TestQuestionDTO;
 import com.edusupernova.edusupernova.dto.response.TestSessionDTO;
 import com.edusupernova.edusupernova.model.TestQuestions;
@@ -34,7 +35,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/tests")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class TestController {
 
     private final TestService       testService;
@@ -80,6 +80,14 @@ public class TestController {
 
         FeedBackDTO report = testService.getReport(testId, auth.getName());
         return ResponseEntity.ok(report);
+    }
+
+    /**
+     * Returns the authenticated user's completed test history, newest first.
+     */
+    @GetMapping("/history")
+    public ResponseEntity<List<TestHistoryDTO>> getHistory(Authentication auth) {
+        return ResponseEntity.ok(testService.getHistory(auth.getName()));
     }
 
     // ── Legacy endpoints ──────────────────────────────────────────────────────

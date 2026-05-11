@@ -1,0 +1,54 @@
+VECTORS AND COMPLEX NUMBERS
+
+VECTORS IN 3D
+Vector: A quantity with both magnitude and direction. Written as a column vector or with unit vectors i, j, k.
+Position vector: Vector from the origin O to a point; OP⃗ = p.
+Unit vector: A vector of magnitude 1; â = a / |a|.
+
+Magnitude: |a| = √(x² + y² + z²) for a = xi + yj + zk.
+Dot product (scalar product): a · b = |a||b|cos θ = x₁x₂ + y₁y₂ + z₁z₂.
+  Perpendicular vectors: a · b = 0.
+  Finding angle between vectors: cos θ = (a · b) / (|a||b|).
+
+Lines in 3D:
+  Vector equation: r = a + λb (a = point on line, b = direction vector, λ ∈ ℝ).
+  Cartesian form: (x - x₁)/l = (y - y₁)/m = (z - z₁)/n where (l, m, n) is direction vector.
+  Parallel lines: Same direction vector.
+  Skew lines: Not parallel, do not intersect; no common point and different directions.
+  Shortest distance between skew lines: Use the cross product or minimise |r₁ - r₂|.
+
+Planes:
+  Equation: n · r = n · a, where n is the normal vector and a is a point on the plane.
+  Cartesian: ax + by + cz = d, where (a, b, c) is normal vector.
+  Angle between planes: Angle between their normals.
+  Distance from point to plane: |n · p - d| / |n|.
+  Line of intersection of two planes: Solve simultaneously.
+
+COMPLEX NUMBERS
+Definition: z = a + bi where a, b ∈ ℝ and i² = -1.
+  Real part: Re(z) = a. Imaginary part: Im(z) = b.
+Complex conjugate: z* = a - bi. Note: zz* = a² + b² = |z|².
+Modulus: |z| = √(a² + b²); distance from origin in the Argand diagram.
+Argument: arg(z) = θ = arctan(b/a); angle from positive real axis (-π < θ ≤ π).
+
+Operations:
+  Addition/Subtraction: (a+bi) ± (c+di) = (a±c) + (b±d)i.
+  Multiplication: (a+bi)(c+di) = (ac-bd) + (ad+bc)i.
+  Division: Multiply numerator and denominator by the conjugate of the denominator.
+
+POLAR (MODULUS-ARGUMENT) FORM
+z = r(cos θ + i sin θ) = r e^(iθ) [Euler's form]
+  where r = |z| and θ = arg(z).
+Multiplication in polar form: |z₁z₂| = |z₁||z₂|; arg(z₁z₂) = arg z₁ + arg z₂.
+Division: |z₁/z₂| = |z₁|/|z₂|; arg(z₁/z₂) = arg z₁ - arg z₂.
+
+DE MOIVRE'S THEOREM
+(r(cos θ + i sin θ))ⁿ = rⁿ(cos nθ + i sin nθ)
+Used to: find powers and roots of complex numbers, prove trigonometric identities.
+n-th roots of z: There are exactly n distinct nth roots, equally spaced around a circle of radius r^(1/n).
+
+LOCI IN THE ARGAND DIAGRAM
+|z - a| = r: Circle centred at point a with radius r.
+|z - a| = |z - b|: Perpendicular bisector of segment ab.
+arg(z - a) = θ: Half-line from a at angle θ.
+Re(z) = c: Vertical line. Im(z) = c: Horizontal line.

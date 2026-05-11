@@ -1,0 +1,52 @@
+FURTHER MECHANICS
+
+MOMENTUM AND IMPULSE
+Linear momentum: p = mv (vector quantity; SI unit: kg m s⁻¹).
+Newton's 2nd Law (impulse form): F = dp/dt; Impulse = Ft = Δ(mv) = mv - mu.
+Conservation of linear momentum: In a closed system, total momentum is constant.
+  m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂ (no external forces).
+Elastic collision: Kinetic energy conserved; coefficient of restitution e = 1.
+Inelastic collision: Kinetic energy not conserved; e < 1.
+Perfectly inelastic: Objects stick together; maximum KE lost; e = 0.
+Coefficient of restitution (Newton's Law of Restitution):
+  e = (speed of separation) / (speed of approach) = (v₂ - v₁) / (u₁ - u₂).
+
+WORK, ENERGY AND POWER
+Work done: W = Fs cos θ (force × displacement × cos of angle between them).
+Kinetic energy: KE = ½mv².
+Gravitational potential energy: GPE = mgh.
+Work-energy theorem: Net work done = change in KE.
+Conservation of mechanical energy: KE + PE = constant (no friction/air resistance).
+Power: P = dW/dt = Fv (rate of doing work; SI unit: watt W).
+Efficiency: η = useful power output / total power input.
+
+CIRCULAR MOTION
+For uniform circular motion (constant speed, changing direction):
+  Angular velocity: ω = dθ/dt = v/r (rad s⁻¹).
+  Period: T = 2π/ω = 2πr/v.
+  Centripetal acceleration: a = v²/r = ω²r (directed towards centre).
+  Centripetal force: F = mv²/r = mω²r (not a new force; it is the net force towards centre).
+Applications:
+  Horizontal circle (e.g. car on banked road): Normal force and friction provide centripetal force.
+  Conical pendulum: T cos θ = mg; T sin θ = mω²r → tan θ = ω²r/g.
+  Vertical circle: At the top, minimum speed → mg = mv²/r → v = √(gr).
+  At the bottom, N - mg = mv²/r.
+
+HOOKE'S LAW AND ELASTIC STRINGS/SPRINGS
+Hooke's Law: T = kx = λx/l (where λ is modulus of elasticity, l is natural length, x is extension).
+Elastic potential energy (EPE): EPE = λx²/(2l) = kx²/2.
+Energy conservation with elastic strings:
+  KE + GPE + EPE = constant (if no friction).
+
+SIMPLE HARMONIC MOTION (SHM)
+Condition: Acceleration directed towards fixed point, proportional to displacement: a = -ω²x.
+Displacement: x = A cos(ωt + φ); A = amplitude.
+Velocity: v = ±ω√(A² - x²); maximum at x = 0: vₘₐₓ = ωA.
+Period: T = 2π/ω (independent of amplitude for true SHM).
+Simple pendulum: T = 2π√(l/g) for small angles.
+Mass on spring: T = 2π√(m/k).
+
+VARIABLE FORCES AND MOTION
+When force varies with displacement: Use work-energy theorem W = ∫F dx.
+When force varies with time: Use impulse-momentum F·t or ∫F dt = Δ(mv).
+Resisted motion: Net force = driving force - resistance; use F = ma.

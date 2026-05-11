@@ -1,0 +1,47 @@
+FURTHER PROBABILITY AND STATISTICS
+
+CONTINUOUS PROBABILITY DISTRIBUTIONS
+Probability Density Function (PDF): f(x) where P(a ≤ X ≤ b) = ∫[a to b] f(x) dx.
+  Properties: f(x) ≥ 0 for all x; ∫[−∞ to ∞] f(x) dx = 1.
+Cumulative Distribution Function (CDF): F(x) = P(X ≤ x) = ∫[−∞ to x] f(t) dt.
+Mean: E(X) = ∫x f(x) dx; Variance: Var(X) = E(X²) - [E(X)]² = ∫x² f(x) dx - μ².
+Median m: F(m) = 0.5. Mode: Value where f(x) is maximum.
+
+NORMAL DISTRIBUTION
+X ~ N(μ, σ²): Mean μ, variance σ².
+Bell-shaped, symmetric about μ; 68% within 1σ, 95% within 2σ, 99.7% within 3σ.
+Standardisation: Z = (X - μ) / σ; Z ~ N(0, 1) (standard normal).
+Using tables: P(Z < z) read from standard normal tables; P(Z > z) = 1 - P(Z < z).
+Finding parameters: Given probability conditions, use inverse normal and simultaneous equations.
+Normal approximation to binomial: X ~ B(n, p); if np > 5 and n(1-p) > 5, approximate by N(np, np(1-p)).
+  Apply continuity correction: P(X = k) ≈ P(k-0.5 < Y < k+0.5).
+
+HYPOTHESIS TESTING
+Null hypothesis H₀: The assumption to be tested (usually "no effect" or a specific value).
+Alternative hypothesis H₁: What we suspect if H₀ is false.
+  One-tailed test: H₁: θ > θ₀ or H₁: θ < θ₀.
+  Two-tailed test: H₁: θ ≠ θ₀.
+Significance level α: Probability of rejecting H₀ when it is true (Type I error).
+p-value: Probability of obtaining a result at least as extreme as observed, assuming H₀ is true.
+  Reject H₀ if p-value < α.
+Critical region: Set of values for which H₀ is rejected.
+Type I error: Rejecting H₀ when it is true (probability = α).
+Type II error: Failing to reject H₀ when it is false.
+
+TESTING THE MEAN (Normal distribution, known variance)
+Test statistic: Z = (x̄ - μ₀) / (σ/√n); compare with critical values from N(0,1).
+
+POISSON DISTRIBUTION
+X ~ Po(λ): Models the number of events in a fixed interval.
+P(X = r) = e^(-λ) · λʳ / r!; Mean = Variance = λ.
+Conditions: Events occur randomly, independently, at a constant average rate.
+Poisson approximation to binomial: If n large, p small, np = λ moderate; X ~ B(n,p) ≈ Po(np).
+Sum of independent Poisson: If X ~ Po(λ₁) and Y ~ Po(λ₂), then X+Y ~ Po(λ₁+λ₂).
+
+CONTINUOUS UNIFORM DISTRIBUTION
+X ~ U(a, b): f(x) = 1/(b-a) for a ≤ x ≤ b.
+Mean = (a+b)/2; Variance = (b-a)²/12.
+
+EXPONENTIAL DISTRIBUTION (where required)
+X ~ Exp(λ): f(x) = λe^(-λx) for x ≥ 0.
+Mean = 1/λ; Variance = 1/λ². Memoryless property: P(X > s+t | X > s) = P(X > t).

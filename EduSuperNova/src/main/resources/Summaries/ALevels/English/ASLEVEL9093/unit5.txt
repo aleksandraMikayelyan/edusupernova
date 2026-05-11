@@ -1,0 +1,66 @@
+LANGUAGE AND POWER
+Power: The capacity to influence, control, or affect others through language and social position.
+Instrumental Power: Power exercised to achieve practical goals or enforce rules and decisions (e.g., the language of law, the police, or institutional authority).
+Influential Power: Power exercised through persuasion, argument, and appeal rather than direct authority, seeking to change minds or behaviour.
+Powerful Participant: A participant in discourse who has greater authority, status, or social power and whose language reflects this.
+Non-Powerful Participant: A participant whose language is shaped by their lower status, who may adopt more deferential or hedged speech.
+Dominance Theory: The theory associated with Dale Spender and others, proposing that language reflects and reinforces social power imbalances, particularly along gender lines.
+Gatekeeping: The process by which those with institutional power control others' access to resources, opportunities, or platforms, often through language.
+Hegemony: The dominance of one social group's values, language, and worldview over others, accepted as natural rather than as a product of power.
+Language and Ideology: The way in which language encodes and perpetuates particular values, beliefs, and power structures.
+Discourse Analysis: The study of how language in use — in conversation, texts, and institutions — reflects and constructs social relationships and power.
+
+POLITICAL AND INSTITUTIONAL LANGUAGE
+Doublespeak: Language that deliberately obscures, distorts, or misrepresents meaning, typically used by those in power to mislead.
+Euphemism (political): The use of mild or vague language to conceal something unpleasant or morally questionable (e.g., "collateral damage" for civilian casualties).
+Spin: The use of selective language and framing by politicians or public figures to present information in the most favourable light.
+Propaganda: Language and imagery used systematically to promote a particular political viewpoint, often suppressing alternative perspectives.
+Political Correctness: The use of language that avoids terms considered offensive, exclusive, or discriminatory toward particular social groups.
+Framing: The way in which language choices present an issue from a particular perspective, shaping how the audience understands and evaluates it.
+Nomination: The act of choosing what to name something; naming choices reflect power and ideology (e.g., "freedom fighter" vs. "terrorist").
+Presupposition: An assumption built into the structure of a statement that the reader or listener is expected to accept without question.
+
+LANGUAGE AND GENDER
+Deficit Model: The theory, associated with Robin Lakoff, that women's language is deficient compared to men's, characterised by features such as tag questions, hedging, and polite forms.
+Dominance Model: The theory that differences between men's and women's language reflect men's social dominance; associated with research by Pamela Fishman and Dale Spender.
+Difference Model: The theory, associated with Deborah Tannen, that men and women belong to different subcultures with different communicative goals — rapport talk vs. report talk — and that neither style is superior.
+Rapport Talk: Deborah Tannen's term for a conversational style focused on building relationships, sharing feelings, and creating connection, associated primarily with women.
+Report Talk: Deborah Tannen's term for a conversational style focused on conveying information, demonstrating knowledge, and establishing status, associated primarily with men.
+Tag Question: A short question added to the end of a statement (e.g., "It's cold, isn't it?"), theorised by Lakoff as a feature of women's speech indicating uncertainty.
+Hedging: The use of tentative, qualifying language (e.g., "sort of," "I think," "maybe") to soften claims, associated with women's speech in some theoretical frameworks but used by all speakers in varying contexts.
+Minimal Response: A brief, non-committal response ("mm," "yeah," "right") that can indicate either active listening or passive non-engagement, depending on theoretical framework.
+Interruption: Speaking before another person has finished; Zimmerman and West's research linked interruptions primarily to male speakers in mixed-sex conversation.
+Overlapping Speech: Speaking at the same time as another person; not necessarily an interruption, as it can indicate enthusiasm, solidarity, or co-construction.
+Floor: The conversational "space" held by a speaker; giving and holding the floor relates to power dynamics in conversation.
+Genderlect: A variety of language associated with a particular gender group, including vocabulary, grammatical patterns, and conversational strategies.
+Marked Form: A word that is derived from or depends on a more basic "unmarked" form, often through the addition of a female suffix (e.g., "actress" from "actor"), which can signal lower social status.
+Generic Masculine: The use of masculine pronouns or nouns as a default to refer to people of unspecified gender (e.g., "Every student should raise his hand"), critiqued for marginalising women.
+Semantic Derogation: The process by which words associated with women acquire negative or trivialised connotations over time (e.g., "hussy" from "housewife").
+
+LANGUAGE VARIATION
+Language Variation: Differences in language use across different regions, social groups, time periods, and situations.
+Regional Dialect: A variety of language associated with a specific geographical area, with distinctive vocabulary, grammar, and pronunciation.
+Social Dialect / Sociolect: A variety of language associated with a particular social group, shaped by factors such as class, age, gender, ethnicity, or occupation.
+Age-Related Language Variation: The way language use differs across generations, including the adoption of new vocabulary, slang, and communication norms by younger speakers.
+Ethnolect: A variety of language associated with a particular ethnic group, incorporating elements of vocabulary, pronunciation, and discourse structure from the community's cultural background.
+Received Pronunciation (RP): The prestige accent of British English, historically associated with education and the upper classes; sometimes called "BBC English."
+Estuary English: A variety of English that blends features of RP and London/south-east regional speech; widely spoken in contemporary Britain.
+Multi-Ethnic Youth English (MEYE): A sociolect spoken by young people across ethnic communities in urban Britain, incorporating features from Caribbean, South Asian, and other linguistic influences.
+Prestige: The social status and positive evaluation associated with certain language varieties, accents, or styles.
+Overt Prestige: The prestige associated with Standard English and formal registers, recognised and valued in mainstream social institutions.
+Covert Prestige: The status and solidarity associated with non-standard language varieties within their own speech communities, even when stigmatised by wider society.
+Language Stigma: The negative social judgements made about speakers who use non-standard or low-prestige language varieties.
+Hypercorrection: The use of a prestigious or standard form in contexts where it is not appropriate, often as a result of overcorrecting from a stigmatised form (e.g., "between you and I").
+
+LANGUAGE CHANGE
+Language Change: The ongoing evolution of language over time, affecting all levels — phonology, lexis, grammar, and discourse.
+Neologism: A newly coined word or phrase, or an existing word used in a new sense, reflecting social, technological, or cultural change.
+Archaism: A word, phrase, or construction no longer in common use, surviving in formal, religious, or literary contexts.
+Borrowing/Loanword: A word adopted from another language into English (e.g., "café" from French, "tsunami" from Japanese).
+Broadening/Generalisation: A form of semantic change in which a word's meaning widens over time (e.g., "holiday" from "holy day").
+Narrowing/Specialisation: A form of semantic change in which a word's meaning becomes more restricted over time (e.g., "meat" once meant all food, now refers specifically to animal flesh).
+Amelioration: A form of semantic change in which a word's meaning becomes more positive over time.
+Pejoration: A form of semantic change in which a word's meaning becomes more negative over time.
+Prescriptivism: The view that there is a correct, standard form of language that should be maintained and taught; resistance to language change.
+Descriptivism: The approach to language that describes how language is actually used rather than prescribing how it should be used; accepting of language change as natural.
+Technological Register: The specialised vocabulary and conventions that have developed around digital communication, including abbreviations, emoticons, and platform-specific norms.

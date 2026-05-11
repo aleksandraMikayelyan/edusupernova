@@ -1,0 +1,70 @@
+FIGURATIVE LANGUAGE
+Metaphor: A direct comparison between two unlike things, stating one thing is another to create a new layer of meaning (e.g., "Life is a journey").
+Extended Metaphor: A metaphor that is developed and sustained across several sentences, paragraphs, or an entire text.
+Simile: A comparison between two unlike things using "like" or "as" to highlight a shared quality (e.g., "Her voice was like velvet").
+Personification: Attributing human characteristics, feelings, or actions to a non-human entity, object, or abstract idea.
+Anthropomorphism: Giving an animal or object human form or identity, as a character rather than merely a figurative technique.
+Pathetic Fallacy: A form of personification in which the natural world or weather reflects or reinforces the emotional state of characters or the narrator.
+Hyperbole: Deliberate and extreme exaggeration for emphasis or comic effect (e.g., "I've told you a million times").
+Litotes: Deliberate understatement using a negative construction to express a positive (e.g., "not bad" meaning "good").
+Oxymoron: A figure of speech in which two contradictory terms are combined for rhetorical or poetic effect (e.g., "bittersweet," "deafening silence").
+Paradox: A statement that appears self-contradictory but contains a deeper truth (e.g., "The more you know, the more you realise you know nothing").
+Synecdoche: A figure of speech in which a part is used to represent the whole, or the whole to represent a part (e.g., "All hands on deck").
+Metonymy: A figure of speech in which the name of one thing is used to refer to something closely associated with it (e.g., "the Crown" for the monarchy).
+Symbolism: The use of a person, object, place, or event to represent an abstract idea or quality beyond its literal meaning.
+Allegory: A narrative in which characters, events, and settings function as symbols that together create a deeper moral, political, or philosophical meaning.
+Motif: A recurring element — image, idea, symbol, or phrase — that develops thematic significance throughout a text.
+Imagery: Descriptive language that appeals to the senses — visual, auditory, olfactory, tactile, or gustatory — to create vivid mental pictures.
+
+RHETORICAL DEVICES
+Rhetoric: The art of effective and persuasive communication, using language to influence an audience.
+Ethos: An appeal to the credibility, authority, or trustworthiness of the speaker or writer.
+Pathos: An appeal to the emotions of the audience to create sympathy, fear, anger, or compassion.
+Logos: An appeal to logic and reason, using evidence, facts, and reasoned argument to persuade.
+Rhetorical Question: A question asked for effect, not requiring an answer, used to engage the audience or emphasise a point.
+Antithesis: The juxtaposition of contrasting ideas in a balanced grammatical structure to highlight the contrast (e.g., "It was the best of times, it was the worst of times").
+Juxtaposition: Placing two contrasting ideas, images, or characters side by side to highlight their differences.
+Chiasmus: A rhetorical device in which the order of words in one clause is reversed in the next (e.g., "Ask not what your country can do for you, ask what you can do for your country").
+Aphorism: A concise, memorable statement expressing a general truth or observation (e.g., "Actions speak louder than words").
+Parallelism: The use of the same grammatical structure in successive phrases or clauses to create rhythm and emphasis.
+Inclusive Language: The use of first-person plural pronouns ("we," "our," "us") to draw the audience into a shared identity or common cause with the writer.
+Second Person Address: The use of "you" to directly address the reader, creating intimacy or implicating them in the argument.
+Imperative: A verb form used to give commands or instructions, used in rhetoric to direct and motivate the audience.
+
+NARRATIVE TECHNIQUES
+Narrative: A story or account of events, whether fictional or non-fictional.
+Narrator: The voice that tells the story; the narrative persona through which events are recounted.
+First-Person Narrative: A narrative told from the perspective of "I," offering an intimate and subjective account but with limited omniscience.
+Second-Person Narrative: A rare narrative mode using "you," placing the reader directly inside the action.
+Third-Person Narrative: A narrative told from outside the story, using "he," "she," "they," with varying degrees of omniscience.
+Omniscient Narrator: A third-person narrator who has complete knowledge of all characters' thoughts, feelings, and events.
+Limited Narrator: A narrator whose knowledge is restricted to the perspective of one character.
+Unreliable Narrator: A narrator whose account is not fully trustworthy, due to bias, limited knowledge, or psychological instability.
+Stream of Consciousness: A narrative technique that mimics the continuous flow of a character's thoughts, feelings, and sensations.
+Free Indirect Discourse: A narrative technique that blends the narrator's voice with a character's thoughts or speech without quotation marks or reporting clauses (e.g., "She looked at the letter. How dare he write such things.").
+Analepsis/Flashback: A narrative device in which an earlier event is recounted after events that occurred later in time.
+Prolepsis/Foreshadowing: A hint or suggestion of events that will occur later in the narrative.
+In Medias Res: Beginning a narrative in the middle of the action, without prior context, to immediately engage the reader.
+Denouement: The final resolution of a narrative's plot, in which conflicts are resolved and loose ends are tied.
+Cliffhanger: A narrative technique ending a section at a moment of high tension or unresolved crisis to compel the reader to continue.
+
+STRUCTURE AND FORM
+Structure: The way in which a text is organised and constructed, at the level of the whole text and at the level of sentences and paragraphs.
+Linear Structure: A narrative or argument that follows a straightforward chronological or logical progression from beginning to end.
+Non-Linear Structure: A structure that departs from chronological order, using flashbacks, parallel narratives, or circular structures.
+Circular Structure: A text that ends at or near its beginning point, creating a sense of completeness, entrapment, or irony.
+Cyclical Pattern: A repeating structural pattern, often used to suggest inevitability or the passage of time.
+Frame Narrative: A story within a story; an outer narrative that introduces and contains an inner narrative.
+Episodic Structure: A narrative composed of loosely connected episodes rather than a tightly unified plot.
+Pacing: The speed at which a narrative or argument moves, controlled through sentence length, paragraph structure, and the amount of detail included.
+Bathos: A sudden, jarring descent from the elevated to the trivial or absurd, often used for comic or ironic deflation.
+Anticlimax: An abrupt and disappointing fall in intensity after a build-up of tension or expectation.
+Volta: A turning point or shift in argument, tone, or perspective within a text, most commonly associated with the sonnet form.
+
+GENRE AND PURPOSE
+Genre: A category of text defined by shared conventions of form, style, subject matter, and purpose.
+Convention: An established feature or rule associated with a particular genre or type of text.
+Register: The variety of language adapted to a particular situation, defined by its field, tenor, and mode.
+Purpose: The reason a text was written — to inform, persuade, entertain, instruct, advise, describe, or some combination of these.
+Audience: The intended or actual recipients of a text, whose characteristics shape the language, tone, and content choices of the writer.
+Context: The circumstances surrounding the production and reception of a text, including its historical, social, cultural, and political background.

@@ -1,0 +1,247 @@
+VOCABULARY IN CONTEXT FOR IELTS READING
+
+Vocabulary knowledge underpins every question in IELTS Reading. You cannot identify a main idea, locate a detail, or evaluate an argument if you cannot understand the words that express them. This file covers the systematic strategies for decoding unfamiliar vocabulary from context, the academic word families most critical for IELTS success, and the specific vocabulary knowledge required for the test's passage types.
+
+WHY VOCABULARY IN CONTEXT MATTERS
+
+IELTS Reading does not have a dedicated "vocabulary question" section the way some other tests do. Instead, vocabulary is tested indirectly across every question type:
+
+- PARAPHRASE RECOGNITION: You must recognise that "utilise" in the passage means "use" in the question.
+- TRUE/FALSE/NOT GIVEN: You must understand every word in the statement and the passage to judge accurately.
+- HEADING MATCHING: You must understand the paragraph's vocabulary to identify its main idea.
+- SHORT ANSWER: You must understand the question to know what to search for.
+
+KEY CONCEPT: You will encounter unfamiliar words in every IELTS Reading test. This is by design. The test measures whether you can derive meaning from context — not whether you have memorised a dictionary. Context-reading skill beats rote memorisation as a test strategy.
+
+THE FIVE CONTEXT CLUE TYPES
+
+TYPE 1 — DIRECT DEFINITION
+
+The author defines the term explicitly, usually near its first appearance.
+
+SIGNALS: Commas or dashes enclosing the definition, the phrase "which is," "known as," "referred to as," "that is," "i.e.," or a parenthetical explanation.
+
+EXAMPLES:
+- "The cryosphere — the portion of Earth's surface where water exists in a frozen state — plays a critical role in global climate regulation."
+- "Symbiosis, the close and often long-term biological interaction between two different species, can take several forms."
+- "The concept of umwelt (the subjective world of an organism) was introduced by Jakob von Uexküll."
+
+ACTION: When you see dashes, parentheses, or "i.e." near an unfamiliar word, read the material inside those markers — it is the definition.
+
+TYPE 2 — CONTRAST AND ANTONYM
+
+The unfamiliar word is the opposite of a nearby familiar word or concept. Contrast signal words indicate this relationship.
+
+SIGNALS: However, but, unlike, whereas, in contrast, on the other hand, although, despite, yet, rather than, as opposed to, instead.
+
+EXAMPLES:
+- "Early economists viewed the market as inherently stable. The turbulence of the 1930s, however, revealed it to be highly volatile." → volatile = unstable, the opposite of stable.
+- "Unlike the gradual erosion typical of river systems, glacial action produces abrupt and dramatic changes to the landscape." → abrupt = sudden, contrasting with gradual.
+
+ACTION: When you see a contrast signal near an unfamiliar word, find the familiar word or idea being contrasted, and define the unknown word as its opposite.
+
+TYPE 3 — SYNONYM AND RESTATEMENT
+
+The author restates the same idea using different vocabulary — a synonym or parallel structure clarifies the term.
+
+SIGNALS: Or, also, similarly, likewise, in other words, that is to say, which means that, parallel grammatical structures using "and."
+
+EXAMPLES:
+- "The species proved remarkably tenacious, or stubborn, in resisting environmental pressures." → tenacious = stubborn.
+- "The policy was widely condemned — criticised from almost every political perspective." → condemned = criticised.
+
+ACTION: Look for the word "or" followed by a plain English equivalent — this is the most reliable synonym signal in academic writing.
+
+TYPE 4 — EXAMPLE AND ILLUSTRATION
+
+Examples following an unfamiliar term reveal the category or type it belongs to.
+
+SIGNALS: For example, for instance, such as, including, like, among these, one such, e.g.
+
+EXAMPLES:
+- "Many arboreal mammals, such as howler monkeys, sloths, and spider monkeys, rarely descend to the forest floor." → arboreal = tree-dwelling (revealed by the examples, all of which live in trees).
+- "Several pathogens, including influenza viruses, streptococcal bacteria, and prions, are capable of crossing species barriers." → pathogen = disease-causing organism.
+
+ACTION: When examples follow an unfamiliar word, ask "what do all these examples have in common?" That common characteristic is the word's meaning.
+
+TYPE 5 — GENERAL CONTEXT AND LOGIC
+
+No single signal word exists. The overall meaning of the sentence or paragraph makes the word's meaning inferable.
+
+ACTION: Read the entire sentence and the sentence before and after. Ask: "Given what is happening in this passage, what type of word (positive/negative, increase/decrease, concrete/abstract) would make logical sense here?" Then choose the answer option that fits that type.
+
+EXAMPLE: "The drought caused crop yields to plummet across the region." Even without knowing "plummet" precisely, the context (drought, negative consequence) tells you it means "fall dramatically" rather than "rise" or "remain stable."
+
+WORD ROOTS, PREFIXES, AND SUFFIXES
+
+Knowing Greek and Latin word-building components allows you to decode thousands of academic words you have never encountered before.
+
+HIGH-VALUE PREFIXES:
+- A-, AN-: without, not (atypical, anaerobic, asymmetric)
+- ANTE-, PRE-: before (antecedent, preceding, preliminary)
+- ANTI-: against (antibacterial, antithetical, antagonist)
+- BENE-, BIEN-: good, well (beneficial, benevolent)
+- BI-: two (bilateral, biennial, biome)
+- CIRCUM-: around (circumnavigate, circumscribed)
+- CO-, CON-, COM-: together, with (cohesive, convergent, compound)
+- CONTRA-, COUNTER-: against (contradict, counterproductive)
+- DE-: down, away, reversal (deplete, deteriorate, diminish)
+- DIS-: not, apart (dissipate, disparity, disproportionate)
+- EM-, EN-: in, into, cause to be (embedded, encompass, enforce)
+- EX-: out, former (extract, exacerbate, expel)
+- HYPER-: over, excessive (hyperactivity, hyperbole)
+- HYPO-: under, below (hypothesis, hypothermia)
+- IN-, IM-, IR-, IL-: not (inconsistent, implausible, irreversible, illogical)
+- INTER-: between (interaction, intervene, interrelated)
+- INTRA-: within (intraspecific, intravenous)
+- MACRO-: large (macroeconomics, macroscopic)
+- MICRO-: small (microorganism, microscopic)
+- MONO-: one (monotheistic, monolingual, monopoly)
+- MULTI-: many (multifaceted, multilateral)
+- POST-: after (postcolonial, posthumous, posterior)
+- PRE-, PRO-: before, forward (precede, promote, progress)
+- RE-: again, back (recur, replenish, reassess)
+- SUB-: under, below (subordinate, subsidence, suboptimal)
+- SUPER-, SUR-: above, over (surplus, supersede, superior)
+- TRANS-: across, beyond (transform, transmit, transcend)
+- ULTRA-: beyond, extreme (ultraviolet, unprecedented)
+- UNI-: one (uniform, unilateral, unique)
+
+HIGH-VALUE SUFFIXES (word endings that reveal word type):
+- -TION, -SION: noun, state or process (formation, erosion, adaptation)
+- -ITY, -TY: noun, quality (stability, diversity, complexity)
+- -ISM: noun, doctrine or practice (capitalism, empiricism)
+- -IST: noun, person practising or believing (economist, ecologist)
+- -ATE: verb, to cause or do (accelerate, facilitate, generate)
+- -IFY: verb, to make (intensify, amplify, clarify)
+- -IZE, -ISE: verb, to make or become (stabilise, utilise, theorise)
+- -ABLE, -IBLE: adjective, capable of being (measurable, sustainable, reversible)
+- -AL: adjective, relating to (environmental, agricultural, industrial)
+- -OUS: adjective, having the quality of (homogeneous, vigorous, numerous)
+- -LY: adverb, in a manner (significantly, predominantly, rapidly)
+- -MENT: noun, state or result (development, enforcement, assessment)
+
+HIGH-VALUE ROOTS:
+- AUDI: hear (audience, auditory)
+- BIO: life (biology, biosphere, biodiversity)
+- CHRON: time (chronological, synchronise)
+- CRED: believe (credible, credentials)
+- DEM: people (democracy, demographic, epidemic)
+- DICT: say (dictate, predict, contradict)
+- DUC, DUCT: lead (produce, deduce, conduct)
+- FER: carry, bear (transfer, proliferate, infer)
+- FRACT, FRAG: break (fragment, fractured, refraction)
+- GEO: earth (geography, geology, geopolitics)
+- GRAPH: write, record (demographic, photograph, topography)
+- LOG, LOGY: study, word (ecology, sociology, dialogue)
+- MIT, MISS: send (transmit, emission, dismiss)
+- MORT: death (mortality, immortal)
+- PATH: feel, disease (pathogen, sympathy, empathy)
+- PHOT: light (photosynthesis, photograph)
+- PORT: carry (transport, export, import)
+- SCRIB, SCRIPT: write (describe, prescribe, manuscript)
+- SPEC, SPECT: see (spectrum, inspect, perspective)
+- STRUCT: build (construct, infrastructure, restructure)
+- TERR: land (terrain, terrestrial, territory)
+- THERM: heat (thermal, thermometer, geothermal)
+- URB: city (urban, suburban, urbanisation)
+- VER: true (verify, verdict, version)
+- VIS, VID: see (visible, evidence, supervise)
+
+THE ACADEMIC WORD LIST — IELTS PRIORITY FAMILIES
+
+The Academic Word List (AWL) identifies the 570 most common word families in academic English, excluding the 2,000 most common general English words. Mastery of the AWL's top families provides the most direct vocabulary boost for IELTS Reading.
+
+TIER 1 — HIGHEST FREQUENCY AWL FAMILIES:
+- ANALYSE / ANALYSIS / ANALYTICAL / ANALYST
+- APPROACH / APPROACHES / APPROACHED
+- AREA / AREAS
+- ASSESS / ASSESSMENT / ASSESSED
+- ASSUME / ASSUMPTION / ASSUMED
+- AUTHORITY / AUTHORITIES / AUTHORITATIVE
+- AVAILABLE / AVAILABILITY
+- BENEFIT / BENEFICIAL / BENEFICIARY
+- CONCEPT / CONCEPTUAL / CONCEPTUALISE
+- CONSIST / CONSISTENT / CONSISTENCY
+- CONTEXT / CONTEXTUAL / CONTEXTUALISE
+- CONTRACT / CONTRACTION / CONTRACTED
+- CREATE / CREATION / CREATIVE / CREATIVITY
+- DATA / DATABASE
+- DEFINE / DEFINITION / DEFINITIVE
+- DERIVE / DERIVED / DERIVATION
+- DISTRIBUTE / DISTRIBUTION / DISTRIBUTIVE
+- ECONOMIC / ECONOMY / ECONOMICS / ECONOMIST
+- ENVIRONMENT / ENVIRONMENTAL / ENVIRONMENTALLY
+- ESTABLISH / ESTABLISHED / ESTABLISHMENT
+- ESTIMATE / ESTIMATED / ESTIMATION
+- EVALUATE / EVALUATION / EVALUATIVE
+- EVIDENT / EVIDENCE / EVIDENTIAL
+- FACTOR / FACTORS
+- FUNCTION / FUNCTIONAL / DYSFUNCTIONAL
+- IDENTIFY / IDENTIFICATION / IDENTIFIED
+- INDICATE / INDICATION / INDICATOR
+- INDIVIDUAL / INDIVIDUALLY / INDIVIDUALISM
+- INTERPRET / INTERPRETATION / INTERPRETIVE
+- INVOLVE / INVOLVEMENT / INVOLVED
+- ISSUE / ISSUES
+- MAJOR / MAJORITY
+- METHOD / METHODOLOGY / METHODOLOGICAL
+- OCCUR / OCCURRENCE / OCCURRED
+- PERIOD / PERIODIC / PERIODICALLY
+- POLICY / POLICIES
+- PRINCIPLE / PRINCIPLES / PRINCIPALLY
+- PROCESS / PROCESSES / PROCESSED
+- REQUIRE / REQUIREMENT / REQUIRED
+- RESEARCH / RESEARCHER / RESEARCHED
+- RESPOND / RESPONSE / RESPONSIVE
+- ROLE / ROLES
+- SECTION / SECTIONS / SECTIONAL
+- SIGNIFICANT / SIGNIFICANCE / SIGNIFICANTLY
+- SIMILAR / SIMILARITY / SIMILARLY
+- SOURCE / SOURCES / SOURCED
+- SPECIFIC / SPECIFICALLY / SPECIFICITY
+- STRUCTURE / STRUCTURAL / RESTRUCTURE
+- THEORY / THEORETICAL / THEORISE
+- VARY / VARIATION / VARIABLE / VARIED / INVARIABLY
+
+PARAPHRASE VOCABULARY — COMMON IELTS SYNONYM PAIRS
+
+Knowing these pairs means you can recognise when a question and its passage answer are saying the same thing in different words.
+
+use → utilise, employ, apply, implement, deploy
+show → demonstrate, indicate, reveal, illustrate, suggest, evidence
+cause → lead to, result in, give rise to, trigger, bring about, precipitate
+increase → rise, grow, expand, escalate, surge, accelerate, proliferate
+decrease → fall, decline, drop, diminish, reduce, contract, plummet
+important → significant, crucial, critical, essential, fundamental, pivotal, vital
+difficult → challenging, problematic, complex, arduous, demanding
+change → alter, modify, transform, shift, adjust, adapt
+explain → account for, elucidate, clarify, illuminate
+argue → contend, claim, assert, maintain, propose, suggest, posit
+agree → concur, support, endorse, affirm, confirm
+disagree → contest, refute, challenge, dispute, reject, contradict
+start → initiate, commence, trigger, prompt, spark, generate
+stop → cease, halt, prevent, impede, restrict, inhibit
+help → facilitate, enable, allow, promote, support, assist, advance
+hurt → impede, hinder, undermine, compromise, damage, obstruct
+
+TOP STRATEGIES FOR VOCABULARY IN CONTEXT
+
+Strategy: When you encounter an unfamiliar word, immediately look for one of the five context clue types before attempting to answer. Most unfamiliar academic words have contextual support nearby.
+
+Strategy: Build your AWL vocabulary systematically before the test — even 10 new word families per week produces significant gains over a month.
+
+Strategy: Learn words in FAMILIES, not in isolation. Knowing "analyse" and its forms (analysis, analytical, analyst) quadruples your vocabulary return per unit of study effort.
+
+Strategy: For paraphrase recognition, practise rewriting sentences from practice passages using synonyms. This trains both vocabulary knowledge and paraphrase awareness simultaneously.
+
+Strategy: Use prefix and suffix knowledge as a first-resort decoding tool when context clues are absent. Even partial knowledge of a word's root gives you something to work with.
+
+COMMON MISTAKES TO AVOID
+
+- Using the most familiar meaning of a word without checking the context (many academic words have non-standard academic meanings)
+- Ignoring definition signals (dashes, parentheses, "i.e.") that make vocabulary questions trivially easy
+- Treating vocabulary as a memorisation problem rather than a context-reading skill — both matter, but context skill is always available on the test
+- Giving up on a word rather than using prefix/suffix/root analysis
+- Failing to recognise paraphrase in True/False/Not Given questions because the vocabulary is different from the passage
+- Neglecting to build vocabulary systematically before the test, then feeling overwhelmed during reading

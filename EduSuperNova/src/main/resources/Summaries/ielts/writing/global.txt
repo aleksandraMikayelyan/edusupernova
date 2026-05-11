@@ -1,0 +1,272 @@
+GLOBAL STRATEGIES FOR IELTS WRITING
+
+This file covers the principles and techniques that improve performance across ALL IELTS Writing tasks — both Task 1 and Task 2, both Academic and General Training. Mastering these cross-cutting skills is what separates Band 6 from Band 7 and Band 7 from Band 8.
+
+UNDERSTANDING THE FOUR MARKING CRITERIA
+
+Every IELTS Writing response — Task 1 and Task 2 — is assessed on the same four criteria, each worth 25% of the task score.
+
+TASK ACHIEVEMENT / TASK RESPONSE (25%): Did you answer the question fully and appropriately? Is your purpose clear? Is content relevant and sufficiently developed?
+
+COHERENCE AND COHESION (25%): Is your writing logically organised? Are paragraphs well-structured? Are linking devices used accurately and varied?
+
+LEXICAL RESOURCE (25%): Do you use a wide, accurate range of vocabulary? Do you avoid repetition? Do you use collocations and less common words appropriately?
+
+GRAMMATICAL RANGE AND ACCURACY (25%): Do you use varied sentence structures? Is your grammar accurate? Do you control complex structures?
+
+KEY CONCEPT: All four criteria are equally weighted. A student who writes grammatically perfect sentences but fails to answer the question will score no higher than Band 5. A student with a brilliant argument but poor grammar and no cohesive structure will also underperform. Balanced competence across all four criteria produces the highest scores.
+
+THE BAND DESCRIPTOR DIFFERENCES
+
+Understanding what separates adjacent bands gives you precise improvement targets.
+
+BAND 5 → BAND 6:
+- Task: Addresses task but not all parts fully; position may be unclear
+- Cohesion: Uses basic connectives (and, but, because, so); paragraphing present but not always clear
+- Lexis: Limited range; some errors in word choice; some repetition
+- Grammar: Limited range; attempts complex sentences but errors frequent
+
+BAND 6 → BAND 7:
+- Task: Addresses all parts; position is clear; main ideas are developed
+- Cohesion: Organises information logically; uses a range of cohesive devices; some over-use or under-use
+- Lexis: Wider range; uses less common vocabulary; some errors but not impeding communication
+- Grammar: Mix of simple and complex structures; some errors but not dominating
+
+BAND 7 → BAND 8:
+- Task: All parts addressed; position well-developed with relevant, extended support
+- Cohesion: Skilful use of cohesive devices; paragraphing consistently clear and logical
+- Lexis: Wide range used with flexibility; rare errors; effective use of collocations
+- Grammar: Wide range of structures; frequent error-free sentences; minor errors only
+
+KEY CONCEPT: The single most common blockage at Band 6 is insufficient DEVELOPMENT. Students make claims but do not explain or support them adequately. The move to Band 7 requires ideas to be fully explained with clear reasoning before evidence is provided.
+
+COHERENCE AND COHESION IN DEPTH
+
+COHERENCE: The overall logical flow and clarity of your argument. A coherent essay makes sense without effort — the reader always knows where they are and where the argument is heading.
+
+COHESION: The specific language tools that link sentences and paragraphs together. A cohesive essay uses these tools accurately, naturally, and with variety.
+
+PARAGRAPH STRUCTURE FOR COHERENCE:
+
+Every paragraph should have a single central idea, stated in the topic sentence. All subsequent sentences develop, support, or illustrate that idea. When a new idea begins, a new paragraph begins.
+
+PARAGRAPH LENGTH: Aim for 4 to 6 sentences per body paragraph. Fewer than 3 sentences suggests underdevelopment. More than 8 sentences in one paragraph suggests two ideas that should be separated.
+
+PARAGRAPH TRANSITIONS: The first sentence of each paragraph should either begin a new aspect of the argument or signal its relationship to the previous paragraph. Do not use a heading or number — use language.
+
+COHESIVE DEVICES — CATEGORIES AND EXAMPLES:
+
+ADDITION: furthermore, moreover, in addition, additionally, not only... but also, what is more, equally important
+
+CONTRAST: however, nevertheless, on the other hand, in contrast, despite this, while, whereas, although, even so, that said, conversely, notwithstanding
+
+CAUSE AND EFFECT: therefore, as a result, consequently, hence, thus, for this reason, owing to, due to, this leads to, it follows that
+
+EXEMPLIFICATION: for example, for instance, to illustrate, such as, a case in point is, this is exemplified by, as demonstrated by
+
+CONCESSION: admittedly, it is true that, while it cannot be denied that, granted that, even though
+
+EMPHASIS: above all, most importantly, in particular, notably, significantly, crucially, what is most striking is
+
+CLARIFICATION: that is to say, in other words, to put it differently, to be more specific, more precisely
+
+CONCLUSION: in conclusion, to summarise, overall, on balance, ultimately, to conclude, in short
+
+IMPORTANT: Mechanical use of connectives — inserting them at the start of every sentence regardless of whether a connection is needed — is penalised for "mechanical" or "over-use." The examiner wants connectives used because there is a genuine logical connection to signal, not as decorative punctuation.
+
+REFERENCE AND SUBSTITUTION FOR COHESION:
+
+PRONOUNS: Replacing nouns with pronouns avoids repetition and creates cohesive chains. "Digital technology has transformed communication. It has enabled..." The "it" links back to "digital technology."
+
+DEMONSTRATIVES: "this," "these," "such," "that" + noun phrase refer back to previous ideas. "Such attitudes remain prevalent..." / "This development has had significant consequences..."
+
+LEXICAL SUBSTITUTION: Replace repeated content words with synonyms or superordinate terms. "Remote work → flexible working arrangements → this new model of employment."
+
+AVOIDING MECHANICAL PARAGRAPH OPENERS:
+
+WEAK (mechanical, formulaic):
+- "Firstly,..." / "Secondly,..." / "Thirdly,..." / "Finally,..."
+- "In my opinion,..." (repeated throughout)
+- "Moreover, furthermore, in addition,..." (used interchangeably without logical distinction)
+
+STRONGER (varied, purposeful):
+- "A more compelling consideration is..." / "The deeper issue, however, concerns..."
+- "What is perhaps most significant is..." / "Beyond this, one must consider..."
+- "This is not, of course, without its limitations..."
+
+LEXICAL RESOURCE IN DEPTH
+
+WHAT EXAMINERS LOOK FOR:
+- Range: Do you use a wide variety of words, or do you repeat the same core vocabulary?
+- Precision: Do you choose the exact word for the context, or approximate with a vague word?
+- Collocation: Do your word combinations sound natural to a native speaker?
+- Register: Is your vocabulary appropriately formal for academic writing?
+
+AVOIDING WORD REPETITION:
+
+Create word families and synonym chains for every major topic you write about. For every key word, prepare 3-4 alternatives.
+
+EXAMPLE — "problems":
+Primary: problems
+Synonyms: challenges, difficulties, issues, concerns, drawbacks, shortcomings, obstacles, complications
+Formal alternatives: adverse consequences, detrimental effects, impediments
+
+EXAMPLE — "children":
+Primary: children
+Alternatives: young people, the younger generation, minors, pupils, students, youngsters (informal — avoid in formal essays), adolescents (teenagers specifically)
+
+EXAMPLE — "government":
+Primary: government
+Alternatives: authorities, policymakers, legislators, the state, the public sector, governing bodies
+
+COLLOCATION — THE KEY TO LEXICAL RESOURCE BAND 7+
+
+COLLOCATION: The natural pairing of words that native speakers use together. Wrong collocations sound unnatural even when grammatically correct.
+
+COMMON COLLOCATION ERRORS:
+- "make a research" → CORRECT: "conduct research" / "carry out research"
+- "do a crime" → CORRECT: "commit a crime"
+- "strong rain" → CORRECT: "heavy rain"
+- "take a decision" → CORRECT: "make a decision" (British: "take a decision" is also acceptable)
+- "high salary" → CORRECT: "high salary" ✓ but "big salary" sounds informal
+- "solve a problem" ✓ / "fix a problem" ✓ / "eliminate a problem" ✓ / "cure a problem" ✗
+
+HIGH-VALUE ACADEMIC COLLOCATIONS:
+
+VERB + NOUN:
+- address an issue / tackle a problem / overcome an obstacle / alleviate suffering
+- pose a challenge / present difficulties / create obstacles
+- implement a policy / introduce measures / enforce regulations / adopt an approach
+- conduct research / carry out a study / analyse data / draw conclusions
+- raise awareness / promote understanding / foster cooperation / encourage participation
+- exacerbate inequality / widen the gap / deepen division
+- mitigate the effects / reduce the impact / minimise the risk
+
+ADJECTIVE + NOUN:
+- growing concern / pressing issue / widespread problem / significant challenge
+- compelling evidence / convincing argument / robust data / substantial support
+- adverse effects / detrimental impact / far-reaching consequences / profound implications
+- fundamental change / radical transformation / gradual shift / subtle difference
+
+ADVERB + ADJECTIVE:
+- deeply concerned / widely recognised / strongly suggested / clearly demonstrated
+- increasingly common / rapidly growing / steadily declining / largely ineffective
+
+REGISTER AND FORMALITY
+
+IELTS Task 2 and Academic Task 1 require formal academic register throughout. Informal language — slang, contractions, casual phrasing — reduces your Lexical Resource score.
+
+INFORMAL → FORMAL REPLACEMENTS:
+- kids → children / young people
+- a lot of → a significant number of / a considerable amount of / numerous
+- get → obtain / receive / acquire / achieve
+- show → demonstrate / illustrate / reveal / indicate
+- think → believe / consider / argue / contend / maintain
+- big → considerable / substantial / significant / extensive / major
+- bad → detrimental / adverse / harmful / problematic / unfavourable
+- good → beneficial / advantageous / positive / favourable / effective
+- use → utilise / employ / apply / implement
+- make sure → ensure / guarantee / verify
+- start → initiate / commence / begin / establish / introduce
+- end → conclude / terminate / cease / eliminate
+
+NEVER USE IN ACADEMIC WRITING: gonna, wanna, kinda, a lot, loads of, stuff, things, nice, great, awesome, totally, basically, I guess, I think (in opinion essays, vary this).
+
+GRAMMATICAL RANGE AND ACCURACY IN DEPTH
+
+VARIETY IN SENTENCE STRUCTURE:
+
+Simple sentence: "Education improves employment prospects."
+Compound sentence: "Education improves employment prospects, and it also enhances social mobility."
+Complex sentence: "Although the relationship between education and employment is well-established, the quality of education varies significantly between regions."
+Compound-complex: "While higher education expands individual opportunities, it also generates significant costs, and these burdens are not equally distributed across society."
+
+KEY CONCEPT: Band 7 requires a "mix of simple and complex sentences." Band 8 requires a "wide range of structures." Do not write all complex sentences — this creates difficult, dense prose. Vary length and complexity deliberately.
+
+SUBORDINATE CLAUSES FOR SOPHISTICATION:
+
+Adverbial clauses: "Because digital platforms have reduced geographical barriers, businesses now operate on a genuinely global scale."
+Relative clauses: "The approach, which has been criticised by several researchers, relies on data that may not be fully representative."
+Noun clauses: "What the evidence clearly demonstrates is that early intervention produces the most lasting results."
+Participle clauses: "Having examined both perspectives, it becomes clear that a balanced approach is required."
+
+CONDITIONAL STRUCTURES:
+
+Zero conditional (general truth): "If individuals lack access to quality education, they face significant disadvantages in the labour market."
+First conditional (likely future): "If governments invest in renewable energy infrastructure, carbon emissions will decline substantially."
+Second conditional (hypothetical): "If corporations were required to report their carbon footprint annually, public pressure would incentivise greater transparency."
+Third conditional (counterfactual): "If early intervention programmes had been introduced earlier, many of these social problems might have been avoided."
+
+PASSIVE VOICE FOR ACADEMIC TONE:
+- "It has been argued that..." / "Evidence has been gathered suggesting..."
+- "These measures were introduced in response to..." / "The policy was widely criticised for..."
+- Passive removes the agent and creates formal, impersonal tone appropriate for academic writing.
+
+TIME MANAGEMENT — THE GLOBAL FRAMEWORK
+
+TOTAL WRITING TIME: 60 minutes.
+
+TASK 1: 20 minutes maximum.
+- Planning: 2 to 3 minutes
+- Writing: 15 minutes
+- Checking: 2 minutes
+
+TASK 2: 40 minutes.
+- Planning: 5 minutes
+- Writing: 30 minutes
+- Checking: 5 minutes
+
+KEY CONCEPT: Task 2 is worth twice as much as Task 1. If you spend 30 minutes on Task 1, you have only 30 minutes for Task 2. This is a catastrophic time management failure that many students make. Set a hard limit of 20 minutes for Task 1 and move on, even if it feels incomplete.
+
+PROOFREADING STRATEGY
+
+In the final 2 to 5 minutes of each task, systematically check:
+
+PASS 1 — CONTENT: Does every paragraph address the question? Is the position clear? Is there an overview (Task 1) or a clear thesis (Task 2)?
+
+PASS 2 — GRAMMAR: Check subject-verb agreement, tense consistency, article use (a/an/the), and plural forms. These are the highest-frequency grammar errors.
+
+PASS 3 — VOCABULARY: Are there any words repeated more than twice? Can any vague words ("things," "good," "bad") be replaced with more precise alternatives? Are there any obvious spelling errors?
+
+PASS 4 — STRUCTURE: Does the introduction end with a clear purpose statement? Does the conclusion restate the position? Are all paragraphs clearly separated?
+
+BUILDING LONG-TERM WRITING PROFICIENCY
+
+WEEKLY WRITING HABIT: Write one complete Task 2 essay every week under timed conditions. Do not write essays without timing yourself — stamina and time management are skills built through practice, not just knowledge.
+
+VOCABULARY BUILDING: Keep a collocation notebook. Every time you encounter a new academic collocation in reading or writing feedback, record it: "carry out research," "pose a significant challenge." Review weekly.
+
+FEEDBACK LOOP: After writing each essay, assess it against the four criteria honestly. Identify your weakest criterion and deliberately target it in your next essay. Generic "write more essays" practice produces slower progress than targeted improvement.
+
+READING FOR WRITING: Reading quality academic English — newspaper editorials (The Guardian, The Economist), academic journals, and high-quality essay examples — builds passive vocabulary and collocation knowledge that transfers directly to your writing.
+
+MODEL SENTENCES FOR EACH CRITERION:
+
+HIGH COHERENCE: "While the economic arguments for globalisation are substantial, they must be weighed carefully against the social costs that disproportionately affect the most vulnerable communities."
+
+HIGH LEXICAL RESOURCE: "The relentless commodification of natural resources has exacerbated ecological fragility, undermining the very environmental systems on which long-term human prosperity depends."
+
+HIGH GRAMMATICAL RANGE: "Having been overlooked for decades, the mental health of young people has finally attracted the sustained policy attention it demands, with several governments now mandating wellbeing programmes in schools, a development that, while welcome, arrives long overdue."
+
+TOP GLOBAL STRATEGIES FOR IELTS WRITING
+
+Strategy: Identify the question type before planning. Every decision about structure, register, and content flows from this.
+
+Strategy: Plan both tasks before writing either one. Spending 2 minutes planning Task 1 and 5 minutes planning Task 2 produces more focused, higher-scoring responses than writing immediately.
+
+Strategy: Treat the four criteria as a checklist. Before finishing each task, ask: Have I answered the question? Is it well-organised? Have I varied my vocabulary? Have I used complex grammar structures?
+
+Strategy: Never write below the minimum word count. Penalties are applied for fewer than 150 words (Task 1) or 250 words (Task 2). Aim for 170 and 270 respectively to have a comfortable buffer.
+
+Strategy: The most efficient single improvement for most Band 6 students is DEVELOPING ideas more fully. Add one more sentence of explanation or evidence to each body paragraph. This addresses Task Response and Lexical Resource simultaneously.
+
+COMMON MISTAKES TO AVOID
+
+- Spending more than 20 minutes on Task 1
+- Repeating the same connective ("furthermore") throughout instead of varying cohesive devices
+- Writing in paragraphs that contain two or three different ideas with no clear topic sentence
+- Using informal vocabulary or contractions in academic tasks
+- Collocation errors — "do a research," "make a progress," "strong rain"
+- Writing a conclusion that introduces new arguments
+- Not proofreading — many Band 6 errors are the kind you can catch yourself in 3 minutes
+- Memorising and reproducing template essays — examiners recognise and penalise memorised responses

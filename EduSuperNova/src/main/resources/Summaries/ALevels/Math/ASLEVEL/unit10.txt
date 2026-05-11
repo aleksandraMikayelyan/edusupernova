@@ -1,0 +1,53 @@
+INTRODUCTION TO VECTORS
+A vector is a quantity that has both magnitude (size) and direction. Vectors are used to describe displacements, velocities, forces, and positions in two and three dimensions.
+
+VECTOR: A quantity with magnitude and direction, represented in bold (a) or with a bar (a with overline).
+SCALAR: A quantity with magnitude only, such as speed, mass, or temperature.
+
+REPRESENTING VECTORS
+Vectors can be expressed in several equivalent forms.
+
+- Column notation: a = (x, y) or in 3D: a = (x, y, z).
+- Component form: a = x·i + y·j in 2D, or a = x·i + y·j + z·k in 3D, where i, j, k are unit vectors along the positive x, y, z axes.
+
+THE MAGNITUDE OF A VECTOR
+The magnitude (length) of a vector measures its size without regard to direction.
+
+- In 2D: |a| = √(x² + y²)
+- In 3D: |a| = √(x² + y² + z²)
+
+A unit vector in the direction of a is: â = a / |a|
+
+ADDITION, SUBTRACTION AND SCALAR MULTIPLICATION
+Vectors are combined component by component.
+
+- a + b = (a₁ + b₁, a₂ + b₂)
+- a - b = (a₁ - b₁, a₂ - b₂)
+- Scalar multiplication: k·a = (ka₁, ka₂) — scales the magnitude; if k < 0, reverses direction.
+
+POSITION VECTORS
+The position vector of a point P is the vector OP from the origin O to P.
+
+- If A and B have position vectors a and b respectively, then AB = b - a.
+- The midpoint M of AB has position vector m = (a + b) / 2.
+
+THE SCALAR (DOT) PRODUCT
+The scalar product combines two vectors to produce a scalar value, and is used to find angles between lines.
+
+DEFINITION: a · b = |a| |b| cos θ, where θ is the angle between the two vectors.
+
+In component form:
+- 2D: a · b = a₁b₁ + a₂b₂
+- 3D: a · b = a₁b₁ + a₂b₂ + a₃b₃
+
+KEY RESULTS:
+- If a · b = 0 and neither vector is zero, the vectors are perpendicular (θ = 90°).
+- Rearranging: cos θ = (a · b) / (|a| |b|), which gives θ between 0° and 180°.
+
+PARALLEL VECTORS
+Two vectors are parallel if one is a scalar multiple of the other.
+
+- a is parallel to b if a = k·b for some scalar k.
+- If k > 0, the vectors point in the same direction; if k < 0, they point in opposite directions.
+
+NOTE: These results are essential for problems involving geometry, force equilibrium, and kinematics in later units.

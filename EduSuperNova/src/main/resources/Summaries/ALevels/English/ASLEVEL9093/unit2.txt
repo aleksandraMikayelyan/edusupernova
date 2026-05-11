@@ -1,0 +1,82 @@
+PHONOLOGY AND SOUND
+Phoneme: The smallest unit of sound in a language that can change meaning (e.g., /p/ and /b/ in "pat" and "bat").
+Grapheme: The written representation of a phoneme; a letter or combination of letters.
+Alliteration: The repetition of the same consonant sound at the beginning of closely connected words, used for emphasis or rhythm.
+Assonance: The repetition of vowel sounds within nearby words to create a musical or echoing effect.
+Sibilance: A form of alliteration using the /s/ or /sh/ sound, often creating a hissing, sinister, or soft effect.
+Onomatopoeia: Words that phonetically imitate the sound they describe (e.g., "crash," "whisper," "buzz").
+Plosive: A consonant sound made by stopping airflow and releasing it suddenly (/b/, /d/, /g/, /p/, /t/, /k/), often creating a harsh or abrupt effect.
+Fricative: A sound produced by forcing air through a narrow channel (e.g., /f/, /v/, /s/, /z/), often creating tension or unease.
+Rhyme: The repetition of identical or similar sounds at the end of words, used to create pattern and memorability.
+Rhythm: The pattern of stressed and unstressed syllables that gives writing or speech a sense of flow and movement.
+Prosody: The patterns of stress and intonation in language; the study of meter, rhythm, and sound in poetry and speech.
+Stress: Emphasis placed on a syllable or word in speech, altering meaning or creating impact.
+
+LEXIS AND SEMANTICS
+Lexis: The vocabulary of a language; the total stock of words and their meanings.
+Semantics: The study of meaning in language, including how words and phrases convey meaning in context.
+Denotation: The literal, dictionary definition of a word.
+Connotation: The emotional associations, implications, or cultural resonances a word carries beyond its literal meaning.
+Synonym: A word with the same or similar meaning to another word.
+Antonym: A word with the opposite meaning to another word.
+Hyponym: A word that is a specific type within a broader category (e.g., "sparrow" is a hyponym of "bird").
+Hypernym/Superordinate: The broader category term under which more specific hyponyms are grouped (e.g., "animal" is the hypernym of "dog," "cat," "bird").
+Semantic Field: A group of words that are linked by a shared area of meaning or theme (e.g., words related to war, nature, or religion).
+Abstract Noun: A noun referring to a concept, quality, or idea that cannot be physically perceived (e.g., "freedom," "grief," "justice").
+Concrete Noun: A noun referring to a physical, tangible object that can be perceived by the senses.
+Collocation: Words that naturally and habitually appear together in a language (e.g., "commit a crime," "heavy rain").
+Amelioration: A process of semantic change in which a word acquires a more positive meaning over time.
+Pejoration: A process of semantic change in which a word acquires a more negative meaning over time.
+Euphemism: A mild or indirect word used in place of one that is harsh, blunt, or offensive (e.g., "passed away" for "died").
+Dysphemism: The deliberate use of a harsh or offensive term where a neutral or positive one might be expected.
+Jargon: Specialised vocabulary used by a particular profession or social group, which may exclude outsiders.
+Buzzword: A fashionable word or phrase from a particular field that has gained wide usage, often losing precise meaning.
+Neologism: A newly coined word or expression, or an existing word used in a new sense.
+
+GRAMMAR AND SYNTAX
+Syntax: The rules governing how words are arranged into sentences and phrases.
+Morphology: The study of the structure and form of words, including prefixes, suffixes, and roots.
+Morpheme: The smallest grammatical unit of meaning within a word (e.g., "unhappy" contains two morphemes: "un-" and "happy").
+Noun Phrase: A phrase with a noun as its head, often expanded by determiners, adjectives, and other modifiers.
+Verb Phrase: A phrase with a verb as its head, including auxiliary verbs and their complements.
+Simple Sentence: A sentence containing one independent clause with a subject and a verb.
+Compound Sentence: A sentence formed by joining two or more independent clauses with a coordinating conjunction (e.g., "and," "but," "or").
+Complex Sentence: A sentence containing an independent clause and one or more dependent (subordinate) clauses.
+Compound-Complex Sentence: A sentence containing at least two independent clauses and one or more dependent clauses.
+Coordination: Joining clauses or phrases of equal grammatical status using coordinating conjunctions.
+Subordination: Embedding a dependent clause within a main clause to show a hierarchical relationship of ideas.
+Passive Voice: A grammatical construction in which the subject receives the action of the verb (e.g., "The report was written by the committee"), often used to create objectivity or distance.
+Active Voice: A grammatical construction in which the subject performs the action (e.g., "The committee wrote the report").
+Declarative Sentence: A sentence that makes a statement.
+Interrogative Sentence: A sentence that asks a question.
+Imperative Sentence: A sentence that issues a command or instruction.
+Exclamatory Sentence: A sentence that expresses strong emotion, ending in an exclamation mark.
+Anaphora: The deliberate repetition of a word or phrase at the beginning of successive clauses for rhetorical effect.
+Epistrophe: The repetition of a word or phrase at the end of successive clauses.
+Tricolon: A series of three parallel words, phrases, or clauses, used to create rhythm and emphasise a point.
+Fronting: Placing an element other than the subject at the beginning of a sentence for emphasis (e.g., "This I cannot forgive").
+Ellipsis: The omission of words that are understood from context, creating economy or informality (e.g., "Going out?" for "Are you going out?").
+Deixis: Words that point to something in context — personal (I, you), spatial (here, there), or temporal (now, then).
+
+DISCOURSE AND PRAGMATICS
+Discourse: Spoken or written language beyond the level of a single sentence; extended use of language in context.
+Pragmatics: The study of how context and social factors influence the interpretation of language beyond its literal meaning.
+Speech Act: An utterance that performs an action (e.g., promising, warning, requesting, apologising).
+Implicature: The meaning implied by an utterance beyond what is literally said, relying on shared knowledge and context.
+Register: The variety of language used in a particular social situation, determined by field, tenor, and mode.
+Field: The subject matter or topic of communication.
+Tenor: The relationship between the participants in a communication, including their relative status and familiarity.
+Mode: The channel of communication — spoken, written, or multimodal.
+Cohesion: The way in which elements of a text are linked together to form a unified whole, through devices such as reference, substitution, and connectives.
+Coherence: The quality of a text making logical sense as a whole, achieved through consistent topic, argument, and structure.
+Topic Sentence: The sentence, usually at the start of a paragraph, that introduces and summarises the paragraph's main idea.
+Discourse Marker: A word or phrase used to organise, connect, or signal shifts in spoken or written discourse (e.g., "however," "on the other hand," "right," "anyway").
+
+GRAPHOLOGY AND LAYOUT
+Graphology: The study of the visual and presentational features of a text, including typography, layout, and images.
+Typography: The style, size, weight, and arrangement of printed text used to create meaning and guide the reader.
+Layout: The overall arrangement and organisation of text and images on a page or screen.
+Multimodal Text: A text that combines two or more modes of communication, such as written language, images, sound, or gesture.
+White Space: Areas of a page or screen deliberately left without text or images, used to guide the eye and create emphasis.
+Caption: Text accompanying an image, used to provide context or reinforce the text's message.
+Heading/Subheading: Titles used to organise text into sections, signalling the topic of each division to the reader.

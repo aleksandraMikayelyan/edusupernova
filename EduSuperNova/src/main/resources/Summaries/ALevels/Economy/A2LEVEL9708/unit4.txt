@@ -1,0 +1,56 @@
+GOVERNMENT MACROECONOMIC POLICIES
+
+FISCAL POLICY
+Definition: Use of government spending and taxation to influence the economy.
+Expansionary fiscal policy: Increase G or reduce T → higher AD → stimulates growth.
+Contractionary fiscal policy: Reduce G or increase T → lower AD → controls inflation.
+
+Budget positions:
+  Budget deficit: G > T → government borrows (increases national debt).
+  Budget surplus: T > G → government pays off debt.
+  Balanced budget: T = G.
+Automatic stabilisers: Tax and benefit systems that automatically stabilise the economy.
+  Example: In recession, tax revenue falls and unemployment benefits rise → cushion the fall in AD.
+Crowding out: Government borrowing pushes up interest rates → reduces private investment.
+Time lags: Fiscal policy takes time to implement and take effect (recognition, decision, impact lags).
+
+MONETARY POLICY
+Definition: Use of interest rates, money supply, and credit conditions to influence the economy.
+Tools:
+  Interest rate changes: Central bank sets base rate; affects borrowing costs and consumption.
+  Quantitative easing (QE): Central bank creates money to buy financial assets → increases money supply.
+  Reserve requirements: Minimum fraction of deposits banks must hold.
+Transmission mechanism: Interest rate cuts → lower borrowing costs → higher C and I → higher AD.
+Limitations: Liquidity trap (interest rates at zero but no increase in spending), time lags.
+
+SUPPLY-SIDE POLICIES
+Aim to increase productive capacity (shift LRAS rightward).
+Market-based supply-side policies:
+  Tax cuts: Increase incentive to work and invest.
+  Deregulation: Reduce barriers to competition and entry.
+  Privatisation: Improve efficiency through profit motive.
+  Trade union reform: Reduce wage rigidity and improve labour market flexibility.
+Interventionist supply-side policies:
+  Education and training: Improve human capital.
+  Infrastructure investment: Reduce costs of production.
+  Research and development: Encourage innovation.
+  Industrial policy: Support strategic industries.
+
+CONFLICTS BETWEEN MACROECONOMIC OBJECTIVES
+Growth vs Inflation: Rapid growth can overheat economy and cause inflation (Keynesian).
+Unemployment vs Inflation: Phillips Curve — inverse relationship in short run.
+  Long-run Phillips Curve: Vertical at NAIRU — no permanent trade-off.
+  NAIRU (Non-Accelerating Inflation Rate of Unemployment): Natural unemployment rate.
+Growth vs Current account: Higher growth increases imports → worsens current account.
+Inflation vs Competitiveness: High inflation raises export prices → reduces export demand.
+
+EFFECTIVENESS OF POLICIES
+Fiscal policy: Effective when there is spare capacity; less effective near full employment.
+Monetary policy: Effective in controlling inflation; less so in recession (pushing on a string).
+Supply-side policies: Long-term solutions but slow to take effect.
+Policy mix: Combining policies to achieve multiple objectives simultaneously.
+
+ECONOMIC INDICATORS
+Leading indicators: Predict future economic activity (e.g. business confidence surveys).
+Lagging indicators: Confirm trends after they occur (e.g. unemployment rate).
+Coincident indicators: Move with the economy in real time (e.g. GDP growth).

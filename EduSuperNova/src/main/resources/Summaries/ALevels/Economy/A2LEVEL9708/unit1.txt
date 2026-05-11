@@ -1,0 +1,59 @@
+THE PRICE SYSTEM IN THEORY AND PRACTICE
+
+ELASTICITY OF DEMAND
+Price Elasticity of Demand (PED): Measures the responsiveness of quantity demanded to a change in price.
+  PED = % change in quantity demanded / % change in price
+  - PED > 1: Elastic demand (consumers sensitive to price changes)
+  - PED < 1: Inelastic demand (consumers insensitive to price changes)
+  - PED = 1: Unit elastic
+Determinants of PED: availability of substitutes, proportion of income, necessity vs luxury, time period.
+
+Income Elasticity of Demand (YED): Responsiveness of demand to a change in income.
+  YED = % change in quantity demanded / % change in income
+  - YED > 0: Normal good
+  - YED < 0: Inferior good
+  - YED > 1: Luxury good
+
+Cross Elasticity of Demand (XED): Responsiveness of demand for one good to a price change in another.
+  XED > 0: Substitutes
+  XED < 0: Complements
+  XED = 0: Unrelated goods
+
+ELASTICITY OF SUPPLY
+Price Elasticity of Supply (PES): Responsiveness of quantity supplied to a change in price.
+  PES = % change in quantity supplied / % change in price
+  - PES > 1: Elastic supply
+  - PES < 1: Inelastic supply
+Determinants: time period, factor mobility, spare capacity, storability.
+
+CONSUMER AND PRODUCER SURPLUS
+Consumer Surplus: The difference between what consumers are willing to pay and what they actually pay.
+  Represented by the area above the price line and below the demand curve.
+Producer Surplus: The difference between the price producers receive and the minimum they would accept.
+  Represented by the area below the price line and above the supply curve.
+Total (Community) Surplus: Consumer surplus + producer surplus = total welfare.
+
+MARKET FAILURES
+Externalities: Costs or benefits that fall on third parties not involved in the transaction.
+  Negative externality (e.g. pollution): MSC > MPC → overproduction → deadweight loss.
+  Positive externality (e.g. education): MSB > MPB → underproduction → deadweight loss.
+
+Public Goods: Non-excludable and non-rivalrous (e.g. national defence, lighthouses).
+  Free-rider problem: individuals consume without paying → market under-provides.
+
+Merit Goods: Goods with greater social benefit than private benefit (e.g. healthcare, education).
+  Government encourages consumption through subsidies or direct provision.
+
+Demerit Goods: Goods with greater social cost than private cost (e.g. tobacco, alcohol).
+  Government discourages consumption through taxes or regulation.
+
+Information Failures: Asymmetric information leads to adverse selection and moral hazard.
+  Example: Insurance markets, second-hand car markets (Akerlof's "lemons" problem).
+
+GOVERNMENT POLICIES TO CORRECT MARKET FAILURES
+Taxes: Internalise negative externalities by raising price to reflect MSC (Pigouvian tax).
+Subsidies: Encourage consumption/production of goods with positive externalities.
+Price controls: Maximum prices (e.g. rent control) and minimum prices (e.g. minimum wage).
+Regulation: Direct controls on quantity, quality, or behaviour.
+Tradeable permits: Cap-and-trade systems for pollution rights.
+Provision of information: Reduce information asymmetry.

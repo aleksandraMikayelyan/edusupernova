@@ -5,6 +5,7 @@ import com.edusupernova.edusupernova.data.UserRepository;
 import com.edusupernova.edusupernova.dto.request.GoogleAuthRequest;
 import com.edusupernova.edusupernova.dto.request.LoginRequest;
 import com.edusupernova.edusupernova.dto.request.RegisterRequest;
+import com.edusupernova.edusupernova.dto.request.VerifyEmailRequest;
 import com.edusupernova.edusupernova.dto.response.AuthResponse;
 import com.edusupernova.edusupernova.dto.response.MessageResponse;
 import com.edusupernova.edusupernova.dto.response.UserSummaryDTO;
@@ -50,10 +51,11 @@ import java.util.UUID;
 @Transactional
 public class UsersService {
 
-    private final UserRepository          userRepository;
-    private final PasswordEncoder         passwordEncoder;
-    private final AuthenticationManager   authenticationManager;
-    private final JwtTokenUtil            jwtTokenUtil;
+    private final UserRepository             userRepository;
+    private final PasswordEncoder            passwordEncoder;
+    private final AuthenticationManager      authenticationManager;
+    private final JwtTokenUtil               jwtTokenUtil;
+    private final EmailVerificationService   emailVerificationService;
 
     @Value("${google.oauth2.client-id}")
     private String googleClientId;
@@ -76,11 +78,9 @@ public class UsersService {
         Users user = buildUser(request);
         userRepository.save(user);
 
-        // TODO: Email verification service will be added later
-        // emailVerificationService.sendCode(request.email());
+        emailVerificationService.sendCode(request.email());
 
-        return new MessageResponse(
-                "Account created. Please log in to continue.");
+        return new MessageResponse("Verification code sent to " + request.email());
     }
 
     /**
@@ -131,6 +131,28 @@ public class UsersService {
             user = buildGoogleUser(email, name);
             userRepository.save(user);
         }
+
+        return buildAuthResponse(user);
+    }
+
+    /**
+     * Step 2 of registration: validates the 6-digit code and issues a JWT.
+     *
+     * @throws BusinessRuleException if the code is wrong or expired
+     */
+    public AuthResponse verifyEmail(VerifyEmailRequest request) {
+        Users user = userRepository.findByEmail(request.email());
+        if (user == null) {
+            throw new BusinessRuleException("No account found for that email address");
+        }
+
+        boolean valid = emailVerificationService.validateCode(request.email(), request.code());
+        if (!valid) {
+            throw new BusinessRuleException("Invalid or expired verification code");
+        }
+
+        user.setEmailVerified(true);
+        userRepository.save(user);
 
         return buildAuthResponse(user);
     }

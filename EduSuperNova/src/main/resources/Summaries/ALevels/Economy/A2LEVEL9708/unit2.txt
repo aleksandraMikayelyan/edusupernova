@@ -1,0 +1,56 @@
+GOVERNMENT MICROECONOMIC INTERVENTION
+
+TAXATION
+Direct taxes: Levied on income and profit (e.g. income tax, corporation tax).
+  Progressive tax: Higher earners pay a higher percentage rate.
+  Regressive tax: Takes a larger proportion of income from lower earners.
+Indirect taxes: Levied on expenditure (e.g. VAT, excise duty).
+  Specific tax: Fixed amount per unit (shifts supply curve upward by constant amount).
+  Ad valorem tax: Percentage of price (shifts supply curve upward by increasing amount).
+Tax incidence: Who bears the burden depends on relative elasticity of demand and supply.
+  Inelastic demand → consumers bear more of the tax burden.
+  Elastic demand → producers bear more of the tax burden.
+
+SUBSIDIES
+A payment by government to producers or consumers to lower price or increase output.
+Effect: Shifts supply curve rightward, reducing equilibrium price and increasing quantity.
+Subsidy incidence: Who benefits depends on elasticity; inelastic supply → producers benefit more.
+Used to encourage positive externalities, support merit goods, or assist specific industries.
+
+PRICE CONTROLS
+Maximum price (price ceiling): Set below equilibrium to make goods affordable.
+  Creates excess demand (shortage) as quantity demanded exceeds quantity supplied.
+  Examples: rent controls, food price caps.
+Minimum price (price floor): Set above equilibrium to protect producers.
+  Creates excess supply (surplus) as quantity supplied exceeds quantity demanded.
+  Examples: minimum wage, EU Common Agricultural Policy (CAP) intervention prices.
+
+REGULATION
+Direct controls on market behaviour imposed by government or regulatory bodies.
+Types: pollution limits, product safety standards, competition law, licensing.
+Regulatory capture: Regulated industries influence regulators in their own favour.
+Cost-benefit analysis (CBA): Used to evaluate public projects by comparing total costs and benefits.
+  Challenge: Placing monetary values on intangible costs/benefits (e.g. lives, environment).
+
+COMPETITION POLICY
+Aims to promote competition and prevent monopoly abuse.
+Anti-competitive behaviour: Price-fixing, market sharing, predatory pricing, abuse of dominance.
+Merger control: Authorities assess whether mergers substantially reduce competition.
+Natural monopoly: Declining average costs throughout market → single firm most efficient.
+  Regulated to prevent exploitation: price caps (RPI-X), rate of return regulation.
+
+PRIVATISATION AND DEREGULATION
+Privatisation: Transfer of state-owned enterprises to private ownership.
+  Arguments for: efficiency, profit motive, reduced government borrowing.
+  Arguments against: profit over public interest, natural monopoly exploitation.
+Deregulation: Removal of legal barriers to entry in markets.
+  Encourages competition but may reduce safety standards.
+Nationalisation: Government takes control of private enterprises.
+  Justified for natural monopolies, strategic industries, or market failure correction.
+
+LABOUR MARKET ISSUES
+Wage determination: Interaction of labour demand (MRP) and labour supply.
+Monopsony: Single buyer of labour → wages driven below competitive level.
+Trade unions: Collective bargaining raises wages but may reduce employment.
+Wage differentials: Explained by skill levels, compensating differentials, discrimination.
+Minimum wage: Reduces poverty but may cause unemployment if set above equilibrium.

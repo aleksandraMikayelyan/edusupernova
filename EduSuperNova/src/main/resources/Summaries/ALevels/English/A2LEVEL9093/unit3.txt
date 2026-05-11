@@ -1,0 +1,53 @@
+DISCOURSE AND PRAGMATICS
+
+PRAGMATICS
+Pragmatics: The study of how context shapes meaning beyond the literal words spoken.
+Utterance meaning vs sentence meaning: What is communicated vs what the words literally say.
+Context: Physical setting, social roles, shared knowledge, previous discourse.
+Deixis: Words that point to things in context (e.g. "here", "now", "this", "she").
+  Personal deixis: I, you, he/she.
+  Spatial deixis: here, there.
+  Temporal deixis: now, then, yesterday.
+
+SPEECH ACTS (Austin & Searle)
+Locutionary act: The literal act of saying something.
+Illocutionary act: The intended action performed through speech (e.g. promising, requesting, warning).
+Perlocutionary act: The effect the utterance has on the listener.
+Illocutionary force: The function or intention behind an utterance.
+Performatives: Utterances that perform an action when spoken (e.g. "I promise", "I hereby sentence you").
+Direct speech acts: Form matches function (e.g. "What time is it?" — genuine question).
+Indirect speech acts: Form does not match function (e.g. "Can you pass the salt?" — a request, not a question about ability).
+
+GRICE'S COOPERATIVE PRINCIPLE
+Grice proposed that speakers follow maxims to communicate efficiently:
+Maxim of Quantity: Be as informative as required; don't be more informative than necessary.
+Maxim of Quality: Don't say what you believe to be false; don't say what you lack evidence for.
+Maxim of Relation: Be relevant.
+Maxim of Manner: Avoid obscurity and ambiguity; be brief and orderly.
+Implicature: Meaning conveyed beyond the literal words, generated when maxims appear to be flouted.
+  Conversational implicature: Context-dependent implied meaning.
+  Conventional implicature: Meaning tied to specific words (e.g. "even", "but").
+Flouting a maxim: Deliberately breaking a maxim to generate implicature (e.g. irony, understatement).
+
+POLITENESS THEORY (Brown & Levinson)
+Face: The public self-image that people want to maintain.
+  Positive face: The desire to be liked, approved of, and accepted.
+  Negative face: The desire to be free from imposition.
+Face-Threatening Acts (FTAs): Utterances that threaten someone's positive or negative face.
+Politeness strategies:
+  Bald on record: Direct, no mitigation (e.g. "Sit down").
+  Positive politeness: Affirm the listener's desires (e.g. "We're all in this together").
+  Negative politeness: Minimise imposition (e.g. "I'm sorry to bother you, but...").
+  Off record: Indirect, ambiguous (e.g. "It's cold in here" as a request to close a window).
+  Withhold the FTA: Don't perform the act.
+
+CONVERSATION ANALYSIS
+Turn-taking: Rules governing when speakers change (Sacks, Schegloff & Jefferson).
+  Transition Relevance Places (TRPs): Points where speaker change is possible.
+  Adjacency pairs: Conversational sequences that come in pairs (e.g. question-answer, greeting-greeting).
+  Preferred response: The expected, face-saving response.
+  Dispreferred response: The unexpected response, often hedged or delayed.
+Topic management: How topics are introduced, maintained, and changed.
+Repairs: Corrections of errors or misunderstandings in conversation.
+Backchannels: Signals that show a listener is paying attention (e.g. "mm", "yeah", "I see").
+Interruptions vs overlaps: Interruptions violate turn-taking; overlaps are supportive.

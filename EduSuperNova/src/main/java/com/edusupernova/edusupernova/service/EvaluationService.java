@@ -156,10 +156,8 @@ public class EvaluationService {
 
         try {
             log.info("Test {} — Groq evaluation starting for {} open-ended questions", testId, openAnswers.size());
-            String context = String.format("Exam: %s, Paper: %s", examName, paperName);
-
             List<OpenEndedEvaluator.EvaluationResult> aiResults =
-                    openEndedEvaluator.evaluateBatch(openAnswers, context);
+                    openEndedEvaluator.evaluateBatch(openAnswers, examName, paperName);
 
             persistOpenEndedResults(openAnswers, aiResults);
             log.info("Test {} — Groq evaluation complete and persisted", testId);

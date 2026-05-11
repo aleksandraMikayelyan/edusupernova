@@ -1,58 +1,49 @@
-UNIT 9: REPRESENTATION OF DATA
+INTRODUCTION TO INTEGRATION
+Integration is the reverse process of differentiation and is the second major branch of calculus. It is used to find areas under curves and to reconstruct original functions from their rates of change.
 
-INTRODUCTION TO STATISTICS
-Statistics is the science of collecting, analyzing, and presenting data. To make data understandable, it must be organized into visual representations that reveal patterns and trends.
+INTEGRATION: The process of finding the original function when its derivative is known. Also called anti-differentiation.
 
-DATA: A collection of facts, such as numbers, words, measurements, or observations.
-VARIABLE: A characteristic that can be measured or counted.
+THE POWER RULE FOR INTEGRATION
+The power rule is the fundamental rule for integrating polynomial terms.
 
-CATEGORICAL AND NUMERICAL DATA
-Data is primarily classified into two types depending on the nature of the information being recorded.
+- For any rational n ≠ -1: ∫ x^n dx = x^(n+1) / (n + 1) + c
+- The constant c is the constant of integration and must always be included in indefinite integrals.
+- A constant k integrates as: ∫ k dx = kx + c
+- The sum/difference rule: the integral of a sum or difference is the sum or difference of individual integrals.
 
-Categorical (Qualitative): Data that describes qualities or characteristics (e.g., color, gender).
+CONSTANT OF INTEGRATION
+Every indefinite integral contains an arbitrary constant c, because differentiating any constant gives zero.
 
-Numerical (Quantitative): Data that can be measured and given a numerical value.
+NOTE: The value of c is determined when a boundary condition is given — such as a known point on the curve.
 
-Discrete Data: Numerical data that can only take specific values (e.g., number of students).
+DEFINITE INTEGRALS
+A definite integral has specified upper and lower limits and produces a numerical value.
 
-Continuous Data: Numerical data that can take any value within a range (e.g., height, time).
+DEFINITION: ∫[a to b] f(x) dx = F(b) - F(a), where F(x) is any anti-derivative of f(x).
 
-STEM-AND-LEAF DIAGRAMS
-A stem-and-leaf diagram is a way to display data while preserving the individual data points.
+- The result represents the signed area between the curve y = f(x) and the x-axis from x = a to x = b.
+- Regions below the x-axis give a negative result; regions above give a positive result.
 
-The "stem" is the first digit or digits of a number.
+FINDING THE EQUATION OF A CURVE
+If the gradient function dy/dx is known and a point on the curve is given, the equation of the curve can be recovered by integrating.
 
-The "leaf" is the final digit.
+Steps:
+1. Integrate dy/dx to obtain y = F(x) + c.
+2. Substitute the known point (x, y) to find c.
+3. Write the complete equation of the curve.
 
-Every diagram must include a key to explain how to read the values.
+AREA UNDER A CURVE
+The area bounded by the curve y = f(x), the x-axis, and the vertical lines x = a and x = b is:
 
-HISTOGRAMS
-Histograms are used to represent continuous data that has been grouped into intervals or classes.
+Area = ∫[a to b] f(x) dx, provided f(x) ≥ 0 on [a, b].
 
-DEFINITION: Frequency density is the ratio of the frequency to the class width (Frequency / Class Width).
+- If the curve dips below the x-axis, split the integral at the x-intercepts and take the absolute value of each part.
 
-In a histogram, the area of each bar represents the frequency, not the height.
+AREA BETWEEN TWO CURVES
+The area enclosed between two curves y = f(x) and y = g(x) where f(x) ≥ g(x) is:
 
-The vertical axis is labeled as "Frequency Density."
+Area = ∫[a to b] [f(x) - g(x)] dx
 
-Bars must be joined together because the data is continuous.
+where a and b are the x-coordinates of the intersection points.
 
-CUMULATIVE FREQUENCY GRAPHS
-A cumulative frequency graph (or ogive) shows the running total of frequencies.
-
-Points are plotted at the upper class boundaries of each interval.
-
-The graph is used to estimate the median, quartiles, and percentiles.
-
-The median is found at the 50% mark of the total frequency.
-
-BOX-AND-WHISKER PLOTS
-A box-and-whisker plot provides a visual summary of the distribution of a data set based on a five-number summary.
-
-The five numbers are: Minimum, Lower Quartile (Q1), Median (Q2), Upper Quartile (Q3), and Maximum.
-
-The "box" contains the middle 50% of the data (the Interquartile Range).
-
-The "whiskers" extend to the minimum and maximum values.
-
-REMEMBER: Comparing box plots allows for a quick visual comparison of the spread and central tendency of different data sets.
+NOTE: Always sketch the curves to determine which function lies above before setting up the integral.

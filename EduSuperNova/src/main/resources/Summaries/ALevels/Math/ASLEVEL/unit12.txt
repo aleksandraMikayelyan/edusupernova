@@ -1,0 +1,55 @@
+INTRODUCTION TO MECHANICS: FORCES AND KINEMATICS
+Mechanics is the branch of mathematics that models the real-world behaviour of objects under the influence of forces and motion. This unit covers the fundamental concepts of forces in equilibrium and the kinematics of objects moving in a straight line.
+
+FORCE: A push or pull acting on an object, measured in Newtons (N). Force is a vector quantity.
+MASS: The amount of matter in an object, measured in kilograms (kg). Mass is a scalar.
+
+TYPES OF FORCES
+Common forces encountered in AS Level Mechanics include:
+
+- Weight (W): The gravitational force acting downward on an object. W = mg, where g ≈ 9.8 m/s² or 10 m/s².
+- Normal Reaction (R or N): The perpendicular contact force exerted by a surface on an object.
+- Tension (T): The pulling force in a string, rope, or rod.
+- Friction (F): A force that opposes relative motion between surfaces in contact.
+- Thrust: A pushing force, typically from a rod.
+
+FRICTION
+Friction acts to oppose the motion or tendency of motion of an object.
+
+- Maximum (limiting) friction: F_max = μR, where μ is the coefficient of friction and R is the normal reaction.
+- If the object is in equilibrium or moving at constant velocity, F ≤ μR.
+- The friction force is only equal to μR when the object is on the point of sliding.
+
+EQUILIBRIUM OF A PARTICLE
+A particle is in equilibrium when the net force acting on it is zero.
+
+- Resolve forces horizontally and vertically: ΣF_x = 0 and ΣF_y = 0.
+- For objects on inclined planes, resolve parallel and perpendicular to the surface.
+
+NOTE: Always draw a clear force diagram before resolving.
+
+KINEMATICS: EQUATIONS OF MOTION
+Kinematics describes the motion of objects without considering the cause. For uniform acceleration (constant a), five equations link the variables u, v, a, s, and t.
+
+SUVAT EQUATIONS (for constant acceleration):
+- v = u + at
+- s = ut + 0.5at²
+- s = vt - 0.5at²
+- v² = u² + 2as
+- s = 0.5(u + v)t
+
+Where: u = initial velocity, v = final velocity, a = acceleration, s = displacement, t = time.
+
+VELOCITY–TIME GRAPHS
+A velocity–time graph provides a powerful visual tool for analysing motion.
+
+- The gradient of a v-t graph equals acceleration.
+- The area under a v-t graph equals displacement.
+- A horizontal line indicates constant velocity (zero acceleration).
+- A straight sloped line indicates uniform (constant) acceleration.
+
+VERTICAL MOTION UNDER GRAVITY
+When an object moves vertically under gravity (neglecting air resistance), use the SUVAT equations with a = -g (taking upward as positive) or a = +g (taking downward as positive).
+
+- At the highest point of a projectile's path, the vertical velocity v = 0.
+- The time to reach the highest point equals the time to return to the same height.

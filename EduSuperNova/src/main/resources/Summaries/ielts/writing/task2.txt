@@ -1,0 +1,231 @@
+IELTS WRITING TASK 2
+
+Task 2 is the essay component. You write at least 250 words in approximately 40 minutes in response to a point of view, argument, or problem. Task 2 is worth twice as many marks as Task 1 — it has the greatest single impact on your overall Writing band score.
+
+WHAT IS TESTED
+
+The four marking criteria are identical to Task 1, but the weighting of expectations rises significantly:
+
+TASK RESPONSE: Did you fully address all parts of the question? Is your position clear? Is the argument developed and supported? Does every paragraph contribute to answering the question?
+
+COHERENCE AND COHESION: Is the essay logically structured? Do paragraphs have clear central ideas? Are cohesive devices used accurately and not mechanically?
+
+LEXICAL RESOURCE: Do you use a wide range of vocabulary? Do you avoid repetition? Do you use vocabulary accurately, including less common words and collocations?
+
+GRAMMATICAL RANGE AND ACCURACY: Do you use a variety of complex structures? Is grammar accurate throughout?
+
+KEY CONCEPT: Task Response is the foundation. You can write beautifully structured prose with advanced vocabulary, but if you have not answered the question asked — all parts of it — your Task Response score will cap your entire band. Read the question with surgical precision before writing a single word.
+
+THE FIVE QUESTION TYPES
+
+OPINION ESSAY (Agree/Disagree):
+"To what extent do you agree or disagree with this statement?"
+"Do you think [statement] is a positive or negative development?"
+YOUR TASK: State and defend YOUR position with clear reasoning and evidence.
+
+DISCUSSION ESSAY (Discuss Both Views):
+"Discuss both views and give your own opinion."
+"Some people think X. Others believe Y. Discuss both views."
+YOUR TASK: Present BOTH perspectives fairly, then give your opinion in the conclusion (or weave it throughout).
+
+ADVANTAGES AND DISADVANTAGES ESSAY:
+"Discuss the advantages and disadvantages of this development."
+"Do the advantages outweigh the disadvantages?"
+YOUR TASK: Present and discuss both sides. If asked for an opinion ("outweigh"), give one.
+
+PROBLEM AND SOLUTION ESSAY:
+"What are the causes of this problem and what measures could be taken to solve it?"
+"What problems does this cause and what solutions can you suggest?"
+YOUR TASK: Identify causes or problems AND propose specific, realistic solutions.
+
+TWO-PART QUESTION ESSAY:
+"Why is this the case? What can be done about it?"
+"Do you think this is positive? What can individuals do to help?"
+YOUR TASK: Answer BOTH parts — failure to address one part is the most common Task Response error on this question type.
+
+KEY CONCEPT: The question type determines your essay structure. Attempting to write the same generic five-paragraph structure for every question type produces off-task responses for discussion essays, advantages/disadvantages essays, and two-part questions. Identify the type before planning.
+
+THE RESPONSE STRUCTURE BY QUESTION TYPE
+
+OPINION ESSAY STRUCTURE:
+- Introduction: Background sentence + clear thesis stating your position
+- Body 1: First reason supporting your position + example/evidence
+- Body 2: Second reason supporting your position + example/evidence
+- (Optional Body 3): Acknowledge the opposing view + brief rebuttal OR third supporting reason
+- Conclusion: Restate position, summarise main reasons, optional implication
+
+DISCUSSION ESSAY STRUCTURE:
+- Introduction: Background sentence + balanced overview of both views
+- Body 1: First view — explain it and provide supporting reasoning
+- Body 2: Second view — explain it and provide supporting reasoning
+- Conclusion: State YOUR opinion, explain why you favour this view, balanced closing
+
+ADVANTAGES/DISADVANTAGES STRUCTURE:
+- Introduction: Background + thesis (state whether advantages outweigh or not, if asked)
+- Body 1: Advantages — present two with supporting reasoning
+- Body 2: Disadvantages — present two with supporting reasoning
+- Conclusion: Restate your evaluative position + closing
+
+PROBLEM/SOLUTION STRUCTURE:
+- Introduction: Background + thesis acknowledging the issue and previewing your response
+- Body 1: Two or three causes/problems with explanation
+- Body 2: Two or three corresponding solutions with explanation
+- Conclusion: Restate the severity and the viability of solutions
+
+TWO-PART QUESTION STRUCTURE:
+- Introduction: Background + address both questions briefly
+- Body 1: Answer question one fully with supporting reasoning
+- Body 2: Answer question two fully with supporting reasoning
+- Conclusion: Synthesise both answers
+
+WRITING A STRONG INTRODUCTION
+
+The introduction has two components: a background sentence and a thesis.
+
+BACKGROUND SENTENCE: Contextualises the topic without using the prompt's exact words. Paraphrase the issue in your own language.
+
+THESIS STATEMENT: States your overall position or indicates how you will approach the essay. For opinion essays, state your view directly. For discussion essays, acknowledge both sides. For problem/solution essays, acknowledge the issue.
+
+WEAK INTRODUCTION (copied): "Nowadays, many people think that technology has made communication worse. Some people agree with this and some do not. This essay will discuss both sides."
+
+STRONG INTRODUCTION: "The rapid expansion of digital communication has fundamentally altered the way people interact, prompting debate over whether these changes have enriched or impoverished human connection. While technology has undoubtedly extended the reach of communication, concerns about its effect on the depth and quality of relationships deserve serious consideration. This essay will examine both perspectives before presenting a reasoned position."
+
+NOTE: Never use "In this essay, I will write about..." — it is too vague. Never use "I totally agree" — it is too informal. Your thesis should be precise and confident.
+
+WRITING STRONG BODY PARAGRAPHS
+
+The PEEL structure ensures every body paragraph is coherent and well-developed:
+
+POINT: The paragraph's central claim, stated in the first sentence. This is the topic sentence.
+
+EXPLANATION: Develop the claim with reasoning. Why is this true? How does it work?
+
+EVIDENCE: Support with a concrete example, data, real-world case, or logical illustration.
+
+LINK: Connect back to the essay question or the thesis. Show how this paragraph answers the question.
+
+EXAMPLE PEEL PARAGRAPH (Opinion essay on remote work):
+
+POINT: "One significant advantage of remote working is its positive impact on employee productivity."
+EXPLANATION: "When workers are freed from the distractions of a busy office environment — frequent interruptions, noisy colleagues, and unnecessary meetings — many are able to concentrate more effectively on complex tasks."
+EVIDENCE: "Studies from Stanford University, for instance, found that remote workers demonstrated a 13% improvement in performance compared to their office-based counterparts, a finding echoed by numerous companies that shifted to flexible working arrangements during the pandemic."
+LINK: "This suggests that the traditional assumption that physical presence in an office correlates with greater output is increasingly difficult to sustain."
+
+KEY CONCEPT: The weakest element in most student body paragraphs is the EXPLANATION. Students state a claim and then jump directly to an example without explaining the reasoning. The explanation is where your analytical ability is demonstrated — it is what separates Band 7 from Band 6.
+
+DEVELOPING A COUNTERARGUMENT
+
+For opinion essays at Band 7 and above, acknowledging and refuting the opposing view strengthens your argument by demonstrating intellectual balance.
+
+STRUCTURE FOR COUNTERARGUMENT + REBUTTAL:
+"Admittedly, [state the opposing view fairly]. However, [explain why your position is still stronger / why the concern is overstated / why the evidence points elsewhere]."
+
+EXAMPLE: "Admittedly, critics argue that excessive screen time associated with digital communication can lead to social isolation and mental health difficulties, particularly among young people. However, this concern, while legitimate, conflates the medium with misuse. Research consistently shows that digital communication used appropriately — to maintain existing relationships and build communities of interest — enhances rather than diminishes wellbeing."
+
+IMPORTANT: Never demolish the opposing view unfairly or dismiss it with a single word. A genuine engagement with the counterargument and a measured rebuttal demonstrates sophistication. This is what separates Band 7 from Band 6 in Task Response.
+
+WRITING A STRONG CONCLUSION
+
+The conclusion has two functions: restate your position and synthesise (do not merely summarise).
+
+WHAT A CONCLUSION MUST DO:
+- Clearly restate the main position or overall finding
+- Reference the main supporting reasons (briefly, not in full)
+- Optionally offer a broader implication or forward-looking statement
+
+WHAT A CONCLUSION MUST NOT DO:
+- Introduce new information, arguments, or evidence not discussed in the body
+- Simply copy sentences from the introduction or body
+- Be longer than the introduction (conclusions are typically 3 to 4 sentences)
+
+CONCLUSION SIGNAL PHRASES:
+- "In conclusion, it is clear that..."
+- "To summarise, while [acknowledging one side], [main position]."
+- "Overall, the evidence suggests that..."
+- "On balance, [position], primarily because [main reason]."
+
+WEAK CONCLUSION: "In conclusion, this essay has discussed the advantages and disadvantages of technology. There are many pros and cons. It is a complex issue."
+
+STRONG CONCLUSION: "In conclusion, while technology has unquestionably introduced challenges for face-to-face communication, its capacity to democratise access to information and connect individuals across geographical boundaries represents a net benefit to society. The key lies not in resisting technological change but in developing the digital literacy necessary to use these tools purposefully."
+
+VOCABULARY FOR TASK 2
+
+INTRODUCING ARGUMENTS:
+- "A compelling argument in favour of X is that..."
+- "It is widely argued that..." / "Many would contend that..."
+- "Perhaps the most persuasive case for X rests on..."
+- "One of the principal reasons for X is..."
+
+CONCEDING AND CONTRASTING:
+- "Admittedly, there is merit in the argument that..."
+- "While it is true that... it is nevertheless the case that..."
+- "Despite the apparent validity of this claim..."
+- "Notwithstanding these concerns..."
+
+GIVING EXAMPLES:
+- "This is clearly illustrated by..." / "A case in point is..."
+- "Evidence for this can be seen in..." / "Research consistently demonstrates..."
+- "Take, for example, the situation in..." / "Consider the case of..."
+
+DRAWING CONCLUSIONS WITHIN BODY PARAGRAPHS:
+- "This suggests that..." / "It follows, therefore, that..."
+- "The implication is clear:" / "What this demonstrates is..."
+- "This points to a broader pattern whereby..."
+
+EXPRESSING DEGREES OF CERTAINTY:
+- Certain: "It is clear that..." / "There is no doubt that..."
+- Probable: "It seems likely that..." / "Evidence strongly suggests..."
+- Possible: "It is possible that..." / "This may indicate..."
+- Tentative: "It could be argued that..." / "Some might suggest..."
+
+COMMON ESSAY TOPICS AND RELEVANT VOCABULARY
+
+TECHNOLOGY AND SOCIETY: automation, artificial intelligence, digital literacy, surveillance, data privacy, screen time, social media, misinformation, connectivity, digital divide.
+
+ENVIRONMENT: carbon emissions, renewable energy, sustainability, biodiversity, climate change, ecological footprint, conservation, deforestation, urbanisation.
+
+EDUCATION: curriculum, critical thinking, vocational training, academic achievement, equal access, standardised testing, lifelong learning, digital education, skills gap.
+
+HEALTH: sedentary lifestyle, mental health awareness, healthcare provision, preventive medicine, obesity epidemic, pharmaceutical industry, well-being.
+
+GLOBALISATION AND CULTURE: cultural homogenisation, economic inequality, migration, multiculturalism, free trade, soft power, cultural identity, diaspora.
+
+CRIME AND JUSTICE: deterrence, rehabilitation, recidivism, punitive measures, restorative justice, social inequality as a root cause, incarceration rates.
+
+URBANISATION: infrastructure, public transport, gentrification, affordable housing, smart cities, urban sprawl, community cohesion.
+
+GRAMMAR FOR BAND 7 AND ABOVE
+
+COMPLEX SENTENCES: Use subordinate clauses to show logical relationships. "Although short-term costs may be considerable, the long-term economic benefits of investing in renewable infrastructure are likely to outweigh them significantly."
+
+REDUCED RELATIVE CLAUSES: "Research conducted over the past decade..." rather than "Research that has been conducted over the past decade..."
+
+NOMINALISATIONS: Convert verbs to noun phrases for academic tone. "The government decided to invest" → "The government's decision to invest." "People communicate differently" → "Differences in communication patterns."
+
+HEDGING: Academic writing avoids absolute claims. Use "tends to," "in many cases," "evidence suggests," "it appears that" to qualify statements appropriately.
+
+IMPERSONAL STRUCTURES: "It is often claimed that..." / "It has been argued that..." / "There is growing evidence that..."
+
+TOP STRATEGIES FOR TASK 2
+
+Strategy: Spend 5 full minutes planning. Identify the question type, your position, your two main arguments, and your examples before writing a single sentence. Students who plan score higher consistently.
+
+Strategy: Write your thesis before your background sentence — identify your position first, then craft the introduction around it.
+
+Strategy: Each body paragraph must have ONE central claim in its topic sentence. If you find yourself writing about two different ideas in the same paragraph, split it.
+
+Strategy: Use your final 4 to 5 minutes for proofreading. Fix grammar errors, check vocabulary precision, and ensure your conclusion restates your position.
+
+Strategy: Length matters but quality over quantity. A focused, well-argued 260-word essay outscores a rambling 320-word one. Aim for 270 to 290 words.
+
+COMMON MISTAKES TO AVOID
+
+- Addressing only one part of a two-part question
+- Taking a vague or contradictory position in an opinion essay — be clear and commit
+- Listing points as bullets rather than developing them as paragraphs with explanation and evidence
+- Writing the same generic five-paragraph structure regardless of question type
+- Starting every sentence with "I think" or "I believe" — use varied structures
+- Writing an introduction that is longer than a body paragraph
+- Including irrelevant personal anecdotes not tied to the argument
+- Failing to link examples back to the paragraph's central claim
+- Copying topic vocabulary from the question without paraphrasing in the introduction

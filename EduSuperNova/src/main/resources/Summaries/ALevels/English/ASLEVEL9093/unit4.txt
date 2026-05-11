@@ -1,0 +1,68 @@
+AUDIENCE
+Audience: The intended or actual readers, listeners, or viewers of a text, whose characteristics shape all aspects of language choice.
+Primary Audience: The main, intended recipient of a text.
+Secondary Audience: Anyone who reads or receives a text beyond its primary intended recipient.
+Target Audience: The specific group a text is designed to appeal to or communicate with.
+Mass Audience: A large, diverse, and largely anonymous audience, typical of broadcast media and popular publications.
+Niche Audience: A small, specialised audience with specific shared interests, knowledge, or values.
+Demographic: A statistical category used to describe an audience, including age, gender, socioeconomic class, education level, and location.
+Assumed Knowledge: Information the writer takes for granted the audience already possesses, shaping how much explanation is provided.
+Audience Positioning: The way in which a text constructs and addresses its audience, often aligning them with particular values or perspectives.
+Direct Address: Explicitly addressing the reader using second-person pronouns ("you") to create intimacy or engagement.
+Mode of Address: The overall approach a writer takes in relating to their audience — formal, informal, authoritative, collaborative, etc.
+
+PURPOSE
+Purpose: The reason or intention behind the creation of a text; what the writer is trying to achieve.
+Primary Purpose: The dominant or most important function a text is designed to perform.
+Secondary Purpose: An additional, subsidiary function of the text that complements the primary purpose.
+To Inform: To provide the reader with factual knowledge or data about a subject.
+To Explain: To make something clearer or more comprehensible by providing detail, context, or analysis.
+To Instruct: To give step-by-step directions or guidance that enable the reader to perform a task.
+To Persuade: To change or reinforce the reader's attitude, belief, or behaviour regarding an issue.
+To Argue: To present a sustained, logical case in defence of a particular position.
+To Advise: To offer recommendations or guidance to help the reader make decisions or improve their situation.
+To Entertain: To engage and amuse the reader for pleasure, through humour, narrative, or vivid description.
+To Describe: To create a vivid verbal picture of a person, place, object, or experience.
+To Analyse: To examine something systematically by breaking it into its component parts.
+To Review: To assess or evaluate a product, performance, or text, offering a reasoned judgement.
+
+CONTEXT
+Context: The circumstances surrounding the production, distribution, and reception of a text, which shape its meaning and interpretation.
+Historical Context: The time period in which a text was written, including its cultural norms, political climate, and social attitudes.
+Social Context: The social conditions, class structures, and community values that influenced the production or reception of a text.
+Cultural Context: The shared beliefs, traditions, values, and practices of a society that inform a text's content and reception.
+Political Context: The power structures, ideologies, and political events relevant to the creation and reception of a text.
+Biographical Context: Details of the writer's personal life and experiences that may influence the text's content or perspective.
+Reception Context: The circumstances in which an audience receives and interprets a text, which may differ from the original context of production.
+Intertextuality: The relationship between texts; the way a text references, alludes to, or is shaped by other texts.
+Discourse Community: A group of people who share common goals, values, and conventions in their use of language (e.g., the legal community, the scientific community).
+
+REGISTER, FORMALITY, AND STYLE
+Register: The variety of language used in a particular social situation, shaped by the field, tenor, and mode of communication.
+Formal Register: Language associated with official, professional, or academic contexts, characterised by Standard English, complex syntax, and impersonal tone.
+Informal Register: Language characteristic of casual, personal, or social contexts, marked by colloquialisms, contractions, and relaxed syntax.
+Standard English: The prestige variety of English, associated with education, formal writing, and national media; characterised by accepted grammar and spelling conventions.
+Non-Standard English: Language that departs from Standard English conventions, including dialects, slang, and vernacular forms.
+Dialect: A regional or social variety of a language, with its own vocabulary, grammar, and pronunciation features distinct from Standard English.
+Idiolect: The unique language variety of an individual, reflecting their personal background, experiences, and personality.
+Sociolect: A variety of language associated with a particular social group, defined by factors such as class, age, gender, or occupation.
+Accent: The distinctive way words are pronounced by a speaker from a particular region or social group.
+Code-Switching: The practice of moving between two or more languages or language varieties within a conversation or text.
+Hedging: The use of cautious or tentative language to soften the force of a claim and avoid committing fully (e.g., "perhaps," "it seems that," "it could be argued").
+Qualification: The addition of conditions or limitations to a statement to make it more accurate or less absolute.
+
+MEDIA AND NON-FICTION TEXT TYPES
+Broadsheet: A large-format newspaper traditionally associated with serious, in-depth reporting and a formal register, targeting educated readers.
+Tabloid: A smaller-format newspaper associated with popular journalism, sensational headlines, emotive language, and visual impact.
+Editorial: An article written by a newspaper or magazine's editor expressing the publication's official opinion on an issue.
+Column: A regularly published piece by a named journalist or commentator, often expressing personal opinion in a distinctive voice.
+Feature Article: A long-form journalistic piece exploring a topic in depth, combining factual reporting with narrative and analysis.
+Reportage: A style of writing that recreates events through vivid, first-hand descriptive detail, often blurring the line between journalism and literature.
+Review: A critical evaluation of a cultural product (book, film, restaurant, performance), combining description with reasoned personal judgement.
+Opinion Piece: A journalistic text in which a writer presents and defends a personal viewpoint on a current issue.
+Blog: An informal, regularly updated online text written in a personal voice, often addressing a specific topic or audience.
+Manifesto: A public declaration of principles, policies, or intentions, typically issued by a political group or movement.
+Autobiography: A first-person account of the writer's own life, covering significant experiences and reflecting on their meaning.
+Memoir: A form of autobiographical writing focused on a specific period, event, or relationship rather than the full life narrative.
+Travel Writing: A genre that combines personal narrative, description of place, and cultural observation, often exploring the writer's own identity and assumptions.
+Literary Non-Fiction: Non-fiction writing that employs the techniques of literary fiction — narrative, imagery, characterisation — to produce an aesthetically engaging account of real events.

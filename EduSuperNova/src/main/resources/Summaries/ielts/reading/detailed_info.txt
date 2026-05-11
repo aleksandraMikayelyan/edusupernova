@@ -1,0 +1,166 @@
+DETAILED INFORMATION IN IELTS READING
+
+Detail-focused questions are the backbone of the IELTS Academic and General Training Reading tests. They require you to locate specific, precise information within a passage and match it accurately to a question. Unlike main idea questions, these are won or lost on the quality of your search technique and your ability to recognise paraphrase.
+
+WHAT DETAILED INFORMATION QUESTIONS TEST
+
+These questions ask you to find explicit facts, figures, conditions, explanations, or descriptions stated in the text. The information exists in the passage — your job is to locate it accurately and confirm it matches the question precisely.
+
+DETAIL QUESTION PRINCIPLE: The answer is always in the text. Unlike inference questions, detail questions do not require you to draw conclusions. They require you to find and verify. Any answer that requires you to add your own reasoning or outside knowledge is wrong.
+
+KEY CONCEPT: The greatest challenge in detail questions is not comprehension — it is paraphrase recognition. The question and its answer options will use different words from the passage to express the same idea. Training your paraphrase radar is the single most powerful skill for this question type.
+
+THE FIVE MAIN DETAIL QUESTION TYPES
+
+TRUE / FALSE / NOT GIVEN
+
+This is the most widely misunderstood question type on IELTS Reading. It tests factual claims against the passage.
+
+TRUE: The statement agrees with information in the passage. The passage explicitly supports it.
+
+FALSE: The statement contradicts information in the passage. The passage explicitly says the opposite.
+
+NOT GIVEN: The statement is neither confirmed nor contradicted. The passage simply does not address it — there is no relevant information either way.
+
+KEY CONCEPT: NOT GIVEN does not mean the statement sounds wrong or unlikely. It means the text is silent on it. If you cannot find any sentence in the passage that directly relates to the claim in the question, the answer is NOT GIVEN.
+
+THE MOST COMMON ERROR IN TRUE/FALSE/NOT GIVEN: Students mark NOT GIVEN as FALSE when they cannot find the information. These are completely different answers. FALSE requires the passage to actively contradict the statement. NOT GIVEN means the passage offers no evidence either way.
+
+TEST FOR NOT GIVEN: Ask yourself — "Does the text say ANYTHING about this specific claim?" If yes, it is TRUE or FALSE. If the passage is entirely silent, it is NOT GIVEN.
+
+IMPORTANT: Do not use outside knowledge. If a statement seems obviously false based on your general knowledge but the passage does not contradict it, the answer is NOT GIVEN. IELTS tests only what the passage says.
+
+YES / NO / NOT GIVEN
+
+Structurally identical to TRUE/FALSE/NOT GIVEN but used for passages expressing opinions, claims, or arguments rather than facts. Used in passages written in the first person or expressing a researcher's or author's view.
+
+YES: The statement agrees with the writer's view or claim.
+NO: The statement contradicts the writer's view or claim.
+NOT GIVEN: The writer does not express a view on this point.
+
+NOTE: The distinction between TRUE/FALSE/NG and YES/NO/NG is important. The test uses the format that matches the passage type. Academic passages with authorial argument → YES/NO/NG. Factual descriptions → TRUE/FALSE/NG.
+
+SHORT ANSWER QUESTIONS
+
+"Answer the questions using NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage."
+
+The answers are words taken directly from the text. Do not paraphrase. Write the exact words from the passage.
+
+CRITICAL RULE: The word count limit is absolute. If the answer is "the industrial revolution" (three words), write exactly that. If you write "the beginning of the industrial revolution" (six words), the answer is marked wrong even though it is accurate.
+
+STRATEGY: Find the relevant section of the passage. Read around it. Extract only the words needed. Count your words before writing.
+
+SENTENCE COMPLETION
+
+"Complete the sentences below using NO MORE THAN TWO WORDS from the passage."
+
+Words must come from the text verbatim. The completed sentence must be grammatically coherent and factually accurate.
+
+APPROACH: The sentence stem gives you strong clues about WHERE in the passage to search. Use key nouns in the stem as search anchors. Find the corresponding section, read carefully, and extract the correct completion.
+
+NOTE COMPLETION
+
+Similar to sentence completion but structured as notes or a summary. Words are taken directly from the passage. Follow the same procedure: identify the section, extract exact words, respect the word count.
+
+SUMMARY COMPLETION WITH A WORD LIST
+
+A summary of part of the passage is given with gaps. A box of words is provided — typically more words than gaps. Choose the best word from the box for each gap.
+
+KEY DIFFERENCE: You do not extract words from the passage — you select from the provided list. This means you must understand the meaning of the gap in context AND match it to the correct option from the list. Wrong options are designed to be plausible but incorrect in meaning, grammar, or factual accuracy.
+
+LOCATING INFORMATION IN THE TEXT
+
+The fundamental skill underlying all detail questions is efficient text navigation.
+
+SKIMMING: Reading rapidly for general content. Used to identify which paragraph contains relevant information. Do NOT skim for detail — skim to locate, then read carefully.
+
+SCANNING: Moving your eyes quickly across the text searching for a specific word, number, or phrase. Used to find the right section of the passage. Look for keywords from the question — proper nouns, capitalised words, numbers, and rare technical terms are the fastest anchors.
+
+CAREFUL READING: Once you have located the relevant section, slow down and read every word. Detail questions are lost by careless reading of the correct section more often than by failing to find the section.
+
+THE LOCATE-VERIFY SEQUENCE: (1) Use keywords from the question to scan to the right section. (2) Read the section carefully. (3) Confirm the answer matches the question before writing. Never write an answer from a first scan — always verify with a careful read.
+
+PARAPHRASE RECOGNITION
+
+This is the core skill for ALL detail question types. Questions and answer options never use the passage's exact words — they paraphrase them. You must recognise when two different expressions mean the same thing.
+
+COMMON PARAPHRASE TECHNIQUES USED IN IELTS:
+
+SYNONYM SUBSTITUTION: "utilise" → "use." "construct" → "build." "significant" → "important." "residence" → "home." "subsequently" → "later."
+
+STRUCTURAL CHANGE: "The government implemented the policy" → "The policy was put in place by the government." Same meaning, different structure.
+
+GENERALISATION: "lions, tigers, and leopards" → "large predatory cats." Specific examples become a category.
+
+SPECIFICATION: "animals" → "migratory birds." A category becomes a specific example.
+
+NOMINALISATION: "The company expanded" → "The company's expansion." Verb form becomes noun form.
+
+ANTONYM + NEGATIVE: "The results were inconclusive" → "The results did not provide a definitive answer."
+
+KEY CONCEPT: When you cannot find a keyword from the question in the passage, it is almost always because the passage uses a synonym. Generate 2 to 3 synonyms for your key search word and scan for those instead.
+
+KEYWORD IDENTIFICATION
+
+Before scanning, identify the strongest keywords in the question. Strong keywords are:
+
+BEST FOR SCANNING: Proper nouns (names, places, organisations), numbers and statistics, years and dates, technical terms, capitalised words, unusual or low-frequency words.
+
+LESS USEFUL FOR SCANNING: Common words (the, is, was, have), generic academic words (research, study, suggest), very broad nouns (people, things, effects).
+
+EXAMPLE: "According to the text, how many species were affected by the 1987 volcanic eruption?"
+Best keywords: "1987," "volcanic eruption," "species." Scan for 1987 and/or "volcanic" — these are rare enough to pinpoint the right sentence instantly.
+
+PARAGRAPH REFERENCES IN DETAIL QUESTIONS
+
+Some question sets ask "In which paragraph does the writer mention X?" or "Which paragraph contains information about Y?" — these are called paragraph identification or matching information questions.
+
+APPROACH: Do NOT read each paragraph in full for every question. Instead, identify a key concept from the question, skim each paragraph for that concept, and identify the one paragraph that contains it.
+
+IMPORTANT: The relevant paragraph may not use the exact words from the question. Apply paraphrase recognition. The concept — not the wording — must match.
+
+NOTE: Each answer is used ONCE unless instructed otherwise. If you have used a paragraph letter already, approach subsequent questions with that paragraph provisionally eliminated.
+
+DEALING WITH LONG AND COMPLEX SENTENCES
+
+Academic IELTS passages contain long, clause-heavy sentences. Detail questions often test information embedded deep within a multi-clause sentence.
+
+PARSING STRATEGY: Break the sentence into its grammatical components. Identify: the main subject, the main verb, the main object or complement. Then identify any subordinate clauses (introduced by because, although, which, when, despite, etc.) and their relationship to the main clause.
+
+EXAMPLE: "Although initial experiments in the 1950s suggested that the compound was inert, subsequent studies, conducted over longer periods and with more sensitive instrumentation, demonstrated conclusively that prolonged exposure led to measurable cellular damage."
+
+Parsing: [Main claim]: subsequent studies demonstrated that prolonged exposure caused cellular damage. [Contrast]: initial experiments suggested it was inert. The detail question would test which claim is supported — the initial or the subsequent finding.
+
+MANAGING TIME ON DETAIL QUESTIONS
+
+IELTS Academic Reading: 3 passages, 40 questions, 60 minutes. Approximately 20 minutes per passage.
+
+TIME ALLOCATION PER QUESTION TYPE:
+- TRUE/FALSE/NOT GIVEN: Average 1 to 1.5 minutes per question. These require careful verification.
+- SHORT ANSWER: Average 1 to 1.5 minutes per question. Search + extraction + count.
+- SENTENCE/NOTE COMPLETION: Average 1 minute per question.
+- Paragraph matching: Average 45 seconds per question once you are oriented.
+
+IMPORTANT: Never spend more than 2.5 minutes on a single question. If you cannot find the answer, mark your best guess and move on. Return if time allows. Unanswered questions at the end represent guaranteed mark losses. A wrong answer and a blank are equally wrong — but only a wrong answer has a chance of being right.
+
+TOP STRATEGIES FOR DETAILED INFORMATION QUESTIONS
+
+Strategy: Always read the instructions for every question set. Word count limits, answer format, and source (from the passage / from the box) vary and ignoring instructions is one of the most avoidable ways to lose marks.
+
+Strategy: Use proper nouns, numbers, and technical terms as your primary search anchors when scanning. These are fastest to locate visually.
+
+Strategy: For TRUE/FALSE/NOT GIVEN, find the relevant sentence in the passage and ask: "Does this sentence confirm, deny, or ignore the statement?" Answer in that order.
+
+Strategy: For short answer questions, count your words before writing. Count again after. The word limit is the most common avoidable error on this question type.
+
+Strategy: When stuck on a NOT GIVEN question, do a final, deliberate scan of the entire passage — not just the most obvious section. The information genuinely may not be there, but confirm that before committing.
+
+COMMON MISTAKES TO AVOID
+
+- Confusing FALSE with NOT GIVEN — the passage must actively contradict for FALSE; silence means NOT GIVEN
+- Using outside knowledge to determine truth or falsehood rather than relying solely on the passage
+- Exceeding word count limits on short answer and completion questions
+- Paraphrasing answers in completion questions instead of taking words directly from the passage
+- Scanning too quickly and matching the wrong section of the passage to the question
+- Answering based on what the first relevant-looking sentence says without reading the surrounding context
+- Spending more than 2.5 minutes on a single question, sacrificing multiple later answers

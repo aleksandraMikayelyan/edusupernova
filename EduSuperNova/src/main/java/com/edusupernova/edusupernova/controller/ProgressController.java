@@ -32,7 +32,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/progress")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class ProgressController {
 
     private final UserRepository           userRepository;

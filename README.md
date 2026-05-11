@@ -1,14 +1,14 @@
-# 🦚 EduSupernova — Backend API
+# EduSupernova — Backend API
 
 > **"Learn. Dominate. Shine."**
-> AI-powered exam preparation platform — Spring Boot 3.4 REST API
+> AI-powered exam preparation platform — Spring Boot 3.3 REST API
 
 [![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)](https://openjdk.org/projects/jdk/21/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.x-brightgreen?logo=springboot)](https://spring.io/projects/spring-boot)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql)](https://www.mysql.com/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.5-brightgreen?logo=springboot)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-blue?logo=postgresql)](https://supabase.com/)
 [![JWT](https://img.shields.io/badge/JWT-Auth-yellow?logo=jsonwebtokens)](https://jwt.io/)
-[![Groq](https://img.shields.io/badge/Groq-AI%20Feedback-purple)](https://groq.com/)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+[![Groq](https://img.shields.io/badge/Groq-llama--3.3--70b-purple)](https://groq.com/)
+[![Docker](https://img.shields.io/badge/Docker-Render-blue?logo=docker)](https://render.com/)
 
 ---
 
@@ -19,29 +19,27 @@
 3. [Architecture](#3-architecture)
 4. [Prerequisites](#4-prerequisites)
 5. [Getting Started](#5-getting-started)
-6. [Environment Configuration](#6-environment-configuration)
-7. [Database Setup](#7-database-setup)
+6. [Environment Variables](#6-environment-variables)
+7. [Database](#7-database)
 8. [Project Structure](#8-project-structure)
 9. [Authentication & Security](#9-authentication--security)
 10. [API Reference](#10-api-reference)
-11. [Daily Test Limit System](#11-daily-test-limit-system)
-12. [Groq AI Integration](#12-groq-ai-integration)
-13. [Running Tests](#13-running-tests)
-14. [Docker Deployment](#14-docker-deployment)
-15. [Contributing](#15-contributing)
+11. [AI Evaluation System](#11-ai-evaluation-system)
+12. [Docker & Deployment](#12-docker--deployment)
 
 ---
 
 ## 1. Project Overview
 
-EduSupernova is a freemium AI-powered exam preparation platform targeting **A Levels, SAT, IELTS, ACT, and TOEFL** students. This repository contains the **Spring Boot 3.4 backend** which powers:
+EduSupernova is a freemium AI-powered exam preparation platform targeting **A Levels / AS Levels, SAT, IELTS, ACT, and TOEFL** students. This repository contains the **Spring Boot 3.3 backend** which powers:
 
-- 🔐 **JWT Authentication** — access tokens (15 min) + HttpOnly refresh tokens (7 days)
-- 📚 **Exam & Question Management** — structured by Exam Type → Course → Unit hierarchy
-- 🎯 **Randomised 20-Question Tests** — drawn from a question pool per course
-- 🤖 **Instant AI Feedback** — per-question explanations via Groq's fast LLM
-- 🚦 **Freemium Rate Limiting** — free-tier students capped at 2 tests/day
-- 👑 **Admin Panel API** — full CRUD for questions, exams, and uploads
+- **JWT Authentication** — stateless access tokens + Google OAuth2 sign-in
+- **Exam & Question Management** — Exam → Course → Paper → Unit → Question hierarchy
+- **Randomised Tests** — questions drawn per paper with group/passage support
+- **Instant AI Feedback** — open-ended answers evaluated by Groq's `llama-3.3-70b-versatile` with exam-specific rubrics (IELTS bands, SAT dimensions, A Level AOs, etc.)
+- **Test History & Progress** — per-user completed test tracking and replay
+- **Admin Panel API** — question CRUD, question groups (passages), formula sheet uploads
+- **Formula Sheet Serving** — PDF download endpoint per course
 
 ---
 
@@ -50,45 +48,44 @@ EduSupernova is a freemium AI-powered exam preparation platform targeting **A Le
 | Layer | Technology |
 |---|---|
 | Language | Java 21 (Virtual Threads enabled) |
-| Framework | Spring Boot 3.4.x |
-| Security | Spring Security 6 + JJWT 0.12.x |
+| Framework | Spring Boot 3.3.5 |
+| Security | Spring Security 6 + JJWT |
 | Persistence | Spring Data JPA + Hibernate 6 |
-| Database | MySQL 8.0 |
-| AI Integration | Groq API (`llama3-8b-8192`) |
+| Database | PostgreSQL via Supabase |
+| AI Integration | Groq API (`llama-3.3-70b-versatile`) |
 | Build Tool | Maven 3.9+ |
-| Testing | JUnit 5, Mockito, Testcontainers |
-| Containerisation | Docker + Docker Compose |
-| Migrations | Flyway |
+| Containerisation | Docker (multi-stage build) |
+| Deployment | Render (free tier) |
+| Frontend | React + Vite → Vercel (`edu-supernova.com`) |
 
 ---
 
 ## 3. Architecture
 
-EduSupernova follows **Clean Architecture** with strict layer separation:
-
 ```
-┌──────────────────────────────────────────────┐
-│              Presentation Layer              │
-│   @RestController · DTOs · @ControllerAdvice │
-├──────────────────────────────────────────────┤
-│              Application Layer               │
-│         @Service · Use Case Classes          │
-├──────────────────────────────────────────────┤
-│               Domain Layer                   │
-│     @Entity · Domain Events · Business Rules │
-├──────────────────────────────────────────────┤
-│            Infrastructure Layer              │
-│  @Repository · JPA · Groq Client · Security  │
-└──────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│                  Presentation Layer                  │
+│   @RestController · Record DTOs · GlobalExceptionHandler │
+├──────────────────────────────────────────────────────┤
+│                  Application Layer                   │
+│        @Service · TestService · OpenEndedEvaluator   │
+├──────────────────────────────────────────────────────┤
+│                   Domain Layer                       │
+│   @Entity · Tests · Quiz · QuestionGroup · Unit      │
+├──────────────────────────────────────────────────────┤
+│                Infrastructure Layer                  │
+│   @Repository · GroqService · Spring Security · JPA  │
+└──────────────────────────────────────────────────────┘
 ```
 
 **Key design decisions:**
 
-- **Virtual Threads** (`spring.threads.virtual.enabled=true`) for high concurrency with zero thread-pool tuning
-- **Record DTOs** for immutable, concise request/response objects
-- **`@ControllerAdvice`** global exception handler with RFC 7807 Problem Detail responses
-- **Soft deletes** on `questions` and `exam_types` via `deleted_at` timestamp
-- **Refresh token rotation** — old token invalidated on each refresh
+- **Virtual Threads** for high concurrency with zero thread-pool tuning
+- **Record DTOs** for immutable request/response objects
+- **Exam-specific AI rubrics** — IELTS, TOEFL, SAT, A Level, ACT each have their own scoring criteria injected into the Groq prompt
+- **Autosave idempotency** — re-submitting an already-evaluated answer reuses the cached score instead of calling Groq again
+- **Completion batch evaluation** — any open-ended question answered but not yet scored is evaluated in a single Groq batch call when the test completes
+- **CORS restricted** to `edu-supernova.com` and localhost for development
 
 ---
 
@@ -98,270 +95,117 @@ EduSupernova follows **Clean Architecture** with strict layer separation:
 |---|---|
 | JDK | 21 (LTS) |
 | Maven | 3.9+ |
-| MySQL | 8.0+ |
-| Docker *(optional)* | 24+ |
-
-> **Recommended:** Use [SDKMAN](https://sdkman.io/) to manage Java versions:
-> ```bash
-> sdk install java 21.0.3-tem
-> ```
+| Docker | 24+ (for deployment) |
+| PostgreSQL | Via Supabase (cloud) |
 
 ---
 
 ## 5. Getting Started
 
-### Clone the repository
+### Clone and install
 
 ```bash
 git clone https://github.com/your-org/edusupernova-backend.git
-cd edusupernova-backend
+cd edusupernova-backend/EduSuperNova
 ```
 
-### Install dependencies
+### Run locally
 
 ```bash
-mvn clean install -DskipTests
+# Copy the example env and fill in your values
+cp .env.example .env
+
+# Start Spring Boot (reads from .env)
+./mvnw spring-boot:run
 ```
 
-### Run in development mode
+Server starts on **`http://localhost:8080`**.
 
-```bash
-mvn spring-boot:run -Dspring-boot.run.profiles=dev
-```
-
-The server starts on **`http://localhost:8080`**.
-
-> On first run, Flyway automatically creates all tables and seeds initial data.
+> The schema is managed manually via Supabase SQL editor — `spring.jpa.hibernate.ddl-auto=validate` means Hibernate validates but never modifies the schema.
 
 ---
 
-## 6. Environment Configuration
+## 6. Environment Variables
 
-### `src/main/resources/application.yml`
-
-```yaml
-spring:
-  application:
-    name: edusupernova-api
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/edusupernova?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:root}
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: validate          # Flyway owns DDL
-    show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
-
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
-
-  threads:
-    virtual:
-      enabled: true               # Java 21 Virtual Threads
-
-server:
-  port: 8080
-  servlet:
-    context-path: /api/v1
-
-app:
-  jwt:
-    secret: ${JWT_SECRET}         # Min 256-bit Base64 secret
-    access-token-expiry-ms: 900000        # 15 minutes
-    refresh-token-expiry-ms: 604800000    # 7 days
-
-  groq:
-    api-key: ${GROQ_API_KEY}
-    model: llama3-8b-8192
-    base-url: https://api.groq.com/openai/v1
-
-  cors:
-    allowed-origins: ${CORS_ORIGINS:http://localhost:5173}
-
-  rate-limit:
-    free-daily-tests: 2
-```
-
-### Required Environment Variables
-
-Create a `.env` file in the project root (never commit this file):
+Create a `.env` file in `EduSuperNova/` (never commit it):
 
 ```dotenv
-# Database
-DB_USERNAME=edusupernova_user
-DB_PASSWORD=super_secret_password
+# ── Database (Supabase PostgreSQL) ──────────────────────
+DB_URL=jdbc:postgresql://db.xxxx.supabase.co:5432/postgres
+DB_USERNAME=postgres
+DB_PASSWORD=your_supabase_password
 
-# JWT — generate with: openssl rand -base64 64
-JWT_SECRET=your_256bit_base64_encoded_secret_here
+# ── JWT ─────────────────────────────────────────────────
+JWT_SECRET=your_256bit_secret_here
 
-# Groq AI
-GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# ── Groq AI ─────────────────────────────────────────────
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxx
 
-# CORS (comma-separated for multiple origins)
-CORS_ORIGINS=http://localhost:5173,https://edusupernova.com
+# ── Google OAuth2 ────────────────────────────────────────
+GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
+
+# ── Mail (SMTP) ──────────────────────────────────────────
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your@gmail.com
+MAIL_PASSWORD=your_app_password
+
+# ── File Storage ─────────────────────────────────────────
+# Local dev:
+UPLOAD_DIR=C:/images/
+# On Render (set automatically):
+# UPLOAD_DIR=/app/uploads/
+
+# ── Render (set automatically by platform) ───────────────
+# PORT=10000
 ```
 
-> ⚠️ Add `.env` to `.gitignore` immediately. Never commit secrets to version control.
+### Render Environment Variables
+
+Set all of the above in **Render → Service → Environment** (no `.env` file needed in production). Render automatically injects `PORT`.
 
 ---
 
-## 7. Database Setup
+## 7. Database
 
-### Create the MySQL database and user
-
-```sql
-CREATE DATABASE edusupernova CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'edusupernova_user'@'localhost' IDENTIFIED BY 'your_password';
-GRANT ALL PRIVILEGES ON edusupernova.* TO 'edusupernova_user'@'localhost';
-FLUSH PRIVILEGES;
-```
+**Database:** PostgreSQL hosted on [Supabase](https://supabase.com/)
 
 ### Schema Overview
 
-Flyway migrations in `src/main/resources/db/migration/` apply the full schema automatically.
+```
+Exams
+ └── Courses  (section: AS | A2 | null)
+       └── Papers  (format: MCQ | ESSAY | IELTS_WRITING | DATA_RESPONSE | …)
+             ├── question_groups  (passage/extract + contextText)
+             │     └── Quizes  (questions linked to a group)
+             └── Quizes  (standalone questions, no group)
+       └── Units  (ordered study material, summary_path → classpath .txt)
+
+Users
+ └── Tests  (status: IN_PROGRESS | COMPLETED | ABANDONED)
+       └── Test_Question  (composite PK: testId + quizId)
+             └── aiScore, feedbackIa, userResponse, answeredAt
+
+Enrollments  (user ↔ exam)
+```
+
+### Seeding
+
+SQL seed files live in `src/main/resources/db/`. Run them in the Supabase SQL editor:
 
 ```
-exam_types
-    └── courses  (M:M via exam_type_courses)
-            └── units  (ordered by unit_order)
-                    └── questions  (soft-deleted)
-
-users
-    └── enrollments  (user ↔ exam_type)
-    └── test_sessions
-            └── test_answers  (per-question result + AI feedback)
-    └── daily_test_counters  (rate limiting)
-
-refresh_tokens  (HttpOnly cookie strategy)
-```
-
-### Full Schema (V1__initial_schema.sql excerpt)
-
-```sql
-CREATE TABLE users (
-    id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    email       VARCHAR(255) NOT NULL UNIQUE,
-    username    VARCHAR(100) NOT NULL UNIQUE,
-    password    VARCHAR(255) NOT NULL,
-    role        ENUM('STUDENT','ADMIN') NOT NULL DEFAULT 'STUDENT',
-    is_premium  BOOLEAN NOT NULL DEFAULT FALSE,
-    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_users_email (email)
-);
-
-CREATE TABLE exam_types (
-    id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name        VARCHAR(100) NOT NULL UNIQUE,   -- 'A Levels', 'SAT', etc.
-    description TEXT,
-    icon_url    VARCHAR(500),
-    deleted_at  TIMESTAMP NULL DEFAULT NULL,
-    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE courses (
-    id            BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    exam_type_id  BIGINT UNSIGNED NOT NULL,
-    name          VARCHAR(200) NOT NULL,
-    description   TEXT,
-    deleted_at    TIMESTAMP NULL DEFAULT NULL,
-    created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (exam_type_id) REFERENCES exam_types(id),
-    INDEX idx_courses_exam_type (exam_type_id)
-);
-
-CREATE TABLE units (
-    id           BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    course_id    BIGINT UNSIGNED NOT NULL,
-    name         VARCHAR(200) NOT NULL,
-    unit_order   SMALLINT UNSIGNED NOT NULL DEFAULT 1,
-    summary      MEDIUMTEXT,
-    deleted_at   TIMESTAMP NULL DEFAULT NULL,
-    FOREIGN KEY (course_id) REFERENCES courses(id),
-    INDEX idx_units_course (course_id)
-);
-
-CREATE TABLE questions (
-    id            BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unit_id       BIGINT UNSIGNED NOT NULL,
-    question_text TEXT NOT NULL,
-    option_a      VARCHAR(1000) NOT NULL,
-    option_b      VARCHAR(1000) NOT NULL,
-    option_c      VARCHAR(1000) NOT NULL,
-    option_d      VARCHAR(1000) NOT NULL,
-    correct_option ENUM('A','B','C','D') NOT NULL,
-    explanation   TEXT,
-    difficulty    ENUM('EASY','MEDIUM','HARD') DEFAULT 'MEDIUM',
-    deleted_at    TIMESTAMP NULL DEFAULT NULL,
-    created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (unit_id) REFERENCES units(id),
-    INDEX idx_questions_unit (unit_id),
-    INDEX idx_questions_active (unit_id, deleted_at)
-);
-
-CREATE TABLE enrollments (
-    id            BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_id       BIGINT UNSIGNED NOT NULL,
-    exam_type_id  BIGINT UNSIGNED NOT NULL,
-    enrolled_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY uq_user_exam (user_id, exam_type_id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (exam_type_id) REFERENCES exam_types(id)
-);
-
-CREATE TABLE test_sessions (
-    id           BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_id      BIGINT UNSIGNED NOT NULL,
-    course_id    BIGINT UNSIGNED NOT NULL,
-    score        TINYINT UNSIGNED DEFAULT 0,
-    total        TINYINT UNSIGNED DEFAULT 20,
-    status       ENUM('IN_PROGRESS','COMPLETED','ABANDONED') DEFAULT 'IN_PROGRESS',
-    started_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    completed_at TIMESTAMP NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (course_id) REFERENCES courses(id),
-    INDEX idx_sessions_user (user_id),
-    INDEX idx_sessions_user_date (user_id, started_at)
-);
-
-CREATE TABLE test_answers (
-    id              BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    session_id      BIGINT UNSIGNED NOT NULL,
-    question_id     BIGINT UNSIGNED NOT NULL,
-    chosen_option   ENUM('A','B','C','D') NOT NULL,
-    is_correct      BOOLEAN NOT NULL,
-    ai_feedback     TEXT,
-    answered_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (session_id) REFERENCES test_sessions(id),
-    FOREIGN KEY (question_id) REFERENCES questions(id)
-);
-
-CREATE TABLE daily_test_counters (
-    id         BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_id    BIGINT UNSIGNED NOT NULL,
-    test_date  DATE NOT NULL,
-    test_count TINYINT UNSIGNED NOT NULL DEFAULT 0,
-    UNIQUE KEY uq_user_date (user_id, test_date),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-CREATE TABLE refresh_tokens (
-    id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_id     BIGINT UNSIGNED NOT NULL UNIQUE,
-    token       VARCHAR(500) NOT NULL UNIQUE,
-    expires_at  TIMESTAMP NOT NULL,
-    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    INDEX idx_refresh_token (token)
-);
+seed_act.sql
+seed_act_english.sql
+seed_act_reading_questions.sql
+seed_act_math_questions.sql
+seed_act_math_questions_ext.sql
+seed_ielts_reading.sql
+seed_ielts_listening.sql
+seed_ielts_writing.sql
+seed_sat.sql
+seed_asLevel_paper1.sql
+seed_asLevel_english_units.sql
+seed_a2Level_courses.sql
 ```
 
 ---
@@ -369,118 +213,44 @@ CREATE TABLE refresh_tokens (
 ## 8. Project Structure
 
 ```
-edusupernova-backend/
-├── src/
-│   ├── main/
-│   │   ├── java/com/edusupernova/
-│   │   │   ├── EduSupernovaApplication.java
-│   │   │   │
-│   │   │   ├── config/
-│   │   │   │   ├── SecurityConfig.java
-│   │   │   │   ├── JwtConfig.java
-│   │   │   │   ├── CorsConfig.java
-│   │   │   │   └── GroqConfig.java
-│   │   │   │
-│   │   │   ├── security/
-│   │   │   │   ├── JwtTokenProvider.java
-│   │   │   │   ├── JwtAuthenticationFilter.java
-│   │   │   │   ├── CustomUserDetailsService.java
-│   │   │   │   └── SecurityConstants.java
-│   │   │   │
-│   │   │   ├── controller/
-│   │   │   │   ├── AuthController.java
-│   │   │   │   ├── ExamTypeController.java
-│   │   │   │   ├── CourseController.java
-│   │   │   │   ├── UnitController.java
-│   │   │   │   ├── TestSessionController.java
-│   │   │   │   ├── EnrollmentController.java
-│   │   │   │   └── admin/
-│   │   │   │       ├── AdminQuestionController.java
-│   │   │   │       └── AdminExamController.java
-│   │   │   │
-│   │   │   ├── service/
-│   │   │   │   ├── AuthService.java
-│   │   │   │   ├── ExamTypeService.java
-│   │   │   │   ├── CourseService.java
-│   │   │   │   ├── UnitService.java
-│   │   │   │   ├── TestSessionService.java
-│   │   │   │   ├── DailyLimitService.java
-│   │   │   │   ├── EnrollmentService.java
-│   │   │   │   └── GroqFeedbackService.java
-│   │   │   │
-│   │   │   ├── repository/
-│   │   │   │   ├── UserRepository.java
-│   │   │   │   ├── ExamTypeRepository.java
-│   │   │   │   ├── CourseRepository.java
-│   │   │   │   ├── UnitRepository.java
-│   │   │   │   ├── QuestionRepository.java
-│   │   │   │   ├── TestSessionRepository.java
-│   │   │   │   ├── TestAnswerRepository.java
-│   │   │   │   ├── DailyTestCounterRepository.java
-│   │   │   │   ├── EnrollmentRepository.java
-│   │   │   │   └── RefreshTokenRepository.java
-│   │   │   │
-│   │   │   ├── entity/
-│   │   │   │   ├── User.java
-│   │   │   │   ├── ExamType.java
-│   │   │   │   ├── Course.java
-│   │   │   │   ├── Unit.java
-│   │   │   │   ├── Question.java
-│   │   │   │   ├── TestSession.java
-│   │   │   │   ├── TestAnswer.java
-│   │   │   │   ├── DailyTestCounter.java
-│   │   │   │   ├── Enrollment.java
-│   │   │   │   └── RefreshToken.java
-│   │   │   │
-│   │   │   ├── dto/
-│   │   │   │   ├── request/
-│   │   │   │   │   ├── LoginRequest.java        (record)
-│   │   │   │   │   ├── RegisterRequest.java     (record)
-│   │   │   │   │   ├── SubmitAnswerRequest.java (record)
-│   │   │   │   │   └── CreateQuestionRequest.java (record)
-│   │   │   │   └── response/
-│   │   │   │       ├── AuthResponse.java        (record)
-│   │   │   │       ├── ExamTypeResponse.java    (record)
-│   │   │   │       ├── CourseResponse.java      (record)
-│   │   │   │       ├── UnitResponse.java        (record)
-│   │   │   │       ├── QuestionResponse.java    (record)
-│   │   │   │       ├── TestSessionResponse.java (record)
-│   │   │   │       ├── AnswerFeedbackResponse.java (record)
-│   │   │   │       └── TestReportResponse.java  (record)
-│   │   │   │
-│   │   │   └── exception/
-│   │   │       ├── GlobalExceptionHandler.java
-│   │   │       ├── ResourceNotFoundException.java
-│   │   │       ├── DailyLimitExceededException.java
-│   │   │       ├── UnauthorizedException.java
-│   │   │       └── DuplicateEnrollmentException.java
-│   │   │
-│   │   └── resources/
-│   │       ├── application.yml
-│   │       ├── application-dev.yml
-│   │       ├── application-prod.yml
-│   │       └── db/migration/
-│   │           ├── V1__initial_schema.sql
-│   │           ├── V2__seed_exam_types.sql
-│   │           └── V3__seed_sample_questions.sql
-│   │
-│   └── test/
-│       └── java/com/edusupernova/
-│           ├── service/
-│           │   ├── AuthServiceTest.java
-│           │   ├── TestSessionServiceTest.java
-│           │   └── DailyLimitServiceTest.java
-│           └── controller/
-│               ├── AuthControllerTest.java
-│               └── TestSessionControllerTest.java
-│
-├── .env.example
-├── .gitignore
-├── docker-compose.yml
-├── Dockerfile
-├── mvnw
-├── mvnw.cmd
-└── pom.xml
+EduSuperNova/
+├── src/main/
+│   ├── java/com/edusupernova/edusupernova/
+│   │   ├── config/
+│   │   │   ├── SecurityConfig.java       # CORS + JWT filter chain
+│   │   │   └── JwtAuthenticationFilter.java
+│   │   ├── controller/
+│   │   │   ├── AdminController.java      # Questions, groups, formula sheets
+│   │   │   ├── CourseController.java     # Course list + formula sheet download
+│   │   │   ├── ExamController.java       # Exam discovery + enrollment
+│   │   │   ├── TestController.java       # Start / answer / report / history
+│   │   │   ├── UnitController.java       # Units screen data
+│   │   │   ├── ProgressController.java   # Progress + completed groups
+│   │   │   └── UserController.java       # Register / login / Google OAuth
+│   │   ├── service/
+│   │   │   ├── TestService.java          # Core test lifecycle
+│   │   │   ├── OpenEndedEvaluator.java   # Exam-specific Groq rubrics
+│   │   │   ├── GroqService.java          # HTTP client for Groq API
+│   │   │   ├── QuizService.java          # Question selection / generation
+│   │   │   └── …
+│   │   ├── model/                        # JPA entities
+│   │   ├── dto/request/ + dto/response/  # Record DTOs
+│   │   ├── data/                         # Spring Data JPA repositories
+│   │   └── exception/                    # GlobalExceptionHandler
+│   └── resources/
+│       ├── application.properties
+│       ├── Summaries/                    # Unit .txt content files
+│       │   ├── ALevels/Economy/…
+│       │   ├── ALevels/Math/…
+│       │   ├── ALevels/English/…
+│       │   ├── ACT/…
+│       │   ├── SAT/…
+│       │   ├── ielts/…
+│       │   └── toefl/…
+│       └── db/                           # SQL seed files
+├── dockerfile                            # Multi-stage Docker build
+├── pom.xml
+└── mvnw / mvnw.cmd
 ```
 
 ---
@@ -489,385 +259,157 @@ edusupernova-backend/
 
 ### Token Strategy
 
-| Token | Storage | Expiry | Purpose |
-|---|---|---|---|
-| Access Token (JWT) | `Authorization: Bearer` header | 15 minutes | API authentication |
-| Refresh Token (JWT) | HttpOnly Secure Cookie | 7 days | Silent token refresh |
+| Token | Storage | Purpose |
+|---|---|---|
+| JWT Access Token | `Authorization: Bearer` header | API authentication, stateless |
 
-### Endpoints
+Tokens are held in-memory on the frontend (never localStorage). On page refresh the user re-authenticates.
 
-| Method | Endpoint | Auth | Description |
-|---|---|---|---|
-| `POST` | `/auth/register` | Public | Create student account |
-| `POST` | `/auth/login` | Public | Returns access token + sets cookie |
-| `POST` | `/auth/refresh` | Cookie | Rotates refresh token |
-| `POST` | `/auth/logout` | Bearer | Revokes refresh token |
+### Allowed Origins (CORS)
 
-### Role-based Access
-
-```java
-// Student-only endpoints
-@PreAuthorize("hasRole('STUDENT')")
-
-// Admin-only endpoints
-@PreAuthorize("hasRole('ADMIN')")
-
-// Both roles
-@PreAuthorize("isAuthenticated()")
+```
+https://edu-supernova.com
+https://www.edu-supernova.com
+http://localhost:5173   (Vite dev)
+http://localhost:3000   (alt dev)
 ```
 
 ### Login Flow
 
-```
-POST /auth/login
-Body: { "email": "student@test.com", "password": "••••••••" }
+```http
+POST /api/users/login
+Content-Type: application/json
 
-Response 200:
+{ "email": "student@test.com", "password": "••••••••" }
+```
+
+```json
 {
   "accessToken": "eyJhbG...",
   "tokenType": "Bearer",
-  "expiresIn": 900,
-  "user": {
-    "id": 1,
-    "username": "alice",
-    "email": "student@test.com",
-    "role": "STUDENT",
-    "isPremium": false
-  }
+  "expiresIn": 86400,
+  "rol": "STUDENT",
+  "user": { "id": 1, "username": "alice", "email": "student@test.com" }
 }
-Set-Cookie: refreshToken=eyJhbG...; HttpOnly; Secure; SameSite=Strict; Path=/auth/refresh
 ```
 
 ---
 
 ## 10. API Reference
 
-All endpoints are prefixed with `/api/v1`.
+All endpoints are prefixed with `/api`.
 
-### Authentication
+### Auth
 
-```
-POST   /auth/register
-POST   /auth/login
-POST   /auth/refresh
-POST   /auth/logout
-```
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `POST` | `/users/register` | Public | Create account |
+| `POST` | `/users/login` | Public | Returns JWT |
+| `POST` | `/users/google-auth` | Public | Google OAuth sign-in |
 
-### Exam Types & Catalogue
+### Exams & Courses
 
-```
-GET    /exam-types                          → List all exam types
-GET    /exam-types/{id}/courses             → Courses for an exam type
-GET    /courses/{id}/units                  → Units for a course (ordered)
-GET    /units/{id}                          → Unit detail with summary
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/exams/dashboard` | All active exams |
+| `GET` | `/exams/{examId}` | Courses for an exam |
+| `GET` | `/units/course/{courseId}` | Units + papers for a course |
+| `GET` | `/courses/{courseId}/formula-sheet` | Download formula PDF |
 
-### Enrollment
+### Tests
 
-```
-POST   /enrollments                         → Enroll in exam type
-GET    /enrollments/me                      → My enrolled exam types
-DELETE /enrollments/{examTypeId}            → Unenroll
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/tests/start` | Start a test session |
+| `POST` | `/tests/{testId}/answer` | Submit answer → AI feedback |
+| `GET` | `/tests/{testId}/report` | Final report with AI scores |
+| `GET` | `/tests/{testId}/questions` | All questions for a test |
+| `GET` | `/tests/history` | User's completed test history |
 
-### Test Sessions
+### Admin
 
-```
-POST   /tests/start          Body: { courseId }       → Create session (checks daily limit)
-GET    /tests/{sessionId}                              → Get session + questions
-POST   /tests/{sessionId}/answer                       → Submit answer → AI feedback
-GET    /tests/{sessionId}/report                       → Final score + all AI feedback
-GET    /tests/history                                  → My past test sessions
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/admin/exams` | All exams (for selectors) |
+| `GET` | `/admin/exams/{examId}/courses` | Courses + papers |
+| `GET` | `/admin/papers/{paperId}/groups` | Question groups |
+| `POST` | `/admin/groups` | Create a passage/group |
+| `POST` | `/admin/questions` | Add a question |
+| `DELETE` | `/admin/questions/{id}` | Delete a question |
+| `POST` | `/admin/courses/{courseId}/formula-sheet` | Upload PDF |
 
-### Admin Endpoints
+---
 
-```
-POST   /admin/exam-types                    → Create exam type
-PUT    /admin/exam-types/{id}               → Update exam type
-DELETE /admin/exam-types/{id}               → Soft delete
+## 11. AI Evaluation System
 
-POST   /admin/courses                       → Create course
-PUT    /admin/courses/{id}                  → Update course
-DELETE /admin/courses/{id}                  → Soft delete
+Open-ended answers (essays, IELTS writing, data response) are evaluated by **Groq's `llama-3.3-70b-versatile`** using exam-specific rubrics.
 
-POST   /admin/units                         → Create unit
-PUT    /admin/units/{id}                    → Update unit (summary, order)
+### Exam Rubrics
 
-POST   /admin/questions                     → Create question
-POST   /admin/questions/bulk               → Bulk import (JSON array)
-PUT    /admin/questions/{id}                → Update question
-DELETE /admin/questions/{id}                → Soft delete
+| Exam | Criteria | Native Scale → 0–10 |
+|---|---|---|
+| IELTS Writing | Task Achievement, Coherence & Cohesion, Lexical Resource, Grammatical Range | Band × 1.11 |
+| TOEFL Writing | Development, Organization, Language Use | Score × 2 |
+| SAT Essay | Reading, Analysis, Writing (each 1–4) | (sum−3)/9 × 10 |
+| A Level / AS Level | AO1 Knowledge, AO2 Application, AO3 Analysis, QWC | 0–10 (A*=8+) |
+| ACT Writing | Ideas, Development, Organization, Language (each 1–6) | (avg−1)/5 × 10 |
 
-GET    /admin/stats                         → Platform overview stats
-```
+### Feedback Structure
 
-### Example: Start a Test
+The AI returns structured JSON feedback with three sections:
 
-```http
-POST /api/v1/tests/start
-Authorization: Bearer eyJhbG...
-Content-Type: application/json
-
-{
-  "courseId": 3
-}
-```
-
-**Response `201 Created`:**
 ```json
 {
-  "sessionId": 42,
-  "courseId": 3,
-  "courseName": "Pure Mathematics",
-  "status": "IN_PROGRESS",
-  "totalQuestions": 20,
-  "currentQuestion": {
-    "questionNumber": 1,
-    "questionId": 117,
-    "questionText": "Solve the quadratic equation x² - 5x + 6 = 0",
-    "optionA": "x = 2 or x = 3",
-    "optionB": "x = -2 or x = -3",
-    "optionC": "x = 1 or x = 6",
-    "optionD": "x = -1 or x = -6"
-  }
-}
-```
-
-### Example: Submit an Answer
-
-```http
-POST /api/v1/tests/42/answer
-Authorization: Bearer eyJhbG...
-Content-Type: application/json
-
-{
-  "questionId": 117,
-  "chosenOption": "A"
-}
-```
-
-**Response `200 OK`:**
-```json
-{
-  "isCorrect": true,
-  "correctOption": "A",
-  "aiFeedback": "Correct! Factoring gives (x-2)(x-3)=0, so x=2 or x=3. The key is recognising two numbers that multiply to +6 and add to -5.",
-  "nextQuestion": {
-    "questionNumber": 2,
-    "questionId": 203,
-    "questionText": "...",
-    "optionA": "...",
-    "optionB": "...",
-    "optionC": "...",
-    "optionD": "..."
+  "strengths": "Clear position and well-developed argument.",
+  "criteria": {
+    "Lexical Resource": "Vocabulary is repetitive — 'important' appears 4 times. Use 'significant', 'critical', or 'pivotal'.",
+    "Coherence & Cohesion": "Paragraph transitions are abrupt. Add bridging sentences between ideas."
   },
-  "sessionComplete": false
+  "nextSteps": "1. Build a vocabulary log. 2. Practice cohesive devices."
 }
 ```
 
-### Error Responses (RFC 7807 Problem Detail)
+### Idempotency
 
-```json
-{
-  "type": "https://edusupernova.com/errors/daily-limit-exceeded",
-  "title": "Daily Test Limit Reached",
-  "status": 429,
-  "detail": "Free users can start a maximum of 2 tests per day. Upgrade to Premium for unlimited tests.",
-  "instance": "/api/v1/tests/start"
-}
-```
+Re-submitting an already-evaluated answer reuses the cached score — Groq is not called again. This prevents race conditions from autosave hooks and duplicate submits.
 
 ---
 
-## 11. Daily Test Limit System
+## 12. Docker & Deployment
 
-Free-tier users are limited to **2 test sessions per calendar day** (UTC). The limit is enforced at the service layer before any questions are loaded.
-
-### How it works
-
-1. `POST /tests/start` is called by the student
-2. `DailyLimitService.checkAndIncrement(userId)` runs
-3. Looks up (or creates) a row in `daily_test_counters` for `(userId, today)`
-4. If `test_count >= 2` AND `is_premium = false` → throws `DailyLimitExceededException` → HTTP 429
-5. Otherwise, increments counter atomically and proceeds
-
-### Key service code
-
-```java
-@Transactional
-public void checkAndIncrement(Long userId, boolean isPremium) {
-    if (isPremium) return; // no limit for premium
-
-    LocalDate today = LocalDate.now(ZoneOffset.UTC);
-    DailyTestCounter counter = repository
-        .findByUserIdAndTestDate(userId, today)
-        .orElseGet(() -> DailyTestCounter.builder()
-            .userId(userId)
-            .testDate(today)
-            .testCount(0)
-            .build());
-
-    if (counter.getTestCount() >= FREE_DAILY_LIMIT) {
-        throw new DailyLimitExceededException(
-            "You have reached your daily limit of %d tests. Upgrade to Premium for unlimited access."
-                .formatted(FREE_DAILY_LIMIT));
-    }
-
-    counter.setTestCount(counter.getTestCount() + 1);
-    repository.save(counter);
-}
-```
-
----
-
-## 12. Groq AI Integration
-
-EduSupernova uses **Groq's `llama3-8b-8192`** model for sub-second per-question feedback.
-
-### Configuration
-
-```yaml
-app:
-  groq:
-    api-key: ${GROQ_API_KEY}
-    model: llama3-8b-8192
-    base-url: https://api.groq.com/openai/v1
-```
-
-### GroqFeedbackService
-
-The service is called immediately after each answer submission. It sends the question, all options, the student's choice, and the correct answer to Groq, and returns a brief pedagogical explanation.
-
-**Prompt template:**
-
-```
-You are a concise exam tutor. A student answered a multiple-choice question.
-Question: {questionText}
-Options: A) {optA}  B) {optB}  C) {optC}  D) {optD}
-Student answered: {chosenOption}
-Correct answer: {correctOption}
-
-Provide a 2-3 sentence explanation that:
-1. States whether they were correct or not.
-2. Explains WHY the correct answer is right.
-3. Gives a quick memory tip if relevant.
-Be encouraging and direct. Do not repeat the question.
-```
-
-### Timeout & Fallback
-
-- HTTP timeout: 8 seconds
-- If Groq is unavailable, the answer is still saved and feedback defaults to the stored `explanation` field from the `questions` table
-- Errors are logged but never bubble up to the student as a 500
-
----
-
-## 13. Running Tests
-
-```bash
-# Unit tests only
-mvn test
-
-# Integration tests (requires Docker for Testcontainers)
-mvn verify -P integration-tests
-
-# Generate coverage report
-mvn jacoco:report
-# Open: target/site/jacoco/index.html
-```
-
-### Test categories
-
-| Annotation | Scope |
-|---|---|
-| `@SpringBootTest` | Full context integration tests |
-| `@WebMvcTest` | Controller slice (no DB) |
-| `@DataJpaTest` | Repository slice (Testcontainers MySQL) |
-| Plain JUnit 5 | Service unit tests with Mockito |
-
----
-
-## 14. Docker Deployment
-
-### Development (docker-compose)
-
-```yaml
-# docker-compose.yml
-version: '3.9'
-services:
-  mysql:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: edusupernova
-      MYSQL_USER: edusupernova_user
-      MYSQL_PASSWORD: secret
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  api:
-    build: .
-    ports:
-      - "8080:8080"
-    environment:
-      DB_USERNAME: edusupernova_user
-      DB_PASSWORD: secret
-      JWT_SECRET: ${JWT_SECRET}
-      GROQ_API_KEY: ${GROQ_API_KEY}
-    depends_on:
-      mysql:
-        condition: service_healthy
-
-volumes:
-  mysql_data:
-```
-
-```bash
-# Start everything
-docker-compose up -d
-
-# View logs
-docker-compose logs -f api
-
-# Stop
-docker-compose down
-```
-
-### Production Dockerfile
+### Dockerfile (multi-stage)
 
 ```dockerfile
-FROM eclipse-temurin:21-jre-alpine AS runtime
+# Stage 1: Build
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
-COPY target/edusupernova-*.jar app.jar
+COPY pom.xml .
+RUN mvn dependency:go-offline -q
+COPY src ./src
+RUN mvn package -DskipTests -q
+
+# Stage 2: Runtime (~90 MB)
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+RUN mkdir -p /app/uploads/formula-sheets
+COPY --from=build /app/target/edusupernova-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
 
-```bash
-mvn clean package -DskipTests
-docker build -t edusupernova-api:latest .
-```
+### Deploy to Render
 
----
+1. Push this repo to GitHub
+2. Render → **New Web Service** → Docker → connect repo
+3. Set environment variables in Render dashboard (see §6)
+4. Render auto-builds on every push to `main`
+5. Public URL: `https://edusupernova.onrender.com`
 
-## 15. Contributing
+### Frontend (Vercel)
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Follow the existing code style (Checkstyle config in `checkstyle.xml`)
-4. Write tests for all new service-layer logic
-5. Open a Pull Request against `develop`
+The React frontend lives in a separate repo and is deployed to Vercel at **`https://edu-supernova.com`**.
 
-### Code Style Rules
-
-- No business logic in controllers — delegate to `@Service`
-- Use **record DTOs** for all request/response objects
-- All `@Service` public methods must be `@Transactional` where DB writes occur
-- Never expose `@Entity` objects directly from controller methods
-- All endpoints must be documented with `@Operation` (SpringDoc/OpenAPI)
+In dev, Vite proxies `/api/*` to `localhost:8080`. In production, `VITE_API_URL=https://edusupernova.onrender.com` points directly at the Render backend.
 
 ---
 
@@ -878,5 +420,5 @@ MIT © EduSupernova Team
 ---
 
 <p align="center">
-  <b>EduSupernova</b> · Learn. Dominate. Shine. 🦚
+  <b>EduSupernova</b> · Learn. Dominate. Shine.
 </p>

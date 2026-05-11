@@ -1,0 +1,159 @@
+MAIN IDEAS IN IELTS READING
+
+Main idea questions test your ability to understand the overall purpose, argument, and structure of a reading passage — not just isolated facts. They reward readers who think globally about what a text is doing and why. The primary question types that test main ideas in IELTS Reading are heading matching, paragraph matching, and the global multiple choice question.
+
+WHAT MAIN IDEA QUESTIONS TEST
+
+MAIN IDEA: The central point of the entire passage, or the dominant purpose of a single paragraph. The main idea is broader than any individual example, statistic, or supporting detail. It is the answer to: "What is this text fundamentally about, and what does it argue?"
+
+PARAGRAPH MAIN IDEA: What a specific paragraph is primarily doing — its function and its core claim. This may be a topic sentence, an argument, a process description, a counterargument, or an illustration.
+
+KEY CONCEPT: Main idea questions penalise readers who are too detail-focused. A student who notes every fact but cannot summarise a paragraph's purpose will struggle with heading matching. The skill is the opposite of detail-catching — it is abstraction and summarisation.
+
+HEADING MATCHING
+
+This is the most common main idea question type in IELTS Academic Reading. A list of headings (more headings than paragraphs) is given. Match each paragraph to its best heading.
+
+THE CHALLENGE: Headings are paraphrases of the paragraph's main purpose — they do not use the passage's exact words. Additionally, wrong headings are designed to be plausible. They often describe a detail mentioned in the paragraph rather than the paragraph's overall point.
+
+APPROACH — THE FOUR-STEP METHOD:
+
+Step 1: Read the list of headings BEFORE reading the passage. Understand what each heading describes in general terms.
+
+Step 2: Read the first paragraph. Identify its main purpose in one phrase of your own.
+
+Step 3: Match your summary to the closest heading. Do NOT simply pick the heading that mentions a word from the paragraph — match by overall purpose.
+
+Step 4: When you have a candidate heading, confirm: does this heading describe the WHOLE paragraph, or just one part of it? If only one part, look for a better option.
+
+IMPORTANT: If a heading describes one example or detail from a paragraph but the paragraph covers a broader concept, that heading is wrong. A correct heading must reflect the DOMINANT purpose of the entire paragraph.
+
+HEADING ELIMINATION STRATEGY: After assigning headings you are confident about, eliminate them from consideration for remaining paragraphs. This reduces your options and makes closer calls easier.
+
+NOTE: The first and last paragraphs are sometimes excluded from heading matching — the test specifies this. Do not spend time on them if the instructions exclude them.
+
+COMMON HEADING MATCHING ERRORS:
+
+DETAIL TRAP: The heading mentions something that appears in the paragraph, but only as a supporting detail, not the main point. "The role of temperature in enzyme activity" might appear in a paragraph primarily about enzyme catalysis broadly — temperature is mentioned but is not the main focus.
+
+SCOPE MISMATCH: The heading describes the paragraph too broadly or too narrowly. A paragraph specifically about Roman aqueducts should not be matched to "Ancient Engineering in General."
+
+ADJACENT PARAGRAPH CONFUSION: Two consecutive paragraphs sometimes develop a continuous argument. Beginners assign both to the same heading because the topic continues. Each paragraph has its own distinct main idea within the broader topic.
+
+IDENTIFYING PARAGRAPH MAIN IDEAS
+
+Every well-structured academic paragraph has a TOPIC SENTENCE — usually the first sentence — that states its main idea. IELTS passages are written at textbook level and generally follow this convention.
+
+FIRST SENTENCE TEST: Read the first sentence. Does it state the paragraph's purpose? In most cases, yes. If the first sentence is a rhetorical question, a vivid opening, or a transitional link, the topic sentence may be the second sentence.
+
+LAST SENTENCE TEST: Academic paragraphs often end with a sentence that summarises the argument or restates its significance. This can confirm your reading of the paragraph's main idea.
+
+MIDDLE SENTENCES: These provide evidence, examples, data, and elaboration. They support the main idea but ARE NOT the main idea themselves. Even if a middle sentence sounds interesting, it is unlikely to be the correct heading match.
+
+KEY CONCEPT: The main idea of a paragraph is its claim, not its evidence. "Birds migrate to warmer climates" is a claim. "The Arctic tern travels over 70,000 kilometres annually" is evidence. The heading matches the claim, not the evidence.
+
+PARAGRAPH MATCHING — LOCATING INFORMATION
+
+"Which paragraph contains information about X?" — These questions give a list of statements and ask which paragraph contains each idea.
+
+APPROACH:
+
+Step 1: Read one question at a time. Identify the key concept.
+
+Step 2: Skim paragraph openings across the passage for the relevant section. Narrow down to one or two candidate paragraphs.
+
+Step 3: Read those candidate paragraphs carefully to confirm the match.
+
+Step 4: Write the paragraph letter. Note that answers CAN be used more than once in this question type — check the instructions.
+
+IMPORTANT: Paragraph matching rewards SKIMMING efficiency. Do not re-read the entire passage for each question. Use topic sentences as rapid paragraph summaries. If the topic sentence doesn't match, the paragraph usually doesn't either.
+
+GLOBAL MULTIPLE CHOICE — MAIN IDEA OF THE PASSAGE
+
+"Which of the following best describes the main purpose of the passage?"
+"What is the writer's primary concern in this text?"
+
+These test understanding of the ENTIRE passage's argument, not any individual section.
+
+ELIMINATION APPROACH:
+
+Eliminate answers that are too NARROW: Describe only one section or one example from the passage.
+Eliminate answers that are too BROAD: Describe a general topic the passage only partially addresses.
+Eliminate answers that are CONTRADICTED: Misrepresent the author's position or argument.
+Eliminate answers that DISTORT: Correctly describe content but mischaracterise the purpose (e.g., describe an informational passage as "arguing against X" when it is actually balanced).
+
+The correct answer describes the SCOPE and PURPOSE of the whole passage accurately.
+
+PASSAGE STRUCTURE RECOGNITION
+
+Recognising the type of passage structure helps you identify main ideas at every level — whole passage, section, and paragraph.
+
+ARGUMENTATIVE STRUCTURE: Writer takes a clear position and builds a case. Main idea = the argument being made. Paragraphs build the case cumulatively.
+
+ANALYTICAL/EXPLANATORY STRUCTURE: Writer examines a phenomenon, process, or concept. Main idea = the explanation being offered. Paragraphs address different components or stages.
+
+COMPARE AND CONTRAST STRUCTURE: Writer examines two or more positions, theories, or phenomena side by side. Main idea = the comparison being drawn and often a conclusion about which is more accurate or viable.
+
+PROBLEM-SOLUTION STRUCTURE: Writer identifies an issue and explores responses. Main idea = the problem and the most viable solution. Paragraphs define the problem, dismiss inadequate solutions, and endorse the preferred one.
+
+CHRONOLOGICAL/HISTORICAL STRUCTURE: Writer traces a development over time. Main idea = the overall arc of change and its significance. Paragraphs cover successive time periods or turning points.
+
+KEY CONCEPT: Knowing the structure of a passage tells you where to look for the main idea. In an argumentative passage, the main idea is usually in the introduction and restated in the conclusion. In a compare-contrast passage, it often emerges in the final section. In a problem-solution passage, it appears in both the problem setup and the conclusion.
+
+USING THE INTRODUCTION AND CONCLUSION
+
+INTRODUCTION: Academic passages almost always establish the main idea in the first paragraph. Read it with maximum attention. The thesis, scope, and purpose are typically present here.
+
+CONCLUSION: The final paragraph typically restates the main idea, synthesises the argument, and may state implications. If you are uncertain about the main idea after reading the passage, re-read the conclusion carefully.
+
+BODY PARAGRAPHS: Do not look for the passage's main idea here. Body paragraphs contain supporting information. Their individual main ideas contribute to the overall argument, but any single body paragraph is too narrow to represent the whole passage.
+
+ACTIVE READING FOR MAIN IDEAS
+
+SUMMARISE AS YOU READ: After each paragraph, write a 3-to-5-word summary beside it. After reading the whole passage, look at all your summaries together — the overall pattern is the main idea.
+
+THESIS HUNTING: In the introduction, underline the sentence that makes the broadest claim about the subject. This is usually the thesis. Everything else proves, explores, or refines it.
+
+SIGNAL PHRASES THAT ANNOUNCE MAIN IDEAS:
+- "This article examines..." / "This paper argues that..."
+- "The central question is..." / "A key issue is..."
+- "What follows is an account of..." / "The purpose of this discussion is..."
+- "In conclusion, the evidence suggests..." / "Taken together, these findings indicate..."
+- "This paper contends that..." / "The aim of this review is to..."
+
+MATCHING HEADINGS TO DISCOURSE FUNCTIONS
+
+Beyond topic matching, strong students match headings to a paragraph's DISCOURSE FUNCTION — what role it plays in the text's argument.
+
+COMMON DISCOURSE FUNCTIONS:
+- Introducing a definition or key concept
+- Presenting evidence for the previous claim
+- Introducing a contrast or counter-position
+- Describing a historical development or origin
+- Evaluating or critiquing a theory or method
+- Summarising findings or drawing conclusions
+- Proposing a solution or recommendation
+- Acknowledging a limitation
+
+EXAMPLE: A paragraph beginning "Despite these advantages, critics have identified several weaknesses in the approach..." has the discourse function of presenting a counterargument. Any heading that describes a specific criticism of a specific weakness may be too narrow. A heading like "Limitations of the proposed model" captures the function correctly.
+
+TOP STRATEGIES FOR MAIN IDEA QUESTIONS
+
+Strategy: For heading matching, summarise the paragraph in your own words BEFORE looking at the headings list. This prevents you from being drawn to a heading that uses familiar words but describes the wrong thing.
+
+Strategy: Eliminate headings that describe details or examples rather than the paragraph's overall claim.
+
+Strategy: For global multiple choice, test each option against the ENTIRE passage. An option that only describes the first half cannot be the main idea of the whole.
+
+Strategy: Use the introduction and conclusion as main idea anchors. Read these two sections with maximum attention and minimum rushing.
+
+Strategy: When heading matching feels ambiguous, assign confident matches first. Eliminate used headings. The remaining options narrow your field for the harder matches significantly.
+
+COMMON MISTAKES TO AVOID
+
+- Choosing a heading that mentions a key word from the paragraph but describes a detail, not the main point
+- Confusing the main idea of one section with the main idea of the whole passage
+- Selecting a heading based on word matching rather than conceptual matching
+- Ignoring the topic sentence and basing the paragraph summary on its most vivid middle section
+- Spending too long on a single heading match — make a decision and move on; return if time allows
+- Forgetting to check whether each heading/letter can be used more than once in paragraph matching tasks

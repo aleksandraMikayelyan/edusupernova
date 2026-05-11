@@ -1,0 +1,62 @@
+INTERNATIONAL TRADE AND EXCHANGE RATES
+
+INTERNATIONAL TRADE THEORY
+Absolute advantage: A country produces a good using fewer resources than another country.
+Comparative advantage: A country should specialise in the good for which it has the lowest opportunity cost.
+  Even if one country is absolutely better at everything, trade is still mutually beneficial.
+  Example: If Country A gives up less of Good Y to produce one unit of Good X, it has comparative advantage in X.
+Terms of Trade (ToT): Index of export prices relative to import prices.
+  ToT = (Index of export prices / Index of import prices) × 100
+  Improvement: Export prices rise relative to import prices → country gains from trade.
+  Deterioration: Export prices fall relative to import prices → country loses purchasing power.
+Gains from trade: Specialisation → economies of scale → greater variety of goods → higher living standards.
+
+BARRIERS TO TRADE (PROTECTIONISM)
+Tariff: Tax on imports → raises domestic price → reduces imports, increases domestic production.
+Quota: Physical limit on quantity of imports.
+Embargoes: Complete ban on trade with a country.
+Subsidies to domestic producers: Lowers their costs → more competitive against imports.
+Exchange rate manipulation: Deliberately devaluing currency to boost exports.
+Arguments for protectionism: Infant industry, strategic industries, dumping, balance of payments, employment.
+Arguments against: Retaliation, inefficiency, higher consumer prices, reduced global welfare.
+
+FREE TRADE AND TRADE AGREEMENTS
+WTO (World Trade Organisation): Promotes free trade and resolves trade disputes.
+Bilateral agreements: Between two countries.
+Regional trade blocs:
+  Free Trade Area (FTA): No tariffs between members; each keeps own external tariffs (e.g. NAFTA).
+  Customs Union: FTA + common external tariff (e.g. EU customs union).
+  Common Market: Customs union + free movement of labour and capital (e.g. EU single market).
+  Economic Union: Common market + harmonised economic policies (e.g. Eurozone).
+Trade creation: Moving from high-cost domestic production to lower-cost imports within the bloc.
+Trade diversion: Replacing low-cost world imports with higher-cost bloc imports.
+
+EXCHANGE RATES
+Nominal exchange rate: Price of one currency in terms of another.
+Real exchange rate: Nominal rate adjusted for relative price levels.
+Factors affecting exchange rate: Interest rates, inflation, trade balance, speculation, government policy.
+
+Fixed exchange rate: Government maintains rate at a set level by buying/selling currency.
+  Advantage: Certainty for traders, controls inflation.
+  Disadvantage: Requires large reserves, loss of monetary policy independence.
+Floating exchange rate: Determined by market forces of supply and demand.
+  Advantage: Automatic adjustment, no need for reserves, monetary policy independence.
+  Disadvantage: Volatility, uncertainty, can be affected by speculation.
+Managed float: Central bank intervenes occasionally to smooth fluctuations.
+
+IMPACT OF EXCHANGE RATE CHANGES
+Depreciation/devaluation: Currency falls in value.
+  Exports cheaper → export demand rises; Imports more expensive → import demand falls.
+  J-curve effect: In short run, current account may worsen before improving (contracts adjustment lag).
+  Marshall-Lerner condition: Depreciation improves current account if sum of PEDs > 1.
+Appreciation/revaluation: Currency rises in value.
+  Exports more expensive → export demand falls; Imports cheaper → import demand rises.
+
+BALANCE OF PAYMENTS
+Current account: Trade in goods and services + primary income (investment income) + secondary income (transfers).
+  Deficit: Imports > exports → currency outflows exceed inflows.
+  Surplus: Exports > imports → currency inflows exceed outflows.
+Capital and financial account: Investment flows, reserves changes.
+Correction of current account deficit:
+  Expenditure-switching: Depreciation, tariffs → switch from imports to domestic goods.
+  Expenditure-reducing: Deflationary fiscal/monetary policy → reduce income and imports.

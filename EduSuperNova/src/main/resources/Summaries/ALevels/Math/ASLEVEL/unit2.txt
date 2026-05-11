@@ -1,5 +1,5 @@
 INTRODUCTION TO FUNCTIONS
-A function is a rule that assigns each element from a set (the domain) to exactly one element in another set (the range)[cite: 49].
+A function is a rule that assigns each element from a set (the domain) to exactly one element in another set (the range).
 
 MAPPING: The process of associating elements of one set with elements of another.
 DOMAIN: The set of all possible input values (x-values) for which the function is defined.

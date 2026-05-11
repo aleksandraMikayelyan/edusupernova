@@ -1,0 +1,69 @@
+LANGUAGE ACQUISITION
+Language Acquisition: The process by which humans develop the ability to perceive, produce, and use language to communicate.
+First Language Acquisition (L1): The process of acquiring one's native language in early childhood.
+Second Language Acquisition (L2): The process of learning an additional language after the first language has been established.
+Critical Period Hypothesis: The theory, associated with Eric Lenneberg, that there is a biologically determined window in early childhood during which language acquisition is most effective and natural.
+Nativism/Innatism: The theoretical position, associated with Noam Chomsky, that humans are born with an innate language acquisition device (LAD) that enables rapid and universal language development.
+Language Acquisition Device (LAD): Chomsky's proposed innate mental faculty that enables children to acquire language by internalising grammatical rules from the language input they receive.
+Universal Grammar: Chomsky's theory that all human languages share a common underlying grammatical structure, supporting the nativist view of language acquisition.
+Behaviourism: The theoretical position, associated with B.F. Skinner, that language is acquired through imitation of adult speech and reinforcement (reward and correction); largely rejected in its pure form but influential in understanding input.
+Interactionist Theory: The position that language acquisition results from the interaction between innate capacity and environmental input; associated with Jerome Bruner and the Language Acquisition Support System (LASS).
+Language Acquisition Support System (LASS): Jerome Bruner's term for the social and interactional support provided by caregivers that complements the child's innate language capacity.
+Input Hypothesis: Stephen Krashen's theory that language is acquired when learners are exposed to comprehensible input slightly beyond their current level of proficiency (i+1).
+Zone of Proximal Development (ZPD): Vygotsky's concept of the gap between what a learner can achieve independently and what they can achieve with guidance; central to scaffolding in language development.
+Scaffolding: The support provided by a more knowledgeable adult or peer to help a child achieve language tasks beyond their current independent capability.
+
+STAGES OF CHILD LANGUAGE ACQUISITION
+Pre-linguistic Stage: The period before a child produces recognisable words, characterised by crying, cooing, and babbling.
+Cooing: The production of soft, vowel-like sounds by infants, typically from around 6 to 8 weeks, indicating comfort and social engagement.
+Babbling: The production of repeated consonant-vowel syllables (e.g., "ba-ba-ba," "ma-ma-ma") from around 6 months, not yet meaningful but phonologically practising the sounds of the ambient language.
+Holophrastic Stage: The stage from approximately 12 months in which a child uses single words (holophrases) to communicate whole meanings or intentions (e.g., "milk" meaning "I want milk").
+Holophrase: A single word used by a young child to express a complete thought or communicative intent.
+Two-Word Stage: The stage from approximately 18 to 24 months in which children begin combining two words to communicate, often following a telegraphic agent-action or possessor-possession pattern (e.g., "daddy go," "my cup").
+Telegraphic Stage: A stage from approximately 24 to 30 months characterised by short utterances of two to three words that contain mainly content words (nouns, verbs) while omitting function words (e.g., "dog eat bone").
+Virtuous Error: A grammatically incorrect form produced by a child that demonstrates systematic rule-application rather than imitation (e.g., "I goed" for "I went," correctly applying the past tense rule).
+Overextension: A common error in early vocabulary development in which a child applies a word more broadly than its conventional meaning (e.g., using "dog" for all four-legged animals).
+Underextension: A common error in early vocabulary development in which a child applies a word more narrowly than its conventional meaning (e.g., using "cup" only for their own cup).
+Overregularisation: The application of a grammatical rule to irregular forms that are exceptions to that rule (e.g., "sheeps," "mouses," "breaked"), indicating the child has internalised the rule.
+Child-Directed Speech (CDS): The adapted speech style used by adults and caregivers when talking to young children, characterised by higher pitch, exaggerated intonation, simplified vocabulary, and repetition. Also called "Motherese" or "Caretaker Speech."
+Expansion: A conversational strategy in which an adult responds to a child's utterance by repeating and extending it into a grammatically complete form (e.g., Child: "dog run." Adult: "Yes, the dog is running.").
+Recast: A strategy in which an adult responds to a child's incorrect utterance by reformulating it correctly without explicitly correcting the error (e.g., Child: "He goed home." Adult: "Yes, he went home.").
+
+SPOKEN LANGUAGE FEATURES
+Spoken Language: Language produced orally in real time, characterised by spontaneity, interactivity, and prosodic features absent from writing.
+Prosody: The suprasegmental features of spoken language, including intonation, stress, rhythm, and pace, which convey meaning, emphasis, and attitude.
+Intonation: The rise and fall of pitch across an utterance, used to signal questions, statements, lists, and emotional tone.
+Stress: The emphasis placed on a particular syllable or word in speech, which can significantly alter meaning.
+Pause: A temporary silence within or between utterances, which may be filled (e.g., "um," "er") or unfilled; used for planning, emphasis, or turn management.
+Filled Pause / Filler: A vocalised hesitation (e.g., "um," "er," "like," "you know") used to maintain a conversational turn while the speaker plans what to say.
+False Start: When a speaker begins an utterance and then abandons it to start again, typically during planning in spontaneous speech.
+Repetition: The repeating of words or phrases in spontaneous speech, either for emphasis or as a hesitation feature while the speaker formulates their next thought.
+Elision: The omission of sounds or syllables in connected speech (e.g., "gonna" for "going to," "wanna" for "want to").
+Assimilation: A phonological process in which adjacent sounds influence each other, resulting in the alteration of pronunciation (e.g., "ten people" → "tem people").
+Linking: In fluent speech, a final consonant is linked to a following initial vowel sound, producing smooth, connected utterances.
+Turn-Taking: The system by which speakers alternate in conversation, managed through verbal and non-verbal signals.
+Adjacency Pair: A two-part conversational structure in which the first utterance of one speaker calls for a specific type of response from another (e.g., question-answer, greeting-greeting, compliment-acceptance).
+Initiation-Response-Feedback (IRF): A three-part exchange structure common in classroom discourse in which a teacher initiates, a student responds, and the teacher provides feedback.
+Back-Channel: Brief responses given by a listener to signal attention and understanding without taking the conversational turn (e.g., "mm," "yeah," "I see").
+Repair: A conversational strategy used to correct or clarify misunderstanding, either by the speaker themselves (self-repair) or by another participant.
+Hedging: The use of tentative, qualifying language in speech to soften claims or avoid commitment, often signalling politeness or uncertainty.
+Face: The public self-image that participants in conversation seek to maintain; developed in politeness theory by Brown and Levinson.
+Positive Face: The desire to be liked, admired, and approved of by others.
+Negative Face: The desire to be free from imposition and to maintain autonomy over one's own actions.
+Face-Threatening Act (FTA): An utterance that threatens either the positive or negative face of the speaker or the hearer.
+Politeness Strategies: Conversational strategies used to minimise face threats, including hedging, indirect requests, apologies, and compliments.
+Phatic Communion: Conversation whose primary function is social bonding rather than information exchange (e.g., "How are you?"); a term introduced by Bronislaw Malinowski.
+Speech Community: A group of people who share a common set of norms and expectations regarding language use.
+
+CONVERSATION ANALYSIS
+Conversation Analysis (CA): A sociological and linguistic approach to studying the detailed structure of naturally occurring talk, examining turn-taking, repair, and sequential organisation.
+Turn-Taking: The orderly exchange of speaking turns in conversation, managed through prosodic cues, gaze, syntax completion, and convention.
+Topic Management: The ways in which speakers introduce, maintain, change, and close conversational topics.
+Cooperative Principle: Grice's theory that speakers generally follow shared conventions to make communication efficient and effective; violations of these maxims generate implicature.
+Maxim of Quantity: Grice's principle that speakers should provide as much information as required, and no more.
+Maxim of Quality: Grice's principle that speakers should not say what they believe to be false or what they have insufficient evidence for.
+Maxim of Relation: Grice's principle that contributions should be relevant to the current topic or purpose of the conversation.
+Maxim of Manner: Grice's principle that speakers should be clear, unambiguous, brief, and orderly.
+Flouting a Maxim: Deliberately and openly breaking one of Grice's maxims to generate an implied meaning (implicature) that the listener is expected to understand.
+Violating a Maxim: Covertly breaking a maxim to mislead the listener, without expecting them to detect it.
+Implicature: The meaning implied by a speaker's utterance beyond its literal content, generated by the interaction between what is said and the Cooperative Principle.

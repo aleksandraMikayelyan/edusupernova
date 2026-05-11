@@ -1,0 +1,50 @@
+STYLISTICS AND LANGUAGE ANALYSIS
+
+STYLISTICS
+Stylistics: The study of the linguistic choices that produce style in a text.
+Foregrounding: Making certain language features stand out against the background norm.
+  Deviation: Departing from linguistic norms (e.g. unconventional punctuation, invented words).
+  Parallelism: Repeating grammatical or phonological patterns for emphasis.
+Register: A variety of language suited to a particular situation, purpose, and audience.
+  Field: Subject matter and topic.
+  Tenor: Relationship between writer/speaker and audience.
+  Mode: Channel of communication (written, spoken, digital).
+
+NARRATIVE VOICE AND POINT OF VIEW
+First person: Narrator is a character within the story ("I"); intimate, limited perspective.
+Second person: Narrator addresses the reader as "you"; immersive, unusual.
+Third person omniscient: Narrator knows all characters' thoughts and feelings.
+Third person limited: Narrator focuses on one character's perspective.
+Free indirect discourse: Narrative shifts subtly into a character's thoughts without quotation marks.
+Unreliable narrator: A narrator whose account is biased, mistaken, or deceptive.
+Implied author: The version of the author implied by the text's values and choices.
+
+LEXICAL ANALYSIS
+Lexical field: A group of words related to the same topic or domain.
+Collocation: Words that typically appear together (e.g. "heavy rain", "make a decision").
+Connotation: The implied or associated meanings of a word beyond its denotation.
+Semantic prosody: The tendency of a word to attract positive or negative associations (e.g. "cause" tends to precede negative nouns: "cause damage").
+Hedging: Language that reduces certainty or commitment (e.g. "perhaps", "it seems", "might").
+
+SYNTAX AND GRAMMAR IN ANALYSIS
+Syntactic complexity: Long, multi-clause sentences suggest formality and complexity.
+Minor sentences: Incomplete sentences for effect (e.g. "Total silence. Nothing moved.").
+Active vs passive voice: Active foregrounds the agent; passive omits or displaces the agent.
+Nominalisation: Turning verbs or adjectives into nouns (e.g. "destroy" → "destruction").
+  Used in formal and bureaucratic language to obscure agency.
+
+THE LANGUAGE OF ADVERTISING AND MEDIA
+Persuasion techniques: Appeals to ethos, pathos, logos; celebrity endorsement.
+Representation: How language constructs versions of reality; who is foregrounded or marginalised.
+Critical Discourse Analysis (CDA): Examines how language reflects and reproduces power relations.
+  Key theorist: Norman Fairclough — language mediates social practice.
+Headlines: Noun phrases, puns, alliteration; designed to attract attention and condense meaning.
+Intertextuality: References to other texts or cultural knowledge within a text.
+Multimodality: Texts that combine language with images, layout, colour, and sound.
+
+LITERARY LANGUAGE
+Verse and prosody: Metre (iambic pentameter), rhythm, stress; effects in poetry.
+Rhyme: Full rhyme, half rhyme, internal rhyme; effects on sound and meaning.
+Imagery: Sustained patterns of figurative language (motifs, extended metaphors).
+Stream of consciousness: Narrative technique mimicking the flow of unfiltered thought.
+Dramatic irony: Audience knows something characters do not; creates tension.

@@ -1,0 +1,51 @@
+LANGUAGE CHANGE OVER TIME
+
+TYPES OF LANGUAGE CHANGE
+Lexical change: New words enter the language; old words fall out of use.
+  Neologism: A newly coined word (e.g. "selfie", "podcast", "googling").
+  Borrowing (loan words): Words adopted from other languages (e.g. "sofa" from Arabic, "ballet" from French).
+  Compounding: Combining existing words (e.g. "bookstore", "skyscraper").
+  Blending: Merging parts of two words (e.g. "brunch" = breakfast + lunch).
+  Clipping: Shortening a word (e.g. "phone" from "telephone", "flu" from "influenza").
+  Conversion (functional shift): A word changes its grammatical class (e.g. "to text", "to friend").
+  Acronym and initialism: NASA, BBC, ASAP.
+  Eponym: Word from a person's name (e.g. "hoover", "sandwich").
+  Archaic words: Words that have fallen out of use (e.g. "forsooth", "prithee").
+
+SEMANTIC CHANGE
+Broadening (generalisation): Word's meaning becomes wider (e.g. "holiday" — holy day → any day off).
+Narrowing (specialisation): Meaning becomes more restricted (e.g. "meat" — any food → animal flesh).
+Amelioration: Word gains a more positive meaning (e.g. "knight" — boy/servant → noble warrior).
+Pejoration: Word gains a more negative meaning (e.g. "villain" — farm worker → wicked person).
+Metaphorical extension: Meaning extends through metaphor (e.g. "mouse" for computer device).
+Euphemism: Replacing taboo or unpleasant terms (e.g. "passed away" for "died").
+
+GRAMMATICAL CHANGE
+Loss of inflections: Old English had many case endings; modern English relies on word order.
+Pronoun changes: "Thou/thee" → "you"; gender-neutral "they" (singular use).
+Modal verbs: "Shall" and "will" distinctions blurring.
+Progressive tense spread: Increasing use of -ing forms in contexts previously using simple forms.
+Preposition stranding: Ending a sentence with a preposition (once stigmatised, now accepted).
+
+GRAPHOLOGICAL AND PHONOLOGICAL CHANGE
+Great Vowel Shift (1400–1700): Major change in pronunciation of long vowels in English.
+Spelling standardisation: Printing press → fixed spellings despite phonological change.
+Spelling pronunciation: Words pronounced as spelled (e.g. "often" — "t" restored).
+Digital language: Abbreviations (lol, brb), emojis, hashtags influence written norms.
+
+THEORIES OF LANGUAGE CHANGE
+Jean Aitchison — Metaphors for language change:
+  Damp spoon syndrome: Blaming laziness for change (she disagrees).
+  Crumbling castle theory: Language in decline (she disagrees; change is natural).
+  Infectious disease metaphor: Change as contamination (she disagrees).
+Language change is natural, systematic, and inevitable.
+Social prestige drives uptake of new forms.
+Language shift: A community abandons one language for another over time.
+Language death: A language ceases to have native speakers.
+
+ATTITUDES TO LANGUAGE CHANGE
+Prescriptivism: Language should follow strict rules; change = decay.
+Descriptivism: Language should be described as it is actually used; change is neutral.
+Linguistic relativity (Sapir-Whorf hypothesis):
+  Strong version: Language determines thought.
+  Weak version: Language influences thought.

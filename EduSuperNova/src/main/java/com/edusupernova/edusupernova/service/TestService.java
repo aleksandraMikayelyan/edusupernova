@@ -5,6 +5,7 @@ import com.edusupernova.edusupernova.dto.request.StartTestRequest;
 import com.edusupernova.edusupernova.dto.request.SubmitAnswerRequest;
 import com.edusupernova.edusupernova.dto.response.AnswerFeedbackDTO;
 import com.edusupernova.edusupernova.dto.response.FeedBackDTO;
+import com.edusupernova.edusupernova.dto.response.TestHistoryDTO;
 import com.edusupernova.edusupernova.dto.response.TestQuestionDTO;
 import com.edusupernova.edusupernova.dto.response.TestSessionDTO;
 import com.edusupernova.edusupernova.exception.ForbiddenException;
@@ -165,6 +166,9 @@ public class TestService {
         Quiz quiz = tq.getQuiz();
         boolean isMCQ = isMCQType(quiz.getQuestionType());
 
+        // Capture before mutating — used to detect autosave re-submissions
+        boolean alreadyAnswered = tq.getAnsweredAt() != null;
+
         // ── Evaluate ─────────────────────────────────────────────────────────
         boolean  isCorrect;
         String   aiFeedback;
@@ -177,19 +181,28 @@ public class TestService {
             isCorrect  = evaluateMCQ(request.userResponse(), quiz.getCorrectAnswer());
             aiFeedback = generateMCQFeedback(quiz, isCorrect);
         } else {
-            // ESSAY / OPEN_ENDED — single-question AI evaluation
-            try {
-                OpenEndedEvaluator.EvaluationResult result =
-                        openEndedEvaluator.evaluateBatch(List.of(tq),
-                                buildContext(test)).get(0);
-                isCorrect  = result.score() >= 6.0;
-                aiFeedback = result.feedback();
-                aiScore    = result.score();
-            } catch (RuntimeException e) {
-                log.warn("AI evaluation failed for quizId={}: {}", request.quizId(), e.getMessage());
-                isCorrect  = false;
-                aiFeedback = "AI feedback unavailable — please review your answer manually.";
-                aiScore    = -1.0;
+            // Re-use existing evaluation if already scored (autosave idempotency guard)
+            if (alreadyAnswered && tq.getAiScore() != null && tq.getAiScore() >= 0) {
+                isCorrect  = Boolean.TRUE.equals(tq.getCorrectResponse());
+                aiFeedback = tq.getFeedbackIa();
+                aiScore    = tq.getAiScore();
+                log.debug("Skipping Groq re-evaluation for quizId={} (already scored: {})", request.quizId(), aiScore);
+            } else {
+                // ESSAY / OPEN_ENDED — single-question AI evaluation
+                try {
+                    OpenEndedEvaluator.EvaluationResult result =
+                            openEndedEvaluator.evaluateBatch(List.of(tq),
+                                    test.getCourse().getExam().getExamname(),
+                                    test.getPaper() != null ? test.getPaper().getPaperName() : null).get(0);
+                    isCorrect  = result.score() >= 6.0;
+                    aiFeedback = result.feedback();
+                    aiScore    = result.score();
+                } catch (RuntimeException e) {
+                    log.warn("AI evaluation failed for quizId={}: {}", request.quizId(), e.getMessage());
+                    isCorrect  = false;
+                    aiFeedback = "AI feedback unavailable — please review your answer manually.";
+                    aiScore    = -1.0;
+                }
             }
         }
 
@@ -200,9 +213,11 @@ public class TestService {
         tq.setAnsweredAt(LocalDateTime.now());
         testQuestionsRepository.save(tq);
 
-        // ── Update test totals ────────────────────────────────────────────────
-        test.setTotalAnswered(test.getTotalAnswered() + 1);
-        if (isCorrect) test.setTotalCorrect(test.getTotalCorrect() + 1);
+        // ── Update test totals (only on first submission, not autosave re-hits) ─
+        if (!alreadyAnswered) {
+            test.setTotalAnswered(test.getTotalAnswered() + 1);
+            if (isCorrect) test.setTotalCorrect(test.getTotalCorrect() + 1);
+        }
 
         // ── Check completion ──────────────────────────────────────────────────
         List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
@@ -212,15 +227,58 @@ public class TestService {
 
         boolean complete = unanswered == 0;
 
-        if (complete) {
+        if (complete && test.getStatus() != Tests.TestStatus.COMPLETED) {
+            // Evaluate any open-ended questions that were answered but never scored
+            List<TestQuestions> needsEval = allQuestions.stream()
+                    .filter(q -> !isMCQType(q.getQuiz().getQuestionType()))
+                    .filter(q -> q.getUserResponse() != null && !q.getUserResponse().isBlank())
+                    .filter(q -> q.getAiScore() == null || q.getAiScore() < 0)
+                    .toList();
+
+            if (!needsEval.isEmpty()) {
+                log.info("testId={} — evaluating {} unevaluated open-ended question(s) at completion", testId, needsEval.size());
+                try {
+                    List<OpenEndedEvaluator.EvaluationResult> batchResults = openEndedEvaluator.evaluateBatch(
+                            needsEval,
+                            test.getCourse().getExam().getExamname(),
+                            test.getPaper() != null ? test.getPaper().getPaperName() : null);
+                    for (int i = 0; i < needsEval.size(); i++) {
+                        TestQuestions q = needsEval.get(i);
+                        OpenEndedEvaluator.EvaluationResult r = batchResults.get(i);
+                        q.setCorrectResponse(r.score() >= 6.0);
+                        q.setFeedbackIa(r.feedback());
+                        q.setAiScore(r.score());
+                        q.setAnsweredAt(LocalDateTime.now());
+                        testQuestionsRepository.save(q);
+                    }
+                } catch (RuntimeException e) {
+                    log.warn("testId={} — completion batch evaluation failed: {}", testId, e.getMessage());
+                }
+            }
+
             int correctCount = (int) allQuestions.stream()
                     .filter(q -> Boolean.TRUE.equals(q.getCorrectResponse()))
                     .count();
+
+            // For open-ended exams use average AI score (0-10 → 0-100%),
+            // for MCQ-only tests use the standard correct/total percentage.
+            List<TestQuestions> scoredOpenEnded = allQuestions.stream()
+                    .filter(q -> !isMCQType(q.getQuiz().getQuestionType()))
+                    .filter(q -> q.getAiScore() != null && q.getAiScore() >= 0)
+                    .toList();
+
+            double finalScore = scoredOpenEnded.isEmpty()
+                    ? calculatePercentage(correctCount, allQuestions.size())
+                    : Math.round(scoredOpenEnded.stream()
+                            .mapToDouble(TestQuestions::getAiScore)
+                            .average()
+                            .orElse(0.0) * 10.0 * 100.0) / 100.0;
+
             test.setTotalCorrect(correctCount);
             test.setTotalAnswered(allQuestions.size());
             test.setStatus(Tests.TestStatus.COMPLETED);
             test.setCompletedAt(LocalDateTime.now());
-            test.setFinalScore(calculatePercentage(correctCount, allQuestions.size()));
+            test.setFinalScore(finalScore);
         }
         testRepository.save(test);
 
@@ -289,7 +347,19 @@ public class TestService {
                 .map(tq -> toQuestionFeedbackDTO(tq, getQuestionNumber(allQuestions, tq)))
                 .toList();
 
-        double finalScore = calculatePercentage(test.getTotalCorrect(), total);
+        // For open-ended exams compute score from average AI score; fall back to correct/total for MCQ
+        List<TestQuestions> scoredOpenEnded = allQuestions.stream()
+                .filter(q -> q.getQuiz() != null && !isMCQType(q.getQuiz().getQuestionType()))
+                .filter(q -> q.getAiScore() != null && q.getAiScore() >= 0)
+                .toList();
+
+        double finalScore = scoredOpenEnded.isEmpty()
+                ? calculatePercentage(test.getTotalCorrect(), total)
+                : Math.round(scoredOpenEnded.stream()
+                        .mapToDouble(TestQuestions::getAiScore)
+                        .average()
+                        .orElse(0.0) * 10.0 * 100.0) / 100.0;
+
         String grade = calculateGrade(finalScore);
 
         return new FeedBackDTO(
@@ -305,6 +375,43 @@ public class TestService {
                 test.getCompletedAt(),
                 durationSeconds,
                 questionFeedback
+        );
+    }
+
+    // ── 5. HISTORY ───────────────────────────────────────────────────────────
+
+    /**
+     * Returns all COMPLETED tests for the authenticated user, newest first.
+     */
+    @Transactional(readOnly = true)
+    public List<TestHistoryDTO> getHistory(String email) {
+        Users user = findUserByEmail(email);
+        return testRepository.findByUserIdOrderByCreationDateDesc(user.getId())
+                .stream()
+                .filter(t -> t.getStatus() == Tests.TestStatus.COMPLETED)
+                .map(this::toHistoryDTO)
+                .toList();
+    }
+
+    private TestHistoryDTO toHistoryDTO(Tests t) {
+        long duration = t.getCompletedAt() != null && t.getStartedAt() != null
+                ? ChronoUnit.SECONDS.between(t.getStartedAt(), t.getCompletedAt())
+                : 0L;
+        // Use totalAnswered stored on the test to avoid N+1 query per history row
+        int total = t.getTotalAnswered() != null ? t.getTotalAnswered() : 0;
+        return new TestHistoryDTO(
+                t.getId(),
+                t.getCourse() != null ? t.getCourse().getId()         : null,
+                t.getCourse() != null ? t.getCourse().getCoursename() : null,
+                t.getPaper()  != null ? t.getPaper().getId()          : null,
+                t.getPaper()  != null ? t.getPaper().getPaperName()   : null,
+                t.getPaper()  != null ? t.getPaper().getFormat().name() : null,
+                t.getFinalScore(),
+                calculateGrade(t.getFinalScore() != null ? t.getFinalScore() : 0.0),
+                t.getTotalCorrect(),
+                total,
+                t.getCompletedAt(),
+                duration
         );
     }
 
@@ -348,12 +455,6 @@ public class TestService {
             case MULTIPLE_CHOICE, TRUE_FALSE_NG, NUMERIC_INPUT -> true;
             default -> false;
         };
-    }
-
-    private String buildContext(Tests test) {
-        return String.format("Exam: %s, Paper: %s",
-                test.getCourse().getExam().getExamname(),
-                test.getPaper() != null ? test.getPaper().getPaperName() : "General");
     }
 
     /**

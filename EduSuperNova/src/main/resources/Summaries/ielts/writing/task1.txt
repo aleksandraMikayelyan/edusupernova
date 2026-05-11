@@ -1,0 +1,215 @@
+IELTS WRITING TASK 1 ACADEMIC
+
+Task 1 Academic requires you to describe visual data — a graph, chart, table, diagram, or map — in at least 150 words in approximately 20 minutes. You do not give your opinion. You report, compare, and summarise what the data shows.
+
+WHAT IS TESTED
+
+The examiner scores your response on four criteria, each worth 25% of your Task 1 mark:
+
+TASK ACHIEVEMENT: Did you accurately describe the key features? Did you write an overview? Did you select and highlight the most significant data rather than listing every number?
+
+COHERENCE AND COHESION: Is your response logically organised? Do paragraphs have clear purposes? Are linking words used correctly and varied?
+
+LEXICAL RESOURCE: Do you use a range of vocabulary for describing data? Do you avoid repetition? Is your vocabulary accurate and precise?
+
+GRAMMATICAL RANGE AND ACCURACY: Do you use a variety of sentence structures? Is your grammar accurate? Do you use tense correctly for the data type?
+
+KEY CONCEPT: Task Achievement is where most students lose marks. They describe data accurately but fail to write a clear overview and fail to select the most significant trends. A response that lists all the numbers without identifying the key patterns scores no higher than Band 5 for Task Achievement, regardless of language quality.
+
+THE FOUR-PART RESPONSE STRUCTURE
+
+Every Task 1 Academic response should have exactly four parts:
+
+PART 1 — INTRODUCTION (1-2 sentences): Paraphrase the question's description of the visual. Change the vocabulary and structure — do not copy the prompt words. State what the visual shows without describing any data yet.
+
+PART 2 — OVERVIEW (2-3 sentences): Summarise the most significant overall trends, patterns, or features. This is the most important paragraph. It shows the examiner you can see the big picture, not just individual data points. Do NOT include specific figures here.
+
+PART 3 — BODY PARAGRAPH 1 (3-5 sentences): Describe the first group of data in detail, with specific figures and comparisons.
+
+PART 4 — BODY PARAGRAPH 2 (3-5 sentences): Describe the second group of data in detail, with specific figures and comparisons.
+
+KEY CONCEPT: The overview is not a conclusion. It does not go at the end — it goes after the introduction, before the body paragraphs. This placement shows the examiner your analytical perspective immediately. Many Band 6 responses either omit the overview entirely or bury it at the end as a summary.
+
+TYPES OF VISUAL DATA AND HOW TO APPROACH EACH
+
+LINE GRAPHS
+
+Used for: Changes over time (trends). One or more lines showing how values rise, fall, or fluctuate over a period.
+
+OVERVIEW FOCUS: What is the overall direction of change? Which category is highest / lowest at the start and end? Are there any notable reversals or crossings?
+
+BODY PARAGRAPH FOCUS: Describe the trend for each category, noting significant rises, falls, peaks, troughs, and points where lines cross.
+
+TENSE: Use past simple for completed periods ("The number rose sharply between 1990 and 2000"). Use present simple only for data presented as current or timeless.
+
+BAR CHARTS
+
+Used for: Comparing quantities across categories, or tracking changes in categories over time (grouped bars).
+
+OVERVIEW FOCUS: Which category is clearly highest or lowest overall? Is there a clear pattern across the categories?
+
+BODY PARAGRAPH FOCUS: Group similar categories together. Compare and contrast. Avoid listing bars in the order they appear — group by pattern.
+
+PIE CHARTS
+
+Used for: Showing proportions of a whole. Often given in pairs (two time periods) or multiples (different countries).
+
+OVERVIEW FOCUS: What is the dominant category? What changed most significantly between the two charts (if paired)?
+
+BODY PARAGRAPH FOCUS: Describe the largest and smallest segments first. Group similar-sized segments. If two charts are given, compare corresponding categories.
+
+TABLES
+
+Used for: Presenting data across multiple variables simultaneously. Often the most data-dense visual type.
+
+OVERVIEW FOCUS: What is the most striking pattern across all the data? Which column or row stands out as highest or lowest overall?
+
+BODY PARAGRAPH FOCUS: Select and compare the most significant data points. You CANNOT describe every cell — choose the most meaningful patterns and comparisons.
+
+IMPORTANT: Never try to include every number in a table. Select the most significant values and use them to illustrate patterns. "The highest value across all categories was..." and "In contrast, the lowest figure..." are better than a row-by-row list.
+
+DIAGRAMS — PROCESS AND CYCLE
+
+Used for: Explaining how something works or the stages in a process. No numerical data.
+
+OVERVIEW FOCUS: How many stages are there? Is it a linear process or a cyclical one? What is the input and the output?
+
+BODY PARAGRAPH FOCUS: Describe the stages in order using clear sequencing language. Use the passive voice where the subject of the action is unimportant or unspecified.
+
+TENSE: Use present simple for most process diagrams ("The raw material is fed into the machine"). Use passive voice heavily.
+
+MAPS — BEFORE AND AFTER / LOCATION
+
+Used for: Comparing how a place has changed over time, or describing the layout of a location.
+
+OVERVIEW FOCUS: What is the overall pattern of change? Has the area developed significantly? Which zones changed most?
+
+BODY PARAGRAPH FOCUS: Describe areas of the map systematically — by location (north/south/east/west/centre) or by category of change (new buildings, demolished buildings, unchanged areas).
+
+TENSE: Past simple for changes between two historical periods ("The factory was replaced by a shopping centre"). Present simple for a current layout description.
+
+WRITING A STRONG INTRODUCTION
+
+DO: Paraphrase the prompt. Change the key words and restructure the sentence.
+
+DO NOT: Copy the prompt word for word. This is penalised under Lexical Resource.
+
+ORIGINAL PROMPT: "The graph below shows the number of visitors to three different museums between 2005 and 2020."
+
+WEAK INTRODUCTION (copied): "The graph below shows the number of visitors to three different museums between 2005 and 2020."
+
+STRONG INTRODUCTION: "The line graph compares visitor numbers at three museums over a fifteen-year period from 2005 to 2020."
+
+PARAPHRASE STRATEGIES:
+- Change "graph" → "line graph" / "bar chart" / "diagram"
+- Change "shows" → "illustrates" / "compares" / "presents" / "depicts" / "outlines"
+- Change "the number of" → "figures for" / "data on" / "statistics relating to"
+- Change time expressions: "between 2005 and 2020" → "from 2005 to 2020" / "over a fifteen-year period"
+- Change categories: "three museums" → "three different cultural institutions"
+
+WRITING A STRONG OVERVIEW
+
+The overview identifies the most significant overall patterns WITHOUT specific numbers.
+
+WEAK OVERVIEW: "The Natural History Museum had the most visitors in 2020 at 4.5 million."
+
+STRONG OVERVIEW: "Overall, visitor numbers to all three museums increased over the period, with the Natural History Museum consistently attracting the largest audiences. The Science Museum showed the most dramatic growth, while the Art Gallery remained relatively stable throughout."
+
+OVERVIEW SIGNAL PHRASES:
+- "Overall, it is clear that..."
+- "In general, the most notable feature is..."
+- "At a glance, the data reveals that..."
+- "The most striking trend is..."
+- "What stands out most clearly is..."
+
+KEY CONCEPT: The overview must cover the WHOLE visual, not just one part. If there are three categories, the overview should address all three in general terms. A one-sentence overview addressing only the most prominent trend is insufficient.
+
+VOCABULARY FOR DESCRIBING DATA
+
+DESCRIBING TRENDS — VERBS:
+Rise, increase, grow, climb, surge (strong upward), jump, soar (very strong upward), creep up (slow upward)
+Fall, decrease, decline, drop, plummet (strong downward), dip (slight downward), slide
+Fluctuate (irregular movement), level off / plateau (stabilise), remain stable / stay constant
+
+DESCRIBING TRENDS — ADVERBS (degree and speed):
+Dramatically, sharply, significantly, considerably, markedly (large change)
+Gradually, steadily, moderately, slightly, marginally (small change)
+Rapidly, swiftly, suddenly, abruptly (fast change)
+Slowly, gradually (slow change)
+
+DESCRIBING TRENDS — NOUNS:
+A rise / an increase / a growth (upward movement)
+A fall / a decrease / a decline / a drop (downward movement)
+A fluctuation (irregular movement)
+A peak / a high point (maximum value)
+A trough / a low point (minimum value)
+A plateau / a period of stability (no significant change)
+
+NOUN PHRASE STRUCTURES: "There was a sharp rise in..." / "The data shows a gradual decline in..."
+VERB PHRASE STRUCTURES: "Sales rose sharply..." / "The figure declined gradually..."
+
+NOTE: Mix noun phrase and verb phrase structures across your response. Using the same structure repeatedly lowers your Lexical Resource score.
+
+DESCRIBING PROPORTIONS (PIE CHARTS AND PERCENTAGES):
+- "accounted for," "represented," "made up," "constituted," "comprised" (X% of the total)
+- "the largest share," "the majority," "the dominant category," "the greatest proportion"
+- "just over half," "approximately a third," "nearly a quarter," "less than one in ten"
+
+MAKING COMPARISONS:
+- "compared to / with," "in comparison with," "relative to"
+- "whereas," "while," "in contrast," "on the other hand"
+- "X was significantly higher than Y" / "Y was roughly twice that of Z"
+- "the most / least," "the highest / lowest," "the greatest / smallest"
+
+APPROXIMATING DATA:
+- "approximately," "roughly," "around," "just over," "just under," "nearly," "almost"
+- "slightly more than," "marginally less than," "barely"
+
+IMPORTANT: You do not need to use exact figures for every data point. Approximation language ("roughly 40%") is perfectly acceptable and sometimes preferred for very precise numbers.
+
+GRAMMAR ESSENTIALS FOR TASK 1
+
+TENSE ACCURACY: The most common grammar error in Task 1. If the data covers a past period (1990-2020), use past simple. If the data covers a future period, use future forms. If the diagram shows a current process, use present simple.
+
+PASSIVE VOICE for processes: "Water is heated to 100°C." / "The mixture is then filtered." Avoid "they heat the water" — use passive when no agent is specified.
+
+SUBJECT-VERB AGREEMENT: "The number of visitors was..." (singular) / "The figures were..." (plural). "The data shows..." (data is treated as singular in British English).
+
+ARTICLE USAGE: Use "the" for specific, identifiable data ("the highest figure") and "a/an" for general references ("there was a sharp increase").
+
+RELATIVE CLAUSES for adding data without starting a new sentence: "Sales reached a peak in 2015, when they stood at £3.2 million, before declining steadily over the following years."
+
+TIME MANAGEMENT FOR TASK 1
+
+Total time allowed: 20 minutes.
+
+Planning (2-3 minutes): Identify the visual type. Identify the overview (key trends). Decide how to group data into two body paragraphs.
+
+Writing (15 minutes): Introduction (2 minutes), Overview (3 minutes), Body 1 (5 minutes), Body 2 (5 minutes).
+
+Checking (2 minutes): Check tense consistency, spelling of any data labels, word count (minimum 150).
+
+IMPORTANT: Do not spend more than 20 minutes on Task 1. Task 2 is worth twice as many marks. If you run over time on Task 1, you sacrifice far more from Task 2 than you gained.
+
+TOP STRATEGIES FOR TASK 1 ACADEMIC
+
+Strategy: Always write the overview before the body paragraphs. This ensures you prioritise the big picture and do not run out of time before writing the most important paragraph.
+
+Strategy: Organise body paragraphs by pattern or group, not by the visual's left-to-right order. Grouping by significance produces better coherence than listing.
+
+Strategy: For complex visuals with many data points, select three or four of the most significant values and use them to illustrate the trends. Do not attempt to describe everything.
+
+Strategy: Vary your trend vocabulary deliberately. Use a verb phrase in one sentence ("exports rose dramatically"), then a noun phrase in the next ("this increase was followed by..."). This improves Lexical Resource without requiring exotic vocabulary.
+
+Strategy: When data shows exceptions to the general trend, note them. "While most categories increased, X remained relatively stable" shows analytical awareness and scores well for Task Achievement.
+
+COMMON MISTAKES TO AVOID
+
+- Copying the prompt sentence as the introduction
+- Omitting the overview paragraph entirely — this caps your Task Achievement score at Band 5
+- Placing the overview at the end instead of after the introduction
+- Including your own opinion or explanation ("This may be because...") — report only what the data shows
+- Using only one tense throughout when multiple time periods require different tenses
+- Describing data in visual order (left to right) rather than by analytical pattern
+- Forgetting to include specific figures in body paragraphs — data must be referenced
+- Writing fewer than 150 words — penalties apply below the minimum

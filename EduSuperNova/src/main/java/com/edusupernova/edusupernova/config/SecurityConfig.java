@@ -65,6 +65,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/tests/start").permitAll()
                         .requestMatchers("/api/feedback/**").permitAll()
                         .requestMatchers("/api/progress/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/courses/*/formula-sheet").permitAll()
+                        .requestMatchers("/api/courses/**").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
@@ -92,8 +94,14 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOriginPatterns(List.of("*")); // Permitimos todos los patrones de origen
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedOrigins(List.of(
+                "https://edu-supernova.com",
+                "https://www.edu-supernova.com",
+                "https://edusupernova.onrender.com",
+                "http://localhost:5173",
+                "http://localhost:3000"
+        ));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 
