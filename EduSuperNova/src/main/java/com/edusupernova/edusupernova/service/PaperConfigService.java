@@ -38,32 +38,35 @@ public class PaperConfigService {
             String pn = p.getPaperName().toLowerCase();
             boolean changed = false;
 
-            // ── Math MCQ → exactly 11 questions ──────────────────────────────
-            if (cn.contains("math") && p.getFormat() == Paper.PaperFormat.MCQ) {
+            // Only A-Level / AS-Level courses are reconfigured — never ACT/SAT/IELTS/TOEFL
+            boolean isALevel = cn.contains("level");
+
+            // ── A-Level Math MCQ → exactly 11 questions ───────────────────────
+            if (isALevel && cn.contains("math") && p.getFormat() == Paper.PaperFormat.MCQ) {
                 if (!Integer.valueOf(11).equals(p.getTotalQuestions())) {
                     p.setTotalQuestions(11);
                     changed = true;
                 }
             }
 
-            // ── Economics DATA_RESPONSE → 5 questions ─────────────────────────
-            if (isEcon(cn) && p.getFormat() == Paper.PaperFormat.DATA_RESPONSE) {
+            // ── A-Level Economics DATA_RESPONSE → 5 questions ─────────────────
+            if (isALevel && isEcon(cn) && p.getFormat() == Paper.PaperFormat.DATA_RESPONSE) {
                 if (!Integer.valueOf(5).equals(p.getTotalQuestions())) {
                     p.setTotalQuestions(5);
                     changed = true;
                 }
             }
 
-            // ── Economics ESSAY → 4 questions ────────────────────────────────
-            if (isEcon(cn) && p.getFormat() == Paper.PaperFormat.ESSAY) {
+            // ── A-Level Economics ESSAY → 4 questions ─────────────────────────
+            if (isALevel && isEcon(cn) && p.getFormat() == Paper.PaperFormat.ESSAY) {
                 if (!Integer.valueOf(4).equals(p.getTotalQuestions())) {
                     p.setTotalQuestions(4);
                     changed = true;
                 }
             }
 
-            // ── English / Language Paper 1 → READING_WRITING, 3 essays ──────
-            if (isLang(cn) && pn.contains("paper 1")) {
+            // ── A-Level English Paper 1 → READING_WRITING, 3 essays ──────────
+            if (isALevel && isLang(cn) && pn.contains("paper 1")) {
                 if (p.getFormat() != Paper.PaperFormat.READING_WRITING) {
                     p.setFormat(Paper.PaperFormat.READING_WRITING);
                     changed = true;
@@ -74,8 +77,8 @@ public class PaperConfigService {
                 }
             }
 
-            // ── English / Language Paper 2 → MULTI_ESSAY ─────────────────────
-            if (isLang(cn) && pn.contains("paper 2")) {
+            // ── A-Level English Paper 2 → MULTI_ESSAY ────────────────────────
+            if (isALevel && isLang(cn) && pn.contains("paper 2")) {
                 if (p.getFormat() != Paper.PaperFormat.MULTI_ESSAY) {
                     p.setFormat(Paper.PaperFormat.MULTI_ESSAY);
                     changed = true;
