@@ -29,6 +29,10 @@ COPY --from=build /app/target/edusupernova-0.0.1-SNAPSHOT.jar app.jar
 
 # Render injects PORT at runtime (default 10000).
 # Spring Boot reads it via ${PORT:8080} in application.properties.
-EXPOSE 8080
+EXPOSE 10000
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", \
+  "-Xmx300m", \
+  "-Xms64m", \
+  "-XX:+ExitOnOutOfMemoryError", \
+  "-jar", "app.jar"]
