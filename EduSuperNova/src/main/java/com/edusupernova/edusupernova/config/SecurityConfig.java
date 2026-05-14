@@ -68,6 +68,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/courses/*/formula-sheet").permitAll()
                         .requestMatchers("/api/courses/**").permitAll()
                         .requestMatchers("/error").permitAll()
+                        .requestMatchers("/keep-alive").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
                 // 3. Manejo de excepciones: Si algo falla, que no nos tire un 403 genérico
