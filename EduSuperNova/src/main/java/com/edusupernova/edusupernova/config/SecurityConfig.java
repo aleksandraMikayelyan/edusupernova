@@ -67,6 +67,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/progress/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/courses/*/formula-sheet").permitAll()
                         .requestMatchers("/api/courses/**").permitAll()
+                        .requestMatchers("/keep-alive").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
