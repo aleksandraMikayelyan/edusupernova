@@ -83,6 +83,19 @@ public class TestController {
     }
 
     /**
+     * Force-completes a test. Unanswered questions are scored 0.
+     * Ensures every submit attempt appears in the user's history.
+     */
+    @PostMapping("/{testId}/submit")
+    public ResponseEntity<FeedBackDTO> forceSubmit(
+            @PathVariable Integer testId,
+            Authentication auth) {
+
+        FeedBackDTO report = testService.forceSubmit(testId, auth.getName());
+        return ResponseEntity.ok(report);
+    }
+
+    /**
      * Returns the authenticated user's completed test history, newest first.
      */
     @GetMapping("/history")

@@ -378,7 +378,65 @@ public class TestService {
         );
     }
 
-    // ── 5. HISTORY ───────────────────────────────────────────────────────────
+    // ── 5. FORCE SUBMIT ──────────────────────────────────────────────────────
+
+    /**
+     * Force-completes a test regardless of how many questions were answered.
+     * Unanswered questions are marked as incorrect with score 0 so the attempt
+     * is always visible in the user's history.
+     */
+    public FeedBackDTO forceSubmit(Integer testId, String email) {
+        Tests test = findTest(testId);
+        assertOwnership(test, email);
+
+        if (test.getStatus() == Tests.TestStatus.COMPLETED) {
+            return getReport(testId, email);
+        }
+
+        List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
+
+        for (TestQuestions tq : allQuestions) {
+            if (tq.getUserResponse() == null || tq.getUserResponse().isBlank()) {
+                tq.setUserResponse("");
+                tq.setCorrectResponse(false);
+                tq.setFeedbackIa("Not answered.");
+                if (!isMCQType(tq.getQuiz().getQuestionType())) {
+                    tq.setAiScore(0.0);
+                }
+                tq.setAnsweredAt(LocalDateTime.now());
+                testQuestionsRepository.save(tq);
+            }
+        }
+
+        int correctCount = (int) allQuestions.stream()
+                .filter(q -> Boolean.TRUE.equals(q.getCorrectResponse()))
+                .count();
+
+        List<TestQuestions> scoredOpenEnded = allQuestions.stream()
+                .filter(q -> !isMCQType(q.getQuiz().getQuestionType()))
+                .filter(q -> q.getAiScore() != null && q.getAiScore() >= 0)
+                .toList();
+
+        double finalScore = scoredOpenEnded.isEmpty()
+                ? calculatePercentage(correctCount, allQuestions.size())
+                : Math.round(scoredOpenEnded.stream()
+                        .mapToDouble(TestQuestions::getAiScore)
+                        .average()
+                        .orElse(0.0) * 10.0 * 100.0) / 100.0;
+
+        test.setTotalCorrect(correctCount);
+        test.setTotalAnswered(allQuestions.size());
+        test.setStatus(Tests.TestStatus.COMPLETED);
+        test.setCompletedAt(LocalDateTime.now());
+        test.setFinalScore(finalScore);
+        testRepository.save(test);
+
+        log.info("Force-submitted testId={} userId={} score={}", testId, test.getUser().getId(), finalScore);
+
+        return getReport(testId, email);
+    }
+
+    // ── 6. HISTORY ───────────────────────────────────────────────────────────
 
     /**
      * Returns all COMPLETED tests for the authenticated user, newest first.

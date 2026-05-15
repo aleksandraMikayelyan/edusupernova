@@ -20,7 +20,7 @@ public class EmailService {
     @Value("${app.email.from}")
     private String fromAddress;
 
-    @Async
+    @Async("emailExecutor")
     public void sendVerificationCode(String toEmail, String code) {
         try {
             MimeMessage message = mailSender.createMimeMessage();
