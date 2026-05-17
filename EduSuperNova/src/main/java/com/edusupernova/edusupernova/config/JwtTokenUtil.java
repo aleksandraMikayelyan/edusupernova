@@ -17,7 +17,7 @@ public class JwtTokenUtil {
     @Value("${app.security.jwt-secret}")
     private String secretString;
 
-    private static final long EXPIRATION_TIME = 86400000; // 24 hours
+    private static final long EXPIRATION_TIME = 604800000; // 7 days
 
     public long getExpirationMs() { return EXPIRATION_TIME; }
 

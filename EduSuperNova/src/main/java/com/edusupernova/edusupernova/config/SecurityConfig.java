@@ -41,11 +41,10 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService() {
         return email -> {
             Users user = userRepository.findByEmail(email);
-            // CORRECCIÓN: Si el usuario es null, lanzamos la excepción.
             if (user == null) {
                 throw new UsernameNotFoundException("Usuario no encontrado: " + email);
             }
-            return user;
+            return new UserPrincipal(user);
         };
     }
 
@@ -61,15 +60,14 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/exams/**").permitAll()
                         .requestMatchers("/api/units/**").permitAll()
-                        .requestMatchers("/api/tests/**").permitAll()
-                        .requestMatchers("/api/tests/start").permitAll()
+                        .requestMatchers("/api/tests/**").authenticated()
                         .requestMatchers("/api/feedback/**").permitAll()
                         .requestMatchers("/api/progress/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/courses/*/formula-sheet").permitAll()
                         .requestMatchers("/api/courses/**").permitAll()
+                        .requestMatchers("/images/**").permitAll()
                         .requestMatchers("/keep-alive").permitAll()
                         .requestMatchers("/error").permitAll()
-                        .requestMatchers("/keep-alive").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
                 // 3. Manejo de excepciones: Si algo falla, que no nos tire un 403 genérico

@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "EduSuperNova (local)",
+            "request": "launch",
+            "mainClass": "com.edusupernova.edusupernova.EduSupernovaApplication",
+            "projectName": "edusupernova",
+            "vmArgs": "-Dspring.profiles.active=local",
+            "env": {
+                "BASE_URL": "http://localhost:8080",
+                "UPLOAD_DIR": "C:/images/"
+            }
+        }
+    ]
+}

@@ -28,6 +28,13 @@ public interface TestQuestionsRepository extends JpaRepository<TestQuestions, Te
 
     @Query("SELECT tq FROM TestQuestions tq JOIN FETCH tq.quiz WHERE tq.id.testId = :testId ORDER BY tq.id.quizId ASC")
     List<TestQuestions> findByIdTestIdOrderByIdQuizIdAsc(@Param("testId") Integer testId);
+
+    /**
+     * Batch-fetches (testId, quizId) pairs for multiple tests in a single query.
+     * Used by getHistory() to build the quiz-set fingerprint for deduplication without N+1 queries.
+     */
+    @Query("SELECT tq.id.testId, tq.id.quizId FROM TestQuestions tq WHERE tq.id.testId IN :testIds")
+    List<Object[]> findQuizIdsByTestIds(@Param("testIds") List<Integer> testIds);
     boolean existsByIdTestIdAndIdQuizId(Integer testId, Integer quizId);
 
     java.util.Optional<TestQuestions> findByIdTestIdAndIdQuizId(Integer testId, Integer quizId);

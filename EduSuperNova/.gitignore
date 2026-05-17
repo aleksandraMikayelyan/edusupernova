@@ -35,3 +35,6 @@ build/
 ### Secrets — never commit these ───────────────────────────────────────────────
 .env
 .env.*
+
+### Local developer overrides — machine-specific paths, never commit ────────────
+application-local.properties

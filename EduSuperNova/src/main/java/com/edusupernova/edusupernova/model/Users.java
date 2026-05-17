@@ -3,17 +3,13 @@ package com.edusupernova.edusupernova.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Data
-public class Users implements UserDetails { // 1. Implementa la interfaz
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,38 +49,4 @@ public class Users implements UserDetails { // 1. Implementa la interfaz
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Tests> tests;
 
-    // --- MÉTODOS DE USERDETAILS ---
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Convierte tu ENUM de rol en una autoridad que Spring entienda
-        return List.of(new SimpleGrantedAuthority("ROLE_" + rol.name()));
-    }
-
-    @Override
-    public String getUsername() {
-        // IMPORTANTE: Spring Security usa este método para identificar al usuario.
-        // Si haces login con email, devuelve el email aquí.
-        return this.email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true; // Cambiar a lógica real si manejas expiración
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true; // Cambiar a lógica real si manejas bloqueos
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return Boolean.TRUE.equals(emailVerified);
-    }
 }

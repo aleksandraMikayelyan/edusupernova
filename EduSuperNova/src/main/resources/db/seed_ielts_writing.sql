@@ -40,45 +40,56 @@ BEGIN
     SELECT idunit INTO u4 FROM units WHERE title = 'Unit 4: Task 2 - Global & Social'   LIMIT 1;
 
     -- 4. Insert Question Groups (context/scenario for each Task 1 prompt)
-    INSERT INTO question_groups (idpaper, title, contexttext, contextimageurl, orderindex)
+    -- Academic Task 1: Data Descriptions (contextimageurl comes before contexttext)
+    INSERT INTO question_groups (idpaper, title, contextimageurl, contexttext, orderindex)
     VALUES
-        -- Academic Task 1: Data Descriptions
-        (v_paper_id, 'Academic Task 1: Bar Chart - Telephone Calls', '/images/ielts/ielts-writing-01.png', 
+        (v_paper_id, 'Academic Task 1: Bar Chart - Telephone Calls',
+         '/images/ielts/ielts-writing-01.png',
          'The bar chart below shows the number of minutes of telephone calls in the UK, divided into three categories, from 1995 to 2002.', 1),
 
-        (v_paper_id, 'Academic Task 1: Pie Chart - Water Usage','/images/ielts/ielts-writing-02.jpg',
+        (v_paper_id, 'Academic Task 1: Pie Chart - Water Usage',
+         '/images/ielts/ielts-writing-02.jpg',
          'The pie charts below show the percentage of water used for different purposes in six areas of the world.', 2),
 
-        (v_paper_id, 'Academic Task 1: Table - Wealth Distribution','/images/ielts/ielts-writing-03.jpg',
+        (v_paper_id, 'Academic Task 1: Table - Wealth Distribution',
+         '/images/ielts/ielts-writing-03.jpg',
          'The table below shows the percentage of the population and the distribution of wealth by region in the year 2000.', 3),
 
-        (v_paper_id, 'Academic Task 1: Process Diagram - Milk Production','/images/ielts/ielts-writing-04.jpg',
+        (v_paper_id, 'Academic Task 1: Process Diagram - Milk Production',
+         '/images/ielts/ielts-writing-04.jpg',
          'The diagram below shows how milk is produced and processed for sale in supermarkets.', 4),
 
-        (v_paper_id, 'Academic Task 1: Map - Park Development','/images/ielts/ielts-writing-05.png',
+        (v_paper_id, 'Academic Task 1: Map - Park Development',
+         '/images/ielts/ielts-writing-05.png',
          'The maps below show a small local park in 1920 and its current layout after redevelopment.', 5),
 
-        (v_paper_id, 'Academic Task 1: Bar Chart - Electricity Statistics','/images/ielts/ielts-writing-06.jpg',
+        (v_paper_id, 'Academic Task 1: Bar Chart - Electricity Statistics',
+         '/images/ielts/ielts-writing-06.jpg',
          'The bar chart below shows the top ten countries for the production and consumption of electricity in 2014.', 6),
 
-        (v_paper_id, 'Academic Task 1: Table - City Water Costs','/images/ielts/ielts-writing-07.jpg',
+        (v_paper_id, 'Academic Task 1: Table - City Water Costs',
+         '/images/ielts/ielts-writing-07.jpg',
          'The table below gives information about the average cost of water in five different Australian cities.', 7),
 
-        (v_paper_id, 'Academic Task 1: Line Graph - Waste Production','/images/ielts/ielts-writing-08.png',
+        (v_paper_id, 'Academic Task 1: Line Graph - Waste Production',
+         '/images/ielts/ielts-writing-08.png',
          'The line graph below shows the amount of waste produced by three different companies over a 15-year period.', 8),
 
-        (v_paper_id, 'Academic Task 1: Process Diagram - Central Heating','/images/ielts/ielts-writing-09.png',
+        (v_paper_id, 'Academic Task 1: Process Diagram - Central Heating',
+         '/images/ielts/ielts-writing-09.png',
          'The diagram below shows how a solar-powered central heating system in a house works.', 9),
 
-        (v_paper_id, 'Academic Task 1: Map - School Layout','/images/ielts/ielts-writing-10.png',
+        (v_paper_id, 'Academic Task 1: Map - School Layout',
+         '/images/ielts/ielts-writing-10.png',
          'The maps below show the changes in the layout of a school campus between 1985 and 2015.', 10),
 
-        (v_paper_id, 'Academic Task 1: Bar Chart - Household Waste Recycling','/images/ielts/ielts-writing-11.png',
-         'The bar chart below shows the percentage of total household waste that was recycled in four different countries between 2010 and 2026.', 11),
+        (v_paper_id, 'Academic Task 1: Bar Chart - Household Waste Recycling',
+         '/images/ielts/ielts-writing-11.png',
+         'The bar chart below shows the percentage of total household waste that was recycled in four different countries between 2010 and 2026.', 11);
 
-        -- General Training Task 1: Letter Scenarios
-        INSERT INTO question_groups (idpaper, title, contexttext,, orderindex)
-        VALUES
+    -- General Training Task 1: Letter Scenarios (no image — contextimageurl is NULL)
+    INSERT INTO question_groups (idpaper, title, contexttext, orderindex)
+    VALUES
         (v_paper_id, 'General Task 1: Job Application',
          'You have seen an advertisement for a part-time job in a local restaurant. Write a letter to the manager applying for the job.', 14),
 

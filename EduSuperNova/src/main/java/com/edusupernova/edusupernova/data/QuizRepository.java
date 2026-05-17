@@ -30,7 +30,7 @@ public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
     long countByCourseIdAndQuestionTypeIn(Integer courseId, List<Quiz.QuestionType> questionTypes);
 
-    // ── Paper-based queries (used by TestService via QuizService) ─────────────
+    // ── Paper-based queries (used by TestSessionService via QuizService) ────────
 
     /** All questions for a paper, regardless of unit. */
     List<Quiz> findByPaperId(Integer paperId);

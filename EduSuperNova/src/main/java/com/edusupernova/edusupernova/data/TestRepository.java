@@ -14,6 +14,8 @@ public interface TestRepository extends JpaRepository<Tests, Integer> {  // ← 
 
     List<Tests> findByUserIdAndCourseId(Integer userId, Integer courseId);
 
+    List<Tests> findByUserIdAndPaperIdAndStatus(Integer userId, Integer paperId, Tests.TestStatus status);
+
     // Opcional: tests recientes de un usuario
     List<Tests> findByUserIdOrderByCreationDateDesc(Integer userId);
 

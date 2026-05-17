@@ -1,6 +1,6 @@
 package com.edusupernova.edusupernova.exception;
 
-import com.edusupernova.edusupernova.dto.response.ApiErrorDTO;
+import com.edusupernova.edusupernova.shared.dto.response.ApiErrorDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -11,6 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.stream.Collectors;
 
@@ -92,6 +93,15 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.SERVICE_UNAVAILABLE, "AI Service Unavailable",
                 "Evaluation service is temporarily unavailable. Please try again shortly.",
                 request);
+    }
+
+    // ── 404 for missing static files (/images/**, etc.) ────────────────────
+    // NoResourceFoundException is a Spring-internal exception that would
+    // normally resolve to 404, but the catch-all below intercepts it first.
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ApiErrorDTO> handleNoResource(
+            NoResourceFoundException ex, HttpServletRequest request) {
+        return build(HttpStatus.NOT_FOUND, "Not Found", ex.getMessage(), request);
     }
 
     // ── 500 fallback ───────────────────────────────────────────────────────

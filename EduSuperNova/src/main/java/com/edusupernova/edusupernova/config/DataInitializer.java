@@ -1,6 +1,6 @@
 package com.edusupernova.edusupernova.config;
 
-import com.edusupernova.edusupernova.service.PaperConfigService;
+import com.edusupernova.edusupernova.exam.service.PaperConfigService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
