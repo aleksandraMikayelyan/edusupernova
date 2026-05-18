@@ -32,8 +32,14 @@ public class UserRegistrationService implements IUserRegistrationService {
 
     @Override
     public MessageResponse register(RegisterRequest request) {
-        if (userRepository.findByEmail(request.email()) != null) {
-            throw new BusinessRuleException("Email already registered");
+        Users existing = userRepository.findByEmail(request.email());
+        if (existing != null) {
+            if (Boolean.TRUE.equals(existing.getEmailVerified())) {
+                throw new BusinessRuleException("Email already registered");
+            }
+            // Account exists but was never verified — resend the code
+            emailVerificationService.sendCode(request.email());
+            return new MessageResponse("Verification code sent to " + request.email());
         }
         Users user = buildUser(request);
         userRepository.save(user);
