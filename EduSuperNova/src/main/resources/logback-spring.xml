@@ -2,8 +2,13 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <!-- Synchronous console appender with immediateFlush — every line is flushed
-         to stdout before the JVM can exit, so Render captures startup errors. -->
+    <!-- Log directory: override with LOG_PATH env var on any cloud provider.
+         Example for Render persistent disk: LOG_PATH=/var/data/logs -->
+    <property name="LOG_PATH" value="${LOG_PATH:-./logs}"/>
+    <property name="APP_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+
+    <!-- ── Console (always on — cloud providers capture stdout) ──────────── -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <immediateFlush>true</immediateFlush>
         <encoder>
@@ -12,7 +17,60 @@
         </encoder>
     </appender>
 
+    <!-- ── Daily rolling file — ALL levels (INFO, WARN, ERROR) ───────────── -->
+    <appender name="FILE_ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- One file per day: app-2026-05-19.log -->
+            <fileNamePattern>${LOG_PATH}/app-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 30 days, cap total size at 1 GB -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${APP_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ── Daily rolling file — ERRORS only ─────────────────────────────── -->
+    <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/error.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- One file per day: error-2026-05-19.log -->
+            <fileNamePattern>${LOG_PATH}/error-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>500MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${APP_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ── Package-level tuning ──────────────────────────────────────────── -->
+    <!-- Application code: DEBUG locally, INFO in production -->
+    <springProfile name="local">
+        <logger name="com.edusupernova" level="DEBUG"/>
+    </springProfile>
+    <springProfile name="!local">
+        <logger name="com.edusupernova" level="INFO"/>
+    </springProfile>
+
+    <!-- Suppress noisy Spring/Hibernate internals -->
+    <logger name="org.hibernate.SQL"                         level="WARN"/>
+    <logger name="org.hibernate.orm.deprecation"            level="ERROR"/>
+    <logger name="org.springframework.web"                  level="WARN"/>
+    <logger name="org.springframework.security"             level="WARN"/>
+    <logger name="com.zaxxer.hikari"                        level="WARN"/>
+
+    <!-- ── Root: everything goes to console + both files ────────────────── -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE_ALL"/>
+        <appender-ref ref="FILE_ERROR"/>
     </root>
 </configuration>
