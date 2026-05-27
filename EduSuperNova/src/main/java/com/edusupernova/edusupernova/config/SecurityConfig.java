@@ -57,6 +57,9 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
                         // 2. Permitimos explícitamente las rutas sin barras conflictivas
+                        .requestMatchers(HttpMethod.PUT,    "/api/users/profile").authenticated()
+                        .requestMatchers(HttpMethod.PUT,    "/api/users/password").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/api/users/account").authenticated()
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/exams/**").permitAll()
                         .requestMatchers("/api/units/**").permitAll()

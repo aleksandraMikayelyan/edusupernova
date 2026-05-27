@@ -3,15 +3,20 @@ package com.edusupernova.edusupernova.auth.controller;
 import com.edusupernova.edusupernova.auth.dto.request.GoogleAuthRequest;
 import com.edusupernova.edusupernova.auth.dto.request.LoginRequest;
 import com.edusupernova.edusupernova.auth.dto.request.RegisterRequest;
+import com.edusupernova.edusupernova.auth.dto.request.UpdatePasswordRequest;
+import com.edusupernova.edusupernova.auth.dto.request.UpdateProfileRequest;
 import com.edusupernova.edusupernova.auth.dto.request.VerifyEmailRequest;
 import com.edusupernova.edusupernova.auth.dto.response.AuthResponse;
 import com.edusupernova.edusupernova.shared.dto.response.MessageResponse;
 import com.edusupernova.edusupernova.auth.service.IAuthService;
+import com.edusupernova.edusupernova.auth.service.IUserProfileService;
 import com.edusupernova.edusupernova.auth.service.IUserRegistrationService;
+import com.edusupernova.edusupernova.config.UserPrincipal;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -33,6 +38,7 @@ public class UserController {
 
     private final IUserRegistrationService registrationService;
     private final IAuthService             authService;
+    private final IUserProfileService      profileService;
 
     @PostMapping("/register")
     public ResponseEntity<MessageResponse> register(@Valid @RequestBody RegisterRequest request) {
@@ -52,5 +58,25 @@ public class UserController {
     @PostMapping("/google-auth")
     public ResponseEntity<AuthResponse> googleAuth(@RequestBody GoogleAuthRequest request) {
         return ResponseEntity.ok(authService.googleAuth(request));
+    }
+
+    @PutMapping("/profile")
+    public ResponseEntity<AuthResponse> updateProfile(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @Valid @RequestBody UpdateProfileRequest request) {
+        return ResponseEntity.ok(profileService.updateProfile(principal.getUser().getId(), request));
+    }
+
+    @PutMapping("/password")
+    public ResponseEntity<MessageResponse> updatePassword(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @Valid @RequestBody UpdatePasswordRequest request) {
+        return ResponseEntity.ok(profileService.updatePassword(principal.getUser().getId(), request));
+    }
+
+    @DeleteMapping("/account")
+    public ResponseEntity<MessageResponse> deleteAccount(
+            @AuthenticationPrincipal UserPrincipal principal) {
+        return ResponseEntity.ok(profileService.deleteAccount(principal.getUser().getId()));
     }
 }
