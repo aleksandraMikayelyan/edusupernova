@@ -56,14 +56,51 @@ public class GroqService implements AIEvaluationProvider {
         }
     }
 
+    @Override
+    public String complete(String systemPrompt, String userPrompt) {
+        try {
+            String requestBody = buildRequestBody(systemPrompt, userPrompt);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(GROQ_URL))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
+                    .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                    .timeout(Duration.ofSeconds(20))
+                    .build();
+
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            return extractContent(response.body());
+
+        } catch (GroqApiException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new GroqApiException("HTTP request to Groq failed: " + e.getMessage(), e);
+        }
+    }
+
+    private String buildRequestBody(String systemPrompt, String userPrompt) throws Exception {
+        String escapedSystem = objectMapper.writeValueAsString(systemPrompt);
+        String escapedUser   = objectMapper.writeValueAsString(userPrompt);
+        return String.format(
+                "{\"model\": \"%s\", " +
+                        "\"messages\": [" +
+                        "{\"role\": \"system\", \"content\": %s}, " +
+                        "{\"role\": \"user\",   \"content\": %s}" +
+                        "], " +
+                        "\"response_format\": {\"type\": \"json_object\"}, " +
+                        "\"temperature\": 0.1}",
+                MODEL, escapedSystem, escapedUser
+        );
+    }
+
     private String buildRequestBody(String prompt) throws Exception {
-        // Use ObjectMapper to safely escape the prompt inside JSON
         String escapedPrompt = objectMapper.writeValueAsString(prompt);
         return String.format(
                 "{\"model\": \"%s\", " +
                         "\"messages\": [{\"role\": \"user\", \"content\": %s}], " +
                         "\"response_format\": {\"type\": \"json_object\"}, " +
-                        "\"temperature\": 0.3}",
+                        "\"temperature\": 0.1}",
                 MODEL, escapedPrompt
         );
     }

@@ -35,10 +35,15 @@ public class OpenEndedEvaluator {
     public record EvaluationResult(double score, String feedback) {}
 
     private static final String SYSTEM_PREAMBLE =
-        "You are a professional examiner. " +
-        "Respond ONLY with a valid JSON object — no markdown, no prose, no code fences. " +
-        "Apply the rubric strictly: a blank, off-topic, or placeholder answer scores 0. " +
-        "Never award marks for effort alone; award marks only for demonstrated knowledge.";
+        "You are a strict professional examiner. " +
+        "Respond ONLY with a valid JSON object — no markdown, no prose, no code fences.\n" +
+        "CRITICAL RULES — enforce without exception:\n" +
+        "1. If an answer does not address the question asked (e.g. it discusses unrelated topics, " +
+        "   contains random text, programming content, or is clearly nonsensical), " +
+        "   you MUST assign score 0 and state explicitly in 'strengths' that the answer is irrelevant.\n" +
+        "2. Never invent or assume knowledge the candidate did not demonstrate.\n" +
+        "3. Never award marks for effort alone; award marks only for demonstrated subject knowledge.\n" +
+        "4. A blank or placeholder answer scores 0.";
 
     // ── Public API ────────────────────────────────────────────────────────────
 
@@ -51,7 +56,7 @@ public class OpenEndedEvaluator {
         log.info("Evaluating {} answer(s) with profile '{}' (exam='{}', paper='{}')",
                 answers.size(), profile.label(), examName, paperName);
 
-        String rawJson = aiProvider.complete(prompt);
+        String rawJson = aiProvider.complete(SYSTEM_PREAMBLE, prompt);
         log.debug("AI raw response (first 500 chars): {}",
                 rawJson.substring(0, Math.min(500, rawJson.length())));
 
@@ -86,8 +91,7 @@ public class OpenEndedEvaluator {
             ));
         }
 
-        return SYSTEM_PREAMBLE + "\n\n" +
-               "Exam: " + examLabel + "\n\n" +
+        return "Exam: " + examLabel + "\n\n" +
                "RUBRIC:\n" + profile.rubric() + "\n" +
                "SCORING INSTRUCTION:\n" + profile.scoringGuide() + "\n\n" +
                "For each answer return EXACTLY this JSON structure — one entry per answer:\n" +

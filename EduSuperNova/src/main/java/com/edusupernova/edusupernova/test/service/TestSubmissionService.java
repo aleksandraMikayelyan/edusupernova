@@ -217,6 +217,7 @@ public class TestSubmissionService implements ITestSubmissionService {
     }
 
     private void assertNotExpired(Tests test) {
+        if (test.getTimeLimitMinutes() == null) return;
         if (scoringHelper.getRemainingSeconds(test) == 0
                 && test.getStatus() == Tests.TestStatus.IN_PROGRESS) {
             test.setStatus(Tests.TestStatus.ABANDONED);

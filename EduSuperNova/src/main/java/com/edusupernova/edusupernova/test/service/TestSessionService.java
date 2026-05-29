@@ -80,9 +80,17 @@ public class TestSessionService implements ITestSessionService {
             Optional<Tests> existing = findMatchingInProgressTest(user.getId(), paper.getId(), newQuizIds);
             if (existing.isPresent()) {
                 Tests resumed = existing.get();
-                List<TestQuestions> tqs = testQuestionsRepository.findByIdTestId(resumed.getId());
-                log.info("Resuming IN_PROGRESS testId={} (same question set)", resumed.getId());
-                return testMapper.toSessionDTO(resumed, tqs, paper, unit, timeLimitMinutes);
+                boolean hasTimeLimit = resumed.getTimeLimitMinutes() != null;
+                boolean hasTimeLeft  = scoringHelper.getRemainingSeconds(resumed) > 0;
+                if (!hasTimeLimit || hasTimeLeft) {
+                    List<TestQuestions> tqs = testQuestionsRepository.findByIdTestId(resumed.getId());
+                    log.info("Resuming IN_PROGRESS testId={} (same question set)", resumed.getId());
+                    return testMapper.toSessionDTO(resumed, tqs, paper, unit, timeLimitMinutes);
+                }
+                // Time expired — abandon the stale session and fall through to create a fresh one
+                resumed.setStatus(Tests.TestStatus.ABANDONED);
+                testRepository.save(resumed);
+                log.info("Abandoned expired testId={}, starting fresh", resumed.getId());
             }
         }
 

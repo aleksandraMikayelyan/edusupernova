@@ -1,0 +1,76 @@
+2026-05-28 11:41:35.371 [main] INFO  c.e.e.EdusupernovaApplication - Starting EdusupernovaApplication using Java 21.0.11 with PID 20000 (C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova\target\classes started by aleksandra.mikayelya in C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova)
+2026-05-28 11:41:35.388 [main] INFO  c.e.e.EdusupernovaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-28 11:41:37.973 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-28 11:41:38.156 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 10 JPA repository interfaces.
+2026-05-28 11:41:39.065 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-28 11:41:39.088 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-28 11:41:39.089 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-28 11:41:39.221 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-28 11:41:39.221 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3745 ms
+2026-05-28 11:41:39.468 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-28 11:41:39.564 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-05-28 11:41:39.620 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-28 11:41:40.015 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-28 11:41:42.923 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-28 11:41:43.181 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-28 11:41:44.195 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-28 11:41:45.797 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-28 11:41:47.714 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-28 11:41:47.729 [main] INFO  c.e.e.EdusupernovaApplication - Started EdusupernovaApplication in 13.253 seconds (process running for 14.034)
+2026-05-28 11:41:47.739 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: synchronising paper configuration…
+2026-05-28 11:41:48.718 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: done.
+2026-05-28 11:42:05.329 [tomcat-handler-0] INFO  o.a.tomcat.util.http.parser.Cookie - A cookie header was received [g_state={"i_l":0,"i_ll":1779877754133,"i_b":"kW7UswI2uaQYDSHkWwT6bUvx/APtbWch8rRowtCsoC0","i_e":{"enable_itp_optimization":0},"i_et":1778752527415}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-05-28 11:42:05.348 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-28 12:02:39.414 [tomcat-handler-20] INFO  c.e.e.t.service.TestSessionService - startTest paperId=20 userId=2 doneGroups=[]
+2026-05-28 12:02:39.414 [tomcat-handler-21] INFO  c.e.e.t.service.TestSessionService - startTest paperId=20 userId=2 doneGroups=[]
+2026-05-28 12:02:40.619 [tomcat-handler-21] INFO  c.e.e.t.service.TestSessionService - Started testId=422 userId=2 paperId=20 unitId=all questions=22
+2026-05-28 12:02:40.623 [tomcat-handler-20] INFO  c.e.e.t.service.TestSessionService - Started testId=421 userId=2 paperId=20 unitId=all questions=22
+2026-05-28 12:02:43.969 [tomcat-handler-24] INFO  c.e.e.t.service.OpenEndedEvaluator - Evaluating 1 answer(s) with profile 'TOEFL Writing' (exam='TOEFL', paper='TOEFL Reading')
+2026-05-28 12:03:03.518 [tomcat-handler-39] INFO  c.e.e.t.service.TestSessionService - startTest paperId=19 userId=2 doneGroups=[]
+2026-05-28 12:03:03.517 [tomcat-handler-40] INFO  c.e.e.t.service.TestSessionService - startTest paperId=19 userId=2 doneGroups=[]
+2026-05-28 12:03:04.085 [tomcat-handler-40] INFO  c.e.e.t.service.TestSessionService - Started testId=423 userId=2 paperId=19 unitId=all questions=11
+2026-05-28 12:03:04.093 [tomcat-handler-39] INFO  c.e.e.t.service.TestSessionService - Started testId=424 userId=2 paperId=19 unitId=all questions=11
+2026-05-28 12:03:14.979 [tomcat-handler-54] INFO  c.e.e.t.service.TestSessionService - startTest paperId=25 userId=2 doneGroups=[]
+2026-05-28 12:03:15.018 [tomcat-handler-55] INFO  c.e.e.t.service.TestSessionService - startTest paperId=25 userId=2 doneGroups=[]
+2026-05-28 12:03:15.027 [tomcat-handler-54] WARN  c.e.e.test.service.QuizService - No questions linked to paperId=25 — trying course 13 + type fallback
+2026-05-28 12:03:15.059 [tomcat-handler-55] WARN  c.e.e.test.service.QuizService - No questions linked to paperId=25 — trying course 13 + type fallback
+2026-05-28 12:03:16.844 [tomcat-handler-54] INFO  c.e.e.t.service.TestSessionService - Started testId=425 userId=2 paperId=25 unitId=all questions=40
+2026-05-28 12:03:16.884 [tomcat-handler-55] INFO  c.e.e.t.service.TestSessionService - Started testId=426 userId=2 paperId=25 unitId=all questions=40
+2026-05-28 12:12:05.456 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-28 12:12:25.485 [main] INFO  c.e.e.EdusupernovaApplication - Starting EdusupernovaApplication using Java 21.0.11 with PID 18880 (C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova\target\classes started by aleksandra.mikayelya in C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova)
+2026-05-28 12:12:25.485 [main] INFO  c.e.e.EdusupernovaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-28 12:12:26.779 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-28 12:12:26.931 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 10 JPA repository interfaces.
+2026-05-28 12:12:27.828 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-28 12:12:27.852 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-28 12:12:27.852 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-28 12:12:28.002 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-28 12:12:28.003 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2447 ms
+2026-05-28 12:12:28.296 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-28 12:12:28.384 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-05-28 12:12:28.419 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-28 12:12:28.792 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-28 12:12:31.149 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-28 12:12:31.461 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-28 12:12:31.998 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-28 12:12:32.716 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-28 12:12:33.440 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-28 12:12:33.456 [main] INFO  c.e.e.EdusupernovaApplication - Started EdusupernovaApplication in 8.688 seconds (process running for 10.167)
+2026-05-28 12:12:33.460 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: synchronising paper configuration…
+2026-05-28 12:12:34.350 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: done.
+2026-05-28 12:12:41.602 [tomcat-handler-0] INFO  o.a.tomcat.util.http.parser.Cookie - A cookie header was received [g_state={"i_l":0,"i_ll":1779877754133,"i_b":"kW7UswI2uaQYDSHkWwT6bUvx/APtbWch8rRowtCsoC0","i_e":{"enable_itp_optimization":0},"i_et":1778752527415}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-05-28 12:12:41.627 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-28 12:15:52.826 [tomcat-handler-24] INFO  c.e.e.t.service.TestSessionService - startTest paperId=4 userId=2 doneGroups=[]
+2026-05-28 12:15:52.840 [tomcat-handler-25] INFO  c.e.e.t.service.TestSessionService - startTest paperId=4 userId=2 doneGroups=[]
+2026-05-28 12:15:53.662 [tomcat-handler-24] INFO  c.e.e.t.service.TestSessionService - Started testId=427 userId=2 paperId=4 unitId=all questions=11
+2026-05-28 12:15:54.042 [tomcat-handler-25] INFO  c.e.e.t.service.TestSessionService - Started testId=428 userId=2 paperId=4 unitId=all questions=11
+2026-05-28 12:18:38.032 [tomcat-handler-71] INFO  c.e.e.t.service.TestSessionService - startTest paperId=1 userId=2 doneGroups=[]
+2026-05-28 12:18:38.042 [tomcat-handler-72] INFO  c.e.e.t.service.TestSessionService - startTest paperId=1 userId=2 doneGroups=[]
+2026-05-28 12:18:39.449 [tomcat-handler-71] INFO  c.e.e.t.service.TestSessionService - Started testId=429 userId=2 paperId=1 unitId=all questions=30
+2026-05-28 12:18:39.517 [tomcat-handler-72] INFO  c.e.e.t.service.TestSessionService - Started testId=430 userId=2 paperId=1 unitId=all questions=30
+2026-05-28 12:20:54.422 [tomcat-handler-75] INFO  c.e.e.t.service.TestSessionService - startTest paperId=2 userId=2 doneGroups=[]
+2026-05-28 12:20:54.596 [tomcat-handler-76] INFO  c.e.e.t.service.TestSessionService - startTest paperId=2 userId=2 doneGroups=[]
+2026-05-28 12:20:55.002 [tomcat-handler-75] INFO  c.e.e.t.service.TestSessionService - Started testId=431 userId=2 paperId=2 unitId=all questions=5
+2026-05-28 12:20:55.163 [tomcat-handler-76] INFO  c.e.e.t.service.TestSessionService - Started testId=432 userId=2 paperId=2 unitId=all questions=5

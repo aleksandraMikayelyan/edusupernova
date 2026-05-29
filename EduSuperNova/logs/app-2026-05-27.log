@@ -1,0 +1,29 @@
+2026-05-27 12:29:22.164 [main] INFO  c.e.e.EdusupernovaApplication - Starting EdusupernovaApplication using Java 21.0.11 with PID 26640 (C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova\target\classes started by aleksandra.mikayelya in C:\Users\aleksandra.mikayelya\Desktop\edusupernova\EduSuperNova)
+2026-05-27 12:29:22.185 [main] INFO  c.e.e.EdusupernovaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-27 12:29:25.131 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-27 12:29:25.400 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 256 ms. Found 10 JPA repository interfaces.
+2026-05-27 12:29:26.656 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-27 12:29:26.687 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-27 12:29:26.688 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-27 12:29:26.886 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-27 12:29:26.887 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4582 ms
+2026-05-27 12:29:27.217 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-27 12:29:27.316 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-05-27 12:29:27.387 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-27 12:29:28.083 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-27 12:29:31.675 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-27 12:29:31.957 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-27 12:29:33.090 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-27 12:29:34.484 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-27 12:29:35.517 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-27 12:29:35.529 [main] INFO  c.e.e.EdusupernovaApplication - Started EdusupernovaApplication in 14.455 seconds (process running for 15.38)
+2026-05-27 12:29:35.536 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: synchronising paper configuration…
+2026-05-27 12:29:36.588 [main] INFO  c.e.e.config.DataInitializer - DataInitializer: done.
+2026-05-27 12:29:43.842 [tomcat-handler-0] INFO  o.a.tomcat.util.http.parser.Cookie - A cookie header was received [g_state={"i_l":0,"i_ll":1779877754133,"i_b":"kW7UswI2uaQYDSHkWwT6bUvx/APtbWch8rRowtCsoC0","i_e":{"enable_itp_optimization":0},"i_et":1778752527415}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-05-27 12:29:43.852 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-27 12:30:04.422 [tomcat-handler-17] WARN  c.e.e.exam.service.UnitService - Unit content not found in classpath: Summaries/ielts/reading/inference_opinion.txt
+2026-05-27 12:30:04.717 [tomcat-handler-18] WARN  c.e.e.exam.service.UnitService - Unit content not found in classpath: Summaries/ielts/reading/inference_opinion.txt
+2026-05-27 12:32:45.256 [tomcat-handler-53] WARN  c.e.e.exam.service.UnitService - Unit content not found in classpath: Summaries/ielts/listening/opinions_inference.txt
+2026-05-27 12:32:45.564 [tomcat-handler-54] WARN  c.e.e.exam.service.UnitService - Unit content not found in classpath: Summaries/ielts/listening/opinions_inference.txt
+2026-05-27 13:16:56.085 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
