@@ -41,11 +41,11 @@ public class IeltsTask2Strategy implements EvaluationStrategy {
         """,
         """
         Score each criterion 0–9 (half-bands permitted). \
-        Mean → round to nearest 0.5 → multiply by 1.111 (cap at 10). \
+        Mean → round to nearest 0.5 → multiply by %s (cap at 10). \
         An essay that addresses only part of the question cannot exceed Band 5 on Task Response. \
         A blank or entirely off-topic essay scores Band 0. \
         Report each criterion band and the overall band.\
-        """
+        """.formatted(StrategyUtils.IELTS_BAND_TO_TEN_MULTIPLIER)
     );
 
     @Override
@@ -54,9 +54,16 @@ public class IeltsTask2Strategy implements EvaluationStrategy {
         String paper = StrategyUtils.normalise(paperName);
         if (!exam.contains("ielts") || !paper.contains("writing")) return false;
         String groupTitle = StrategyUtils.groupTitle(answers);
+        // Task 2 essays are seeded without a question group (idquestiongroup IS NULL), unlike
+        // Task 1 responses which always belong to a group titled "... Task 1" — that's why the
+        // positive "task 2"/"40 minutes"/"250 words" markers below never match real data (those
+        // strings only ever appear in the Paper's instructions field). Since this strategy only
+        // runs after both Task 1 strategies have had a chance to match on their title markers,
+        // an ungrouped IELTS Writing answer reaching this point is a Task 2 answer by elimination.
         return groupTitle.contains("task 2")
                 || StrategyUtils.questionTextContains(answers, "40 minutes")
-                || StrategyUtils.questionTextContains(answers, "250 words");
+                || StrategyUtils.questionTextContains(answers, "250 words")
+                || groupTitle.isBlank();
     }
 
     @Override

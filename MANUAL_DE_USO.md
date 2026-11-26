@@ -137,9 +137,11 @@ Algunos cursos (especialmente matemáticas y ciencias) ofrecen una **hoja de fó
 3. (Opcional) Filtra por **unidad específica** o **grupo de preguntas**.
 4. Haz clic en **Iniciar Test** / **Start Test**.
 
-La plataforma generará automáticamente un test con:
-- **15 preguntas de opción múltiple** (cuando aplique)
-- **5 preguntas abiertas** (cuando aplique)
+La plataforma generará automáticamente un test con el número de preguntas configurado
+para ese **papel** específico (cada papel define su propio total — por ejemplo, un
+Paper 1 MCQ puede tener 15 preguntas de opción múltiple mientras que un Writing Task 2
+tiene 1 pregunta abierta). El tipo de pregunta (opción múltiple, abierta, ensayo, etc.)
+depende del formato del papel elegido.
 
 Las preguntas se seleccionan aleatoriamente del banco de preguntas para ese formato.
 

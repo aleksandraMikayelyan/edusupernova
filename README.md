@@ -5,7 +5,7 @@
 
 [![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)](https://openjdk.org/projects/jdk/21/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.5-brightgreen?logo=springboot)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-blue?logo=postgresql)](https://supabase.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-8-blue?logo=mysql)](https://www.mysql.com/)
 [![JWT](https://img.shields.io/badge/JWT-Auth-yellow?logo=jsonwebtokens)](https://jwt.io/)
 [![Groq](https://img.shields.io/badge/Groq-llama--3.3--70b-purple)](https://groq.com/)
 [![Docker](https://img.shields.io/badge/Docker-Render-blue?logo=docker)](https://render.com/)
@@ -51,7 +51,7 @@ EduSupernova is a freemium AI-powered exam preparation platform targeting **A Le
 | Framework | Spring Boot 3.3.5 |
 | Security | Spring Security 6 + JJWT |
 | Persistence | Spring Data JPA + Hibernate 6 |
-| Database | PostgreSQL via Supabase |
+| Database | MySQL 8 |
 | AI Integration | Groq API (`llama-3.3-70b-versatile`) |
 | Build Tool | Maven 3.9+ |
 | Containerisation | Docker (multi-stage build) |
@@ -96,7 +96,7 @@ EduSupernova is a freemium AI-powered exam preparation platform targeting **A Le
 | JDK | 21 (LTS) |
 | Maven | 3.9+ |
 | Docker | 24+ (for deployment) |
-| PostgreSQL | Via Supabase (cloud) |
+| MySQL | 8.0+ |
 
 ---
 
@@ -121,7 +121,7 @@ cp .env.example .env
 
 Server starts on **`http://localhost:8080`**.
 
-> The schema is managed manually via Supabase SQL editor — `spring.jpa.hibernate.ddl-auto=validate` means Hibernate validates but never modifies the schema.
+> The schema is managed manually against the MySQL database — `spring.jpa.hibernate.ddl-auto=validate` means Hibernate validates but never modifies the schema.
 
 ---
 
@@ -130,10 +130,10 @@ Server starts on **`http://localhost:8080`**.
 Create a `.env` file in `EduSuperNova/` (never commit it):
 
 ```dotenv
-# ── Database (Supabase PostgreSQL) ──────────────────────
-DB_URL=jdbc:postgresql://db.xxxx.supabase.co:5432/postgres
-DB_USERNAME=postgres
-DB_PASSWORD=your_supabase_password
+# ── Database (MySQL) ─────────────────────────────────────
+DB_URL=jdbc:mysql://your-mysql-host:3306/edusupernova?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+DB_USERNAME=your_mysql_user
+DB_PASSWORD=your_mysql_password
 
 # ── JWT ─────────────────────────────────────────────────
 JWT_SECRET=your_256bit_secret_here
@@ -168,7 +168,7 @@ Set all of the above in **Render → Service → Environment** (no `.env` file n
 
 ## 7. Database
 
-**Database:** PostgreSQL hosted on [Supabase](https://supabase.com/)
+**Database:** MySQL 8
 
 ### Schema Overview
 
@@ -191,7 +191,7 @@ Enrollments  (user ↔ exam)
 
 ### Seeding
 
-SQL seed files live in `src/main/resources/db/`. Run them in the Supabase SQL editor:
+SQL seed files live in `src/main/resources/db/`. Run them against the MySQL database (e.g. via MySQL Workbench or the `mysql` CLI):
 
 ```
 seed_act.sql
@@ -348,7 +348,7 @@ Open-ended answers (essays, IELTS writing, data response) are evaluated by **Gro
 
 | Exam | Criteria | Native Scale → 0–10 |
 |---|---|---|
-| IELTS Writing | Task Achievement, Coherence & Cohesion, Lexical Resource, Grammatical Range | Band × 1.11 |
+| IELTS Writing | Task Achievement, Coherence & Cohesion, Lexical Resource, Grammatical Range | Band × 1.111 |
 | TOEFL Writing | Development, Organization, Language Use | Score × 2 |
 | SAT Essay | Reading, Analysis, Writing (each 1–4) | (sum−3)/9 × 10 |
 | A Level / AS Level | AO1 Knowledge, AO2 Application, AO3 Analysis, QWC | 0–10 (A*=8+) |
@@ -393,8 +393,8 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 RUN mkdir -p /app/uploads/formula-sheets
 COPY --from=build /app/target/edusupernova-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+EXPOSE 10000
+ENTRYPOINT ["java", "-Xmx300m", "-Xms64m", "-XX:+ExitOnOutOfMemoryError", "-jar", "app.jar"]
 ```
 
 ### Deploy to Render

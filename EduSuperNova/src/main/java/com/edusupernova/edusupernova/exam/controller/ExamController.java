@@ -5,7 +5,7 @@ import com.edusupernova.edusupernova.model.Courses;
 import com.edusupernova.edusupernova.model.Exams;
 import com.edusupernova.edusupernova.exam.service.CourseService;
 import com.edusupernova.edusupernova.exam.service.EnrollmentService;
-import com.edusupernova.edusupernova.exam.service.ExamsService;
+import com.edusupernova.edusupernova.exam.service.ExamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExamController {
 
-    private final ExamsService      examsService;
+    private final ExamService       examService;
     private final EnrollmentService enrollmentService;
     private final CourseService     courseService;
 
@@ -30,7 +30,7 @@ public class ExamController {
 
     @GetMapping("/dashboard")
     public ResponseEntity<List<ExamDTO>> getActiveExams() {
-        return ResponseEntity.ok(examsService.getDashboardExams());
+        return ResponseEntity.ok(examService.getDashboardExams());
     }
 
     @GetMapping("/myexams/{userId}")
@@ -78,7 +78,7 @@ public class ExamController {
 
     @PostMapping
     public ResponseEntity<ExamDTO> create(@RequestBody Exams exam) {
-        return ResponseEntity.ok(examsService.createExam(exam));
+        return ResponseEntity.ok(examService.createExam(exam));
     }
 
     @PatchMapping("/{id}/toggle")
@@ -86,7 +86,7 @@ public class ExamController {
             @PathVariable Integer id,
             @RequestParam boolean active) {
 
-        examsService.toggleActive(id, active);
+        examService.toggleActive(id, active);
         return ResponseEntity.noContent().build();
     }
 }

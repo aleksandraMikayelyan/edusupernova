@@ -11,6 +11,12 @@ final class StrategyUtils {
 
     private StrategyUtils() {}
 
+    /** IELTS band (0-9) → 0-10 scale conversion factor, used by every IELTS Writing strategy. */
+    static final double IELTS_BAND_TO_TEN_MULTIPLIER = 1.111;
+
+    /** Divisor for Cambridge 9093 English (W1 + W2) 25-mark directed/content-writing tasks → 0-10 scale. */
+    static final double DIRECTED_WRITING_SCORE_DIVISOR = 2.5;
+
     static String normalise(String s) {
         if (s == null) return "";
         return s.toLowerCase(Locale.ROOT).replace("-", " ").replace("_", " ").trim();

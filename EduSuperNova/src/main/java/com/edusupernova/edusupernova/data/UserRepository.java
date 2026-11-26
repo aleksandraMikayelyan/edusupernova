@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<Users, Integer> {
 
     // BUSCAR USUARIO POR EMAIL (para login) → devuelve Optional
-    Users findByEmail(String email);
+    Optional<Users> findByEmail(String email);
 
     // BUSCAR USUARIO POR USERNAME (opcional, si quieres login por username)
     Users findByUsername(String username);

@@ -20,9 +20,9 @@ public class IeltsWritingFallbackStrategy implements EvaluationStrategy {
         """,
         """
         Score each criterion 0–9 (half-bands permitted). \
-        Mean → round to nearest 0.5 → multiply by 1.111 (cap at 10). \
+        Mean → round to nearest 0.5 → multiply by %s (cap at 10). \
         Report each criterion band and the overall band.\
-        """
+        """.formatted(StrategyUtils.IELTS_BAND_TO_TEN_MULTIPLIER)
     );
 
     @Override

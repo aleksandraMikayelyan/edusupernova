@@ -52,6 +52,10 @@ public class Quiz {
      *   ESSAY           → rubric / model answer (Groq scores against it)
      *   OPEN_ENDED      → model answer (Groq)
      */
+    // @JsonIgnore: never let this reach a test-taking client via direct entity serialization.
+    // Code that legitimately needs it (scoring, post-answer feedback DTOs) reads it through the
+    // getter directly, which @JsonIgnore does not affect — only Jackson's automatic serialization.
+    @JsonIgnore
     @Column(columnDefinition = "TEXT", nullable = false)
     private String correctAnswer;
 

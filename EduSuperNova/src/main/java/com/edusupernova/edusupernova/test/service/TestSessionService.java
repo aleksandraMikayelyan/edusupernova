@@ -120,10 +120,14 @@ public class TestSessionService implements ITestSessionService {
     // ── Resume ────────────────────────────────────────────────────────────────
 
     @Override
-    @Transactional(readOnly = true)
     public TestSessionDTO getSession(Integer testId, String email) {
         Tests test = findTest(testId);
         assertOwnership(test, email);
+        if (scoringHelper.isExpired(test)) {
+            test.setStatus(Tests.TestStatus.ABANDONED);
+            testRepository.save(test);
+            log.info("testId={} — abandoned on session read (time limit exceeded)", testId);
+        }
         List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
         return testMapper.toSessionDTO(test, allQuestions, test.getPaper(), test.getUnit(), test.getTimeLimitMinutes());
     }
@@ -154,9 +158,8 @@ public class TestSessionService implements ITestSessionService {
     }
 
     private Users findUserByEmail(String email) {
-        Users user = userRepository.findByEmail(email);
-        if (user == null) throw new IllegalArgumentException("User not found: " + email);
-        return user;
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("User not found: " + email));
     }
 
     private Tests findTest(Integer testId) {

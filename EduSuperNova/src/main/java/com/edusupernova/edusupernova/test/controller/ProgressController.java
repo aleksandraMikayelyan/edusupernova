@@ -46,7 +46,7 @@ public class ProgressController {
     public ResponseEntity<List<ExamProgressDTO>> getMyProgress(Authentication auth) {
         if (auth == null) return ResponseEntity.status(401).build();
 
-        Users user = userRepository.findByEmail(auth.getName());
+        Users user = userRepository.findByEmail(auth.getName()).orElse(null);
         if (user == null) return ResponseEntity.notFound().build();
 
         List<Exams> enrolledExams = enrollmentRepository.findEnrolledExamsByUserId(user.getId());
@@ -76,7 +76,7 @@ public class ProgressController {
     public ResponseEntity<List<CompletedGroupDTO>> getCompletedGroups(Authentication auth) {
         if (auth == null) return ResponseEntity.status(401).build();
 
-        Users user = userRepository.findByEmail(auth.getName());
+        Users user = userRepository.findByEmail(auth.getName()).orElse(null);
         if (user == null) return ResponseEntity.notFound().build();
 
         List<CompletedGroupDTO> result = testQuestionsRepository

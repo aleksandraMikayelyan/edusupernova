@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
  *
  * Example:
  * {
- *   "status": 429,
- *   "error": "Daily Limit Exceeded",
- *   "message": "Free users can start a maximum of 2 tests per day.",
- *   "path": "/api/v1/tests/start",
+ *   "status": 409,
+ *   "error": "Business Rule Violation",
+ *   "message": "Test has already been submitted.",
+ *   "path": "/api/tests/submit",
  *   "timestamp": "2026-04-08T10:30:00"
  * }
  */

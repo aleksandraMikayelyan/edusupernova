@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class ExamsService {
+public class ExamService {
 
     private final ExamRepository examRepository;
 

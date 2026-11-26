@@ -38,3 +38,7 @@ build/
 
 ### Local developer overrides — machine-specific paths, never commit ────────────
 application-local.properties
+
+### Logs — rolling daily log files, never commit ────────────────────────────────
+logs/
+*.log

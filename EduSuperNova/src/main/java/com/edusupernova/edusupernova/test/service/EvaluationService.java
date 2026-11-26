@@ -16,18 +16,14 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.IntStream;
 
 /**
- * Orchestrates full test evaluation (batch mode — used for legacy endpoints
- * and for re-evaluating completed sessions from the admin panel).
+ * Orchestrates full test evaluation (batch mode — used by the Feedback-page
+ * flow, which submits all answers at once rather than per-question).
  *
- * For the normal per-question flow, evaluation is handled inside
- * TestSubmissionService.submitAnswer() instead.
- *
- * CHANGED FROM ORIGINAL:
- *   - OPEN_ENDED_TYPES now includes ESSAY, FILL_IN_BLANK, and READING
- *     to cover IELTS Writing and other new paper formats.
- *   - extractLetter() deduplicated into TestScoringHelper (shared utility).
- *   - evaluateTest() signature extended with examName + paperName
- *     (previously examType + sectionName) to match new model naming.
+ * For the per-question flow, evaluation is handled inside
+ * TestSubmissionService.submitAnswer() instead. Both paths write aiScore
+ * (and this path additionally writes punctuation) so TestScoringHelper's
+ * persisted final score stays correct regardless of which path scored
+ * a given question.
  */
 @Slf4j
 @Service
@@ -42,10 +38,7 @@ public class EvaluationService {
     private static final int    PENDING_SCORE    = -1;
     private static final String PENDING_FEEDBACK = "AI evaluation in progress...";
 
-    /**
-     * All question types that require AI evaluation.
-     * CHANGED: added ESSAY, FILL_IN_BLANK, READING to support new exam formats.
-     */
+    /** All question types that require AI evaluation. */
     private static final Set<Quiz.QuestionType> OPEN_ENDED_TYPES = Set.of(
             Quiz.QuestionType.OPEN_ENDED,
             Quiz.QuestionType.ESSAY,
@@ -138,9 +131,13 @@ public class EvaluationService {
 
         double mcScore   = averageScore(mcResults);
         double openScore = openEndedPending ? 0.0 : averageScore(openResults);
-        double total     = openResults.isEmpty()
+        // Mirrors TestScoringHelper.computeFinalScore's persisted rule (AI-average-only once any
+        // open-ended question is scored) so this polling display never contradicts the score the
+        // student later sees on the report/history screens. -1 keeps it "Pending" while AI grading
+        // for any open-ended question is still in flight, consistent with per-question scores above.
+        double total = openResults.isEmpty()
                 ? mcScore
-                : mcScore * MC_WEIGHT + openScore * OPEN_WEIGHT;
+                : (openEndedPending ? -1.0 : openScore);
 
         return new TestEvaluationResult(mcScore, openScore, total, openEndedPending, results);
     }
@@ -218,6 +215,7 @@ public class EvaluationService {
     private void markOpenEndedAsPending(List<TestQuestions> openAnswers) {
         openAnswers.forEach(q -> {
             q.setPunctuation(PENDING_SCORE);
+            q.setAiScore((double) PENDING_SCORE);
             q.setFeedbackIa(PENDING_FEEDBACK);
             q.setCorrectResponse(false);
         });
@@ -232,6 +230,7 @@ public class EvaluationService {
             TestQuestions q  = answers.get(i);
             var           ai = aiResults.get(i);
             q.setPunctuation((int) Math.round(ai.score()));
+            q.setAiScore(ai.score());
             q.setFeedbackIa(ai.feedback());
             q.setCorrectResponse(ai.score() >= 6.0);
             log.debug("  [{}] Quiz {} → score: {}, feedback: {}", i, q.getQuiz().getId(), ai.score(), ai.feedback());
@@ -265,8 +264,15 @@ public class EvaluationService {
         Quiz              quiz = row.getQuiz();
         Quiz.QuestionType type = quiz != null ? quiz.getQuestionType() : Quiz.QuestionType.MULTIPLE_CHOICE;
 
-        int    storedScore = row.getPunctuation() != null ? row.getPunctuation() : PENDING_SCORE;
-        String feedback    = row.getFeedbackIa()  != null ? row.getFeedbackIa()  : PENDING_FEEDBACK;
+        // Open-ended rows may have been scored via the other submission path (TestSubmissionService),
+        // which writes aiScore but not punctuation — prefer aiScore so this read-side path sees it too.
+        int storedScore;
+        if (OPEN_ENDED_TYPES.contains(type) && row.getAiScore() != null) {
+            storedScore = (int) Math.round(row.getAiScore());
+        } else {
+            storedScore = row.getPunctuation() != null ? row.getPunctuation() : PENDING_SCORE;
+        }
+        String feedback = row.getFeedbackIa() != null ? row.getFeedbackIa() : PENDING_FEEDBACK;
 
         return new QuestionResult(
                 quiz != null ? quiz.getId()           : 0,

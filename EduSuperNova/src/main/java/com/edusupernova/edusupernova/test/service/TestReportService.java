@@ -39,14 +39,19 @@ public class TestReportService implements ITestReportService {
     private final UserRepository          userRepository;
     private final TestMapper              testMapper;
     private final TestScoringHelper       scoringHelper;
+    private final ITestSubmissionService  submissionService;
 
     // ── Report ────────────────────────────────────────────────────────────────
 
     @Override
-    @Transactional(readOnly = true)
     public FeedBackDTO getReport(Integer testId, String email) {
         Tests test = findTest(testId);
         assertOwnership(test, email);
+        if (scoringHelper.isExpired(test)) {
+            test.setStatus(Tests.TestStatus.ABANDONED);
+            testRepository.save(test);
+            log.info("testId={} — abandoned on report read (time limit exceeded)", testId);
+        }
 
         List<TestQuestions> allQuestions = testQuestionsRepository.findByIdTestId(testId);
         int total = allQuestions.size();
@@ -103,6 +108,8 @@ public class TestReportService implements ITestReportService {
                 testQuestionsRepository.save(tq);
             }
         }
+
+        submissionService.evaluatePendingOpenEnded(test, allQuestions);
 
         int correctCount = (int) allQuestions.stream()
                 .filter(q -> Boolean.TRUE.equals(q.getCorrectResponse()))
@@ -162,9 +169,8 @@ public class TestReportService implements ITestReportService {
     }
 
     private Users findUserByEmail(String email) {
-        Users user = userRepository.findByEmail(email);
-        if (user == null) throw new IllegalArgumentException("User not found: " + email);
-        return user;
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("User not found: " + email));
     }
 
     private void assertOwnership(Tests test, String email) {

@@ -3,6 +3,8 @@ package com.edusupernova.edusupernova.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,7 +56,8 @@ public class Tests {
     @Column(nullable = false)
     private TestStatus status = TestStatus.IN_PROGRESS;
 
-    @Column(columnDefinition = "NUMERIC(5,2) DEFAULT 0.00")
+    @Column(precision = 5, scale = 2)
+    @JdbcTypeCode(SqlTypes.NUMERIC)
     private Double finalScore = 0.0;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")

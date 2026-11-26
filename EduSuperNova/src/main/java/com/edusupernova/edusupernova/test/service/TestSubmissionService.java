@@ -165,34 +165,39 @@ public class TestSubmissionService implements ITestSubmissionService {
 
     // ── Private helpers ───────────────────────────────────────────────────────
 
-    private void completeTest(Tests test, List<TestQuestions> allQuestions) {
+    @Override
+    public void evaluatePendingOpenEnded(Tests test, List<TestQuestions> allQuestions) {
         List<TestQuestions> needsEval = allQuestions.stream()
                 .filter(q -> !scoringHelper.isMCQType(q.getQuiz().getQuestionType()))
                 .filter(q -> q.getUserResponse() != null && !q.getUserResponse().isBlank())
                 .filter(q -> q.getAiScore() == null || q.getAiScore() < 0)
                 .toList();
 
-        if (!needsEval.isEmpty()) {
-            log.info("testId={} — evaluating {} unevaluated open-ended question(s) at completion",
-                    test.getId(), needsEval.size());
-            try {
-                List<OpenEndedEvaluator.EvaluationResult> batchResults = openEndedEvaluator.evaluateBatch(
-                        needsEval,
-                        test.getCourse().getExam().getExamname(),
-                        test.getPaper() != null ? test.getPaper().getPaperName() : null);
-                for (int i = 0; i < needsEval.size(); i++) {
-                    TestQuestions q = needsEval.get(i);
-                    OpenEndedEvaluator.EvaluationResult r = batchResults.get(i);
-                    q.setCorrectResponse(r.score() >= 6.0);
-                    q.setFeedbackIa(r.feedback());
-                    q.setAiScore(r.score());
-                    q.setAnsweredAt(LocalDateTime.now());
-                    testQuestionsRepository.save(q);
-                }
-            } catch (RuntimeException e) {
-                log.warn("testId={} — completion batch evaluation failed: {}", test.getId(), e.getMessage());
+        if (needsEval.isEmpty()) return;
+
+        log.info("testId={} — evaluating {} unevaluated open-ended question(s)",
+                test.getId(), needsEval.size());
+        try {
+            List<OpenEndedEvaluator.EvaluationResult> batchResults = openEndedEvaluator.evaluateBatch(
+                    needsEval,
+                    test.getCourse().getExam().getExamname(),
+                    test.getPaper() != null ? test.getPaper().getPaperName() : null);
+            for (int i = 0; i < needsEval.size(); i++) {
+                TestQuestions q = needsEval.get(i);
+                OpenEndedEvaluator.EvaluationResult r = batchResults.get(i);
+                q.setCorrectResponse(r.score() >= 6.0);
+                q.setFeedbackIa(r.feedback());
+                q.setAiScore(r.score());
+                q.setAnsweredAt(LocalDateTime.now());
+                testQuestionsRepository.save(q);
             }
+        } catch (RuntimeException e) {
+            log.warn("testId={} — batch evaluation failed: {}", test.getId(), e.getMessage());
         }
+    }
+
+    private void completeTest(Tests test, List<TestQuestions> allQuestions) {
+        evaluatePendingOpenEnded(test, allQuestions);
 
         int correctCount = (int) allQuestions.stream()
                 .filter(q -> Boolean.TRUE.equals(q.getCorrectResponse()))
@@ -217,9 +222,7 @@ public class TestSubmissionService implements ITestSubmissionService {
     }
 
     private void assertNotExpired(Tests test) {
-        if (test.getTimeLimitMinutes() == null) return;
-        if (scoringHelper.getRemainingSeconds(test) == 0
-                && test.getStatus() == Tests.TestStatus.IN_PROGRESS) {
+        if (scoringHelper.isExpired(test)) {
             test.setStatus(Tests.TestStatus.ABANDONED);
             testRepository.save(test);
             throw new IllegalStateException("Test time limit exceeded");

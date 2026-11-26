@@ -99,6 +99,13 @@ public class TestScoringHelper {
         return Math.max(0L, remaining);
     }
 
+    /** True when a timed, still-in-progress test has run out of time. */
+    public boolean isExpired(Tests test) {
+        return test.getTimeLimitMinutes() != null
+                && test.getStatus() == Tests.TestStatus.IN_PROGRESS
+                && getRemainingSeconds(test) == 0;
+    }
+
     // ── Builder ───────────────────────────────────────────────────────────────
 
     public TestQuestions buildTestQuestion(Tests test, Quiz quiz) {

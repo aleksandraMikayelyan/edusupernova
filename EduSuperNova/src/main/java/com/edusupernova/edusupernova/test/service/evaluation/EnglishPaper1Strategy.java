@@ -63,13 +63,13 @@ public class EnglishPaper1Strategy implements EvaluationStrategy {
         For Section A reading/summary questions: score R out of 15 and W out of 15; \
         convert to 0–10 using (R+W)/3. \
         For Section B Directed Writing: score W1 out of 15 and W2 out of 10; \
-        convert to 0–10 using (W1+W2)/2.5. \
+        convert to 0–10 using (W1+W2)/%s. \
         A blank response or one that ignores the specified form and audience scores 0 on the relevant criterion. \
         In the feedback: for language analysis, name every technique identified with its correct \
         linguistic label and comment on whether its effect was explained; \
         for directed writing, state whether form/audience/purpose were achieved and \
         flag any register inconsistencies with a specific example.\
-        """
+        """.formatted(StrategyUtils.DIRECTED_WRITING_SCORE_DIVISOR)
     );
 
     @Override

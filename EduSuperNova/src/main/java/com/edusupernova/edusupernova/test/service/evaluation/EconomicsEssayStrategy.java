@@ -57,6 +57,9 @@ public class EconomicsEssayStrategy implements EvaluationStrategy {
 
     @Override
     public boolean supports(String examName, String paperName, List<TestQuestions> answers) {
+        // Intentional catch-all: @Order(6) runs after EconomicsDataResponseStrategy (@Order(5)),
+        // which claims SHORT_ANSWER economics answers first. Anything else economics-related
+        // (ESSAY, etc.) falls through to here by elimination — no question-type filter needed.
         return StrategyUtils.normalise(examName).contains("econom");
     }
 

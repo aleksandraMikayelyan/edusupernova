@@ -10,7 +10,9 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -q
 
-# Copy source and build the fat JAR (skip tests — Render runs a live DB anyway)
+# Copy source and build the fat JAR (skip tests — they need a live MySQL
+# connection that isn't available at build time; Render only provides DB_URL
+# at runtime via environment variables)
 COPY src ./src
 RUN mvn package -DskipTests -q
 

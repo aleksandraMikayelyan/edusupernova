@@ -40,11 +40,11 @@ public class IeltsTask1AcademicStrategy implements EvaluationStrategy {
         """
         Score each criterion on the IELTS band scale 0–9 (half-bands permitted: 5.5, 6.5, etc.). \
         Compute the mean of the four bands, round to the nearest 0.5, then convert to 0–10: \
-        band × 1.111 (cap at 10). Band 9=10, Band 8=8.9, Band 7=7.8, Band 6=6.7, Band 5=5.6, Band 4=4.4. \
+        band × %s (cap at 10). Band 9=10, Band 8=8.9, Band 7=7.8, Band 6=6.7, Band 5=5.6, Band 4=4.4. \
         A response that does not describe the visual, ignores the data, or is blank scores Band 0 \
         on Task Achievement and will result in a very low overall score. \
         Report the band for every criterion and the overall band in the feedback.\
-        """
+        """.formatted(StrategyUtils.IELTS_BAND_TO_TEN_MULTIPLIER)
     );
 
     @Override

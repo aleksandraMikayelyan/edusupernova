@@ -21,7 +21,9 @@ import java.util.stream.Collectors;
  * Every controller endpoint funnels errors through here so responses have a
  * consistent shape (ApiErrorDTO) and callers can tell 404 from 409 from 500.
  *
- * Order of handlers matters: more specific exceptions first, catch-all last.
+ * Spring dispatches by exception-type specificity (the most specific matching
+ * @ExceptionHandler wins), not by declaration order, so handlers below can be
+ * reordered freely — Exception.class still only catches what no other handler claims.
  */
 @Slf4j
 @RestControllerAdvice

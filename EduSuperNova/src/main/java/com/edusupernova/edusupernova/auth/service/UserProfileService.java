@@ -3,11 +3,9 @@ package com.edusupernova.edusupernova.auth.service;
 import com.edusupernova.edusupernova.auth.dto.request.UpdatePasswordRequest;
 import com.edusupernova.edusupernova.auth.dto.request.UpdateProfileRequest;
 import com.edusupernova.edusupernova.auth.dto.response.AuthResponse;
-import com.edusupernova.edusupernova.auth.dto.response.UserSummaryDTO;
-import com.edusupernova.edusupernova.config.JwtTokenUtil;
-import com.edusupernova.edusupernova.config.UserPrincipal;
 import com.edusupernova.edusupernova.data.UserRepository;
 import com.edusupernova.edusupernova.exception.BusinessRuleException;
+import com.edusupernova.edusupernova.model.AuthProvider;
 import com.edusupernova.edusupernova.model.Users;
 import com.edusupernova.edusupernova.shared.dto.response.MessageResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserProfileService implements IUserProfileService {
 
-    private final UserRepository  userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final JwtTokenUtil    jwtTokenUtil;
+    private final UserRepository      userRepository;
+    private final PasswordEncoder     passwordEncoder;
+    private final AuthResponseFactory authResponseFactory;
 
     @Override
     public AuthResponse updateProfile(Integer userId, UpdateProfileRequest request) {
@@ -41,16 +39,15 @@ public class UserProfileService implements IUserProfileService {
         user.setEmail(request.email());
         userRepository.save(user);
 
-        String token     = jwtTokenUtil.generateToken(new UserPrincipal(user));
-        long   expiresIn = jwtTokenUtil.getExpirationMs() / 1000;
-        UserSummaryDTO summary = new UserSummaryDTO(
-                user.getId(), user.getUsername(), user.getEmail(), user.getRol().name());
-        return new AuthResponse(token, "Bearer", expiresIn, user.getRol().name(), summary);
+        return authResponseFactory.build(user);
     }
 
     @Override
     public MessageResponse updatePassword(Integer userId, UpdatePasswordRequest request) {
         Users user = findUser(userId);
+        if (user.getAuthProvider() == AuthProvider.GOOGLE) {
+            throw new BusinessRuleException("This account uses Google Sign-In and has no password to change");
+        }
         if (!passwordEncoder.matches(request.currentPassword(), user.getPassword())) {
             throw new BusinessRuleException("Current password is incorrect");
         }

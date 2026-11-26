@@ -1,7 +1,7 @@
 # Run the Spring Boot backend with local file paths for image serving.
 # Usage (from this directory): .\start-local.ps1
 
-$env:UPLOAD_DIR = "C:/images/"
+if (-not $env:UPLOAD_DIR) { $env:UPLOAD_DIR = "C:/images/" }
 $env:BASE_URL   = "http://localhost:8080"
 
 Write-Host "Starting EduSuperNova backend (local)..."

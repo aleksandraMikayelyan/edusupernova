@@ -22,6 +22,9 @@ public class EmailService {
     @Value("${app.email.from}")
     private String fromAddress;
 
+    @Value("${app.verification.code-ttl-minutes:10}")
+    private int codeTtlMinutes;
+
     @Async("emailExecutor")
     public void sendVerificationCode(String toEmail, String code) {
         log.info("Sending verification email to {} from {}", toEmail, fromAddress);
@@ -40,7 +43,7 @@ public class EmailService {
                 "<div style='font-size:40px;font-weight:700;letter-spacing:14px;" +
                      "color:#062f37;background:#F7F4EF;padding:24px;text-align:center;" +
                      "border-radius:12px;margin:24px 0'>" + code + "</div>" +
-                "<p style='color:#94A3B8;font-size:13px'>This code expires in 10 minutes.<br>" +
+                "<p style='color:#94A3B8;font-size:13px'>This code expires in " + codeTtlMinutes + " minutes.<br>" +
                 "If you did not create an account, you can safely ignore this email.</p>" +
                 "</div>",
                 true

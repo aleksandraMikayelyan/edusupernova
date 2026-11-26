@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 /**
- * POST /auth/register
+ * POST /api/users/register
  *
  * NOTE: rol is NOT accepted from the client.
  * Every new user is STUDENT by default.

@@ -39,12 +39,12 @@ public class IeltsTask1GeneralStrategy implements EvaluationStrategy {
         """,
         """
         Score each criterion 0–9 (half-bands permitted). \
-        Mean of four bands → round to nearest 0.5 → multiply by 1.111 (cap at 10). \
+        Mean of four bands → round to nearest 0.5 → multiply by %s (cap at 10). \
         A letter that ignores one or more bullet points cannot exceed Band 5 on Task Achievement. \
         A letter with the wrong register (e.g., informal to a company director) is capped at Band 5 overall. \
         A blank response scores Band 0. \
         Report each criterion band and the overall band.\
-        """
+        """.formatted(StrategyUtils.IELTS_BAND_TO_TEN_MULTIPLIER)
     );
 
     @Override

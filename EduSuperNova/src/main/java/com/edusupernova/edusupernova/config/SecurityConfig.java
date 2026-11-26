@@ -39,13 +39,9 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return email -> {
-            Users user = userRepository.findByEmail(email);
-            if (user == null) {
-                throw new UsernameNotFoundException("Usuario no encontrado: " + email);
-            }
-            return new UserPrincipal(user);
-        };
+        return email -> userRepository.findByEmail(email)
+                .map(UserPrincipal::new)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + email));
     }
 
     @Bean
@@ -63,6 +59,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/exams/**").permitAll()
                         .requestMatchers("/api/units/**").permitAll()
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/tests/**").authenticated()
                         .requestMatchers("/api/feedback/**").permitAll()
                         .requestMatchers("/api/progress/**").permitAll()

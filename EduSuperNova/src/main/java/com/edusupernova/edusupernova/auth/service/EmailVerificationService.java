@@ -27,7 +27,7 @@ public class EmailVerificationService {
      */
     @Transactional
     public void sendCode(String email) {
-        Users user = userRepository.findByEmail(email);
+        Users user = userRepository.findByEmail(email).orElse(null);
         if (user == null) return;
 
         String code   = String.format("%06d", RANDOM.nextInt(1_000_000));
@@ -46,7 +46,7 @@ public class EmailVerificationService {
      */
     @Transactional
     public boolean validateCode(String email, String code) {
-        Users user = userRepository.findByEmail(email);
+        Users user = userRepository.findByEmail(email).orElse(null);
         if (user == null) return false;
         if (user.getVerificationCode() == null) return false;
         if (!user.getVerificationCode().equals(code)) return false;

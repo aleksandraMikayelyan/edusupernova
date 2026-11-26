@@ -53,13 +53,13 @@ public class EnglishPaper2Strategy implements EvaluationStrategy {
         """,
         """
         Score W1 out of 15 (Content & Structure) and W2 out of 10 (Style & Accuracy). \
-        Convert to 0–10 using (W1 + W2) / 2.5. \
+        Convert to 0–10 using (W1 + W2) / %s. \
         A blank response or one that does not attempt the chosen mode scores 0. \
         In the feedback: identify the mode chosen by the candidate; \
         comment on structural control with one specific example (quote a line if needed); \
         note vocabulary and sentence variety; \
         flag any grammar, spelling, or punctuation errors that impede communication.\
-        """
+        """.formatted(StrategyUtils.DIRECTED_WRITING_SCORE_DIVISOR)
     );
 
     @Override

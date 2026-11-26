@@ -1,13 +1,11 @@
 package com.edusupernova.edusupernova.auth.service;
 
-import com.edusupernova.edusupernova.config.JwtTokenUtil;
-import com.edusupernova.edusupernova.config.UserPrincipal;
 import com.edusupernova.edusupernova.data.UserRepository;
 import com.edusupernova.edusupernova.auth.dto.request.GoogleAuthRequest;
 import com.edusupernova.edusupernova.auth.dto.request.LoginRequest;
 import com.edusupernova.edusupernova.auth.dto.response.AuthResponse;
-import com.edusupernova.edusupernova.auth.dto.response.UserSummaryDTO;
 import com.edusupernova.edusupernova.exception.BusinessRuleException;
+import com.edusupernova.edusupernova.model.AuthProvider;
 import com.edusupernova.edusupernova.model.Role;
 import com.edusupernova.edusupernova.model.Users;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
@@ -36,8 +34,8 @@ public class AuthService implements IAuthService {
 
     private final UserRepository        userRepository;
     private final AuthenticationManager authenticationManager;
-    private final JwtTokenUtil          jwtTokenUtil;
     private final PasswordEncoder       passwordEncoder;
+    private final AuthResponseFactory   authResponseFactory;
 
     @Value("${google.oauth2.client-id}")
     private String googleClientId;
@@ -47,9 +45,9 @@ public class AuthService implements IAuthService {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.email(), request.password())
         );
-        Users user = userRepository.findByEmail(request.email());
-        if (user == null) throw new IllegalArgumentException("User not found after authentication");
-        return buildAuthResponse(user);
+        Users user = userRepository.findByEmail(request.email())
+                .orElseThrow(() -> new BusinessRuleException("User not found after authentication"));
+        return authResponseFactory.build(user);
     }
 
     @Override
@@ -60,12 +58,12 @@ public class AuthService implements IAuthService {
         String name  = (String) payload.get("name");
         if (name == null || name.isBlank()) name = email.split("@")[0];
 
-        Users user = userRepository.findByEmail(email);
+        Users user = userRepository.findByEmail(email).orElse(null);
         if (user == null) {
             user = buildGoogleUser(email, name);
             userRepository.save(user);
         }
-        return buildAuthResponse(user);
+        return authResponseFactory.build(user);
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────
@@ -78,15 +76,8 @@ public class AuthService implements IAuthService {
         user.setPassword(passwordEncoder.encode(UUID.randomUUID().toString()));
         user.setRol(Role.STUDENT);
         user.setEmailVerified(true);
+        user.setAuthProvider(AuthProvider.GOOGLE);
         return user;
-    }
-
-    private AuthResponse buildAuthResponse(Users user) {
-        String token     = jwtTokenUtil.generateToken(new UserPrincipal(user));
-        long   expiresIn = jwtTokenUtil.getExpirationMs() / 1000;
-        UserSummaryDTO summary = new UserSummaryDTO(
-                user.getId(), user.getUsername(), user.getEmail(), user.getRol().name());
-        return new AuthResponse(token, "Bearer", expiresIn, user.getRol().name(), summary);
     }
 
     private GoogleIdToken.Payload verifyGoogleToken(String idTokenString) {

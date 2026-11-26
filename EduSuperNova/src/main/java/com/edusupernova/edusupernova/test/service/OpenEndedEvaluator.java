@@ -1,5 +1,6 @@
 package com.edusupernova.edusupernova.test.service;
 
+import com.edusupernova.edusupernova.exception.GroqApiException;
 import com.edusupernova.edusupernova.model.Quiz;
 import com.edusupernova.edusupernova.model.QuestionGroup;
 import com.edusupernova.edusupernova.model.TestQuestions;
@@ -34,6 +35,13 @@ public class OpenEndedEvaluator {
 
     public record EvaluationResult(double score, String feedback) {}
 
+    /** Attempts per Groq call before giving up and marking the batch pending re-evaluation. */
+    private static final int    MAX_ATTEMPTS = 2;
+    /** Sentinel score — mirrors EvaluationService.PENDING_SCORE so these rows read as "pending", not "failed". */
+    private static final double PENDING_SCORE = -1.0;
+    private static final String PENDING_REEVALUATION_FEEDBACK =
+            "AI evaluation pending re-evaluation — the AI provider did not return a usable result.";
+
     private static final String SYSTEM_PREAMBLE =
         "You are a strict professional examiner. " +
         "Respond ONLY with a valid JSON object — no markdown, no prose, no code fences.\n" +
@@ -56,11 +64,33 @@ public class OpenEndedEvaluator {
         log.info("Evaluating {} answer(s) with profile '{}' (exam='{}', paper='{}')",
                 answers.size(), profile.label(), examName, paperName);
 
-        String rawJson = aiProvider.complete(SYSTEM_PREAMBLE, prompt);
+        String rawJson = completeWithRetry(prompt, answers.size());
+        if (rawJson == null) {
+            return pendingReEvaluationResults(answers.size());
+        }
         log.debug("AI raw response (first 500 chars): {}",
                 rawJson.substring(0, Math.min(500, rawJson.length())));
 
         return parseResults(rawJson, answers.size());
+    }
+
+    // ── Transport retry ───────────────────────────────────────────────────────
+
+    /**
+     * Retries once on a Groq transport/API failure, then gives up.
+     * Returns null (rather than throwing) so a transport failure and a malformed-JSON
+     * response end up with the same outcome: pending re-evaluation, never a silent 0.
+     */
+    private String completeWithRetry(String prompt, int expectedCount) {
+        for (int attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+            try {
+                return aiProvider.complete(SYSTEM_PREAMBLE, prompt);
+            } catch (GroqApiException e) {
+                log.warn("Groq request failed (attempt {}/{} for {} answer(s)): {}",
+                        attempt, MAX_ATTEMPTS, expectedCount, e.getMessage());
+            }
+        }
+        return null;
     }
 
     // ── Prompt builder ────────────────────────────────────────────────────────
@@ -126,15 +156,15 @@ public class OpenEndedEvaluator {
             }
 
             if (results.size() != expectedCount) {
-                log.warn("AI returned {} results but expected {}. Padding with fallbacks.",
+                log.warn("AI returned {} results but expected {}. Padding with pending placeholders.",
                         results.size(), expectedCount);
             }
 
             return padToSize(results, expectedCount);
 
         } catch (Exception e) {
-            log.error("Failed to parse AI response: {}", e.getMessage());
-            return fallbackResults(expectedCount, "AI evaluation pending — parsing error.");
+            log.error("Failed to parse AI response, marking batch pending re-evaluation: {}", e.getMessage());
+            return pendingReEvaluationResults(expectedCount);
         }
     }
 
@@ -150,11 +180,11 @@ public class OpenEndedEvaluator {
         if (results.size() >= targetSize) return results.subList(0, targetSize);
         var padded = new java.util.ArrayList<>(results);
         while (padded.size() < targetSize)
-            padded.add(new EvaluationResult(0.0, "No evaluation returned for this answer."));
+            padded.add(new EvaluationResult(PENDING_SCORE, "No evaluation returned for this answer — pending re-evaluation."));
         return padded;
     }
 
-    private List<EvaluationResult> fallbackResults(int count, String reason) {
-        return java.util.Collections.nCopies(count, new EvaluationResult(0.0, reason));
+    private List<EvaluationResult> pendingReEvaluationResults(int count) {
+        return java.util.Collections.nCopies(count, new EvaluationResult(PENDING_SCORE, PENDING_REEVALUATION_FEEDBACK));
     }
 }

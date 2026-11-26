@@ -10,7 +10,7 @@ import com.edusupernova.edusupernova.model.Courses;
 import com.edusupernova.edusupernova.model.Paper;
 import com.edusupernova.edusupernova.model.Quiz;
 import com.edusupernova.edusupernova.model.QuestionGroup;
-import com.edusupernova.edusupernova.exam.service.ExamsService;
+import com.edusupernova.edusupernova.exam.service.ExamService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,7 +40,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AdminController {
 
-    private final ExamsService             examsService;
+    private final ExamService              examService;
     private final CourseRepository         courseRepository;
     private final PaperRepository          paperRepository;
     private final QuizRepository           quizRepository;
@@ -67,7 +67,7 @@ public class AdminController {
 
     @GetMapping("/exams")
     public ResponseEntity<List<ExamDTO>> getExams() {
-        return ResponseEntity.ok(examsService.getDashboardExams());
+        return ResponseEntity.ok(examService.getDashboardExams());
     }
 
     // ── Courses + papers ──────────────────────────────────────────────────────

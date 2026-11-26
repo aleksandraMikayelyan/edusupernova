@@ -30,6 +30,15 @@ public class Users {
     private Role rol = Role.STUDENT;
 
     /**
+     * How this account authenticates. GOOGLE accounts have an unusable random
+     * password hash (see AuthService.buildGoogleUser) — never show them a
+     * "current password is incorrect" error, since they never set one.
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "auth_provider", nullable = false)
+    private AuthProvider authProvider = AuthProvider.LOCAL;
+
+    /**
      * False until the user confirms the 6-digit code we send on registration.
      * Spring Security's isEnabled() returns this value, so unverified users
      * are rejected at the authentication layer before any JWT is issued.
